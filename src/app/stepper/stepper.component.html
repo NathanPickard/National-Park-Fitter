@@ -1,0 +1,15 @@
+<mat-vertical-stepper #stepper>
+  <mat-step [stepControl]="firstFormGroup">
+    <form [formGroup]="firstFormGroup">
+      <ng-template matStepLabel>Hiking?</ng-template>
+      <mat-form-field>
+        <input matInput placeholder="Do you want to hike?" formControlName="firstCtrl" required>
+      </mat-form-field>
+      <div>
+        <button mat-button matStepperNext>Next</button>
+      </div>
+    </form>
+
+  </mat-step>
+
+</mat-vertical-stepper>
