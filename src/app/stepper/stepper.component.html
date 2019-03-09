@@ -1,5 +1,7 @@
 <mat-vertical-stepper #stepper>
+
   <mat-step [stepControl]="firstFormGroup">
+
     <form [formGroup]="firstFormGroup">
       <ng-template matStepLabel>Hiking?</ng-template>
       <mat-form-field>
@@ -10,6 +12,28 @@
       </div>
     </form>
 
+  </mat-step>
+
+  <mat-step [stepControl]="secondFormGroup">
+    <form [formGroup]="secondFormGroup">
+      <ng-template matStepLabel>Camping?</ng-template>
+      <mat-form-field>
+        <input matInput placeholder="Are you camping?" formControlName="secondCtrl" required>
+      </mat-form-field>
+      <div>
+        <button mat-button matStepperPrevious>Back</button>
+        <button mat-button matStepperNext>Next</button>
+      </div>
+    </form>
+  </mat-step>
+
+  <mat-step>
+    <ng-template matStepLabel>Done</ng-template>
+    Enjoy your visit!
+    <div>
+      <button mat-button matStepperPrevious>Back</button>
+      <button mat-button (click)="stepper.reset()">Reset</button>
+    </div>
   </mat-step>
 
 </mat-vertical-stepper>
