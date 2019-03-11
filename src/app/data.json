@@ -1,0 +1,615 @@
+{
+  "total": 9,
+  "data": [
+    {
+      "regulationsUrl": "https://www.nps.gov/yose/planyourvisit/campregs.htm",
+      "weatherOverview": "Yosemite National Park covers nearly 1,200 square miles (3,100 square km) in the Sierra Nevada, with elevations ranging from about 2,000 feet (600 m) to 13,000 ft (4,000 m). Yosemite receives 95% of its precipitation between October and May (and over 75% between November and March). Most of Yosemite is blanketed in snow from about November through May. (Yosemite Valley can be rainy or snowy in any given winter storm.)",
+      "campsites": {
+        "other": 198,
+        "group": 0,
+        "horse": 0,
+        "totalSites": 235,
+        "tentOnly": 5,
+        "electricalHookups": 0,
+        "rvOnly": 32,
+        "walkBoatTo": 0
+      },
+      "accessibility": {
+        "wheelchairAccess": "The following campsites are suitable for wheelchairs and include picnic tables with extended tops. The closest restrooms to these campsites are also wheelchair accessible. These campsites are limited to people with disabilities. Upper Pines: sites 6, 7, 21, 26, 27, 28, 29, 39, 42, and 43",
+        "internetInfo": "",
+        "rvAllowed": 1,
+        "cellPhoneInfo": "",
+        "fireStovePolicy": "Wood fires are permitted all year, however, from May through September, campfires in Yosemite Valley are only allowed between 5 pm and 10 pm (campfires are allowed at any time from October through April). Charcoal fires are allowed at any time.",
+        "rvMaxLength": 35,
+        "additionalInfo": "Each campsite contains a fire ring, picnic table, and a food locker and is near a bathroom with drinking water and flushing toilets. In Upper Pines food lockers measure 35\"(D)x43\"(W)x28\"(H).\n\nGroceries: Nearby (Yosemite Village and Half Dome Village, formerly Curry Village)\nShowers: Nearby (Half Dome Village, formerly Curry Village and Housekeeping Camp)",
+        "trailerMaxLength": 24,
+        "adaInfo": "The following campsites are suitable for wheelchairs and include picnic tables with extended tops. The closest restrooms to these campsites are also wheelchair accessible. These campsites are limited to people with disabilities. Upper Pines: sites 6, 7, 21, 26, 27, 28, 29, 39, 42, and 43",
+        "rvInfo": "Upper Pines: 238 sites with space for tents, RVs up to 35 feet, and trailers up to 24 feet. Not every site can accommodate equipment of these lengths. Be sure to read the site details when making a reservation on recreation.gov to ensure your equipment will fit into the site you're reserving. You can also find answers to frequently asked questions about length limits and site types",
+        "accessRoads": [
+          "Paved Roads - All vehicles OK"
+        ],
+        "trailerAllowed": 1,
+        "classifications": [
+          "Developed Campground"
+        ]
+      },
+      "directionsOverview": "Yosemite Valley, near Half Dome Village (formerly Curry Village)",
+      "reservationsUrl": "",
+      "directionsUrl": "https://www.nps.gov/yose/planyourvisit/directions.htm",
+      "reservationsSitesFirstCome": "",
+      "name": "Upper Pines",
+      "regulationsOverview": "A maximum of six people (including children) are allowed per campsite. There is no limit on the number of tents (as long as they all fit into the campsite).\n\nA maximum of two motor vehicles are allowed per campsite. All vehicles must be parked on a parking pad. Trailers don't count against the vehicle limit as long as they fit on the parking pad. Additional parking is available near each campground for no additional charge.",
+      "latLong": "",
+      "description": "Upper Pines Campground is in Yosemite Valley (4,000 ft / 1200m).",
+      "reservationsSitesReservable": "",
+      "parkCode": "yose",
+      "amenities": {
+        "trashRecyclingCollection": "Yes - year round",
+        "toilets": [
+          "Flush Toilets - year round"
+        ],
+        "internetConnectivity": false,
+        "showers": [
+          "None"
+        ],
+        "cellPhoneReception": "Yes - year round",
+        "laundry": false,
+        "amphitheater": "",
+        "dumpStation": false,
+        "campStore": false,
+        "staffOrVolunteerHostOnSite": false,
+        "potableWater": [
+          "Yes - year round"
+        ],
+        "iceAvailableForSale": false,
+        "firewoodForSale": false,
+        "ampitheater": false,
+        "foodStorageLockers": "Yes - year round"
+      },
+      "id": 2399,
+      "reservationsDescription": ""
+    },
+    {
+      "regulationsUrl": "https://www.nps.gov/yose/planyourvisit/campregs.htm",
+      "weatherOverview": "Yosemite National Park covers nearly 1,200 square miles (3,100 square km) in the Sierra Nevada, with elevations ranging from about 2,000 feet (600 m) to 13,000 ft (4,000 m). Yosemite receives 95% of its precipitation between October and May (and over 75% between November and March). Most of Yosemite is blanketed in snow from about November through May. (Yosemite Valley can be rainy or snowy in any given winter storm.)",
+      "campsites": {
+        "other": 31,
+        "group": 4,
+        "horse": 0,
+        "totalSites": 103,
+        "tentOnly": 68,
+        "electricalHookups": 0,
+        "rvOnly": 0,
+        "walkBoatTo": 0
+      },
+      "accessibility": {
+        "wheelchairAccess": "There are no designated accessible campsites at this campground.",
+        "internetInfo": "",
+        "rvAllowed": 1,
+        "cellPhoneInfo": "",
+        "fireStovePolicy": "Wood and charcoal fires are permitted all year and at any time.",
+        "rvMaxLength": 40,
+        "additionalInfo": "Each campsite contains a fire ring, picnic table, and a food locker and is near a bathroom with drinking water and flushing toilets. In Hodgdon Meadow food lockers measure 33\"(D)x45\"(W)x18\"(H). The group sites have four food lockers.\n\nGroceries: Yosemite Valley (Yosemite Village Store; Half Dome Village Store, formerly Curry Village Store; Yosemite Valley Lodge Store, formerly Yosemite Lodge Store) and small grocery store at Crane Flat\nShowers: Yosemite Valley (Half Dome Village, formerly Curry Village and Housekeeping Camp)\nDump station: Available all year in Yosemite Valley (in Upper Pines Campground) or, summer only, near Tuolumne Meadows Campground.",
+        "trailerMaxLength": 30,
+        "adaInfo": "There are no designated accessible campsites at this campground.",
+        "rvInfo": "Hodgdon Meadow: 105 sites with space for tents, RVs up to 35 feet, and trailers up to 27 feet. Not every site can accommodate equipment of these lengths. Be sure to read the site details when making a reservation on recreation.gov to ensure your equipment will fit into the site you're reserving. You can also find answers to frequently asked questions about length limits and site types.",
+        "accessRoads": [
+          "Paved Roads - All vehicles OK"
+        ],
+        "trailerAllowed": 1,
+        "classifications": [
+          "Developed Campground"
+        ]
+      },
+      "directionsOverview": "Off the Big Oak Flat Road (Highway 120), about 45 minutes northwest of Yosemite Valley and adjacent to the Big Oak Flat Entrance Station, at 4,900 ft (1,500 m)",
+      "reservationsUrl": "",
+      "directionsUrl": "https://www.nps.gov/yose/planyourvisit/directions.htm",
+      "reservationsSitesFirstCome": "",
+      "name": "Hodgdon Meadow",
+      "regulationsOverview": "Pets: Permitted (except in group and horse sites; must be on a leash at all times)\nFires: Wood and charcoal fires are permitted.\nPeople per site: A maximum of six people (including children) are allowed per campsite, except for the group site, which requires 13 to 30 people. There is no limit on the number of tents (as long as they all fit into the campsite).\n\nYou are required to store food properly in order to protect Yosemite's bears.",
+      "latLong": "{lat:37.798203, lng:-119.8663715}",
+      "description": "Hodgdon Meadow Campground is located in breathtaking Yosemite National Park in Central California's rugged Sierra Nevada Mountain Range. The campground is 25 miles from Yosemite Valley at an elevation of 4,875 feet.\n\nWithin Yosemite, visitors can gaze upon waterfalls, sheer granite cliffs, deep valleys, grand meadows, ancient giant sequoias, vast wilderness areas and much more.",
+      "reservationsSitesReservable": "",
+      "parkCode": "yose",
+      "amenities": {
+        "trashRecyclingCollection": "Yes - year round",
+        "toilets": [
+          "Flush Toilets - year round"
+        ],
+        "internetConnectivity": false,
+        "showers": [
+          "None"
+        ],
+        "cellPhoneReception": "Yes - year round",
+        "laundry": false,
+        "amphitheater": "",
+        "dumpStation": false,
+        "campStore": false,
+        "staffOrVolunteerHostOnSite": false,
+        "potableWater": [
+          "Yes - year round"
+        ],
+        "iceAvailableForSale": false,
+        "firewoodForSale": false,
+        "ampitheater": false,
+        "foodStorageLockers": "Yes - year round"
+      },
+      "id": 4508,
+      "reservationsDescription": ""
+    },
+    {
+      "regulationsUrl": "https://www.nps.gov/yose/planyourvisit/campregs.htm",
+      "weatherOverview": "Yosemite National Park covers nearly 1,200 square miles (3,100 square km) in the Sierra Nevada, with elevations ranging from about 2,000 feet (600 m) to 13,000 ft (4,000 m). Yosemite receives 95% of its precipitation between October and May (and over 75% between November and March). Most of Yosemite is blanketed in snow from about November through May. (Yosemite Valley can be rainy or snowy in any given winter storm.)",
+      "campsites": {
+        "other": 67,
+        "group": 0,
+        "horse": 0,
+        "totalSites": 80,
+        "tentOnly": 0,
+        "electricalHookups": 0,
+        "rvOnly": 13,
+        "walkBoatTo": 0
+      },
+      "accessibility": {
+        "wheelchairAccess": "The following campsites are suitable for wheelchairs and include picnic tables with extended tops. The closest restrooms to these campsites are also wheelchair accessible. These campsites are limited to people with disabilities. North Pines: sites 111, 113, 119, 125, and 129",
+        "internetInfo": "",
+        "rvAllowed": 1,
+        "cellPhoneInfo": "",
+        "fireStovePolicy": "Wood fires are permitted all year, however, from May through September, campfires in Yosemite Valley are only allowed between 5 pm and 10 pm (campfires are allowed at any time from October through April). Charcoal fires are allowed at any time.",
+        "rvMaxLength": 40,
+        "additionalInfo": "Each campsite contains a fire ring, picnic table, and a food locker and is near a bathroom with drinking water and flushing toilets. In Upper Pines food lockers measure 35\"(D)x43\"(W)x28\"(H).\n\nGroceries: Nearby (Yosemite Village and Half Dome Village, formerly Curry Village)\nShowers: Nearby (Half Dome Village, formerly Curry Village and Housekeeping Camp)\nDump Station: Nearby (Upper Pines Campground)",
+        "trailerMaxLength": 35,
+        "adaInfo": "The following campsites are suitable for wheelchairs and include picnic tables with extended tops. The closest restrooms to these campsites are also wheelchair accessible. These campsites are limited to people with disabilities. North Pines: sites 111, 113, 119, 125, and 129",
+        "rvInfo": "North Pines: 81 sites with space for tents, RVs up to 40 feet, and trailers up to 35 feet. Not every site can accommodate equipment of these lengths. Be sure to read the site details when making a reservation on recreation.gov to ensure your equipment will fit into the site you're reserving. You can also find answers to frequently asked questions about length limits and site types.",
+        "accessRoads": [
+          "Paved Roads - All vehicles OK"
+        ],
+        "trailerAllowed": 1,
+        "classifications": [
+          "Developed Campground"
+        ]
+      },
+      "directionsOverview": "Yosemite Valley, near Half Dome Village (formerly Curry Village)",
+      "reservationsUrl": "",
+      "directionsUrl": "https://www.nps.gov/yose/planyourvisit/directions.htm",
+      "reservationsSitesFirstCome": "",
+      "name": "North Pines",
+      "regulationsOverview": "A maximum of six people (including children) are allowed per campsite. There is no limit on the number of tents (as long as they all fit into the campsite).\n\nA maximum of two motor vehicles are allowed per campsite. All vehicles must be parked on a parking pad. Trailers don't count against the vehicle limit as long as they fit on the parking pad. Additional parking is available near each campground for no additional charge.",
+      "latLong": "",
+      "description": "North Pines Campground is in Yosemite Valley (4,000 ft / 1200m).",
+      "reservationsSitesReservable": "",
+      "parkCode": "yose",
+      "amenities": {
+        "trashRecyclingCollection": "Yes - year round",
+        "toilets": [
+          "Flush Toilets - year round"
+        ],
+        "internetConnectivity": false,
+        "showers": [
+          "None"
+        ],
+        "cellPhoneReception": "Yes - year round",
+        "laundry": false,
+        "amphitheater": "",
+        "dumpStation": false,
+        "campStore": false,
+        "staffOrVolunteerHostOnSite": false,
+        "potableWater": [
+          "Yes - year round"
+        ],
+        "iceAvailableForSale": false,
+        "firewoodForSale": false,
+        "ampitheater": false,
+        "foodStorageLockers": "Yes - year round"
+      },
+      "id": 4570,
+      "reservationsDescription": ""
+    },
+    {
+      "regulationsUrl": "https://www.nps.gov/yose/planyourvisit/campregs.htm",
+      "weatherOverview": "Yosemite National Park covers nearly 1,200 square miles (3,100 square km) in the Sierra Nevada, with elevations ranging from about 2,000 feet (600 m) to 13,000 ft (4,000 m). Yosemite receives 95% of its precipitation between October and May (and over 75% between November and March). Most of Yosemite is blanketed in snow from about November through May. (Yosemite Valley can be rainy or snowy in any given winter storm.)",
+      "campsites": {
+        "other": 64,
+        "group": 0,
+        "horse": 0,
+        "totalSites": 73,
+        "tentOnly": 0,
+        "electricalHookups": 0,
+        "rvOnly": 9,
+        "walkBoatTo": 0
+      },
+      "accessibility": {
+        "wheelchairAccess": "The following campsites are suitable for wheelchairs and include picnic tables with extended tops. The closest restrooms to these campsites are also wheelchair accessible. These campsites are limited to people with disabilities. Lower Pines: sites 7, 13, 14, 18, and 20",
+        "internetInfo": "",
+        "rvAllowed": 1,
+        "cellPhoneInfo": "",
+        "fireStovePolicy": "Wood fires are permitted all year, however, from May through September, campfires in Yosemite Valley are only allowed between 5 pm and 10 pm (campfires are allowed at any time from October through April). Charcoal fires are allowed at any time.",
+        "rvMaxLength": 40,
+        "additionalInfo": "Each campsite contains a fire ring, picnic table, and a food locker and is near a bathroom with drinking water and flushing toilets. In Upper Pines food lockers measure 35\"(D)x43\"(W)x28\"(H).\n\nGroceries: Nearby (Yosemite Village and Half Dome Village, formerly Curry Village)\nShowers: Nearby (Half Dome Village, formerly Curry Village and Housekeeping Camp)\nDump Station: Nearby (Upper Pines Campground)",
+        "trailerMaxLength": 35,
+        "adaInfo": "The following campsites are suitable for wheelchairs and include picnic tables with extended tops. The closest restrooms to these campsites are also wheelchair accessible. These campsites are limited to people with disabilities. Lower Pines: sites 7, 13, 14, 18, and 20",
+        "rvInfo": "Lower Pines: 73 sites with space for tents, RVs up to 40 feet, and trailers up to 35 feet. Not every site can accommodate equipment of these lengths. Be sure to read the site details when making a reservation on recreation.gov to ensure your equipment will fit into the site you're reserving. You can also find answers to frequently asked questions about length limits and site types.",
+        "accessRoads": [
+          "Paved Roads - All vehicles OK"
+        ],
+        "trailerAllowed": 1,
+        "classifications": [
+          "Developed Campground"
+        ]
+      },
+      "directionsOverview": "Yosemite Valley, near Half Dome Village (formerly Curry Village)",
+      "reservationsUrl": "",
+      "directionsUrl": "https://www.nps.gov/yose/planyourvisit/directions.htm",
+      "reservationsSitesFirstCome": "",
+      "name": "Lower Pines",
+      "regulationsOverview": "A maximum of six people (including children) are allowed per campsite. There is no limit on the number of tents (as long as they all fit into the campsite).\n\nA maximum of two motor vehicles are allowed per campsite. All vehicles must be parked on a parking pad. Trailers don't count against the vehicle limit as long as they fit on the parking pad. Additional parking is available near each campground for no additional charge.",
+      "latLong": "",
+      "description": "Lower Pines Campground is in Yosemite Valley (4,000 ft / 1200m).",
+      "reservationsSitesReservable": "",
+      "parkCode": "yose",
+      "amenities": {
+        "trashRecyclingCollection": "Yes - year round",
+        "toilets": [
+          "Flush Toilets - year round"
+        ],
+        "internetConnectivity": false,
+        "showers": [
+          "None"
+        ],
+        "cellPhoneReception": "Yes - year round",
+        "laundry": false,
+        "amphitheater": "",
+        "dumpStation": false,
+        "campStore": false,
+        "staffOrVolunteerHostOnSite": false,
+        "potableWater": [
+          "Yes - year round"
+        ],
+        "iceAvailableForSale": false,
+        "firewoodForSale": false,
+        "ampitheater": false,
+        "foodStorageLockers": "Yes - year round"
+      },
+      "id": 4571,
+      "reservationsDescription": ""
+    },
+    {
+      "regulationsUrl": "https://www.nps.gov/yose/planyourvisit/campregs.htm",
+      "weatherOverview": "Yosemite National Park covers nearly 1,200 square miles (3,100 square km) in the Sierra Nevada, with elevations ranging from about 2,000 feet (600 m) to 13,000 ft (4,000 m). Yosemite receives 95% of its precipitation between October and May (and over 75% between November and March). Most of Yosemite is blanketed in snow from about November through May. (Yosemite Valley can be rainy or snowy in any given winter storm.)",
+      "campsites": {
+        "other": 43,
+        "group": 1,
+        "horse": 2,
+        "totalSites": 97,
+        "tentOnly": 47,
+        "electricalHookups": 0,
+        "rvOnly": 4,
+        "walkBoatTo": 0
+      },
+      "accessibility": {
+        "wheelchairAccess": "The following campsites are suitable for wheelchair and include picnic tables with extended tops. The closest restrooms to these campsites are also wheelchair accessible. These campsites are limited to people with disabilities.\n\nLoop C: sites 69 and 70",
+        "internetInfo": "",
+        "rvAllowed": 1,
+        "cellPhoneInfo": "",
+        "fireStovePolicy": "Wood and charcoal fires are permitted all year and at any time.",
+        "rvMaxLength": 35,
+        "additionalInfo": "Each campsite contains a fire ring, picnic table, and a food locker and is near a bathroom with drinking water and flushing toilets. In Wawona food lockers measure 33\"(D)x45\"(W)x18\"(H). The group site has five food lockers.\n\nGroceries: Nearby (small grocery store in Wawona)\nShowers: Yosemite Valley (Half Dome Village, formerly Curry Village and Housekeeping Camp)",
+        "trailerMaxLength": 35,
+        "adaInfo": "The following campsites are suitable for wheelchair and include picnic tables with extended tops. The closest restrooms to these campsites are also wheelchair accessible. These campsites are limited to people with disabilities.\n\nLoop C: sites 69 and 70",
+        "rvInfo": "Wawona: 97 sites with space for tents, RVs up to 35 feet, and trailers up to 35 feet. Not every site can accommodate equipment of these lengths. Be sure to read the site details when making a reservation on recreation.gov to ensure your equipment will fit into the site you're reserving. You can also find answers to frequently asked questions about length limits and site types.",
+        "accessRoads": [
+          "Paved Roads - All vehicles OK"
+        ],
+        "trailerAllowed": 1,
+        "classifications": [
+          "Developed Campground"
+        ]
+      },
+      "directionsOverview": "Off the Wawona Road (Highway 41), about 45 minutes south of Yosemite Valley and 6 miles north of the South Entrance to Yosemite National Park, at 4,000 ft (1,200 m)",
+      "reservationsUrl": "",
+      "directionsUrl": "https://www.nps.gov/yose/planyourvisit/directions.htm",
+      "reservationsSitesFirstCome": "",
+      "name": "Wawona",
+      "regulationsOverview": "Pets: Permitted (except in group sites; must be on a leash at all times)\nFires: Wood and charcoal fires are permitted all year.\nPeople per site: A maximum of six people (including children) are allowed per campsite, except for the group site, which requires 13 to 30 people. There is no limit on the number of tents (as long as they all fit into the campsite).\n\nYou are required to store food properly in order to protect Yosemite's bears.",
+      "latLong": "{lat:37.5466316, lng:-119.6779594}",
+      "description": "Wawona Campground is located in breathtaking Yosemite National Park in Central California's rugged Sierra Nevada Mountain Range. The campground is 25 miles from Yosemite Valley (south) at an elevation of 4,000 feet.\n\nWithin Yosemite, visitors can gaze upon waterfalls, sheer granite cliffs, deep valleys, grand meadows, ancient giant sequoias, vast wilderness areas and much more.",
+      "reservationsSitesReservable": "",
+      "parkCode": "yose",
+      "amenities": {
+        "trashRecyclingCollection": "Yes - year round",
+        "toilets": [
+          "Flush Toilets - year round"
+        ],
+        "internetConnectivity": false,
+        "showers": [
+          "None"
+        ],
+        "cellPhoneReception": "Yes - year round",
+        "laundry": false,
+        "amphitheater": "",
+        "dumpStation": false,
+        "campStore": false,
+        "staffOrVolunteerHostOnSite": false,
+        "potableWater": [
+          "Yes - year round"
+        ],
+        "iceAvailableForSale": false,
+        "firewoodForSale": false,
+        "ampitheater": false,
+        "foodStorageLockers": "Yes - year round"
+      },
+      "id": 4576,
+      "reservationsDescription": ""
+    },
+    {
+      "regulationsUrl": "",
+      "weatherOverview": "",
+      "campsites": {
+        "other": 0,
+        "group": 0,
+        "horse": 0,
+        "totalSites": 0,
+        "tentOnly": 0,
+        "electricalHookups": 0,
+        "rvOnly": 0,
+        "walkBoatTo": 0
+      },
+      "accessibility": {
+        "wheelchairAccess": "",
+        "internetInfo": "",
+        "rvAllowed": 0,
+        "cellPhoneInfo": "",
+        "fireStovePolicy": "",
+        "rvMaxLength": 0,
+        "additionalInfo": "",
+        "trailerMaxLength": 0,
+        "adaInfo": "",
+        "rvInfo": "",
+        "accessRoads": [],
+        "trailerAllowed": 0,
+        "classifications": []
+      },
+      "directionsOverview": "",
+      "reservationsUrl": "",
+      "directionsUrl": "",
+      "reservationsSitesFirstCome": "",
+      "name": "Wawona Campground",
+      "regulationsOverview": "",
+      "latLong": "",
+      "description": "Wawona Campground is located in breathtaking Yosemite National Park in Central California's rugged Sierra Nevada Mountain Range. The campground is 25 miles from Yosemite Valley (south) at an elevation of 4,000 feet.\n\nWithin Yosemite, visitors can gaze upon waterfalls, sheer granite cliffs, deep valleys, grand meadows, ancient giant sequoias, vast wilderness areas and much more.",
+      "reservationsSitesReservable": "",
+      "parkCode": "yose",
+      "amenities": {
+        "trashRecyclingCollection": "Yes - year round",
+        "toilets": [
+          "Flush Toilets - year round"
+        ],
+        "internetConnectivity": false,
+        "showers": [
+          "None"
+        ],
+        "cellPhoneReception": "Yes - year round",
+        "laundry": false,
+        "amphitheater": "",
+        "dumpStation": false,
+        "campStore": false,
+        "staffOrVolunteerHostOnSite": false,
+        "potableWater": [
+          "Yes - year round"
+        ],
+        "iceAvailableForSale": false,
+        "firewoodForSale": false,
+        "ampitheater": false,
+        "foodStorageLockers": "Yes - year round"
+      },
+      "id": 4577,
+      "reservationsDescription": ""
+    },
+    {
+      "regulationsUrl": "https://www.nps.gov/yose/planyourvisit/campregs.htm",
+      "weatherOverview": "Yosemite National Park covers nearly 1,200 square miles (3,100 square km) in the Sierra Nevada, with elevations ranging from about 2,000 feet (600 m) to 13,000 ft (4,000 m). Yosemite receives 95% of its precipitation between October and May (and over 75% between November and March). Most of Yosemite is blanketed in snow from about November through May. (Yosemite Valley can be rainy or snowy in any given winter storm.)",
+      "campsites": {
+        "other": 76,
+        "group": 7,
+        "horse": 4,
+        "totalSites": 304,
+        "tentOnly": 61,
+        "electricalHookups": 0,
+        "rvOnly": 0,
+        "walkBoatTo": 0
+      },
+      "accessibility": {
+        "wheelchairAccess": "The following campsites are suitable for wheelchairs and include picnic tables with extended tops. The closest restrooms to these campsites are also wheelchair accessible. These campsites are limited to people with disabilities.\n\nLoop B: sites 37, 38, and 39\nLoop C: site 1, 89, and 90",
+        "internetInfo": "",
+        "rvAllowed": 1,
+        "cellPhoneInfo": "",
+        "fireStovePolicy": "Wood and charcoal fires are permitted when the campground is in use/open and at any time.",
+        "rvMaxLength": 35,
+        "additionalInfo": "Each campsite contains a fire ring, picnic table, and a food locker and is near a bathroom with drinking water and flushing toilets. In Wawona food lockers measure 33\"(D)x45\"(W)x18\"(H). The group site has five food lockers.\n\nGroceries: Nearby (small grocery store in Tuolumne Meadows)\nShowers: Yosemite Valley (Half Dome Village, formerly Curry Village and Housekeeping Camp)",
+        "trailerMaxLength": 35,
+        "adaInfo": "The following campsites are suitable for wheelchairs and include picnic tables with extended tops. The closest restrooms to these campsites are also wheelchair accessible. These campsites are limited to people with disabilities.\n\nLoop B: sites 37, 38, and 39\nLoop C: site 1, 89, and 90",
+        "rvInfo": "Tuolumne Meadows: 304 sites with space for tents, RVs up to 35 feet, and trailers up to 35 feet. Not every site can accommodate equipment of these lengths. Be sure to read the site details when making a reservation on recreation.gov to ensure your equipment will fit into the site you're reserving. You can also find answers to frequently asked questions about length limits and site types.",
+        "accessRoads": [
+          "Paved Roads - All vehicles OK"
+        ],
+        "trailerAllowed": 1,
+        "classifications": [
+          "Developed Campground"
+        ]
+      },
+      "directionsOverview": "Off the Tioga Road at Tuolumne Meadows, about 1.5 hours northeast of Yosemite Valley, at 8,600 feet (2,600 m) elevation.",
+      "reservationsUrl": "",
+      "directionsUrl": "https://www.nps.gov/yose/planyourvisit/directions.htm",
+      "reservationsSitesFirstCome": "",
+      "name": "Tuolumne Meadows",
+      "regulationsOverview": "Pets: Permitted (except in group sites; must be on a leash at all times)\nFires: Wood and charcoal fires are permitted.\nPeople per site: A maximum of six people (including children) are allowed per campsite, except for the group site, which requires 13 to 30 people. There is no limit on the number of tents (as long as they all fit into the campsite).",
+      "latLong": "",
+      "description": "Tuolumne Meadows Campground is located in breathtaking Yosemite National Park in Central California's rugged Sierra Nevada Mountain Range. The campground is along the Tioga Road at Tuolumne Meadows, about 1.5 hours northeast of Yosemite Valley, at 8,600 feet (2,600 m) elevation.\n\nWithin Yosemite, visitors can gaze upon waterfalls, sheer granite cliffs, deep valleys, grand meadows, ancient giant sequoias, vast wilderness areas and much more.",
+      "reservationsSitesReservable": "",
+      "parkCode": "yose",
+      "amenities": {
+        "trashRecyclingCollection": "Yes - year round",
+        "toilets": [
+          "Flush Toilets - year round"
+        ],
+        "internetConnectivity": false,
+        "showers": [
+          "None"
+        ],
+        "cellPhoneReception": "Yes - year round",
+        "laundry": false,
+        "amphitheater": "",
+        "dumpStation": false,
+        "campStore": false,
+        "staffOrVolunteerHostOnSite": false,
+        "potableWater": [
+          "Yes - year round"
+        ],
+        "iceAvailableForSale": false,
+        "firewoodForSale": false,
+        "ampitheater": false,
+        "foodStorageLockers": "Yes - year round"
+      },
+      "id": 4578,
+      "reservationsDescription": ""
+    },
+    {
+      "regulationsUrl": "https://www.nps.gov/yose/planyourvisit/campregs.htm",
+      "weatherOverview": "Yosemite National Park covers nearly 1,200 square miles (3,100 square km) in the Sierra Nevada, with elevations ranging from about 2,000 feet (600 m) to 13,000 ft (4,000 m). Yosemite receives 95% of its precipitation between October and May (and over 75% between November and March). Most of Yosemite is blanketed in snow from about November through May. (Yosemite Valley can be rainy or snowy in any given winter storm.)",
+      "campsites": {
+        "other": 73,
+        "group": 0,
+        "horse": 0,
+        "totalSites": 162,
+        "tentOnly": 88,
+        "electricalHookups": 0,
+        "rvOnly": 1,
+        "walkBoatTo": 0
+      },
+      "accessibility": {
+        "wheelchairAccess": "The following campsites are suitable for wheelchair and include picnic tables with extended tops. The closest restrooms to these campsites are also wheelchair accessible. These campsites are limited to people with disabilities.\n\nSites: 423 and 427",
+        "internetInfo": "",
+        "rvAllowed": 1,
+        "cellPhoneInfo": "",
+        "fireStovePolicy": "Wood and charcoal fires are permitted at any time.",
+        "rvMaxLength": 35,
+        "additionalInfo": "Each campsite contains a fire ring, picnic table, and a food locker and is near a bathroom with drinking water and flushing toilets. In Crane Flat food lockers measure 33\"(D)x45\"(W)x18\"(H).\n\nGroceries: Yosemite Valley (Yosemite Village Store; Half Dome Village Store, formerly Curry Village Store; Yosemite Valley Lodge Store, formerly Yosemite Lodge Store) and small grocery store at Crane Flat\nShowers: Yosemite Valley (Half Dome Village, formerly Curry Village and Housekeeping Camp)\nDump station: Available all year in Yosemite Valley (in Upper Pines Campground) or, summer only, near Tuolumne Meadows Campground.",
+        "trailerMaxLength": 27,
+        "adaInfo": "The following campsites are suitable for wheelchair and include picnic tables with extended tops. The closest restrooms to these campsites are also wheelchair accessible. These campsites are limited to people with disabilities.\n\nSites: 423 and 427",
+        "rvInfo": "Crane Flat: 162 sites with space for tents, RVs up to 35 feet, and trailers up to 27 feet. Not every site can accommodate equipment of these lengths. Be sure to read the site details when making a reservation on recreation.gov to ensure your equipment will fit into the site you're reserving. You can also find answers to frequently asked questions about length limits and site types.",
+        "accessRoads": [
+          "Paved Roads - All vehicles OK"
+        ],
+        "trailerAllowed": 1,
+        "classifications": [
+          "Developed Campground"
+        ]
+      },
+      "directionsOverview": "On the Big Oak Flat Road (Highway 120) just west of Crane Flat, about 30 minutes northwest of Yosemite Valley, at 6,200 ft (1,900 m) elevation.",
+      "reservationsUrl": "",
+      "directionsUrl": "https://www.nps.gov/yose/planyourvisit/directions.htm",
+      "reservationsSitesFirstCome": "",
+      "name": "Crane Flat",
+      "regulationsOverview": "Pets: Permitted (except in group and horse sites; must be on a leash at all times)\nFires: Wood and charcoal fires are permitted.\nPeople per site: A maximum of six people (including children) are allowed per campsite, except for the group site, which requires 13 to 30 people. There is no limit on the number of tents (as long as they all fit into the campsite).",
+      "latLong": "",
+      "description": "Crane Flat Campground is located in breathtaking Yosemite National Park in Central California's rugged Sierra Nevada Mountain Range. The campground is located along the Big Oak Flat Road (Highway 120) just west of Crane Flat, about 30 minutes northwest of Yosemite Valley, at 6,200 ft (1,900 m) elevation. \n\nWithin Yosemite, visitors can gaze upon waterfalls, sheer granite cliffs, deep valleys, grand meadows, ancient giant sequoias, vast wilderness areas and much more.",
+      "reservationsSitesReservable": "",
+      "parkCode": "yose",
+      "amenities": {
+        "trashRecyclingCollection": "Yes - year round",
+        "toilets": [
+          "Flush Toilets - year round"
+        ],
+        "internetConnectivity": false,
+        "showers": [
+          "None"
+        ],
+        "cellPhoneReception": "Yes - year round",
+        "laundry": false,
+        "amphitheater": "",
+        "dumpStation": false,
+        "campStore": false,
+        "staffOrVolunteerHostOnSite": false,
+        "potableWater": [
+          "Yes - year round"
+        ],
+        "iceAvailableForSale": false,
+        "firewoodForSale": false,
+        "ampitheater": false,
+        "foodStorageLockers": "Yes - year round"
+      },
+      "id": 4579,
+      "reservationsDescription": ""
+    },
+    {
+      "regulationsUrl": "https://www.nps.gov/yose/planyourvisit/campregs.htm",
+      "weatherOverview": "Yosemite National Park covers nearly 1,200 square miles (3,100 square km) in the Sierra Nevada, with elevations ranging from about 2,000 feet (600 m) to 13,000 ft (4,000 m). Yosemite receives 95% of its precipitation between October and May (and over 75% between November and March). Most of Yosemite is blanketed in snow from about November through May. (Yosemite Valley can be rainy or snowy in any given winter storm.)",
+      "campsites": {
+        "other": 0,
+        "group": 0,
+        "horse": 0,
+        "totalSites": 35,
+        "tentOnly": 35,
+        "electricalHookups": 0,
+        "rvOnly": 0,
+        "walkBoatTo": 35
+      },
+      "accessibility": {
+        "wheelchairAccess": "Camp 4 has a dirt access route leading to many level sites, however, none is designated accessible and there are no designated accessible parking spaces. The restroom is accessible.",
+        "internetInfo": "",
+        "rvAllowed": 0,
+        "cellPhoneInfo": "",
+        "fireStovePolicy": "Wood fires are permitted all year, however, from May through September, campfires in Yosemite Valley are only allowed between 5 pm and 10 pm (campfires are allowed at any time from October through April). Charcoal fires are allowed at any time.",
+        "rvMaxLength": 0,
+        "additionalInfo": "Parking is available adjacent to the campground (it's a very short walk to the campsites). A parking permit is required from spring through fall. You will receive a free parking permit upon registering.\n\nEach campsite contains a fire pit (no grill), picnic table, and four shared food lockers [33\"(D)x45\"(W)x18\"(H)], and is near a bathroom with drinking water and flushing toilets.\n\nGroceries: Nearby (Yosemite Valley Lodge, formerly Yosemite Lodge and Yosemite Village)\nShowers: Nearby (Half Dome Village, formerly Curry Village and Housekeeping Camp)\nPets: Not permitted",
+        "trailerMaxLength": 0,
+        "adaInfo": "Camp 4 has a dirt access route leading to many level sites, however, none is designated accessible and there are no designated accessible parking spaces. The restroom is accessible.",
+        "rvInfo": "Camp 4 has 35 tent-only sites. No RV or trailer sites available.",
+        "accessRoads": [
+          "Paved Roads - All vehicles OK"
+        ],
+        "trailerAllowed": 0,
+        "classifications": [
+          "Developed Campground"
+        ]
+      },
+      "directionsOverview": "Located in Yosemite Valley, near Yosemite Valley Lodge (formerly Yosemite Lodge), at 4,000 ft (1,200 m) elevation.",
+      "reservationsUrl": "",
+      "directionsUrl": "https://www.nps.gov/yose/planyourvisit/directions.htm",
+      "reservationsSitesFirstCome": "",
+      "name": "Camp 4",
+      "regulationsOverview": "Pets: Not permitted\nFires: Wood fires are permitted all year, however, from May through September, campfires in Yosemite Valley are only allowed between 5 pm and 10 pm (campfires are allowed at any time from October through April). Charcoal fires are allowed at any time.\nPeople per site: A maximum of six people (including children) are allowed per campsite.",
+      "latLong": "",
+      "description": "Camp 4 Campground is located in breathtaking Yosemite National Park in Central California's rugged Sierra Nevada Mountain Range. The campground is located in Yosemite Valley, near Yosemite Valley Lodge (formerly Yosemite Lodge), at 4,000 ft (1,200 m) elevation.\n\nWithin Yosemite, visitors can gaze upon waterfalls, sheer granite cliffs, deep valleys, grand meadows, ancient giant sequoias, vast wilderness areas and much more.",
+      "reservationsSitesReservable": "",
+      "parkCode": "yose",
+      "amenities": {
+        "trashRecyclingCollection": "Yes - year round",
+        "toilets": [
+          "Flush Toilets - year round"
+        ],
+        "internetConnectivity": false,
+        "showers": [
+          "None"
+        ],
+        "cellPhoneReception": "Yes - year round",
+        "laundry": false,
+        "amphitheater": "",
+        "dumpStation": false,
+        "campStore": false,
+        "staffOrVolunteerHostOnSite": false,
+        "potableWater": [
+          "Yes - year round"
+        ],
+        "iceAvailableForSale": false,
+        "firewoodForSale": false,
+        "ampitheater": false,
+        "foodStorageLockers": "Yes - year round"
+      },
+      "id": 4580,
+      "reservationsDescription": ""
+    }
+  ],
+  "limit": 50,
+  "start": 1
+}
