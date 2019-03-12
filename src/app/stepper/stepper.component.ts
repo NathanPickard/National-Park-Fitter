@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators, FormControl } from '@angular/forms';
 
+import { SearchService } from './../search.service';
+
 @Component({
   selector: 'app-stepper',
   templateUrl: './stepper.component.html',
@@ -12,7 +14,8 @@ export class StepperComponent implements OnInit {
   secondFormGroup: FormGroup;
   thirdFormGroup: FormGroup;
 
-  constructor(private _formBuilder: FormBuilder) { }
+  constructor(private _formBuilder: FormBuilder,
+    private searchService: SearchService) { }
 
   stepperForm: FormGroup;
 
@@ -36,6 +39,8 @@ export class StepperComponent implements OnInit {
 
   onSubmitStepper() {
     console.log(this.firstFormGroup);
+    console.log(this.secondFormGroup);
+    console.log(this.thirdFormGroup);
   }
 
 }
