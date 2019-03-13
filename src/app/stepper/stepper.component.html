@@ -3,12 +3,13 @@
   <mat-step [stepControl]="firstFormGroup">
 
     <form [formGroup]="firstFormGroup">
-      <ng-template matStepLabel>Hiking?</ng-template>
-      <mat-form-field>
-        <input matInput placeholder="Do you want to hike?" formControlName="firstCtrl" required>
-      </mat-form-field>
+      <ng-template matStepLabel>Camping?</ng-template>
+      <!-- <mat-form-field>
+        <input matInput placeholder="Are you camping?" formControlName="firstCtrl" required>
+      </mat-form-field> -->
+      <mat-checkbox formControlName="firstCtrl">Camping in Yosemite?</mat-checkbox>
       <div>
-        <button mat-button matStepperNext>Next</button>
+        <button mat-raised-button matStepperNext>Next</button>
       </div>
     </form>
 
@@ -16,9 +17,9 @@
 
   <mat-step [stepControl]="secondFormGroup">
     <form [formGroup]="secondFormGroup">
-      <ng-template matStepLabel>Camping?</ng-template>
+      <ng-template matStepLabel>Hiking?</ng-template>
       <mat-form-field>
-        <input matInput placeholder="Are you camping?" formControlName="secondCtrl" required>
+        <input matInput placeholder="Do you want to hike?" formControlName="secondCtrl" required>
       </mat-form-field>
       <div>
         <button mat-button matStepperPrevious>Back</button>

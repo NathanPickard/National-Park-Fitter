@@ -3,7 +3,9 @@
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
-  production: false
+  production: false,
+  NPS_API_KEY: 'uYQbQmGs618vM9mHWlgajs0UHlmXmKWup3WN40GT',
+  NPS_BASE_URL: 'https://api.nps.gov/api/v1/'
 };
 
 /*

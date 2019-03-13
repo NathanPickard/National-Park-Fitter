@@ -19,11 +19,13 @@ export class StepperComponent implements OnInit {
 
   stepperForm: FormGroup;
 
+  foundYosemiteCampgrounds: any[];
+
   ngOnInit() {
 
-    this.stepperForm = new FormGroup({
-      'firstCtrl': new FormControl(null, [Validators.required])
-    });
+    // this.stepperForm = new FormGroup({
+    //   'firstCtrl': new FormControl(null, [Validators.required])
+    // });
 
 
     this.firstFormGroup = this._formBuilder.group({
@@ -37,10 +39,28 @@ export class StepperComponent implements OnInit {
     });
   }
 
+
   onSubmitStepper() {
-    console.log(this.firstFormGroup);
-    console.log(this.secondFormGroup);
-    console.log(this.thirdFormGroup);
+    // console.log(this.firstFormGroup);
+    // console.log(this.secondFormGroup);
+    // console.log(this.thirdFormGroup);
+    if (this.firstFormGroup.value.firstCtrl == true) {
+      return this.searchService.getYosemiteCampgroundResults().subscribe(
+        data => this.handleSuccess(data),
+        error => this.handleError(error)
+      );
+    }
   }
+
+  handleSuccess(data) {
+    this.foundYosemiteCampgrounds = data;
+    console.log(this.foundYosemiteCampgrounds);
+  }
+
+  handleError(error) {
+    console.log(error);
+  }
+
+
 
 }
