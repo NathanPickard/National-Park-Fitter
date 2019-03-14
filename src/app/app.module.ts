@@ -10,6 +10,8 @@ import { NavComponent } from './nav/nav.component';
 
 import { SearchService } from './search.service';
 
+import { FlexLayoutModule } from '@angular/flex-layout';
+
 import { MatButtonModule } from '@angular/material/button';
 import { MatCheckboxModule } from '@angular/material/checkbox';
 import { MatFormFieldModule } from '@angular/material/form-field';
@@ -33,6 +35,7 @@ import { StepperComponent } from './stepper/stepper.component';
     FormsModule,
     HttpClientModule,
     ReactiveFormsModule,
+    FlexLayoutModule,
     MatButtonModule,
     MatCheckboxModule,
     MatFormFieldModule,

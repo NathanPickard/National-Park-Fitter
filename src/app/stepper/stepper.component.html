@@ -1,57 +1,65 @@
-<mat-vertical-stepper #stepper>
+<div fxFlex fxLayout="column" fxLayoutAlign="center center">
+  <h3>Complete the form below to find the park that's right for you!</h3>
+  <!-- <h4>Enjoy your stay</h4> -->
 
-  <mat-step [stepControl]="firstFormGroup">
 
-    <form [formGroup]="firstFormGroup">
-      <ng-template matStepLabel>Camping?</ng-template>
-      <!-- <mat-form-field>
+  <mat-vertical-stepper #stepper>
+
+    <mat-step [stepControl]="firstFormGroup">
+
+      <form [formGroup]="firstFormGroup">
+        <ng-template matStepLabel>Camping?</ng-template>
+        <!-- <mat-form-field>
         <input matInput placeholder="Are you camping?" formControlName="firstCtrl" required>
       </mat-form-field> -->
-      <mat-checkbox formControlName="firstCtrl">Camping in Yosemite?</mat-checkbox>
-      <div>
-        <button mat-raised-button matStepperNext>Next</button>
-      </div>
-    </form>
+        <mat-checkbox formControlName="firstCtrl">Camping in Yosemite?</mat-checkbox>
+        <div>
+          <button mat-raised-button matStepperNext>Next</button>
+        </div>
+      </form>
 
-  </mat-step>
+    </mat-step>
 
-  <mat-step [stepControl]="secondFormGroup">
-    <form [formGroup]="secondFormGroup">
-      <ng-template matStepLabel>Hiking?</ng-template>
-      <mat-form-field>
-        <input matInput placeholder="Do you want to hike?" formControlName="secondCtrl" required>
-      </mat-form-field>
+    <mat-step [stepControl]="secondFormGroup">
+      <form [formGroup]="secondFormGroup">
+        <ng-template matStepLabel>Hiking?</ng-template>
+        <mat-form-field>
+          <input matInput placeholder="Do you want to hike?" formControlName="secondCtrl" required>
+        </mat-form-field>
+        <div>
+          <button mat-button matStepperPrevious>Back</button>
+          <button mat-button matStepperNext>Next</button>
+        </div>
+      </form>
+    </mat-step>
+
+    <mat-step [stepControl]="thirdFormGroup">
+      <form [formGroup]="thirdFormGroup">
+        <ng-template matStepLabel>Climbing?</ng-template>
+        <mat-form-field>
+          <input matInput placeholder="Do you want to climb?" formControlName="thirdCtrl" required>
+        </mat-form-field>
+        <div>
+          <button mat-button matStepperPrevious>Back</button>
+          <button mat-button matStepperNext>Next</button>
+        </div>
+      </form>
+    </mat-step>
+
+    <mat-step>
+      <ng-template matStepLabel>Done</ng-template>
+      Enjoy your visit!
       <div>
         <button mat-button matStepperPrevious>Back</button>
-        <button mat-button matStepperNext>Next</button>
+        <button mat-button (click)="stepper.reset()">Reset</button>
+        <button mat-button (click)="onSubmitStepper()">Done</button>
       </div>
-    </form>
-  </mat-step>
+    </mat-step>
 
-  <mat-step [stepControl]="thirdFormGroup">
-    <form [formGroup]="thirdFormGroup">
-      <ng-template matStepLabel>Climbing?</ng-template>
-      <mat-form-field>
-        <input matInput placeholder="Do you want to climb?" formControlName="thirdCtrl" required>
-      </mat-form-field>
-      <div>
-        <button mat-button matStepperPrevious>Back</button>
-        <button mat-button matStepperNext>Next</button>
-      </div>
-    </form>
-  </mat-step>
+  </mat-vertical-stepper>
 
-  <mat-step>
-    <ng-template matStepLabel>Done</ng-template>
-    Enjoy your visit!
-    <div>
-      <button mat-button matStepperPrevious>Back</button>
-      <button mat-button (click)="stepper.reset()">Reset</button>
-      <button mat-button (click)="onSubmitStepper()">Done</button>
-    </div>
-  </mat-step>
+</div>
 
-</mat-vertical-stepper>
 
 <!-- <mat-vertical-stepper #stepper>
 
