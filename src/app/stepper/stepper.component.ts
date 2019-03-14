@@ -20,6 +20,7 @@ export class StepperComponent implements OnInit {
   stepperForm: FormGroup;
 
   foundYosemiteCampgrounds: any[];
+  foundCampgrounds: any[];
 
   ngOnInit() {
 
@@ -41,20 +42,43 @@ export class StepperComponent implements OnInit {
 
 
   onSubmitStepper() {
+    // console.log(this.firstFormGroup.value.firstCtrl);
+    console.log(this.firstFormGroup.value.firstCtrl);
+    return this.searchService.getCampgroundResults().subscribe(
+      data => this.handleSuccess(data),
+      error => this.handleError(error)
+    );
+
     // console.log(this.firstFormGroup);
     // console.log(this.secondFormGroup);
     // console.log(this.thirdFormGroup);
-    if (this.firstFormGroup.value.firstCtrl == true) {
-      return this.searchService.getYosemiteCampgroundResults().subscribe(
-        data => this.handleSuccess(data),
-        error => this.handleError(error)
-      );
-    }
+
+    // if (this.firstFormGroup.value.firstCtrl == true) {
+    // return this.searchService.getYosemiteCampgroundResults().subscribe(
+    // return this.searchService.getCampgroundResults().subscribe(
+    // data => this.handleSuccess(data),
+    // error => this.handleError(error)
+    // );
+    // }
   }
 
   handleSuccess(data) {
-    this.foundYosemiteCampgrounds = data;
-    console.log(this.foundYosemiteCampgrounds);
+    // this.foundYosemiteCampgrounds = data;
+    this.foundCampgrounds = data;
+    console.log(this.foundCampgrounds);
+
+    console.log(this.foundCampgrounds.data.length);
+
+    if (this.firstFormGroup.value.firstCtrl == true) {
+
+      for (let i = 0; i < this.foundCampgrounds.data.length; i++) {
+        if (this.foundCampgrounds.data[i].accessibility.wheelchairAccess) {
+          console.log('awesome this offers wheelchair access');
+          console.log(this.foundCampgrounds.data[i].accessibility.wheelchairAccess);
+        }
+
+      }
+    }
   }
 
   handleError(error) {

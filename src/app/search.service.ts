@@ -22,6 +22,11 @@ export class SearchService {
   private API_URL: string = environment.NPS_BASE_URL;
 
   getYosemiteCampgroundResults() {
-    return this.httpClient.get<any>(this.API_URL + 'campgrounds?' + 'q=yosemite' + '&api_key=' + 'uYQbQmGs618vM9mHWlgajs0UHlmXmKWup3WN40GT')
+    return this.httpClient.get<any>(this.API_URL + 'campgrounds?' + 'q=yosemite' + '&api_key=' + this.API_KEY);
+  }
+
+  getCampgroundResults() {
+    return this.httpClient.get<any>(this.API_URL + 'campgrounds?' + '&api_key=' + this.API_KEY);
+
   }
 }

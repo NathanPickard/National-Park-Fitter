@@ -8,14 +8,43 @@
     <mat-step [stepControl]="firstFormGroup">
 
       <form [formGroup]="firstFormGroup">
-        <ng-template matStepLabel>Camping?</ng-template>
+
+        <ng-template matStepLabel>Campground accessibility</ng-template>
+        <h4>Select the campground accessibility features you require</h4>
         <!-- <mat-form-field>
         <input matInput placeholder="Are you camping?" formControlName="firstCtrl" required>
       </mat-form-field> -->
-        <mat-checkbox formControlName="firstCtrl">Camping in Yosemite?</mat-checkbox>
-        <div>
-          <button mat-raised-button matStepperNext>Next</button>
+        <div fxLayoutGap="20px" fxLayout="column">
+
+          <!-- <mat-checkbox formControlName="firstCtrl">Trash recycling collection</mat-checkbox>
+          <mat-checkbox formControlName="firstCtrl">Toilets</mat-checkbox>
+          <mat-checkbox formControlName="firstCtrl">Internet connectivity</mat-checkbox>
+          <mat-checkbox formControlName="firstCtrl">Showers</mat-checkbox>
+          <mat-checkbox formControlName="firstCtrl">Cell phone reception</mat-checkbox>
+          <mat-checkbox formControlName="firstCtrl">Laundry</mat-checkbox>
+          <mat-checkbox formControlName="firstCtrl">Amphitheater</mat-checkbox>
+          <mat-checkbox formControlName="firstCtrl">Dump station</mat-checkbox>
+          <mat-checkbox formControlName="firstCtrl">Camp Store</mat-checkbox>
+          <mat-checkbox formControlName="firstCtrl">Staff or volunteer host on site</mat-checkbox>
+          <mat-checkbox formControlName="firstCtrl">Potable water</mat-checkbox>
+          <mat-checkbox formControlName="firstCtrl">Ice available for sale</mat-checkbox>
+          <mat-checkbox formControlName="firstCtrl">Firewood for sale</mat-checkbox>
+          <mat-checkbox formControlName="firstCtrl">Food storage lockers</mat-checkbox> -->
+
+          <mat-checkbox formControlName="firstCtrl">Wheelchair access</mat-checkbox>
+          <!-- <mat-checkbox formControlName="firstCtrl">Internet information</mat-checkbox>
+          <mat-checkbox formControlName="firstCtrl">RV allowed</mat-checkbox>
+          <mat-checkbox formControlName="firstCtrl">Cell phone information</mat-checkbox>
+          <mat-checkbox formControlName="firstCtrl">Fire stove policy</mat-checkbox>
+          <mat-checkbox formControlName="firstCtrl">ADA information</mat-checkbox>
+          <mat-checkbox formControlName="firstCtrl">RV information</mat-checkbox>
+          <mat-checkbox formControlName="firstCtrl">Access roads</mat-checkbox>
+          <mat-checkbox formControlName="firstCtrl">Trailer allowed</mat-checkbox> -->
+          <div>
+            <button mat-raised-button matStepperNext>Next</button>
+          </div>
         </div>
+
       </form>
 
     </mat-step>
