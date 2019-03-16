@@ -87,6 +87,15 @@
 
   </mat-vertical-stepper>
 
+  <div *ngIf="resultsFound">
+    <div *ngFor="let foundCampground of foundCampgrounds">
+      <div *ngIf="foundCampground.accessibility.wheelchairAccess">
+        {{ foundCampground.accessibility.wheelchairAccess }}
+      </div>
+    </div>
+
+  </div>
+
 </div>
 
 

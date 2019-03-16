@@ -19,8 +19,9 @@ export class StepperComponent implements OnInit {
 
   stepperForm: FormGroup;
 
-  foundYosemiteCampgrounds: any[];
   foundCampgrounds: any[];
+
+  resultsFound = false;
 
   ngOnInit() {
 
@@ -64,19 +65,19 @@ export class StepperComponent implements OnInit {
 
   handleSuccess(data) {
     // this.foundYosemiteCampgrounds = data;
-    this.foundCampgrounds = data;
+    this.resultsFound = true;
+
+    this.foundCampgrounds = data.data;
     console.log(this.foundCampgrounds);
 
-    console.log(this.foundCampgrounds.data.length);
+    console.log(this.foundCampgrounds.length);
 
     if (this.firstFormGroup.value.firstCtrl == true) {
 
-      for (let i = 0; i < this.foundCampgrounds.data.length; i++) {
-        if (this.foundCampgrounds.data[i].accessibility.wheelchairAccess) {
-          console.log('awesome this offers wheelchair access');
-          console.log(this.foundCampgrounds.data[i].accessibility.wheelchairAccess);
+      for (let i = 0; i < this.foundCampgrounds.length; i++) {
+        if (this.foundCampgrounds[i].accessibility.wheelchairAccess) {
+          console.log(this.foundCampgrounds[i].accessibility.wheelchairAccess);
         }
-
       }
     }
   }
