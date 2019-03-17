@@ -16,30 +16,15 @@
       </mat-form-field> -->
         <div fxLayoutGap="20px" fxLayout="column">
 
-          <!-- <mat-checkbox formControlName="firstCtrl">Trash recycling collection</mat-checkbox>
-          <mat-checkbox formControlName="firstCtrl">Toilets</mat-checkbox>
-          <mat-checkbox formControlName="firstCtrl">Internet connectivity</mat-checkbox>
-          <mat-checkbox formControlName="firstCtrl">Showers</mat-checkbox>
-          <mat-checkbox formControlName="firstCtrl">Cell phone reception</mat-checkbox>
-          <mat-checkbox formControlName="firstCtrl">Laundry</mat-checkbox>
-          <mat-checkbox formControlName="firstCtrl">Amphitheater</mat-checkbox>
-          <mat-checkbox formControlName="firstCtrl">Dump station</mat-checkbox>
-          <mat-checkbox formControlName="firstCtrl">Camp Store</mat-checkbox>
-          <mat-checkbox formControlName="firstCtrl">Staff or volunteer host on site</mat-checkbox>
-          <mat-checkbox formControlName="firstCtrl">Potable water</mat-checkbox>
-          <mat-checkbox formControlName="firstCtrl">Ice available for sale</mat-checkbox>
-          <mat-checkbox formControlName="firstCtrl">Firewood for sale</mat-checkbox>
-          <mat-checkbox formControlName="firstCtrl">Food storage lockers</mat-checkbox> -->
-
-          <mat-checkbox formControlName="firstCtrl">Wheelchair access</mat-checkbox>
-          <!-- <mat-checkbox formControlName="firstCtrl">Internet information</mat-checkbox>
-          <mat-checkbox formControlName="firstCtrl">RV allowed</mat-checkbox>
-          <mat-checkbox formControlName="firstCtrl">Cell phone information</mat-checkbox>
-          <mat-checkbox formControlName="firstCtrl">Fire stove policy</mat-checkbox>
-          <mat-checkbox formControlName="firstCtrl">ADA information</mat-checkbox>
-          <mat-checkbox formControlName="firstCtrl">RV information</mat-checkbox>
-          <mat-checkbox formControlName="firstCtrl">Access roads</mat-checkbox>
-          <mat-checkbox formControlName="firstCtrl">Trailer allowed</mat-checkbox> -->
+          <mat-checkbox formControlName="wheelchairAccessCtrl">Wheelchair access information</mat-checkbox>
+          <mat-checkbox formControlName="internetCtrl">Internet information</mat-checkbox>
+          <mat-checkbox formControlName="rvAllowedCtrl">RV allowed</mat-checkbox>
+          <mat-checkbox formControlName="cellPhoneInfoCtrl">Cell phone information</mat-checkbox>
+          <mat-checkbox formControlName="fireStoveCtrl">Fire stove policy</mat-checkbox>
+          <mat-checkbox formControlName="adaCtrl">ADA information</mat-checkbox>
+          <mat-checkbox formControlName="rvInfoCtrl">RV information</mat-checkbox>
+          <mat-checkbox formControlName="accessRoadsCtrl">Access roads</mat-checkbox>
+          <mat-checkbox formControlName="trailerAllowedCtrl">Trailer allowed</mat-checkbox>
           <div>
             <button mat-raised-button matStepperNext>Next</button>
           </div>
@@ -89,9 +74,106 @@
 
   <div *ngIf="resultsFound">
     <div *ngFor="let foundCampground of foundCampgrounds">
-      <div *ngIf="foundCampground.accessibility.wheelchairAccess">
-        {{ foundCampground.accessibility.wheelchairAccess }}
-      </div>
+
+
+      <mat-accordion>
+        <h2>{{ foundCampground.name }}</h2>
+
+        <mat-expansion-panel>
+
+          <mat-expansion-panel-header>
+            <mat-panel-title>
+              <h3>Accessibility</h3>
+            </mat-panel-title>
+
+            <!-- <mat-panel-description>
+              Information on all things accessibility
+            </mat-panel-description> -->
+
+          </mat-expansion-panel-header>
+
+          <div *ngIf="foundCampground.accessibility.wheelchairAccess && firstFormGroup.value.firstCtrl">
+            <h4>Wheelchair access information</h4>
+            {{ foundCampground.accessibility.wheelchairAccess }}
+          </div>
+
+          <div *ngIf="foundCampground.accessibility.internetInfo && firstFormGroup.value.internetCtrl">
+            <h4>Internet information</h4>
+            {{ foundCampground.accessibility.internetInfo }}
+          </div>
+
+          <div *ngIf="foundCampground.accessibility.rvAllowed && firstFormGroup.value.rvAllowedCtrl">
+            <h4>RV allowed:</h4>
+            {{ foundCampground.accessibility.rvAllowed }}
+          </div>
+
+          <div *ngIf="foundCampground.accessibility.cellPhoneInfo && firstFormGroup.value.cellPhoneInfoCtrl">
+            <h4>Cell phone information</h4>
+            {{ foundCampground.accessibility.cellPhoneInfo }}
+          </div>
+
+          <div *ngIf="foundCampground.accessibility.fireStovePolicy && firstFormGroup.value.fireStoveCtrl">
+            <h4>Fire stove policy</h4>
+            {{ foundCampground.accessibility.fireStovePolicy }}
+          </div>
+
+          <div *ngIf="foundCampground.accessibility.rvMaxLength && firstFormGroup.value.rvMaxCtrl">
+            <h4>Maximum # of RVs allowed</h4>
+            {{ foundCampground.accessibility.rvMaxLength }}
+          </div>
+
+          <div *ngIf="foundCampground.accessibility.additionalInfo && firstFormGroup.value.additionalInfoCtrl">
+            <h4>Additional information</h4>
+            {{ foundCampground.accessibility.additionalInfo }}
+          </div>
+
+          <div *ngIf="foundCampground.accessibility.trailerMaxLength && firstFormGroup.value.trailerMaxCtrl">
+            <h4>Maximum # of trailers allowed</h4>
+            {{ foundCampground.accessibility.trailerMaxLength }}
+          </div>
+
+          <div *ngIf="foundCampground.accessibility.trailerMaxLength && firstFormGroup.value.adaCtrl">
+            <h4>ADA Information</h4>
+            {{ foundCampground.accessibility.adaInfo }}
+          </div>
+
+          <div *ngIf="foundCampground.accessibility.rvInfo && firstFormGroup.value.rvInfoCtrl">
+            <h4>RV information</h4>
+            {{ foundCampground.accessibility.trailerMaxLength }}
+          </div>
+
+          <div *ngIf="foundCampground.accessibility.accessRoads && firstFormGroup.value.accessRoadsCtrl">
+            <h4>Access roads</h4>
+            {{ foundCampground.accessibility.accessRoads }}
+          </div>
+
+          <div *ngIf="foundCampground.accessibility.classifications && firstFormGroup.value.classificationsCtrl">
+            <h4>Classifications</h4>
+            {{ foundCampground.accessibility.classifications }}
+          </div>
+
+          <div *ngIf="foundCampground.accessibility.trailerAllowed && firstFormGroup.value.trailerAllowedCtrl">
+            <h4>Trailer allowed</h4>
+            {{ foundCampground.accessibility.trailerAllowed }}
+          </div>
+
+
+        </mat-expansion-panel>
+
+
+        <mat-expansion-panel>
+
+          <mat-expansion-panel-header>
+            <mat-panel-title>
+
+            </mat-panel-title>
+          </mat-expansion-panel-header>
+
+        </mat-expansion-panel>
+
+
+      </mat-accordion>
+
     </div>
 
   </div>

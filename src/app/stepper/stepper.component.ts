@@ -31,11 +31,25 @@ export class StepperComponent implements OnInit {
 
 
     this.firstFormGroup = this._formBuilder.group({
-      firstCtrl: ['', Validators.required]
+      wheelchairAccessCtrl: ['', Validators.required],
+      internetCtrl: ['', Validators.required],
+      rvAllowedCtrl: ['', Validators.required],
+      cellPhoneInfoCtrl: ['', Validators.required],
+      fireStoveCtrl: ['', Validators.required],
+      rvMaxCtrl: ['', Validators.required],
+      additionalInfoCtrl: ['', Validators.required],
+      trailerMaxCtrl: ['', Validators.required],
+      adaCtrl: ['', Validators.required],
+      rvInfoCtrl: ['', Validators.required],
+      accessRoadsCtrl: ['', Validators.required],
+      trailerAllowedCtrl: ['', Validators.required],
+      classificationsCtrl: ['', Validators.required]
     });
+
     this.secondFormGroup = this._formBuilder.group({
       secondCtrl: ['', Validators.required]
     });
+    
     this.thirdFormGroup = this._formBuilder.group({
       thirdCtrl: ['', Validators.required]
     });
@@ -44,7 +58,8 @@ export class StepperComponent implements OnInit {
 
   onSubmitStepper() {
     // console.log(this.firstFormGroup.value.firstCtrl);
-    console.log(this.firstFormGroup.value.firstCtrl);
+    console.log(this.firstFormGroup.value.wheelchairAccessCtrl);
+    console.log(this.firstFormGroup.value.internetCtrl);
     return this.searchService.getCampgroundResults().subscribe(
       data => this.handleSuccess(data),
       error => this.handleError(error)
@@ -66,6 +81,7 @@ export class StepperComponent implements OnInit {
   handleSuccess(data) {
     // this.foundYosemiteCampgrounds = data;
     this.resultsFound = true;
+    console.log();
 
     this.foundCampgrounds = data.data;
     console.log(this.foundCampgrounds);
