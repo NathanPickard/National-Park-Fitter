@@ -31,25 +31,40 @@ export class StepperComponent implements OnInit {
 
 
     this.firstFormGroup = this._formBuilder.group({
+      
       wheelchairAccessCtrl: ['', Validators.required],
       internetCtrl: ['', Validators.required],
       rvAllowedCtrl: ['', Validators.required],
+      rvMaxCtrl: ['', Validators.required],
+      rvInfoCtrl: ['', Validators.required],
       cellPhoneInfoCtrl: ['', Validators.required],
       fireStoveCtrl: ['', Validators.required],
-      rvMaxCtrl: ['', Validators.required],
       additionalInfoCtrl: ['', Validators.required],
-      trailerMaxCtrl: ['', Validators.required],
       adaCtrl: ['', Validators.required],
-      rvInfoCtrl: ['', Validators.required],
       accessRoadsCtrl: ['', Validators.required],
       trailerAllowedCtrl: ['', Validators.required],
+      trailerMaxCtrl: ['', Validators.required],
       classificationsCtrl: ['', Validators.required]
     });
 
     this.secondFormGroup = this._formBuilder.group({
-      secondCtrl: ['', Validators.required]
+
+      trashRecyclingCtrl: ['', Validators.required],
+      toiletsCtrl: ['', Validators.required],
+      internetConnectivityCtrl: ['', Validators.required],
+      showersCtrl: ['', Validators.required],
+      cellPhoneReceptionCtrl: ['', Validators.required],
+      laundryCtrl: ['', Validators.required],
+      amphitheaterCtrl: ['', Validators.required],
+      dumpStationCtrl: ['', Validators.required],
+      campStoreCtrl: ['', Validators.required],
+      staffVolunteerCtrl: ['', Validators.required],
+      potableWatertCtrl: ['', Validators.required],
+      iceAvailableForSaleCtrl: ['', Validators.required],
+      firewoodForSaleCtrl: ['', Validators.required],
+      foodStorageLockersCtrl: ['', Validators.required]
     });
-    
+
     this.thirdFormGroup = this._formBuilder.group({
       thirdCtrl: ['', Validators.required]
     });

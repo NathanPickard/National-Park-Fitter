@@ -6,7 +6,6 @@
   <mat-vertical-stepper #stepper>
 
     <mat-step [stepControl]="firstFormGroup">
-
       <form [formGroup]="firstFormGroup">
 
         <ng-template matStepLabel>Campground accessibility</ng-template>
@@ -36,14 +35,36 @@
 
     <mat-step [stepControl]="secondFormGroup">
       <form [formGroup]="secondFormGroup">
-        <ng-template matStepLabel>Hiking?</ng-template>
-        <mat-form-field>
+
+        <ng-template matStepLabel>Campground amenities</ng-template>
+        <!-- <mat-form-field>
           <input matInput placeholder="Do you want to hike?" formControlName="secondCtrl" required>
-        </mat-form-field>
+        </mat-form-field> -->
+
+        <div fxLayoutGap="20px" fxLayout="column">
+
+          <mat-checkbox formControlName="trashRecyclingCtrl">Trash and recycling collection</mat-checkbox>
+          <!-- <mat-checkbox formControlName="toiletsCtrl">Toilets</mat-checkbox> -->
+          <mat-checkbox formControlName="internetConnectivityCtrl">Internet connectivity</mat-checkbox>
+          <mat-checkbox formControlName="showersCtrl">Showers</mat-checkbox>
+          <mat-checkbox formControlName="cellPhoneReceptionCtrl">Cell phone reception</mat-checkbox>
+          <mat-checkbox formControlName="laundryCtrl">Laundry</mat-checkbox>
+          <mat-checkbox formControlName="amphitheaterCtrl">Amphitheater</mat-checkbox>
+          <mat-checkbox formControlName="dumpStationCtrl">Dump station</mat-checkbox>
+          <mat-checkbox formControlName="campStoreCtrl">Camp store</mat-checkbox>
+          <mat-checkbox formControlName="staffVolunteerCtrl">Staff or volunteer host on site</mat-checkbox>
+          <mat-checkbox formControlName="potableWatertCtrl">Potable Water</mat-checkbox>
+          <mat-checkbox formControlName="iceAvailableForSaleCtrl">Ice available for sale</mat-checkbox>
+          <mat-checkbox formControlName="firewoodForSaleCtrl">Firewood available for sale</mat-checkbox>
+          <mat-checkbox formControlName="foodStorageLockersCtrl">Food storage locker</mat-checkbox>
+
+        </div>
+
         <div>
           <button mat-button matStepperPrevious>Back</button>
           <button mat-button matStepperNext>Next</button>
         </div>
+
       </form>
     </mat-step>
 
@@ -165,9 +186,79 @@
 
           <mat-expansion-panel-header>
             <mat-panel-title>
-
+              <h3>Amenities</h3>
             </mat-panel-title>
           </mat-expansion-panel-header>
+
+          <div *ngIf="foundCampground.amenities.trashRecyclingCollection && secondFormGroup.value.trashRecyclingCtrl">
+            <h4>Trash and recycling collection</h4>
+            {{ foundCampground.amenities.trashRecyclingCollection }}
+          </div>
+
+          <!-- <div *ngIf="foundCampground.amenities.toilets && secondFormGroup.value.toiletsCtrl">
+            <h4>Toilets</h4>
+            {{ foundCampground.amenities.trailerAllowed }}
+          </div> -->
+
+          <div *ngIf="foundCampground.amenities.internetConnectivity && secondFormGroup.value.internetConnectivityCtrl">
+            <h4>Internet connectivity</h4>
+            {{ foundCampground.amenities.internetConnectivity }}
+          </div>
+
+          <div *ngIf="foundCampground.amenities.showers && secondFormGroup.value.showersCtrl">
+            <h4>Showers</h4>
+            {{ foundCampground.amenities.showers }}
+          </div>
+
+          <div *ngIf="foundCampground.amenities.cellPhoneReception && secondFormGroup.value.cellPhoneReceptionCtrl">
+            <h4>Cell phone reception</h4>
+            {{ foundCampground.amenities.cellPhoneReception }}
+          </div>
+
+          <div *ngIf="foundCampground.amenities.laundry && secondFormGroup.value.laundryCtrl">
+            <h4>Laundry</h4>
+            {{ foundCampground.amenities.laundry }}
+          </div>
+
+          <div *ngIf="foundCampground.amenities.amphitheater && secondFormGroup.value.amphitheaterCtrl">
+            <h4>Amphitheater</h4>
+            {{ foundCampground.amenities.amphitheater }}
+          </div>
+
+          <div *ngIf="foundCampground.amenities.dumpStation && secondFormGroup.value.dumpStationCtrl">
+            <h4>Dump station</h4>
+            {{ foundCampground.amenities.dumpStation }}
+          </div>
+
+          <div *ngIf="foundCampground.amenities.campStore && secondFormGroup.value.campStoreCtrl">
+            <h4>Camp store</h4>
+            {{ foundCampground.amenities.campStore }}
+          </div>
+
+          <div *ngIf="foundCampground.amenities.staffOrVolunteerHostOnSite && secondFormGroup.value.staffVolunteerCtrl">
+            <h4>Staff or volunteer host on site</h4>
+            {{ foundCampground.amenities.staffOrVolunteerHostOnSite }}
+          </div>
+
+          <div *ngIf="foundCampground.amenities.potableWater && secondFormGroup.value.potableWatertCtrl">
+            <h4>Potable water</h4>
+            {{ foundCampground.amenities.potableWater }}
+          </div>
+
+          <div *ngIf="foundCampground.amenities.iceAvailableForSale && secondFormGroup.value.iceAvailableForSaleCtrl">
+            <h4>Ice availalbe for sale</h4>
+            {{ foundCampground.amenities.iceAvailableForSale }}
+          </div>
+
+          <div *ngIf="foundCampground.amenities.firewoodForSale && secondFormGroup.value.firewoodForSaleCtrl">
+            <h4>Firewood for sale</h4>
+            {{ foundCampground.amenities.firewoodForSale }}
+          </div>
+
+          <div *ngIf="foundCampground.amenities.foodStorageLockers && secondFormGroup.value.foodStorageLockersCtrl">
+            <h4>Food storage lockers</h4>
+            {{ foundCampground.amenities.foodStorageLockers }}
+          </div>
 
         </mat-expansion-panel>
 
