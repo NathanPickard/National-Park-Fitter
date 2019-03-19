@@ -15,15 +15,40 @@
       </mat-form-field> -->
         <div fxLayoutGap="20px" fxLayout="column">
 
-          <mat-checkbox formControlName="wheelchairAccessCtrl">Wheelchair access information</mat-checkbox>
-          <mat-checkbox formControlName="internetCtrl">Internet information</mat-checkbox>
-          <mat-checkbox formControlName="rvAllowedCtrl">RV allowed</mat-checkbox>
-          <mat-checkbox formControlName="cellPhoneInfoCtrl">Cell phone information</mat-checkbox>
-          <mat-checkbox formControlName="fireStoveCtrl">Fire stove policy</mat-checkbox>
-          <mat-checkbox formControlName="adaCtrl">ADA information</mat-checkbox>
-          <mat-checkbox formControlName="rvInfoCtrl">RV information</mat-checkbox>
-          <mat-checkbox formControlName="accessRoadsCtrl">Access roads</mat-checkbox>
-          <mat-checkbox formControlName="trailerAllowedCtrl">Trailer allowed</mat-checkbox>
+          <mat-checkbox formControlName="adaCtrl">
+            <mat-icon>accessible</mat-icon>ADA information
+          </mat-checkbox>
+          <mat-checkbox formControlName="wheelchairAccessCtrl">
+            <mat-icon>accessible_forward</mat-icon>Wheelchair access information
+          </mat-checkbox>
+          <mat-divider></mat-divider>
+          <mat-checkbox formControlName="internetCtrl">
+            <mat-icon>wifi</mat-icon>Internet information
+          </mat-checkbox>
+          <mat-checkbox formControlName="cellPhoneInfoCtrl">
+            <mat-icon>smartphone</mat-icon>Cell phone information
+          </mat-checkbox>
+          <mat-checkbox formControlName="fireStoveCtrl">
+            <mat-icon svgIcon="stove"></mat-icon>Fire stove policy
+          </mat-checkbox>
+
+          <mat-divider></mat-divider>
+
+          <mat-checkbox formControlName="rvAllowedCtrl">
+            <mat-icon>rv_hookup</mat-icon>RV allowed
+          </mat-checkbox>
+          <mat-checkbox formControlName="rvInfoCtrl">
+            <mat-icon>rv_hookup</mat-icon>RV information
+          </mat-checkbox>
+          <mat-checkbox formControlName="trailerAllowedCtrl">
+            <mat-icon svgIcon="truck-trailer"></mat-icon>Trailer allowed
+          </mat-checkbox>
+
+          <mat-divider></mat-divider>
+
+          <mat-checkbox formControlName="accessRoadsCtrl">
+            <mat-icon svgIcon="road"></mat-icon>Access roads
+          </mat-checkbox>
           <div>
             <button mat-raised-button matStepperNext>Next</button>
           </div>
@@ -43,27 +68,56 @@
 
         <div fxLayoutGap="20px" fxLayout="column">
 
-          <mat-checkbox formControlName="trashRecyclingCtrl">Trash and recycling collection</mat-checkbox>
-          <!-- <mat-checkbox formControlName="toiletsCtrl">Toilets</mat-checkbox> -->
-          <mat-checkbox formControlName="internetConnectivityCtrl">Internet connectivity</mat-checkbox>
-          <mat-checkbox formControlName="showersCtrl">Showers</mat-checkbox>
-          <mat-checkbox formControlName="cellPhoneReceptionCtrl">Cell phone reception</mat-checkbox>
-          <mat-checkbox formControlName="laundryCtrl">Laundry</mat-checkbox>
-          <mat-checkbox formControlName="amphitheaterCtrl">Amphitheater</mat-checkbox>
-          <mat-checkbox formControlName="dumpStationCtrl">Dump station</mat-checkbox>
-          <mat-checkbox formControlName="campStoreCtrl">Camp store</mat-checkbox>
-          <mat-checkbox formControlName="staffVolunteerCtrl">Staff or volunteer host on site</mat-checkbox>
-          <mat-checkbox formControlName="potableWatertCtrl">Potable Water</mat-checkbox>
-          <mat-checkbox formControlName="iceAvailableForSaleCtrl">Ice available for sale</mat-checkbox>
-          <mat-checkbox formControlName="firewoodForSaleCtrl">Firewood available for sale</mat-checkbox>
-          <mat-checkbox formControlName="foodStorageLockersCtrl">Food storage locker</mat-checkbox>
+          <mat-checkbox formControlName="trashRecyclingCtrl">
+            <mat-icon svgIcon="recycle"></mat-icon>Trash and recycling collection
+          </mat-checkbox>
+          <mat-checkbox formControlName="toiletsCtrl">
+            <mat-icon svgIcon="toilet"></mat-icon>Toilets
+          </mat-checkbox>
+          <mat-checkbox formControlName="internetConnectivityCtrl">
+            <mat-icon>wifi</mat-icon>Internet connectivity
+          </mat-checkbox>
+          <mat-checkbox formControlName="showersCtrl">
+            <mat-icon svgIcon="shower-head"></mat-icon>Showers
+          </mat-checkbox>
+          <mat-checkbox formControlName="cellPhoneReceptionCtrl">
+            <mat-icon>network_cell</mat-icon>Cell phone reception
+          </mat-checkbox>
+          <mat-checkbox formControlName="laundryCtrl">
+            <mat-icon svgIcon="washing-machine"></mat-icon>Laundry
+          </mat-checkbox>
+          <mat-checkbox formControlName="amphitheaterCtrl">
+            <mat-icon svgIcon="stadium"></mat-icon>Amphitheater
+          </mat-checkbox>
+          <mat-checkbox formControlName="dumpStationCtrl">
+            <mat-icon svgIcon="trash-can-outline"></mat-icon>Dump station
+          </mat-checkbox>
+          <mat-checkbox formControlName="campStoreCtrl">
+            <mat-icon>store</mat-icon>Camp store
+          </mat-checkbox>
+          <mat-checkbox formControlName="staffVolunteerCtrl">
+            <mat-icon>people</mat-icon>Staff or volunteer host on site
+          </mat-checkbox>
+          <mat-checkbox formControlName="potableWatertCtrl">
+            <mat-icon>local_drink</mat-icon>Potable Water
+          </mat-checkbox>
+          <mat-checkbox formControlName="iceAvailableForSaleCtrl">
+            <mat-icon>ac_unit</mat-icon>
+            <mat-icon>attach_money</mat-icon>Ice available for sale
+          </mat-checkbox>
+          <mat-checkbox formControlName="firewoodForSaleCtrl">
+            <mat-icon svgIcon="fire"></mat-icon>
+            <mat-icon>attach_money</mat-icon>Firewood available for sale
+          </mat-checkbox>
+          <mat-checkbox formControlName="foodStorageLockersCtrl">
+            <mat-icon svgIcon="locker-multiple"></mat-icon>Food storage locker
+          </mat-checkbox>
 
         </div>
 
         <div>
           <button mat-button matStepperPrevious>Back</button>
-          <button mat-button matStepperNext>
-            <mat-icon svgIcon="fire-truck"></mat-icon>Next
+          <button mat-button matStepperNext>Next
           </button>
         </div>
 
@@ -101,6 +155,8 @@
 
       <mat-accordion>
         <h2>{{ foundCampground.name }}</h2>
+
+        <p>{{ foundCampground.description }}</p>
 
         <mat-expansion-panel>
 
