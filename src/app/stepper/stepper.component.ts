@@ -31,7 +31,7 @@ export class StepperComponent implements OnInit {
 
 
     this.firstFormGroup = this._formBuilder.group({
-      
+
       wheelchairAccessCtrl: ['', Validators.required],
       internetCtrl: ['', Validators.required],
       rvAllowedCtrl: ['', Validators.required],
@@ -66,7 +66,9 @@ export class StepperComponent implements OnInit {
     });
 
     this.thirdFormGroup = this._formBuilder.group({
-      thirdCtrl: ['', Validators.required]
+      weatherCtrl: ['', Validators.required],
+      regulationsCtrl: ['', Validators.required],
+      directionsCtrl: ['', Validators.required],
     });
   }
 

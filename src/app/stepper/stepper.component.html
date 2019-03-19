@@ -16,32 +16,39 @@
         <div fxLayoutGap="20px" fxLayout="column">
 
           <mat-checkbox formControlName="adaCtrl">
-            <mat-icon>accessible</mat-icon>ADA information
+            <mat-icon>accessible</mat-icon>
+            ADA information
           </mat-checkbox>
           <mat-checkbox formControlName="wheelchairAccessCtrl">
-            <mat-icon>accessible_forward</mat-icon>Wheelchair access information
+            <mat-icon>accessible_forward</mat-icon>
+            Wheelchair access information
           </mat-checkbox>
           <mat-divider></mat-divider>
           <mat-checkbox formControlName="internetCtrl">
             <mat-icon>wifi</mat-icon>Internet information
           </mat-checkbox>
           <mat-checkbox formControlName="cellPhoneInfoCtrl">
-            <mat-icon>smartphone</mat-icon>Cell phone information
+            <mat-icon>smartphone</mat-icon>
+            Cell phone information
           </mat-checkbox>
           <mat-checkbox formControlName="fireStoveCtrl">
-            <mat-icon svgIcon="stove"></mat-icon>Fire stove policy
+            <mat-icon svgIcon="stove"></mat-icon>
+            Fire stove policy
           </mat-checkbox>
 
           <mat-divider></mat-divider>
 
           <mat-checkbox formControlName="rvAllowedCtrl">
-            <mat-icon>rv_hookup</mat-icon>RV allowed
+            <mat-icon>rv_hookup</mat-icon>
+            RV allowed
           </mat-checkbox>
           <mat-checkbox formControlName="rvInfoCtrl">
-            <mat-icon>rv_hookup</mat-icon>RV information
+            <mat-icon>rv_hookup</mat-icon>
+            RV information
           </mat-checkbox>
           <mat-checkbox formControlName="trailerAllowedCtrl">
-            <mat-icon svgIcon="truck-trailer"></mat-icon>Trailer allowed
+            <mat-icon svgIcon="truck-trailer"></mat-icon>
+            Trailer allowed
           </mat-checkbox>
 
           <mat-divider></mat-divider>
@@ -68,49 +75,72 @@
 
         <div fxLayoutGap="20px" fxLayout="column">
 
-          <mat-checkbox formControlName="trashRecyclingCtrl">
-            <mat-icon svgIcon="recycle"></mat-icon>Trash and recycling collection
-          </mat-checkbox>
           <mat-checkbox formControlName="toiletsCtrl">
-            <mat-icon svgIcon="toilet"></mat-icon>Toilets
-          </mat-checkbox>
-          <mat-checkbox formControlName="internetConnectivityCtrl">
-            <mat-icon>wifi</mat-icon>Internet connectivity
+            <mat-icon svgIcon="toilet"></mat-icon>
+            Toilets
           </mat-checkbox>
           <mat-checkbox formControlName="showersCtrl">
-            <mat-icon svgIcon="shower-head"></mat-icon>Showers
+            <mat-icon svgIcon="shower-head"></mat-icon>
+            Showers
           </mat-checkbox>
           <mat-checkbox formControlName="cellPhoneReceptionCtrl">
-            <mat-icon>network_cell</mat-icon>Cell phone reception
+            <mat-icon>network_cell</mat-icon>
+            Cell phone reception
           </mat-checkbox>
           <mat-checkbox formControlName="laundryCtrl">
-            <mat-icon svgIcon="washing-machine"></mat-icon>Laundry
+            <mat-icon svgIcon="washing-machine"></mat-icon>
+            Laundry
+          </mat-checkbox>
+          <mat-checkbox formControlName="internetConnectivityCtrl">
+            <mat-icon>wifi</mat-icon>
+            Internet connectivity
           </mat-checkbox>
           <mat-checkbox formControlName="amphitheaterCtrl">
-            <mat-icon svgIcon="stadium"></mat-icon>Amphitheater
-          </mat-checkbox>
-          <mat-checkbox formControlName="dumpStationCtrl">
-            <mat-icon svgIcon="trash-can-outline"></mat-icon>Dump station
-          </mat-checkbox>
-          <mat-checkbox formControlName="campStoreCtrl">
-            <mat-icon>store</mat-icon>Camp store
+            <mat-icon svgIcon="stadium"></mat-icon>
+            Amphitheater
           </mat-checkbox>
           <mat-checkbox formControlName="staffVolunteerCtrl">
-            <mat-icon>people</mat-icon>Staff or volunteer host on site
+            <mat-icon>people</mat-icon>
+            Staff or volunteer host on site
           </mat-checkbox>
+
+          <mat-divider></mat-divider>
+
+          <mat-checkbox formControlName="trashRecyclingCtrl">
+            <mat-icon svgIcon="recycle"></mat-icon>
+            Trash and recycling collection
+          </mat-checkbox>
+          <mat-checkbox formControlName="dumpStationCtrl">
+            <mat-icon svgIcon="trash-can-outline"></mat-icon>
+            Dump station
+          </mat-checkbox>
+
+          <mat-divider></mat-divider>
+
           <mat-checkbox formControlName="potableWatertCtrl">
-            <mat-icon>local_drink</mat-icon>Potable Water
+            <mat-icon>local_drink</mat-icon>
+            Potable Water
+          </mat-checkbox>
+          <mat-checkbox formControlName="foodStorageLockersCtrl">
+            <mat-icon svgIcon="locker-multiple"></mat-icon>
+            Food storage locker
+          </mat-checkbox>
+
+          <mat-divider></mat-divider>
+
+          <mat-checkbox formControlName="campStoreCtrl">
+            <mat-icon>store</mat-icon>
+            Camp store
           </mat-checkbox>
           <mat-checkbox formControlName="iceAvailableForSaleCtrl">
             <mat-icon>ac_unit</mat-icon>
-            <mat-icon>attach_money</mat-icon>Ice available for sale
+            <mat-icon>attach_money</mat-icon>
+            Ice available for sale
           </mat-checkbox>
           <mat-checkbox formControlName="firewoodForSaleCtrl">
             <mat-icon svgIcon="fire"></mat-icon>
-            <mat-icon>attach_money</mat-icon>Firewood available for sale
-          </mat-checkbox>
-          <mat-checkbox formControlName="foodStorageLockersCtrl">
-            <mat-icon svgIcon="locker-multiple"></mat-icon>Food storage locker
+            <mat-icon>attach_money</mat-icon>
+            Firewood available for sale
           </mat-checkbox>
 
         </div>
@@ -126,10 +156,28 @@
 
     <mat-step [stepControl]="thirdFormGroup">
       <form [formGroup]="thirdFormGroup">
-        <ng-template matStepLabel>Climbing?</ng-template>
-        <mat-form-field>
-          <input matInput placeholder="Do you want to climb?" formControlName="thirdCtrl" required>
-        </mat-form-field>
+        <ng-template matStepLabel>General campground information</ng-template>
+
+        <!-- <mat-form-field>
+          <input matInput placeholder="General campground information" formControlName="thirdCtrl" required>
+        </mat-form-field> -->
+
+        <div fxLayoutGap="20px" fxLayout="column">
+
+          <mat-checkbox formControlName="weatherCtrl">
+            <mat-icon>wb_sunny</mat-icon>
+            Weather
+          </mat-checkbox>
+          <mat-checkbox formControlName="regulationsCtrl">
+            <mat-icon>info</mat-icon>
+            Regulations
+          </mat-checkbox>
+          <mat-checkbox formControlName="directionsCtrl">
+            <mat-icon>directions</mat-icon>
+            Directions
+          </mat-checkbox>
+        </div>
+
         <div>
           <button mat-button matStepperPrevious>Back</button>
           <button mat-button matStepperNext>Next</button>
@@ -155,8 +203,11 @@
 
       <mat-accordion>
         <h2>{{ foundCampground.name }}</h2>
+        <h2>{{ foundCampground.parkCode }}</h2>
 
         <p>{{ foundCampground.description }}</p>
+
+        <p>{{ foundCampground.fees }}</p>
 
         <mat-expansion-panel>
 
@@ -320,6 +371,32 @@
 
         </mat-expansion-panel>
 
+
+        <mat-expansion-panel>
+
+          <mat-expansion-panel-header>
+            <mat-panel-title>
+              <h3>General Information</h3>
+            </mat-panel-title>
+          </mat-expansion-panel-header>
+
+          <div *ngIf="foundCampground.weatherOverview && thirdFormGroup.value.weatherCtrl">
+            <mat-icon>wb_sunny</mat-icon>
+            <h4>Weather overview</h4>
+            {{ foundCampground.weatherOverview }}
+          </div>
+          <div *ngIf="foundCampground.regulationsOverview && thirdFormGroup.value.regulationsCtrl">
+            <mat-icon>info</mat-icon>
+            <h4>Regulations overview</h4>
+            {{ foundCampground.regulationsOverview }}
+          </div>
+          <div *ngIf="foundCampground.directionsOverview && thirdFormGroup.value.directionsCtrl">
+            <mat-icon>directions</mat-icon>
+            <h4>Directions overview</h4>
+            {{ foundCampground.directionsOverview }}
+          </div>
+
+        </mat-expansion-panel>
 
       </mat-accordion>
 
