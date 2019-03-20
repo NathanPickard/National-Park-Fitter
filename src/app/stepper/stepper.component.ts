@@ -14,12 +14,18 @@ export class StepperComponent implements OnInit {
   secondFormGroup: FormGroup;
   thirdFormGroup: FormGroup;
 
+
   constructor(private _formBuilder: FormBuilder,
     private searchService: SearchService) { }
 
   stepperForm: FormGroup;
 
   foundCampgrounds: any[];
+  foundCampgroundPark: any[];
+
+  campgroundPark: any;
+
+  campgroundParkCode: any;
 
   resultsFound = false;
 
@@ -75,16 +81,10 @@ export class StepperComponent implements OnInit {
 
   onSubmitStepper() {
     // console.log(this.firstFormGroup.value.firstCtrl);
-    console.log(this.firstFormGroup.value.wheelchairAccessCtrl);
-    console.log(this.firstFormGroup.value.internetCtrl);
     return this.searchService.getCampgroundResults().subscribe(
       data => this.handleSuccess(data),
       error => this.handleError(error)
     );
-
-    // console.log(this.firstFormGroup);
-    // console.log(this.secondFormGroup);
-    // console.log(this.thirdFormGroup);
 
     // if (this.firstFormGroup.value.firstCtrl == true) {
     // return this.searchService.getYosemiteCampgroundResults().subscribe(
@@ -103,22 +103,46 @@ export class StepperComponent implements OnInit {
     this.foundCampgrounds = data.data;
     console.log(this.foundCampgrounds);
 
+    // this.campgroundPark = this.foundCampgrounds.parkCode;
+    console.log(this.campgroundPark);
+
     console.log(this.foundCampgrounds.length);
 
-    if (this.firstFormGroup.value.firstCtrl == true) {
+    // if (this.firstFormGroup.value.firstCtrl == true) {
 
-      for (let i = 0; i < this.foundCampgrounds.length; i++) {
-        if (this.foundCampgrounds[i].accessibility.wheelchairAccess) {
-          console.log(this.foundCampgrounds[i].accessibility.wheelchairAccess);
-        }
-      }
+    for (let i = 0; i < this.foundCampgrounds.length; i++) {
+      // if (this.foundCampgrounds[i].parkCode) {
+      this.campgroundPark = this.foundCampgrounds[i].parkCode;
+      console.log(this.campgroundPark);
+
+      this.getParkName(this.campgroundPark);
+
+      // return this.searchService.getCampgroundPark(this.campgroundPark).subscribe(
+      //   data => this.handleCampgroundParkSuccess(data),
+      //   error => this.handleError(error),
+      // );
+
+      // console.log(this.foundCampgrounds[i].parkCode);
     }
+    // }
+    // }
+  }
+
+  getParkName(campgroundPark) {
+    return this.searchService.getCampgroundPark(this.campgroundPark).subscribe(
+      data => this.handleCampgroundParkSuccess(data),
+      error => this.handleError(error),
+    );
+  }
+
+  handleCampgroundParkSuccess(data) {
+    this.foundCampgroundPark = data.data;
+    console.log(this.foundCampgroundPark);
   }
 
   handleError(error) {
     console.log(error);
   }
-
 
 
 }

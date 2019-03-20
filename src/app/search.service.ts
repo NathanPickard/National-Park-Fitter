@@ -18,6 +18,8 @@ export class SearchService {
 
   constructor(private httpClient: HttpClient) { }
 
+  parkCode: any;
+
   private API_KEY: string = environment.NPS_API_KEY;
   private API_URL: string = environment.NPS_BASE_URL;
 
@@ -29,7 +31,7 @@ export class SearchService {
     return this.httpClient.get<any>(this.API_URL + 'campgrounds?' + '&api_key=' + this.API_KEY);
   }
 
-  getCampgroundPark() {
-    // return this.httpClient.get<any>()
+  getCampgroundPark(parkCode) {
+    return this.httpClient.get<any>(this.API_URL + 'parks?' + 'parkCode=' + parkCode + '&api_key=' + this.API_KEY);
   }
 }
