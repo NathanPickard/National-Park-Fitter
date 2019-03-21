@@ -34,4 +34,8 @@ export class SearchService {
   getCampgroundPark(parkCode) {
     return this.httpClient.get<any>(this.API_URL + 'parks?' + 'parkCode=' + parkCode + '&api_key=' + this.API_KEY);
   }
+
+  getParkResults() {
+    return this.httpClient.get<any>(this.API_URL + 'parks?' + 'api_key=' + this.API_KEY);
+  }
 }

@@ -23,6 +23,8 @@ export class StepperComponent implements OnInit {
   foundCampgrounds: any[];
   foundCampgroundPark: any[];
 
+  campgroundParkArray: any[] = [name];
+
   campgroundPark: any;
 
   campgroundParkCode: any;
@@ -106,26 +108,14 @@ export class StepperComponent implements OnInit {
     // this.campgroundPark = this.foundCampgrounds.parkCode;
     console.log(this.campgroundPark);
 
-    console.log(this.foundCampgrounds.length);
-
     // if (this.firstFormGroup.value.firstCtrl == true) {
 
     for (let i = 0; i < this.foundCampgrounds.length; i++) {
-      // if (this.foundCampgrounds[i].parkCode) {
       this.campgroundPark = this.foundCampgrounds[i].parkCode;
       console.log(this.campgroundPark);
 
       this.getParkName(this.campgroundPark);
-
-      // return this.searchService.getCampgroundPark(this.campgroundPark).subscribe(
-      //   data => this.handleCampgroundParkSuccess(data),
-      //   error => this.handleError(error),
-      // );
-
-      // console.log(this.foundCampgrounds[i].parkCode);
     }
-    // }
-    // }
   }
 
   getParkName(campgroundPark) {
@@ -137,7 +127,25 @@ export class StepperComponent implements OnInit {
 
   handleCampgroundParkSuccess(data) {
     this.foundCampgroundPark = data.data;
-    console.log(this.foundCampgroundPark);
+
+    for (let i = 0; i < this.foundCampgroundPark.length; i++) {
+      console.log(this.foundCampgroundPark[i].fullName);
+
+      this.campgroundParkArray.push(this.foundCampgroundPark[i].fullName);
+      // this.foundCampgrounds.push(this.foundCampgroundPark[i].fullName);
+
+      // this.campgroundParkArray.push('24');
+
+      // this.foundCampgroundPark[i].fullName.push(this.campgroundParkArray);
+
+      console.log(this.campgroundParkArray);
+    }
+
+    // this.foundCampgroundPark.unshift(this.campgroundParkArray);
+
+
+
+    // console.log(this.foundCampgroundPark);
   }
 
   handleError(error) {
