@@ -83,10 +83,13 @@ export class StepperComponent implements OnInit {
 
   onSubmitStepper() {
     // console.log(this.firstFormGroup.value.firstCtrl);
-    return this.searchService.getCampgroundResults().subscribe(
-      data => this.handleSuccess(data),
-      error => this.handleError(error)
-    );
+
+    this.getCampgroundData();
+    this.getParkData();
+    // return this.searchService.getCampgroundResults().subscribe(
+    //   data => this.handleSuccess(data),
+    //   error => this.handleError(error)
+    // );
 
     // if (this.firstFormGroup.value.firstCtrl == true) {
     // return this.searchService.getYosemiteCampgroundResults().subscribe(
@@ -95,6 +98,20 @@ export class StepperComponent implements OnInit {
     // error => this.handleError(error)
     // );
     // }
+  }
+
+  getCampgroundData() {
+    return this.searchService.getCampgroundResults().subscribe(
+      data => this.handleSuccess(data),
+      error => this.handleError(error)
+    );
+  }
+
+  getParkData() {
+    return this.searchService.getParkResults().subscribe(
+      data => this.handleSuccess(data),
+      error => this.handleError(error)
+    )
   }
 
   handleSuccess(data) {
@@ -126,20 +143,25 @@ export class StepperComponent implements OnInit {
   }
 
   handleCampgroundParkSuccess(data) {
-    this.foundCampgroundPark = data.data;
+    // this.foundCampgroundPark = data.data;
 
-    for (let i = 0; i < this.foundCampgroundPark.length; i++) {
-      console.log(this.foundCampgroundPark[i].fullName);
+    // for (let i = 0; i < this.foundCampgroundPark.length; i++) {
+    //   console.log(this.foundCampgroundPark[i].fullName);
 
-      this.campgroundParkArray.push(this.foundCampgroundPark[i].fullName);
-      // this.foundCampgrounds.push(this.foundCampgroundPark[i].fullName);
+    //   this.campgroundParkArray.push(this.foundCampgroundPark[i].fullName);
+    //   this.foundCampgrounds.push(this.foundCampgroundPark[i].fullName);
 
-      // this.campgroundParkArray.push('24');
+    //   console.log(this.foundCampgrounds);
+    // }
 
-      // this.foundCampgroundPark[i].fullName.push(this.campgroundParkArray);
 
-      console.log(this.campgroundParkArray);
-    }
+
+
+    // this.campgroundParkArray.push('24');
+
+    // this.foundCampgroundPark[i].fullName.push(this.campgroundParkArray);
+
+    // console.log(this.campgroundParkArray);
 
     // this.foundCampgroundPark.unshift(this.campgroundParkArray);
 
