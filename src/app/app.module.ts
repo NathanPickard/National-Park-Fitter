@@ -8,6 +8,8 @@ import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NavComponent } from './nav/nav.component';
 
+import { AppRoutingModule } from './app-routing.module';
+
 import { SearchService } from './search.service';
 
 import { FlexLayoutModule } from '@angular/flex-layout';
@@ -25,16 +27,19 @@ import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatStepperModule } from '@angular/material/stepper';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { StepperComponent } from './stepper/stepper.component';
+import { AboutComponent } from './about/about.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     NavComponent,
-    StepperComponent
+    StepperComponent,
+    AboutComponent
   ],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
+    AppRoutingModule,
     FormsModule,
     HttpClientModule,
     ReactiveFormsModule,

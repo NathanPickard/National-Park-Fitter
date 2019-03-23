@@ -205,7 +205,6 @@
 
         <div *ngFor="let foundCampground of foundCampgrounds">
 
-
           <mat-accordion>
             <h2>{{ foundCampground.name }}</h2>
             <!-- <h2>{{ foundCampground.parkCode }}</h2> -->
@@ -417,7 +416,11 @@
       <div fxLayout="column">
 
         <div *ngFor="let foundPark of foundParks">
+
           <mat-accordion>
+
+            <h2>{{ foundPark.fullName }}</h2>
+            <p>{{ foundPark.description }}</p>
 
             <mat-expansion-panel>
 
@@ -427,7 +430,6 @@
                 </mat-panel-title>
               </mat-expansion-panel-header>
 
-              {{ foundPark.fullName }}
 
             </mat-expansion-panel>
 
