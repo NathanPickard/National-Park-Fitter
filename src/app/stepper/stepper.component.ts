@@ -22,6 +22,7 @@ export class StepperComponent implements OnInit {
 
   foundCampgrounds: any[];
   foundCampgroundPark: any[];
+  foundParks: any[];
 
   campgroundParkArray: any[] = [name];
 
@@ -109,7 +110,7 @@ export class StepperComponent implements OnInit {
 
   getParkData() {
     return this.searchService.getParkResults().subscribe(
-      data => this.handleSuccess(data),
+      data => this.handleParkSuccess(data),
       error => this.handleError(error)
     )
   }
@@ -118,6 +119,7 @@ export class StepperComponent implements OnInit {
     // this.foundYosemiteCampgrounds = data;
     this.resultsFound = true;
     console.log();
+
 
     this.foundCampgrounds = data.data;
     console.log(this.foundCampgrounds);
@@ -133,6 +135,11 @@ export class StepperComponent implements OnInit {
 
       this.getParkName(this.campgroundPark);
     }
+  }
+
+  handleParkSuccess(data) {
+    this.foundParks = data.data;
+    console.log(this.foundParks);
   }
 
   getParkName(campgroundPark) {
