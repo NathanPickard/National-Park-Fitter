@@ -29,13 +29,17 @@ import { MatStepperModule } from '@angular/material/stepper';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { StepperComponent } from './stepper/stepper.component';
 import { AboutComponent } from './about/about.component';
+import { AmenitiesComponent } from './amenities/amenities.component';
+import { AccessibilityComponent } from './accessibility/accessibility.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     NavComponent,
     StepperComponent,
-    AboutComponent
+    AboutComponent,
+    AmenitiesComponent,
+    AccessibilityComponent
   ],
   imports: [
     BrowserModule,
