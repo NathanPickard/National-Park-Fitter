@@ -10,8 +10,8 @@ import { SearchService } from './../search.service';
 })
 export class StepperComponent implements OnInit {
 
-  firstFormGroup: FormGroup;
-  secondFormGroup: FormGroup;
+  accessibilityFormGroup: FormGroup;
+  amenitiesFormGroup: FormGroup;
   thirdFormGroup: FormGroup;
 
 
@@ -30,7 +30,7 @@ export class StepperComponent implements OnInit {
 
   campgroundParkCode: any;
 
-  resultsFound = false;
+  // resultsFound = false;
 
   ngOnInit() {
 
@@ -39,7 +39,7 @@ export class StepperComponent implements OnInit {
     // });
 
 
-    this.firstFormGroup = this._formBuilder.group({
+    this.accessibilityFormGroup = this._formBuilder.group({
 
       wheelchairAccessCtrl: ['', Validators.required],
       internetCtrl: ['', Validators.required],
@@ -56,7 +56,7 @@ export class StepperComponent implements OnInit {
       classificationsCtrl: ['', Validators.required]
     });
 
-    this.secondFormGroup = this._formBuilder.group({
+    this.amenitiesFormGroup = this._formBuilder.group({
 
       trashRecyclingCtrl: ['', Validators.required],
       toiletsCtrl: ['', Validators.required],
@@ -117,9 +117,7 @@ export class StepperComponent implements OnInit {
 
   handleSuccess(data) {
     // this.foundYosemiteCampgrounds = data;
-    this.resultsFound = true;
-    console.log();
-
+    // this.resultsFound = true;
 
     this.foundCampgrounds = data.data;
     console.log(this.foundCampgrounds);
