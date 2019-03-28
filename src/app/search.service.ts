@@ -36,6 +36,6 @@ export class SearchService {
   }
 
   getParkResults() {
-    return this.httpClient.get<any>(this.API_URL + 'parks?' + '&fields=images' + 'api_key=' + this.API_KEY);
+    return this.httpClient.get<any>(this.API_URL + 'parks?' + 'api_key=' + this.API_KEY  + '&fields=images');
   }
 }

@@ -461,7 +461,12 @@
 
               <p>{{ foundPark.description }}</p>
 
-              <img src="{{ foundPark.images }}">
+
+              <div *ngFor="let image of foundPark.images">
+                <img mat-card-image [src]="image.url">
+                <p>{{ image.title }}</p>
+              </div>
+              <!-- <img src="{{ foundPark.images }}"> -->
 
               <mat-expansion-panel>
 
