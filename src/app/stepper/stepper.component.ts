@@ -24,13 +24,15 @@ export class StepperComponent implements OnInit {
   foundCampgroundPark: any[];
   foundParks: any[];
 
+  resultsFound: boolean = false;
+  stepperSubmitted: boolean = false;
+
   campgroundParkArray: any[] = [name];
 
   campgroundPark: any;
 
   campgroundParkCode: any;
 
-  // resultsFound = false;
 
   ngOnInit() {
 
@@ -83,6 +85,7 @@ export class StepperComponent implements OnInit {
 
 
   onSubmitStepper() {
+    this.stepperSubmitted = true;
     // console.log(this.firstFormGroup.value.firstCtrl);
 
     this.getCampgroundData();
@@ -117,7 +120,7 @@ export class StepperComponent implements OnInit {
 
   handleSuccess(data) {
     // this.foundYosemiteCampgrounds = data;
-    // this.resultsFound = true;
+    this.resultsFound = true;
 
     this.foundCampgrounds = data.data;
     console.log(this.foundCampgrounds);
@@ -136,6 +139,8 @@ export class StepperComponent implements OnInit {
   }
 
   handleParkSuccess(data) {
+    this.resultsFound = true;
+
     this.foundParks = data.data;
     console.log(this.foundParks);
   }

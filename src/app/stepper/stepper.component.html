@@ -197,273 +197,295 @@
 
   </mat-vertical-stepper>
 
-  <!-- <div *ngIf="resultsFound"> -->
 
-  <div fxLayout="row" fxLayoutAlign="space-evenly start">
-
-    <div fxLayout="column" fxFlex="45" fxLayoutGap="15px">
-
-      <div *ngFor="let foundCampground of foundCampgrounds">
-
-        <mat-accordion>
-
-          <mat-card>
-
-            <h2>{{ foundCampground.name }}</h2>
-            <!-- <h2>{{ foundCampground.parkCode }}</h2> -->
-            <!-- <h2>{{ campgroundParkArray }}</h2> -->
-
-            <p>{{ foundCampground.description }}</p>
-
-            <p>{{ foundCampground.fees }}</p>
-
-            <!-- <app-accessibility></app-accessibility> -->
-            <mat-expansion-panel>
+  <div *ngIf="!resultsFound && stepperSubmitted">
+    <mat-spinner></mat-spinner>
+  </div>
 
 
-              <mat-expansion-panel-header>
-                <mat-panel-title>
-                  <h3>Accessibility</h3>
-                </mat-panel-title>
 
-                <!-- <mat-panel-description>
+  <div *ngIf="resultsFound">
+
+    <div fxLayout="row" fxLayoutAlign="space-evenly start">
+
+      <div fxLayout="column" fxFlex="45" fxLayoutGap="15px">
+
+        <div *ngFor="let foundCampground of foundCampgrounds">
+
+          <mat-accordion>
+
+            <mat-card>
+
+              <mat-card-header>
+                <mat-card-title>
+                  {{ foundCampground.name }}
+                </mat-card-title>
+
+              </mat-card-header>
+
+              <!-- <h2>{{ foundCampground.parkCode }}</h2> -->
+              <!-- <h2>{{ campgroundParkArray }}</h2> -->
+
+              <p>{{ foundCampground.description }}</p>
+
+              <p>{{ foundCampground.fees }}</p>
+
+              <!-- <app-accessibility></app-accessibility> -->
+              <mat-expansion-panel>
+
+
+                <mat-expansion-panel-header>
+                  <mat-panel-title>
+                    <h3>Accessibility</h3>
+                  </mat-panel-title>
+
+                  <!-- <mat-panel-description>
                   Information on all things accessibility
                 </mat-panel-description> -->
 
-              </mat-expansion-panel-header>
+                </mat-expansion-panel-header>
 
-              <div
-                *ngIf="foundCampground.accessibility.wheelchairAccess && accessibilityFormGroup.value.wheelchairAccessCtrl">
-                <h4>Wheelchair access information</h4>
-                {{ foundCampground.accessibility.wheelchairAccess }}
-              </div>
+                <div
+                  *ngIf="foundCampground.accessibility.wheelchairAccess && accessibilityFormGroup.value.wheelchairAccessCtrl">
+                  <h4>Wheelchair access information</h4>
+                  {{ foundCampground.accessibility.wheelchairAccess }}
+                </div>
 
-              <div *ngIf="foundCampground.accessibility.internetInfo && accessibilityFormGroup.value.internetCtrl">
-                <h4>Internet information</h4>
-                {{ foundCampground.accessibility.internetInfo }}
-              </div>
+                <div *ngIf="foundCampground.accessibility.internetInfo && accessibilityFormGroup.value.internetCtrl">
+                  <h4>Internet information</h4>
+                  {{ foundCampground.accessibility.internetInfo }}
+                </div>
 
-              <div *ngIf="foundCampground.accessibility.rvAllowed && accessibilityFormGroup.value.rvAllowedCtrl">
-                <h4>RV allowed:</h4>
-                {{ foundCampground.accessibility.rvAllowed }}
-              </div>
+                <div *ngIf="foundCampground.accessibility.rvAllowed && accessibilityFormGroup.value.rvAllowedCtrl">
+                  <h4>RV allowed:</h4>
+                  {{ foundCampground.accessibility.rvAllowed }}
+                </div>
 
-              <div
-                *ngIf="foundCampground.accessibility.cellPhoneInfo && accessibilityFormGroup.value.cellPhoneInfoCtrl">
-                <h4>Cell phone information</h4>
-                {{ foundCampground.accessibility.cellPhoneInfo }}
-              </div>
+                <div
+                  *ngIf="foundCampground.accessibility.cellPhoneInfo && accessibilityFormGroup.value.cellPhoneInfoCtrl">
+                  <h4>Cell phone information</h4>
+                  {{ foundCampground.accessibility.cellPhoneInfo }}
+                </div>
 
-              <div *ngIf="foundCampground.accessibility.fireStovePolicy && accessibilityFormGroup.value.fireStoveCtrl">
-                <h4>Fire stove policy</h4>
-                {{ foundCampground.accessibility.fireStovePolicy }}
-              </div>
+                <div
+                  *ngIf="foundCampground.accessibility.fireStovePolicy && accessibilityFormGroup.value.fireStoveCtrl">
+                  <h4>Fire stove policy</h4>
+                  {{ foundCampground.accessibility.fireStovePolicy }}
+                </div>
 
-              <div *ngIf="foundCampground.accessibility.rvMaxLength && accessibilityFormGroup.value.rvMaxCtrl">
-                <h4>Maximum # of RVs allowed</h4>
-                {{ foundCampground.accessibility.rvMaxLength }}
-              </div>
+                <div *ngIf="foundCampground.accessibility.rvMaxLength && accessibilityFormGroup.value.rvMaxCtrl">
+                  <h4>Maximum # of RVs allowed</h4>
+                  {{ foundCampground.accessibility.rvMaxLength }}
+                </div>
 
-              <div
-                *ngIf="foundCampground.accessibility.additionalInfo && accessibilityFormGroup.value.additionalInfoCtrl">
-                <h4>Additional information</h4>
-                {{ foundCampground.accessibility.additionalInfo }}
-              </div>
+                <div
+                  *ngIf="foundCampground.accessibility.additionalInfo && accessibilityFormGroup.value.additionalInfoCtrl">
+                  <h4>Additional information</h4>
+                  {{ foundCampground.accessibility.additionalInfo }}
+                </div>
 
-              <div
-                *ngIf="foundCampground.accessibility.trailerMaxLength && accessibilityFormGroup.value.trailerMaxCtrl">
-                <h4>Maximum # of trailers allowed</h4>
-                {{ foundCampground.accessibility.trailerMaxLength }}
-              </div>
+                <div
+                  *ngIf="foundCampground.accessibility.trailerMaxLength && accessibilityFormGroup.value.trailerMaxCtrl">
+                  <h4>Maximum # of trailers allowed</h4>
+                  {{ foundCampground.accessibility.trailerMaxLength }}
+                </div>
 
-              <div *ngIf="foundCampground.accessibility.trailerMaxLength && accessibilityFormGroup.value.adaCtrl">
-                <h4>ADA Information</h4>
-                {{ foundCampground.accessibility.adaInfo }}
-              </div>
+                <div *ngIf="foundCampground.accessibility.trailerMaxLength && accessibilityFormGroup.value.adaCtrl">
+                  <h4>ADA Information</h4>
+                  {{ foundCampground.accessibility.adaInfo }}
+                </div>
 
-              <div *ngIf="foundCampground.accessibility.rvInfo && accessibilityFormGroup.value.rvInfoCtrl">
-                <h4>RV information</h4>
-                {{ foundCampground.accessibility.trailerMaxLength }}
-              </div>
+                <div *ngIf="foundCampground.accessibility.rvInfo && accessibilityFormGroup.value.rvInfoCtrl">
+                  <h4>RV information</h4>
+                  {{ foundCampground.accessibility.trailerMaxLength }}
+                </div>
 
-              <div *ngIf="foundCampground.accessibility.accessRoads && accessibilityFormGroup.value.accessRoadsCtrl">
-                <h4>Access roads</h4>
-                {{ foundCampground.accessibility.accessRoads }}
-              </div>
+                <div *ngIf="foundCampground.accessibility.accessRoads && accessibilityFormGroup.value.accessRoadsCtrl">
+                  <h4>Access roads</h4>
+                  {{ foundCampground.accessibility.accessRoads }}
+                </div>
 
-              <div
-                *ngIf="foundCampground.accessibility.classifications && accessibilityFormGroup.value.classificationsCtrl">
-                <h4>Classifications</h4>
-                {{ foundCampground.accessibility.classifications }}
-              </div>
+                <div
+                  *ngIf="foundCampground.accessibility.classifications && accessibilityFormGroup.value.classificationsCtrl">
+                  <h4>Classifications</h4>
+                  {{ foundCampground.accessibility.classifications }}
+                </div>
 
-              <div
-                *ngIf="foundCampground.accessibility.trailerAllowed && accessibilityFormGroup.value.trailerAllowedCtrl">
-                <h4>Trailer allowed</h4>
-                {{ foundCampground.accessibility.trailerAllowed }}
-              </div>
-
-
-            </mat-expansion-panel>
+                <div
+                  *ngIf="foundCampground.accessibility.trailerAllowed && accessibilityFormGroup.value.trailerAllowedCtrl">
+                  <h4>Trailer allowed</h4>
+                  {{ foundCampground.accessibility.trailerAllowed }}
+                </div>
 
 
+              </mat-expansion-panel>
 
 
-            <mat-expansion-panel>
 
-              <mat-expansion-panel-header>
-                <mat-panel-title>
-                  <h3>Amenities</h3>
-                </mat-panel-title>
-              </mat-expansion-panel-header>
 
-              <div
-                *ngIf="foundCampground.amenities.trashRecyclingCollection && amenitiesFormGroup.value.trashRecyclingCtrl">
-                <h4>Trash and recycling collection</h4>
-                {{ foundCampground.amenities.trashRecyclingCollection }}
-              </div>
+              <mat-expansion-panel>
 
-              <!-- <div *ngIf="foundCampground.amenities.toilets && amenitiesFormGroup.value.toiletsCtrl">
+                <mat-expansion-panel-header>
+                  <mat-panel-title>
+                    <h3>Amenities</h3>
+                  </mat-panel-title>
+                </mat-expansion-panel-header>
+
+                <div
+                  *ngIf="foundCampground.amenities.trashRecyclingCollection && amenitiesFormGroup.value.trashRecyclingCtrl">
+                  <h4>Trash and recycling collection</h4>
+                  {{ foundCampground.amenities.trashRecyclingCollection }}
+                </div>
+
+                <!-- <div *ngIf="foundCampground.amenities.toilets && amenitiesFormGroup.value.toiletsCtrl">
                 <h4>Toilets</h4>
                 {{ foundCampground.amenities.trailerAllowed }}
           </div> -->
 
-              <div
-                *ngIf="foundCampground.amenities.internetConnectivity && amenitiesFormGroup.value.internetConnectivityCtrl">
-                <h4>Internet connectivity</h4>
-                {{ foundCampground.amenities.internetConnectivity }}
-              </div>
+                <div
+                  *ngIf="foundCampground.amenities.internetConnectivity && amenitiesFormGroup.value.internetConnectivityCtrl">
+                  <h4>Internet connectivity</h4>
+                  {{ foundCampground.amenities.internetConnectivity }}
+                </div>
 
-              <div *ngIf="foundCampground.amenities.showers && amenitiesFormGroup.value.showersCtrl">
-                <h4>Showers</h4>
-                {{ foundCampground.amenities.showers }}
-              </div>
+                <div *ngIf="foundCampground.amenities.showers && amenitiesFormGroup.value.showersCtrl">
+                  <h4>Showers</h4>
+                  {{ foundCampground.amenities.showers }}
+                </div>
 
-              <div
-                *ngIf="foundCampground.amenities.cellPhoneReception && amenitiesFormGroup.value.cellPhoneReceptionCtrl">
-                <h4>Cell phone reception</h4>
-                {{ foundCampground.amenities.cellPhoneReception }}
-              </div>
+                <div
+                  *ngIf="foundCampground.amenities.cellPhoneReception && amenitiesFormGroup.value.cellPhoneReceptionCtrl">
+                  <h4>Cell phone reception</h4>
+                  {{ foundCampground.amenities.cellPhoneReception }}
+                </div>
 
-              <div *ngIf="foundCampground.amenities.laundry && amenitiesFormGroup.value.laundryCtrl">
-                <h4>Laundry</h4>
-                {{ foundCampground.amenities.laundry }}
-              </div>
+                <div *ngIf="foundCampground.amenities.laundry && amenitiesFormGroup.value.laundryCtrl">
+                  <h4>Laundry</h4>
+                  {{ foundCampground.amenities.laundry }}
+                </div>
 
-              <div *ngIf="foundCampground.amenities.amphitheater && amenitiesFormGroup.value.amphitheaterCtrl">
-                <h4>Amphitheater</h4>
-                {{ foundCampground.amenities.amphitheater }}
-              </div>
+                <div *ngIf="foundCampground.amenities.amphitheater && amenitiesFormGroup.value.amphitheaterCtrl">
+                  <h4>Amphitheater</h4>
+                  {{ foundCampground.amenities.amphitheater }}
+                </div>
 
-              <div *ngIf="foundCampground.amenities.dumpStation && amenitiesFormGroup.value.dumpStationCtrl">
-                <h4>Dump station</h4>
-                {{ foundCampground.amenities.dumpStation }}
-              </div>
+                <div *ngIf="foundCampground.amenities.dumpStation && amenitiesFormGroup.value.dumpStationCtrl">
+                  <h4>Dump station</h4>
+                  {{ foundCampground.amenities.dumpStation }}
+                </div>
 
-              <div *ngIf="foundCampground.amenities.campStore && amenitiesFormGroup.value.campStoreCtrl">
-                <h4>Camp store</h4>
-                {{ foundCampground.amenities.campStore }}
-              </div>
+                <div *ngIf="foundCampground.amenities.campStore && amenitiesFormGroup.value.campStoreCtrl">
+                  <h4>Camp store</h4>
+                  {{ foundCampground.amenities.campStore }}
+                </div>
 
-              <div
-                *ngIf="foundCampground.amenities.staffOrVolunteerHostOnSite && amenitiesFormGroup.value.staffVolunteerCtrl">
-                <h4>Staff or volunteer host on site</h4>
-                {{ foundCampground.amenities.staffOrVolunteerHostOnSite }}
-              </div>
+                <div
+                  *ngIf="foundCampground.amenities.staffOrVolunteerHostOnSite && amenitiesFormGroup.value.staffVolunteerCtrl">
+                  <h4>Staff or volunteer host on site</h4>
+                  {{ foundCampground.amenities.staffOrVolunteerHostOnSite }}
+                </div>
 
-              <div *ngIf="foundCampground.amenities.potableWater && amenitiesFormGroup.value.potableWatertCtrl">
-                <h4>Potable water</h4>
-                {{ foundCampground.amenities.potableWater }}
-              </div>
+                <div *ngIf="foundCampground.amenities.potableWater && amenitiesFormGroup.value.potableWatertCtrl">
+                  <h4>Potable water</h4>
+                  {{ foundCampground.amenities.potableWater }}
+                </div>
 
-              <div
-                *ngIf="foundCampground.amenities.iceAvailableForSale && amenitiesFormGroup.value.iceAvailableForSaleCtrl">
-                <h4>Ice availalbe for sale</h4>
-                {{ foundCampground.amenities.iceAvailableForSale }}
-              </div>
+                <div
+                  *ngIf="foundCampground.amenities.iceAvailableForSale && amenitiesFormGroup.value.iceAvailableForSaleCtrl">
+                  <h4>Ice availalbe for sale</h4>
+                  {{ foundCampground.amenities.iceAvailableForSale }}
+                </div>
 
-              <div *ngIf="foundCampground.amenities.firewoodForSale && amenitiesFormGroup.value.firewoodForSaleCtrl">
-                <h4>Firewood for sale</h4>
-                {{ foundCampground.amenities.firewoodForSale }}
-              </div>
+                <div *ngIf="foundCampground.amenities.firewoodForSale && amenitiesFormGroup.value.firewoodForSaleCtrl">
+                  <h4>Firewood for sale</h4>
+                  {{ foundCampground.amenities.firewoodForSale }}
+                </div>
 
-              <div
-                *ngIf="foundCampground.amenities.foodStorageLockers && amenitiesFormGroup.value.foodStorageLockersCtrl">
-                <h4>Food storage lockers</h4>
-                {{ foundCampground.amenities.foodStorageLockers }}
-              </div>
+                <div
+                  *ngIf="foundCampground.amenities.foodStorageLockers && amenitiesFormGroup.value.foodStorageLockersCtrl">
+                  <h4>Food storage lockers</h4>
+                  {{ foundCampground.amenities.foodStorageLockers }}
+                </div>
 
-            </mat-expansion-panel>
+              </mat-expansion-panel>
 
-            <mat-expansion-panel>
+              <mat-expansion-panel>
 
-              <mat-expansion-panel-header>
-                <mat-panel-title>
-                  <h3>General Information</h3>
-                </mat-panel-title>
-              </mat-expansion-panel-header>
+                <mat-expansion-panel-header>
+                  <mat-panel-title>
+                    <h3>General Information</h3>
+                  </mat-panel-title>
+                </mat-expansion-panel-header>
 
-              <div *ngIf="foundCampground.weatherOverview && thirdFormGroup.value.weatherCtrl">
-                <mat-icon>wb_sunny</mat-icon>
-                <h4>Weather overview</h4>
-                {{ foundCampground.weatherOverview }}
-              </div>
-              <div *ngIf="foundCampground.regulationsOverview && thirdFormGroup.value.regulationsCtrl">
-                <mat-icon>info</mat-icon>
-                <h4>Regulations overview</h4>
-                {{ foundCampground.regulationsOverview }}
-              </div>
-              <div *ngIf="foundCampground.directionsOverview && thirdFormGroup.value.directionsCtrl">
-                <mat-icon>directions</mat-icon>
-                <h4>Directions overview</h4>
-                {{ foundCampground.directionsOverview }}
-              </div>
+                <div *ngIf="foundCampground.weatherOverview && thirdFormGroup.value.weatherCtrl">
+                  <mat-icon>wb_sunny</mat-icon>
+                  <h4>Weather overview</h4>
+                  {{ foundCampground.weatherOverview }}
+                </div>
+                <div *ngIf="foundCampground.regulationsOverview && thirdFormGroup.value.regulationsCtrl">
+                  <mat-icon>info</mat-icon>
+                  <h4>Regulations overview</h4>
+                  {{ foundCampground.regulationsOverview }}
+                </div>
+                <div *ngIf="foundCampground.directionsOverview && thirdFormGroup.value.directionsCtrl">
+                  <mat-icon>directions</mat-icon>
+                  <h4>Directions overview</h4>
+                  {{ foundCampground.directionsOverview }}
+                </div>
 
-            </mat-expansion-panel>
+              </mat-expansion-panel>
 
-          </mat-card>
+            </mat-card>
 
-        </mat-accordion>
+          </mat-accordion>
+
+        </div>
 
       </div>
 
-    </div>
+      <div fxLayout="column" fxFlex="45" fxLayoutGap="15px">
 
-    <div fxLayout="column" fxFlex="45" fxLayoutGap="15px">
+        <div *ngFor="let foundPark of foundParks">
 
-      <div *ngFor="let foundPark of foundParks">
+          <mat-accordion>
 
-        <mat-accordion>
+            <mat-card>
+              <mat-card-header>
+                <mat-card-title>
+                  {{ foundPark.fullname }}
+                </mat-card-title>
+                <mat-card-subtitle>
+                  {{ foundPark.designation }}
+                </mat-card-subtitle>
+              </mat-card-header>
 
-          <mat-card>
+              <p>{{ foundPark.description }}</p>
 
-            <h2>{{ foundPark.fullName }}</h2>
-            <p>{{ foundPark.description }}</p>
+              <img src="{{ foundPark.images }}">
 
-            <mat-expansion-panel>
+              <mat-expansion-panel>
 
-              <mat-expansion-panel-header>
-                <mat-panel-title>
-                  <h3>National Park</h3>
-                </mat-panel-title>
-              </mat-expansion-panel-header>
-
-              <img src="{{ foundPark.image }}">
+                <mat-expansion-panel-header>
+                  <mat-panel-title>
+                    <h3>National Park</h3>
+                  </mat-panel-title>
+                </mat-expansion-panel-header>
 
 
-            </mat-expansion-panel>
 
-          </mat-card>
+              </mat-expansion-panel>
 
-        </mat-accordion>
+            </mat-card>
+
+          </mat-accordion>
+
+        </div>
 
       </div>
 
     </div>
 
   </div>
-
-  <!-- </div> -->
 
 
 
