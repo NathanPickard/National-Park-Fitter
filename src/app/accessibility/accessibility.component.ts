@@ -9,6 +9,7 @@ import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 export class AccessibilityComponent implements OnInit {
 
   @Input() foundCampgrounds: any[];
+  @Input() foundCampground: any[];
 
   accessibilityFormGroup: FormGroup;
 

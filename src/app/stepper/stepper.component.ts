@@ -126,13 +126,13 @@ export class StepperComponent implements OnInit {
     console.log(this.foundCampgrounds);
 
     // this.campgroundPark = this.foundCampgrounds.parkCode;
-    console.log(this.campgroundPark);
+    // console.log(this.campgroundPark);
 
     // if (this.firstFormGroup.value.firstCtrl == true) {
 
     for (let i = 0; i < this.foundCampgrounds.length; i++) {
-      this.campgroundPark = this.foundCampgrounds[i].parkCode;
-      console.log(this.campgroundPark);
+      this.campgroundPark = this.foundCampgrounds[i].parkcode;
+      // console.log(this.campgroundPark);
 
       this.getParkName(this.campgroundPark);
     }
@@ -153,7 +153,13 @@ export class StepperComponent implements OnInit {
   }
 
   handleCampgroundParkSuccess(data) {
-    // this.foundCampgroundPark = data.data;
+    this.foundCampgroundPark = data.data;
+
+    console.log(this.foundCampgroundPark);
+
+    this.campgroundParkArray.push('');
+
+    console.log(this.campgroundParkArray);
 
     // for (let i = 0; i < this.foundCampgroundPark.length; i++) {
     //   console.log(this.foundCampgroundPark[i].fullName);
@@ -163,7 +169,6 @@ export class StepperComponent implements OnInit {
 
     //   console.log(this.foundCampgrounds);
     // }
-
 
 
 

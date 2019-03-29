@@ -28,14 +28,14 @@ export class SearchService {
   // }
 
   getCampgroundResults() {
-    return this.httpClient.get<any>(this.API_URL + 'campgrounds?' + '&api_key=' + this.API_KEY);
+    return this.httpClient.get<any>(this.API_URL + 'campgrounds?' + '&api_key=' + this.API_KEY + '&limit=5');
   }
 
   getCampgroundPark(parkCode) {
-    return this.httpClient.get<any>(this.API_URL + 'parks?' + 'parkCode=' + parkCode + '&api_key=' + this.API_KEY);
+    return this.httpClient.get<any>(this.API_URL + 'parks?' + 'parkCode=' + parkCode + '&api_key=' + this.API_KEY + '&limit=5');
   }
 
   getParkResults() {
-    return this.httpClient.get<any>(this.API_URL + 'parks?' + 'api_key=' + this.API_KEY  + '&fields=images');
+    return this.httpClient.get<any>(this.API_URL + 'parks?' + 'api_key=' + this.API_KEY + '&fields=images' + '&limit=5');
   }
 }
