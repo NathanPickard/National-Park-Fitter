@@ -1,7 +1,5 @@
 <div fxFlex fxLayout="column" fxLayoutAlign="center center">
   <h3>Complete the form below to find the park and campground that's right for you!</h3>
-  <!-- <h4>Enjoy your stay</h4> -->
-
 
   <mat-vertical-stepper #stepper>
 
@@ -15,7 +13,7 @@
       </mat-form-field> -->
         <div fxLayoutGap="20px" fxLayout="column">
 
-          <mat-checkbox formControlName="adaCtrl">
+          <mat-checkbox fxLayout="row" formControlName="adaCtrl">
             <mat-icon>accessible</mat-icon>
             ADA information
           </mat-checkbox>
@@ -211,6 +209,8 @@
       <div fxLayout="column" fxFlex="45" fxLayoutGap="15px">
 
         <div *ngFor="let foundCampground of foundCampgrounds">
+
+          <!-- <div *ngFor="let campgroundArr of campgroundParkArray"> -->
 
           <mat-accordion>
 
@@ -438,6 +438,8 @@
             </mat-card>
 
           </mat-accordion>
+
+          <!-- </div> -->
 
         </div>
 

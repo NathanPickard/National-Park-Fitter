@@ -155,22 +155,22 @@ export class StepperComponent implements OnInit {
   handleCampgroundParkSuccess(data) {
     this.foundCampgroundPark = data.data;
 
-    console.log(this.foundCampgroundPark);
+    // console.log(this.foundCampgroundPark);
 
-    this.campgroundParkArray.push('');
+    // this.campgroundParkArray.push(this.foundCampgroundPark);
+    // this.foundCampgroundPark.push(this.campgroundParkArray);
 
-    console.log(this.campgroundParkArray);
+    // console.log(this.campgroundParkArray);
 
-    // for (let i = 0; i < this.foundCampgroundPark.length; i++) {
-    //   console.log(this.foundCampgroundPark[i].fullName);
+    for (let i = 0; i < this.foundCampgroundPark.length; i++) {
+      // console.log(this.foundCampgroundPark[i].fullname);
 
-    //   this.campgroundParkArray.push(this.foundCampgroundPark[i].fullName);
-    //   this.foundCampgrounds.push(this.foundCampgroundPark[i].fullName);
+      this.campgroundParkArray.push(this.foundCampgroundPark[i].fullname);
+      // this.foundCampgrounds.push(this.foundCampgroundPark[i].fullname);
 
-    //   console.log(this.foundCampgrounds);
-    // }
-
-
+      // console.log(this.foundCampgrounds);
+      console.log(this.campgroundParkArray);
+    }
 
     // this.campgroundParkArray.push('24');
 
@@ -179,8 +179,6 @@ export class StepperComponent implements OnInit {
     // console.log(this.campgroundParkArray);
 
     // this.foundCampgroundPark.unshift(this.campgroundParkArray);
-
-
 
     // console.log(this.foundCampgroundPark);
   }
