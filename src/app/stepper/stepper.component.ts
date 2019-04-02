@@ -13,7 +13,9 @@ export class StepperComponent implements OnInit {
   accessibilityFormGroup: FormGroup;
   amenitiesFormGroup: FormGroup;
   generalInfoFormGroup: FormGroup;
+  
   stateFormGroup: FormGroup;
+  generalParkInfoFormGroup: FormGroup;
 
   stepperForm: FormGroup;
 
@@ -43,6 +45,10 @@ export class StepperComponent implements OnInit {
 
     this.stateFormGroup = this._formBuilder.group({
       stateCtrl: ['', Validators.required]
+    });
+
+    this.generalParkInfoFormGroup = this._formBuilder.group({
+      parkInfoCtrl: ['', Validators.required]
     });
 
 

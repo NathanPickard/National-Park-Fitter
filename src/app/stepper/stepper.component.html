@@ -195,13 +195,33 @@
 
         </div>
 
+        <div>
+          <button mat-button matStepperPrevious>Back</button>
+          <button mat-button matStepperNext>Next</button>
+        </div>
+
       </form>
 
     </mat-step>
 
+    <mat-step [stepControl]="generalParkInfoFormGroup">
+      <form [formGroup]="generalParkInfoFormGroup">
+        <ng-template matStepLabel>General park information</ng-template>
+        <div>
+          <mat-checkbox formControlName="parkInfoCtrl">
+            <mat-icon>info</mat-icon>
+            Park Information
+          </mat-checkbox>
+        </div>
+
+      </form>
+    </mat-step>
+
+
+
     <mat-step>
       <ng-template matStepLabel>Done</ng-template>
-      Enjoy your visit!
+      Get results!
       <div>
         <button mat-button matStepperPrevious>Back</button>
         <button mat-button (click)="stepper.reset()">Reset</button>
@@ -493,6 +513,11 @@
                     <h3>National Park</h3>
                   </mat-panel-title>
                 </mat-expansion-panel-header>
+
+                <div *ngIf="foundPark.description && generalParkInfoFormGroup.value.parkInfoCtrl">
+                  <h4>Park Information</h4>
+                  {{ foundPark.description }}
+                </div>
 
                 <h2>
                   Park URL:
