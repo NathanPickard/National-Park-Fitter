@@ -152,8 +152,8 @@
       </form>
     </mat-step>
 
-    <mat-step [stepControl]="thirdFormGroup">
-      <form [formGroup]="thirdFormGroup">
+    <mat-step [stepControl]="generalInfoFormGroup">
+      <form [formGroup]="generalInfoFormGroup">
         <ng-template matStepLabel>General campground information</ng-template>
 
         <!-- <mat-form-field>
@@ -181,6 +181,22 @@
           <button mat-button matStepperNext>Next</button>
         </div>
       </form>
+    </mat-step>
+
+    <mat-step [stepControl]="stateFormGroup">
+      <form [formGroup]="stateFormGroup">
+        <ng-template matStepLabel>Get park by state</ng-template>
+
+        <div>
+          <mat-select placeholder="State">
+            <mat-option [value]="stateFormGroup">Oregon</mat-option>
+            <mat-option>Tennessee</mat-option>
+          </mat-select>
+
+        </div>
+
+      </form>
+
     </mat-step>
 
     <mat-step>
@@ -417,17 +433,17 @@
                   </mat-panel-title>
                 </mat-expansion-panel-header>
 
-                <div *ngIf="foundCampground.weatherOverview && thirdFormGroup.value.weatherCtrl">
+                <div *ngIf="foundCampground.weatherOverview && generalInfoFormGroup.value.weatherCtrl">
                   <mat-icon>wb_sunny</mat-icon>
                   <h4>Weather overview</h4>
                   {{ foundCampground.weatherOverview }}
                 </div>
-                <div *ngIf="foundCampground.regulationsOverview && thirdFormGroup.value.regulationsCtrl">
+                <div *ngIf="foundCampground.regulationsOverview && generalInfoFormGroup.value.regulationsCtrl">
                   <mat-icon>info</mat-icon>
                   <h4>Regulations overview</h4>
                   {{ foundCampground.regulationsOverview }}
                 </div>
-                <div *ngIf="foundCampground.directionsOverview && thirdFormGroup.value.directionsCtrl">
+                <div *ngIf="foundCampground.directionsOverview && generalInfoFormGroup.value.directionsCtrl">
                   <mat-icon>directions</mat-icon>
                   <h4>Directions overview</h4>
                   {{ foundCampground.directionsOverview }}

@@ -12,13 +12,14 @@ export class StepperComponent implements OnInit {
 
   accessibilityFormGroup: FormGroup;
   amenitiesFormGroup: FormGroup;
-  thirdFormGroup: FormGroup;
+  generalInfoFormGroup: FormGroup;
+  stateFormGroup: FormGroup;
 
+  stepperForm: FormGroup;
 
   constructor(private _formBuilder: FormBuilder,
     private searchService: SearchService) { }
 
-  stepperForm: FormGroup;
 
   foundCampgrounds: any[];
   foundCampgroundPark: any[];
@@ -39,6 +40,10 @@ export class StepperComponent implements OnInit {
     // this.stepperForm = new FormGroup({
     //   'firstCtrl': new FormControl(null, [Validators.required])
     // });
+
+    this.stateFormGroup = this._formBuilder.group({
+      stateCtrl: ['', Validators.required]
+    });
 
 
     this.accessibilityFormGroup = this._formBuilder.group({
@@ -76,7 +81,7 @@ export class StepperComponent implements OnInit {
       foodStorageLockersCtrl: ['', Validators.required]
     });
 
-    this.thirdFormGroup = this._formBuilder.group({
+    this.generalInfoFormGroup = this._formBuilder.group({
       weatherCtrl: ['', Validators.required],
       regulationsCtrl: ['', Validators.required],
       directionsCtrl: ['', Validators.required],
