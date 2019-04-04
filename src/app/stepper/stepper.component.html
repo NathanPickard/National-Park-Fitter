@@ -21,17 +21,15 @@
             <mat-icon>accessible_forward</mat-icon>
             Wheelchair access information
           </mat-checkbox>
+
           <mat-divider></mat-divider>
+
           <mat-checkbox formControlName="internetCtrl">
             <mat-icon>wifi</mat-icon>Internet information
           </mat-checkbox>
           <mat-checkbox formControlName="cellPhoneInfoCtrl">
             <mat-icon>smartphone</mat-icon>
             Cell phone information
-          </mat-checkbox>
-          <mat-checkbox formControlName="fireStoveCtrl">
-            <mat-icon svgIcon="stove"></mat-icon>
-            Fire stove policy
           </mat-checkbox>
 
           <mat-divider></mat-divider>
@@ -54,9 +52,15 @@
           <mat-checkbox formControlName="accessRoadsCtrl">
             <mat-icon svgIcon="road"></mat-icon>Access roads
           </mat-checkbox>
+          <mat-checkbox formControlName="fireStoveCtrl">
+            <mat-icon svgIcon="stove"></mat-icon>
+            Fire stove policy
+          </mat-checkbox>
+
           <div>
             <button mat-raised-button matStepperNext>Next</button>
           </div>
+
         </div>
 
       </form>
@@ -243,6 +247,8 @@
     <div fxLayout="row" fxLayoutAlign="space-evenly start">
 
       <div fxLayout="column" fxFlex="45" fxLayoutGap="15px">
+
+        <app-accessibility></app-accessibility>
 
         <div *ngFor="let foundCampground of foundCampgrounds">
 
@@ -490,7 +496,7 @@
             <mat-card>
               <mat-card-header>
                 <mat-card-title>
-                  {{ foundPark.fullname }}
+                  {{ foundPark.fullName }}
                 </mat-card-title>
                 <mat-card-subtitle>
                   {{ foundPark.designation }}

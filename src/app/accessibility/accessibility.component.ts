@@ -1,6 +1,8 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 
+import { StepperComponent } from '../stepper/stepper.component';
+
 @Component({
   selector: 'app-accessibility',
   templateUrl: './accessibility.component.html',
@@ -8,8 +10,8 @@ import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 })
 export class AccessibilityComponent implements OnInit {
 
-  @Input() foundCampgrounds: any[];
-  @Input() foundCampground: any[];
+  // @Input() foundCampgrounds: any[];
+  // @Input() foundCampground: any[];
 
   accessibilityFormGroup: FormGroup;
 
@@ -19,22 +21,22 @@ export class AccessibilityComponent implements OnInit {
 
   ngOnInit() {
 
-    this.accessibilityFormGroup = this._formBuilder.group({
+    // this.accessibilityFormGroup = this._formBuilder.group({
 
-      wheelchairAccessCtrl: ['', Validators.required],
-      internetCtrl: ['', Validators.required],
-      rvAllowedCtrl: ['', Validators.required],
-      rvMaxCtrl: ['', Validators.required],
-      rvInfoCtrl: ['', Validators.required],
-      cellPhoneInfoCtrl: ['', Validators.required],
-      fireStoveCtrl: ['', Validators.required],
-      additionalInfoCtrl: ['', Validators.required],
-      adaCtrl: ['', Validators.required],
-      accessRoadsCtrl: ['', Validators.required],
-      trailerAllowedCtrl: ['', Validators.required],
-      trailerMaxCtrl: ['', Validators.required],
-      classificationsCtrl: ['', Validators.required]
-    });
+    //   wheelchairAccessCtrl: ['', Validators.required],
+    //   internetCtrl: ['', Validators.required],
+    //   rvAllowedCtrl: ['', Validators.required],
+    //   rvMaxCtrl: ['', Validators.required],
+    //   rvInfoCtrl: ['', Validators.required],
+    //   cellPhoneInfoCtrl: ['', Validators.required],
+    //   fireStoveCtrl: ['', Validators.required],
+    //   additionalInfoCtrl: ['', Validators.required],
+    //   adaCtrl: ['', Validators.required],
+    //   accessRoadsCtrl: ['', Validators.required],
+    //   trailerAllowedCtrl: ['', Validators.required],
+    //   trailerMaxCtrl: ['', Validators.required],
+    //   classificationsCtrl: ['', Validators.required]
+    // });
   }
 
 }
