@@ -13,7 +13,7 @@ export class StepperComponent implements OnInit {
   accessibilityFormGroup: FormGroup;
   amenitiesFormGroup: FormGroup;
   generalInfoFormGroup: FormGroup;
-  
+
   stateFormGroup: FormGroup;
   generalParkInfoFormGroup: FormGroup;
 
@@ -26,6 +26,7 @@ export class StepperComponent implements OnInit {
   foundCampgrounds: any[];
   foundCampgroundPark: any[];
   foundParks: any[];
+  foundNewsReleases: any[];
 
   resultsFound: boolean = false;
   stepperSubmitted: boolean = false;
@@ -38,6 +39,8 @@ export class StepperComponent implements OnInit {
 
 
   ngOnInit() {
+
+    this.getNewsReleases();
 
     // this.stepperForm = new FormGroup({
     //   'firstCtrl': new FormControl(null, [Validators.required])
@@ -94,6 +97,13 @@ export class StepperComponent implements OnInit {
     });
   }
 
+  getNewsReleases() {
+    return this.searchService.getLatestNewsReleases().subscribe(
+      data => this.handleNewsReleaseSuccess(data),
+      error => this.handleError(error)
+    );
+  }
+
 
   onSubmitStepper() {
     this.stepperSubmitted = true;
@@ -127,6 +137,11 @@ export class StepperComponent implements OnInit {
       data => this.handleParkSuccess(data),
       error => this.handleError(error)
     )
+  }
+
+  handleNewsReleaseSuccess(data) {
+    this.foundNewsReleases = data.data;
+    console.log(this.foundNewsReleases);
   }
 
   handleSuccess(data) {

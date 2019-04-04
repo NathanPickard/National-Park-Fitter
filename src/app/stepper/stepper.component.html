@@ -1,6 +1,15 @@
 <div fxFlex fxLayout="column" fxLayoutAlign="center center">
   <h3>Complete the form below to find the park and campground that's right for you!</h3>
 
+  <div>
+    <div *ngFor="let foundNewsRelease of foundNewsReleases">
+      {{ foundNewsRelease.releasedate }}
+      {{ foundNewsRelease.title }}
+      {{ foundNewsRelease.abstract }}
+      <mat-divider></mat-divider>
+    </div>
+  </div>
+
   <mat-vertical-stepper #stepper>
 
     <mat-step [stepControl]="accessibilityFormGroup">

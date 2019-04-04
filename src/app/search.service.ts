@@ -27,6 +27,10 @@ export class SearchService {
   //   return this.httpClient.get<any>(this.API_URL + 'campgrounds?' + 'q=yosemite' + '&api_key=' + this.API_KEY);
   // }
 
+  getLatestNewsReleases() {
+    return this.httpClient.get<any>(this.API_URL + 'newsreleases?' + '&api_key=' + this.API_KEY + '&limit=5');
+  }
+
   getCampgroundResults() {
     return this.httpClient.get<any>(this.API_URL + 'campgrounds?' + '&api_key=' + this.API_KEY + '&limit=5');
   }
