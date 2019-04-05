@@ -10,6 +10,13 @@ import { NavComponent } from './nav/nav.component';
 
 import { AppRoutingModule } from './app-routing.module';
 
+import { StepperComponent } from './stepper/stepper.component';
+import { AboutComponent } from './about/about.component';
+import { AmenitiesComponent } from './amenities/amenities.component';
+import { AccessibilityComponent } from './accessibility/accessibility.component';
+import { ParkComponent } from './park/park.component';
+import { CampgroundComponent } from './campground/campground.component';
+
 import { SearchService } from './search.service';
 
 import { FlexLayoutModule } from '@angular/flex-layout';
@@ -29,11 +36,6 @@ import { MatSelectModule } from '@angular/material/select';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatStepperModule } from '@angular/material/stepper';
 import { MatToolbarModule } from '@angular/material/toolbar';
-import { StepperComponent } from './stepper/stepper.component';
-import { AboutComponent } from './about/about.component';
-import { AmenitiesComponent } from './amenities/amenities.component';
-import { AccessibilityComponent } from './accessibility/accessibility.component';
-import { ParkComponent } from './park/park.component';
 
 @NgModule({
   declarations: [
@@ -43,7 +45,8 @@ import { ParkComponent } from './park/park.component';
     AboutComponent,
     AmenitiesComponent,
     AccessibilityComponent,
-    ParkComponent
+    ParkComponent,
+    CampgroundComponent
   ],
   imports: [
     BrowserModule,

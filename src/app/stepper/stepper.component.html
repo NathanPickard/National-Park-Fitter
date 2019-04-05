@@ -1,5 +1,6 @@
 <div fxFlex fxLayout="column" fxLayoutAlign="center center">
-  <h3>Complete the form below to find the park and campground that's right for you!</h3>
+
+  <h3>Latest National Park news</h3>
 
   <div fxLayoutGap="16px" fxLayout="row" fxLayoutAlign="space-evenly start">
     <div *ngFor="let foundNewsRelease of foundNewsReleases">
@@ -23,6 +24,8 @@
 
     </div>
   </div>
+
+  <h3>Complete the form below to find the park and campground that's right for you!</h3>
 
   <mat-vertical-stepper #stepper>
 

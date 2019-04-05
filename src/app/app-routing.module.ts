@@ -3,6 +3,7 @@ import { Routes, RouterModule, PreloadAllModules } from '@angular/router';
 
 import { StepperComponent } from './stepper/stepper.component';
 import { ParkComponent } from './park/park.component';
+import { CampgroundComponent } from './campground/campground.component';
 import { AboutComponent } from './about/about.component';
 
 const appRoutes: Routes = [
@@ -10,7 +11,10 @@ const appRoutes: Routes = [
     path: '', component: StepperComponent
   },
   {
-    path: '', component: ParkComponent
+    path: 'park', component: ParkComponent
+  },
+  {
+    path: 'campground', component: CampgroundComponent
   },
   {
     path: 'about', component: AboutComponent
