@@ -1,12 +1,26 @@
 <div fxFlex fxLayout="column" fxLayoutAlign="center center">
   <h3>Complete the form below to find the park and campground that's right for you!</h3>
 
-  <div>
+  <div fxLayoutGap="16px" fxLayout="row" fxLayoutAlign="space-evenly start">
     <div *ngFor="let foundNewsRelease of foundNewsReleases">
-      {{ foundNewsRelease.releasedate }}
-      {{ foundNewsRelease.title }}
-      {{ foundNewsRelease.abstract }}
-      <mat-divider></mat-divider>
+
+      <mat-card>
+        <mat-card-header>
+          <mat-card-title>
+            <a href="{{ foundNewsRelease.url }}" style="text-decoration: none;" target="_blank">
+              {{ foundNewsRelease.title }}
+            </a>
+          </mat-card-title>
+          <mat-card-subtitle>
+            {{ foundNewsRelease.releasedate | date: 'E, MMM d, y' }}
+          </mat-card-subtitle>
+
+        </mat-card-header>
+        <mat-card-content>
+          {{ foundNewsRelease.abstract }}
+        </mat-card-content>
+      </mat-card>
+
     </div>
   </div>
 
@@ -257,7 +271,7 @@
 
       <div fxLayout="column" fxFlex="45" fxLayoutGap="15px">
 
-        <app-accessibility></app-accessibility>
+        <!-- <app-accessibility></app-accessibility> -->
 
         <div *ngFor="let foundCampground of foundCampgrounds">
 

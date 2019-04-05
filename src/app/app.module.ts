@@ -33,6 +33,7 @@ import { StepperComponent } from './stepper/stepper.component';
 import { AboutComponent } from './about/about.component';
 import { AmenitiesComponent } from './amenities/amenities.component';
 import { AccessibilityComponent } from './accessibility/accessibility.component';
+import { ParkComponent } from './park/park.component';
 
 @NgModule({
   declarations: [
@@ -41,7 +42,8 @@ import { AccessibilityComponent } from './accessibility/accessibility.component'
     StepperComponent,
     AboutComponent,
     AmenitiesComponent,
-    AccessibilityComponent
+    AccessibilityComponent,
+    ParkComponent
   ],
   imports: [
     BrowserModule,
