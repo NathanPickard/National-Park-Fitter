@@ -136,7 +136,7 @@ export class StepperComponent implements OnInit {
     return this.searchService.getParkResults().subscribe(
       data => this.handleParkSuccess(data),
       error => this.handleError(error)
-    )
+    );
   }
 
   handleNewsReleaseSuccess(data) {

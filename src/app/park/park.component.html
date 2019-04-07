@@ -1,3 +1,49 @@
-<p>
-  park works!
-</p>
+<mat-vertical-stepper #stepper>
+
+  <mat-step [stepControl]="stateFormGroup">
+    <form [formGroup]="stateFormGroup">
+      <ng-template matStepLabel>Get park by state</ng-template>
+
+      <div>
+        <mat-select placeholder="State">
+          <mat-option [value]="stateFormGroup">Oregon</mat-option>
+          <mat-option>Tennessee</mat-option>
+        </mat-select>
+
+      </div>
+
+      <div>
+        <button mat-button matStepperPrevious>Back</button>
+        <button mat-button matStepperNext>Next</button>
+      </div>
+
+    </form>
+
+  </mat-step>
+
+  <mat-step [stepControl]="generalParkInfoFormGroup">
+    <form [formGroup]="generalParkInfoFormGroup">
+      <ng-template matStepLabel>General park information</ng-template>
+      <div>
+        <mat-checkbox formControlName="parkInfoCtrl">
+          <mat-icon>info</mat-icon>
+          Park Information
+        </mat-checkbox>
+      </div>
+
+    </form>
+  </mat-step>
+
+
+
+  <mat-step>
+    <ng-template matStepLabel>Done</ng-template>
+    Get results!
+    <div>
+      <button mat-button matStepperPrevious>Back</button>
+      <button mat-button (click)="stepper.reset()">Reset</button>
+      <button mat-button (click)="onSubmitStepper()">Done</button>
+    </div>
+  </mat-step>
+
+</mat-vertical-stepper>
