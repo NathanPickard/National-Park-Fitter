@@ -12,6 +12,7 @@ export class AccessibilityComponent implements OnInit {
 
   // @Input() foundCampgrounds: any[];
   // @Input() foundCampground: any[];
+  foundCampgrounds: any[];
 
   accessibilityFormGroup: FormGroup;
 

@@ -1,49 +1,121 @@
-<mat-vertical-stepper #stepper>
+<div fxFlex fxLayout="column" fxLayoutAlign="center center">
 
-  <mat-step [stepControl]="stateFormGroup">
-    <form [formGroup]="stateFormGroup">
-      <ng-template matStepLabel>Get park by state</ng-template>
+  <mat-vertical-stepper #stepper>
 
-      <div>
-        <mat-select placeholder="State">
-          <mat-option [value]="stateFormGroup">Oregon</mat-option>
-          <mat-option>Tennessee</mat-option>
-        </mat-select>
+    <mat-step [stepControl]="stateFormGroup">
+      <form [formGroup]="stateFormGroup">
+        <ng-template matStepLabel>Get park by state</ng-template>
 
-      </div>
+        <div>
+          <mat-select placeholder="State">
+            <mat-option [value]="stateFormGroup">Oregon</mat-option>
+            <mat-option>Tennessee</mat-option>
+          </mat-select>
 
+        </div>
+
+        <div>
+          <button mat-button matStepperPrevious>Back</button>
+          <button mat-button matStepperNext>Next</button>
+        </div>
+
+      </form>
+
+    </mat-step>
+
+    <mat-step [stepControl]="generalParkInfoFormGroup">
+      <form [formGroup]="generalParkInfoFormGroup">
+        <ng-template matStepLabel>General park information</ng-template>
+        <div>
+          <mat-checkbox formControlName="parkInfoCtrl">
+            <mat-icon>info</mat-icon>
+            Park Information
+          </mat-checkbox>
+        </div>
+
+      </form>
+    </mat-step>
+
+
+
+    <mat-step>
+      <ng-template matStepLabel>Done</ng-template>
+      Get results!
       <div>
         <button mat-button matStepperPrevious>Back</button>
-        <button mat-button matStepperNext>Next</button>
+        <button mat-button (click)="stepper.reset()">Reset</button>
+        <button mat-button (click)="onSubmitStepper()">Done</button>
+      </div>
+    </mat-step>
+
+  </mat-vertical-stepper>
+
+  <div *ngIf="!resultsFound && stepperSubmitted">
+    <mat-spinner></mat-spinner>
+  </div>
+
+  <div *ngIf="resultsFound">
+
+    <div fxLayout="column" fxLayoutAlign="center center" fxLayoutGap="15px">
+
+      <!-- <div fxFlex="80"> -->
+
+      <div *ngFor="let foundPark of foundParks">
+
+        <mat-accordion>
+
+          <mat-card>
+            <mat-card-header>
+              <mat-card-title>
+                {{ foundPark.fullName }}
+              </mat-card-title>
+              <mat-card-subtitle>
+                {{ foundPark.designation }}
+              </mat-card-subtitle>
+            </mat-card-header>
+
+            <p>{{ foundPark.description }}</p>
+
+
+            <div *ngFor="let image of foundPark.images">
+              <img mat-card-image [src]="image.url">
+              <p>{{ image.title }}</p>
+            </div>
+            <!-- <img src="{{ foundPark.images }}"> -->
+
+            <mat-expansion-panel>
+
+              <mat-expansion-panel-header>
+                <mat-panel-title>
+                  <h3>National Park</h3>
+                </mat-panel-title>
+              </mat-expansion-panel-header>
+
+              <div *ngIf="foundPark.description && generalParkInfoFormGroup.value.parkInfoCtrl">
+                <h4>Park Information</h4>
+                {{ foundPark.description }}
+              </div>
+
+              <h2>
+                Park URL:
+                <a href="{{ foundPark.url }}" target="_blank">here</a>
+              </h2>
+
+
+
+            </mat-expansion-panel>
+
+          </mat-card>
+
+        </mat-accordion>
+
       </div>
 
-    </form>
-
-  </mat-step>
-
-  <mat-step [stepControl]="generalParkInfoFormGroup">
-    <form [formGroup]="generalParkInfoFormGroup">
-      <ng-template matStepLabel>General park information</ng-template>
-      <div>
-        <mat-checkbox formControlName="parkInfoCtrl">
-          <mat-icon>info</mat-icon>
-          Park Information
-        </mat-checkbox>
-      </div>
-
-    </form>
-  </mat-step>
-
-
-
-  <mat-step>
-    <ng-template matStepLabel>Done</ng-template>
-    Get results!
-    <div>
-      <button mat-button matStepperPrevious>Back</button>
-      <button mat-button (click)="stepper.reset()">Reset</button>
-      <button mat-button (click)="onSubmitStepper()">Done</button>
     </div>
-  </mat-step>
+  </div>
 
-</mat-vertical-stepper>
+
+
+  <!-- </div> -->
+
+</div>
