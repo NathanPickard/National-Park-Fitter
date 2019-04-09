@@ -11,10 +11,10 @@ const appRoutes: Routes = [
     path: '', component: StepperComponent
   },
   {
-    path: 'park', component: ParkComponent
+    path: 'parks', component: ParkComponent
   },
   {
-    path: 'campground', component: CampgroundComponent
+    path: 'campgrounds', component: CampgroundComponent
   },
   {
     path: 'about', component: AboutComponent
