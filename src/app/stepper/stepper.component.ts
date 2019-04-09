@@ -17,8 +17,6 @@ export class StepperComponent implements OnInit {
   stateFormGroup: FormGroup;
   generalParkInfoFormGroup: FormGroup;
 
-  stepperForm: FormGroup;
-
   constructor(private _formBuilder: FormBuilder,
     private searchService: SearchService) { }
 
@@ -53,7 +51,6 @@ export class StepperComponent implements OnInit {
     this.generalParkInfoFormGroup = this._formBuilder.group({
       parkInfoCtrl: ['', Validators.required]
     });
-
 
     this.accessibilityFormGroup = this._formBuilder.group({
 
@@ -115,14 +112,6 @@ export class StepperComponent implements OnInit {
     //   data => this.handleSuccess(data),
     //   error => this.handleError(error)
     // );
-
-    // if (this.firstFormGroup.value.firstCtrl == true) {
-    // return this.searchService.getYosemiteCampgroundResults().subscribe(
-    // return this.searchService.getCampgroundResults().subscribe(
-    // data => this.handleSuccess(data),
-    // error => this.handleError(error)
-    // );
-    // }
   }
 
   getCampgroundData() {
