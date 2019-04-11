@@ -337,20 +337,20 @@
                 </mat-expansion-panel-header>
 
                 <div
-                  *ngIf="foundCampground.amenities.trashRecyclingCollection && amenitiesFormGroup.value.trashRecyclingCtrl">
+                  *ngIf="foundCampground.amenities.trashrecyclingcollection && amenitiesFormGroup.value.trashRecyclingCtrl">
                   <h4>Trash and recycling collection</h4>
-                  {{ foundCampground.amenities.trashRecyclingCollection }}
+                  {{ foundCampground.amenities.trashrecyclingcollection }}
                 </div>
 
-                <!-- <div *ngIf="foundCampground.amenities.toilets && amenitiesFormGroup.value.toiletsCtrl">
-                <h4>Toilets</h4>
-                {{ foundCampground.amenities.trailerAllowed }}
-          </div> -->
+                <div *ngIf="foundCampground.amenities.toilets && amenitiesFormGroup.value.toiletsCtrl">
+                  <h4>Toilets</h4>
+                  {{ foundCampground.amenities.toilets }}
+                </div>
 
                 <div
-                  *ngIf="foundCampground.amenities.internetConnectivity && amenitiesFormGroup.value.internetConnectivityCtrl">
+                  *ngIf="foundCampground.amenities.internetconnectivity && amenitiesFormGroup.value.internetConnectivityCtrl">
                   <h4>Internet connectivity</h4>
-                  {{ foundCampground.amenities.internetConnectivity }}
+                  {{ foundCampground.amenities.internetconnectivity }}
                 </div>
 
                 <div *ngIf="foundCampground.amenities.showers && amenitiesFormGroup.value.showersCtrl">
@@ -359,9 +359,9 @@
                 </div>
 
                 <div
-                  *ngIf="foundCampground.amenities.cellPhoneReception && amenitiesFormGroup.value.cellPhoneReceptionCtrl">
+                  *ngIf="foundCampground.amenities.cellphonereception && amenitiesFormGroup.value.cellPhoneReceptionCtrl">
                   <h4>Cell phone reception</h4>
-                  {{ foundCampground.amenities.cellPhoneReception }}
+                  {{ foundCampground.amenities.cellphonereception }}
                 </div>
 
                 <div *ngIf="foundCampground.amenities.laundry && amenitiesFormGroup.value.laundryCtrl">
@@ -374,42 +374,42 @@
                   {{ foundCampground.amenities.amphitheater }}
                 </div>
 
-                <div *ngIf="foundCampground.amenities.dumpStation && amenitiesFormGroup.value.dumpStationCtrl">
+                <div *ngIf="foundCampground.amenities.dumpstation && amenitiesFormGroup.value.dumpStationCtrl">
                   <h4>Dump station</h4>
-                  {{ foundCampground.amenities.dumpStation }}
+                  {{ foundCampground.amenities.dumpstation }}
                 </div>
 
-                <div *ngIf="foundCampground.amenities.campStore && amenitiesFormGroup.value.campStoreCtrl">
+                <div *ngIf="foundCampground.amenities.campstore && amenitiesFormGroup.value.campStoreCtrl">
                   <h4>Camp store</h4>
-                  {{ foundCampground.amenities.campStore }}
+                  {{ foundCampground.amenities.campstore }}
                 </div>
 
                 <div
-                  *ngIf="foundCampground.amenities.staffOrVolunteerHostOnSite && amenitiesFormGroup.value.staffVolunteerCtrl">
+                  *ngIf="foundCampground.amenities.stafforvolunteerhostonsite && amenitiesFormGroup.value.staffVolunteerCtrl">
                   <h4>Staff or volunteer host on site</h4>
-                  {{ foundCampground.amenities.staffOrVolunteerHostOnSite }}
+                  {{ foundCampground.amenities.stafforvolunteerhostonsite }}
                 </div>
 
-                <div *ngIf="foundCampground.amenities.potableWater && amenitiesFormGroup.value.potableWatertCtrl">
+                <div *ngIf="foundCampground.amenities.potablewater && amenitiesFormGroup.value.potableWatertCtrl">
                   <h4>Potable water</h4>
-                  {{ foundCampground.amenities.potableWater }}
+                  {{ foundCampground.amenities.potablewater }}
                 </div>
 
                 <div
-                  *ngIf="foundCampground.amenities.iceAvailableForSale && amenitiesFormGroup.value.iceAvailableForSaleCtrl">
+                  *ngIf="foundCampground.amenities.iceavailableforsale && amenitiesFormGroup.value.iceAvailableForSaleCtrl">
                   <h4>Ice availalbe for sale</h4>
-                  {{ foundCampground.amenities.iceAvailableForSale }}
+                  {{ foundCampground.amenities.iceavailableforsale }}
                 </div>
 
-                <div *ngIf="foundCampground.amenities.firewoodForSale && amenitiesFormGroup.value.firewoodForSaleCtrl">
+                <div *ngIf="foundCampground.amenities.firewoodforsale && amenitiesFormGroup.value.firewoodForSaleCtrl">
                   <h4>Firewood for sale</h4>
-                  {{ foundCampground.amenities.firewoodForSale }}
+                  {{ foundCampground.amenities.firewoodforsale }}
                 </div>
 
                 <div
-                  *ngIf="foundCampground.amenities.foodStorageLockers && amenitiesFormGroup.value.foodStorageLockersCtrl">
+                  *ngIf="foundCampground.amenities.foodstoragelockers && amenitiesFormGroup.value.foodStorageLockersCtrl">
                   <h4>Food storage lockers</h4>
-                  {{ foundCampground.amenities.foodStorageLockers }}
+                  {{ foundCampground.amenities.foodstoragelockers }}
                 </div>
 
               </mat-expansion-panel>
@@ -422,20 +422,22 @@
                   </mat-panel-title>
                 </mat-expansion-panel-header>
 
-                <div *ngIf="foundCampground.weatherOverview && generalInfoFormGroup.value.weatherCtrl">
-                  <mat-icon>wb_sunny</mat-icon>
-                  <h4>Weather overview</h4>
-                  {{ foundCampground.weatherOverview }}
+                <div *ngIf="foundCampground.weatheroverview && generalInfoFormGroup.value.weatherCtrl">
+                  <div fxLayout="row" fxLayoutAlign="start center" fxLayoutGap="40px">
+                    <mat-icon>wb_sunny</mat-icon>
+                    <h4>Weather overview</h4>
+                  </div>
+                  {{ foundCampground.weatheroverview }}
                 </div>
-                <div *ngIf="foundCampground.regulationsOverview && generalInfoFormGroup.value.regulationsCtrl">
+                <div *ngIf="foundCampground.regulationsoverview && generalInfoFormGroup.value.regulationsCtrl">
                   <mat-icon>info</mat-icon>
                   <h4>Regulations overview</h4>
-                  {{ foundCampground.regulationsOverview }}
+                  {{ foundCampground.regulationsoverview }}
                 </div>
-                <div *ngIf="foundCampground.directionsOverview && generalInfoFormGroup.value.directionsCtrl">
+                <div *ngIf="foundCampground.directionsoverview && generalInfoFormGroup.value.directionsCtrl">
                   <mat-icon>directions</mat-icon>
                   <h4>Directions overview</h4>
-                  {{ foundCampground.directionsOverview }}
+                  {{ foundCampground.directionsoverview }}
                 </div>
 
               </mat-expansion-panel>

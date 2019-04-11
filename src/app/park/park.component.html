@@ -55,60 +55,63 @@
 
   <div *ngIf="resultsFound">
 
-    <div fxLayout="column" fxLayoutAlign="center center" fxLayoutGap="15px">
+    <!-- <div fxLayout="column" fxLayoutAlign="center center" fxLayoutGap="15px"> -->
+    <div fxLayoutAlign="space-evenly start">
+      <div fxLayout="column" fxFlex="90" fxLayoutGap="15px">
 
-      <!-- <div fxFlex="80"> -->
+        <!-- <div fxFlex="80"> -->
 
-      <div *ngFor="let foundPark of foundParks">
+        <div *ngFor="let foundPark of foundParks">
 
-        <mat-accordion>
+          <mat-accordion>
 
-          <mat-card>
-            <mat-card-header>
-              <mat-card-title>
-                {{ foundPark.fullName }}
-              </mat-card-title>
-              <mat-card-subtitle>
-                {{ foundPark.designation }}
-              </mat-card-subtitle>
-            </mat-card-header>
+            <mat-card>
+              <mat-card-header>
+                <mat-card-title>
+                  {{ foundPark.fullName }}
+                </mat-card-title>
+                <mat-card-subtitle>
+                  {{ foundPark.designation }}
+                </mat-card-subtitle>
+              </mat-card-header>
 
-            <p>{{ foundPark.description }}</p>
+              <p>{{ foundPark.description }}</p>
 
 
-            <div *ngFor="let image of foundPark.images">
-              <img mat-card-image [src]="image.url">
-              <p>{{ image.title }}</p>
-            </div>
-            <!-- <img src="{{ foundPark.images }}"> -->
-
-            <mat-expansion-panel>
-
-              <mat-expansion-panel-header>
-                <mat-panel-title>
-                  <h3>National Park</h3>
-                </mat-panel-title>
-              </mat-expansion-panel-header>
-
-              <div *ngIf="foundPark.description && generalParkInfoFormGroup.value.parkInfoCtrl">
-                <h4>Park Information</h4>
-                {{ foundPark.description }}
+              <div *ngFor="let image of foundPark.images">
+                <img mat-card-image [src]="image.url">
+                <p>{{ image.title }}</p>
               </div>
+              <!-- <img src="{{ foundPark.images }}"> -->
 
-              <h2>
-                Park URL:
-                <a href="{{ foundPark.url }}" target="_blank">here</a>
-              </h2>
+              <mat-expansion-panel>
+
+                <mat-expansion-panel-header>
+                  <mat-panel-title>
+                    <h3>National Park</h3>
+                  </mat-panel-title>
+                </mat-expansion-panel-header>
+
+                <div *ngIf="foundPark.description && generalParkInfoFormGroup.value.parkInfoCtrl">
+                  <h4>Park Information</h4>
+                  {{ foundPark.description }}
+                </div>
+
+                <h2>
+                  Park URL:
+                  <a href="{{ foundPark.url }}" target="_blank">here</a>
+                </h2>
 
 
-            </mat-expansion-panel>
+              </mat-expansion-panel>
 
-          </mat-card>
+            </mat-card>
 
-        </mat-accordion>
+          </mat-accordion>
+
+        </div>
 
       </div>
-
     </div>
   </div>
 
