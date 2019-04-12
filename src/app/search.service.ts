@@ -28,7 +28,7 @@ export class SearchService {
   // }
 
   getLatestNewsReleases() {
-    return this.httpClient.get<any>(this.API_URL + 'newsreleases?' + '&api_key=' + this.API_KEY + '&limit=5');
+    return this.httpClient.get<any>(this.API_URL + 'newsreleases?' + '&api_key=' + this.API_KEY + '&fields=images' + '&limit=5');
   }
 
   getCampgroundResults() {

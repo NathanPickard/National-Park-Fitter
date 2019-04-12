@@ -27,6 +27,7 @@ export class StepperComponent implements OnInit {
   foundNewsReleases: any[];
 
   resultsFound: boolean = false;
+  newsFound: boolean = false;
   stepperSubmitted: boolean = false;
 
   campgroundParkArray: any[] = [name];
@@ -39,10 +40,6 @@ export class StepperComponent implements OnInit {
   ngOnInit() {
 
     this.getNewsReleases();
-
-    // this.stepperForm = new FormGroup({
-    //   'firstCtrl': new FormControl(null, [Validators.required])
-    // });
 
     this.stateFormGroup = this._formBuilder.group({
       stateCtrl: ['', Validators.required]
@@ -104,14 +101,9 @@ export class StepperComponent implements OnInit {
 
   onSubmitStepper() {
     this.stepperSubmitted = true;
-    // console.log(this.firstFormGroup.value.firstCtrl);
 
     this.getCampgroundData();
     this.getParkData();
-    // return this.searchService.getCampgroundResults().subscribe(
-    //   data => this.handleSuccess(data),
-    //   error => this.handleError(error)
-    // );
   }
 
   getCampgroundData() {
@@ -129,6 +121,7 @@ export class StepperComponent implements OnInit {
   }
 
   handleNewsReleaseSuccess(data) {
+    this.newsFound = true;
     this.foundNewsReleases = data.data;
     console.log(this.foundNewsReleases);
   }
