@@ -37,9 +37,14 @@ export class StepperComponent implements OnInit {
   campgroundParkCode: any;
 
   searchParkForm: FormGroup;
+  searchQuery: string;
 
 
   ngOnInit() {
+
+    this.searchParkForm = new FormGroup({
+      'searchQuery': new FormControl(null)
+    });
 
     this.getNewsReleases();
 
