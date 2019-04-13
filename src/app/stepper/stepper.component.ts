@@ -36,6 +36,8 @@ export class StepperComponent implements OnInit {
 
   campgroundParkCode: any;
 
+  searchParkForm: FormGroup;
+
 
   ngOnInit() {
 
@@ -89,6 +91,10 @@ export class StepperComponent implements OnInit {
       regulationsCtrl: ['', Validators.required],
       directionsCtrl: ['', Validators.required],
     });
+  }
+
+  searchParks() {
+
   }
 
   getNewsReleases() {
