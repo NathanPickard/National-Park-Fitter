@@ -2,9 +2,9 @@
 
   <mat-vertical-stepper #stepper>
 
-    <mat-step [stepControl]="stateFormGroup">
+    <mat-step [stepControl]="stateFormGroup" state="state">
       <form [formGroup]="stateFormGroup">
-        <ng-template matStepLabel>Get park by state</ng-template>
+        <ng-template matStepLabel>Park by state</ng-template>
 
         <div>
           <mat-select placeholder="State">
@@ -23,13 +23,19 @@
 
     </mat-step>
 
-    <mat-step [stepControl]="generalParkInfoFormGroup">
+    <mat-step [stepControl]="generalParkInfoFormGroup" state="generalParkInformation">
       <form [formGroup]="generalParkInfoFormGroup">
         <ng-template matStepLabel>General park information</ng-template>
         <div>
+
           <mat-checkbox formControlName="parkInfoCtrl">
             <mat-icon>info</mat-icon>
             Park Information
+          </mat-checkbox>
+
+          <mat-checkbox formControlName="parkWeatherCtrl">
+            <mat-icon>wb_sunny</mat-icon>
+            Weather
           </mat-checkbox>
         </div>
 
@@ -37,7 +43,7 @@
     </mat-step>
 
 
-    <mat-step>
+    <mat-step state="done">
       <ng-template matStepLabel>Done</ng-template>
       Get results!
       <div>
@@ -46,6 +52,18 @@
         <button mat-button (click)="onSubmitStepper()">Done</button>
       </div>
     </mat-step>
+
+    <ng-template matStepperIcon="state">
+      <mat-icon>place</mat-icon>
+    </ng-template>
+
+    <ng-template matStepperIcon="generalParkInformation">
+      <mat-icon>info</mat-icon>
+    </ng-template>
+
+    <ng-template matStepperIcon="done">
+      <mat-icon>done_all</mat-icon>
+    </ng-template>
 
   </mat-vertical-stepper>
 

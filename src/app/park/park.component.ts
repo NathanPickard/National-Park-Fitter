@@ -28,6 +28,7 @@ export class ParkComponent implements OnInit {
     });
 
     this.generalParkInfoFormGroup = this._formBuilder.group({
+      parkWeatherCtrl: ['', Validators.required],
       parkInfoCtrl: ['', Validators.required]
     });
   }
