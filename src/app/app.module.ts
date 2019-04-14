@@ -37,6 +37,8 @@ import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatStepperModule } from '@angular/material/stepper';
 import { MatToolbarModule } from '@angular/material/toolbar';
 
+import { STEPPER_GLOBAL_OPTIONS } from '@angular/cdk/stepper';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -71,7 +73,11 @@ import { MatToolbarModule } from '@angular/material/toolbar';
     MatStepperModule,
     MatToolbarModule
   ],
-  providers: [SearchService],
+  providers: [SearchService,
+    {
+      provide: STEPPER_GLOBAL_OPTIONS,
+      useValue: { displayDefaultIndicatorType: false }
+    }],
   bootstrap: [AppComponent]
 })
 export class AppModule {

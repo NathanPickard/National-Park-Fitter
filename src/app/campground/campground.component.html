@@ -5,14 +5,13 @@
 
   <mat-vertical-stepper #stepper>
 
-    <mat-step [stepControl]="accessibilityFormGroup">
+    <mat-step [stepControl]="accessibilityFormGroup" state="accessibility">
       <form [formGroup]="accessibilityFormGroup">
 
         <ng-template matStepLabel>Campground accessibility</ng-template>
+
         <h4>Select the campground accessibility features you require</h4>
-        <!-- <mat-form-field>
-        <input matInput placeholder="Are you camping?" formControlName="firstCtrl" required>
-      </mat-form-field> -->
+
         <div fxLayoutGap="20px" fxLayout="column">
 
           <mat-checkbox fxLayout="row" formControlName="adaCtrl">
@@ -69,7 +68,7 @@
 
     </mat-step>
 
-    <mat-step [stepControl]="amenitiesFormGroup">
+    <mat-step [stepControl]="amenitiesFormGroup" state="amenities">
       <form [formGroup]="amenitiesFormGroup">
 
         <ng-template matStepLabel>Campground amenities</ng-template>
@@ -158,7 +157,7 @@
       </form>
     </mat-step>
 
-    <mat-step [stepControl]="generalInfoFormGroup">
+    <mat-step [stepControl]="generalInfoFormGroup" state="information">
       <form [formGroup]="generalInfoFormGroup">
         <ng-template matStepLabel>General campground information</ng-template>
 
@@ -189,8 +188,7 @@
       </form>
     </mat-step>
 
-
-    <mat-step>
+    <mat-step state="done">
       <ng-template matStepLabel>Done</ng-template>
       Get results!
       <div>
@@ -199,6 +197,22 @@
         <button mat-button (click)="onSubmitStepper()">Done</button>
       </div>
     </mat-step>
+
+    <ng-template matStepperIcon="accessibility">
+      <mat-icon>accessibility_new</mat-icon>
+    </ng-template>
+
+    <ng-template matStepperIcon="amenities">
+      <mat-icon>star_border</mat-icon>
+    </ng-template>
+
+    <ng-template matStepperIcon="information">
+      <mat-icon>info</mat-icon>
+    </ng-template>
+
+    <ng-template matStepperIcon="done">
+      <mat-icon>done_all</mat-icon>
+    </ng-template>
 
   </mat-vertical-stepper>
 
