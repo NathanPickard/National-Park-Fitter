@@ -17,13 +17,19 @@ export class StepperComponent implements OnInit {
   stateFormGroup: FormGroup;
   generalParkInfoFormGroup: FormGroup;
 
+  searching: boolean = false;
+  parksFound: boolean = false;
+
   constructor(private _formBuilder: FormBuilder,
     private searchService: SearchService) { }
 
 
   foundCampgrounds: any[];
   foundCampgroundPark: any[];
+
   foundParks: any[];
+  foundSearchParks: any[];
+
   foundNewsReleases: any[];
 
   resultsFound: boolean = false;
@@ -99,18 +105,26 @@ export class StepperComponent implements OnInit {
   }
 
   searchParks() {
+    this.searching = true;
+    const query = this.searchParkForm.value.searchQuery;
 
+    return this.searchService.searchParks(query).subscribe(
+      data => this.handleSearchParkSuccess(data),
+      error => this.handleError(error),
+      () => this.searching = false
+    );
   }
+
 
   getNewsReleases() {
     return this.searchService.getLatestNewsReleases().subscribe(
       data => this.handleNewsReleaseSuccess(data),
       error => this.handleError(error)
-    );
-  }
+      );
+    }
 
 
-  onSubmitStepper() {
+    onSubmitStepper() {
     this.stepperSubmitted = true;
 
     this.getCampgroundData();
@@ -128,7 +142,14 @@ export class StepperComponent implements OnInit {
     return this.searchService.getParkResults().subscribe(
       data => this.handleParkSuccess(data),
       error => this.handleError(error)
-    );
+      );
+  }
+
+  handleSearchParkSuccess(data) {
+    this.parksFound = true;
+    this.foundSearchParks = data.data;
+
+    console.log(this.foundSearchParks);
   }
 
   handleNewsReleaseSuccess(data) {

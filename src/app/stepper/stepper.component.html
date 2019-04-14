@@ -2,15 +2,28 @@
 
   <form [formGroup]="searchParkForm" (ngSubmit)="searchParks()">
     <mat-form-field appearance="outline">
+
       <mat-label>Search National Parks</mat-label>
       <input matInput type="search" placeholder="Search for National Parks" formControlName="searchQuery">
       <mat-icon matSuffix svgIcon="map-search-outline"></mat-icon>
       <mat-hint>Search the National Parks!</mat-hint>
+
     </mat-form-field>
+
     <button type="submit" mat-raised-button color="primary">
       <mat-icon>search</mat-icon>
     </button>
+
   </form>
+
+  <div *ngFor="let foundSearchPark of foundSearchParks">
+    <mat-card>
+      <mat-card-content>
+        {{ foundSearchPark.fullName }}
+      </mat-card-content>
+    </mat-card>
+
+  </div>
 
   <div *ngIf="newsFound; else notAvailable">
     <div fxLayoutAlign="center center">
