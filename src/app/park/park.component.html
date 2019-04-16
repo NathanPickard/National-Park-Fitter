@@ -14,9 +14,9 @@
 
         </div>
 
-        <div>
-          <button mat-button matStepperPrevious>Back</button>
-          <button mat-button matStepperNext>Next</button>
+        <div fxLayoutGap="15px">
+          <button mat-raised-button matStepperPrevious>Back</button>
+          <button mat-raised-button matStepperNext>Next</button>
         </div>
 
       </form>
@@ -26,7 +26,7 @@
     <mat-step [stepControl]="generalParkInfoFormGroup" state="generalParkInformation">
       <form [formGroup]="generalParkInfoFormGroup">
         <ng-template matStepLabel>General park information</ng-template>
-        <div>
+        <div fxLayoutGap="20px" fxLayout="column">
 
           <mat-checkbox formControlName="parkInfoCtrl">
             <mat-icon>info</mat-icon>
@@ -39,6 +39,11 @@
           </mat-checkbox>
         </div>
 
+        <div fxLayoutGap="15px">
+          <button mat-raised-button matStepperPrevious>Back</button>
+          <button mat-raised-button matStepperNext>Next</button>
+        </div>
+
       </form>
     </mat-step>
 
@@ -46,10 +51,10 @@
     <mat-step state="done">
       <ng-template matStepLabel>Done</ng-template>
       Get results!
-      <div>
-        <button mat-button matStepperPrevious>Back</button>
-        <button mat-button (click)="stepper.reset()">Reset</button>
-        <button mat-button (click)="onSubmitStepper()">Done</button>
+      <div fxLayoutGap="15px">
+        <button mat-raised-button matStepperPrevious>Back</button>
+        <button mat-raised-button (click)="stepper.reset()">Reset</button>
+        <button mat-raised-button (click)="onSubmitStepper()">Submit</button>
       </div>
     </mat-step>
 

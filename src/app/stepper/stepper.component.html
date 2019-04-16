@@ -1,20 +1,22 @@
 <div fxFlex fxLayout="column" fxLayoutAlign="center center">
 
-  <form [formGroup]="searchParkForm" (ngSubmit)="searchParks()">
-    <mat-form-field appearance="outline">
+  <div fxLayoutAlign="center center" style="min-height: 350px; width: 100%">
+    <form [formGroup]="searchParkForm" (ngSubmit)="searchParks()">
+      <mat-form-field appearance="outline">
 
-      <mat-label>Search National Parks</mat-label>
-      <input matInput type="search" placeholder="Search for National Parks" formControlName="searchQuery">
-      <mat-icon matSuffix svgIcon="map-search-outline"></mat-icon>
-      <mat-hint>Search the National Parks!</mat-hint>
+        <mat-label>Search National Parks</mat-label>
+        <input matInput type="search" placeholder="Search for National Parks" formControlName="searchQuery">
+        <mat-icon matSuffix svgIcon="map-search-outline"></mat-icon>
+        <mat-hint>Search the National Parks!</mat-hint>
 
-    </mat-form-field>
+      </mat-form-field>
 
-    <button type="submit" mat-raised-button color="primary">
-      <mat-icon>search</mat-icon>
-    </button>
+      <button type="submit" mat-raised-button color="primary">
+        <mat-icon>search</mat-icon>
+      </button>
 
-  </form>
+    </form>
+  </div>
 
   <div *ngFor="let foundSearchPark of foundSearchParks">
     <mat-card>
@@ -26,6 +28,7 @@
   </div>
 
   <div *ngIf="newsFound; else notAvailable">
+
     <div fxLayoutAlign="center center">
       <h3>Latest National Park news</h3>
     </div>
@@ -62,18 +65,16 @@
 
   </div>
 
-  <h3>Complete the form below to find the park and campground that's right for you!</h3>
+</div>
 
-  <mat-vertical-stepper #stepper>
+
+<!-- <mat-vertical-stepper #stepper>
 
     <mat-step [stepControl]="accessibilityFormGroup">
       <form [formGroup]="accessibilityFormGroup">
 
         <ng-template matStepLabel>Campground accessibility</ng-template>
         <h4>Select the campground accessibility features you require</h4>
-        <!-- <mat-form-field>
-        <input matInput placeholder="Are you camping?" formControlName="firstCtrl" required>
-      </mat-form-field> -->
         <div fxLayoutGap="20px" fxLayout="column">
 
           <mat-checkbox fxLayout="row" formControlName="adaCtrl">
@@ -134,9 +135,6 @@
       <form [formGroup]="amenitiesFormGroup">
 
         <ng-template matStepLabel>Campground amenities</ng-template>
-        <!-- <mat-form-field>
-          <input matInput placeholder="Do you want to hike?" formControlName="secondCtrl" required>
-        </mat-form-field> -->
 
         <div fxLayoutGap="20px" fxLayout="column">
 
@@ -223,10 +221,6 @@
       <form [formGroup]="generalInfoFormGroup">
         <ng-template matStepLabel>General campground information</ng-template>
 
-        <!-- <mat-form-field>
-          <input matInput placeholder="General campground information" formControlName="thirdCtrl" required>
-        </mat-form-field> -->
-
         <div fxLayoutGap="20px" fxLayout="column">
 
           <mat-checkbox formControlName="weatherCtrl">
@@ -311,11 +305,10 @@
 
       <div fxLayout="column" fxFlex="45" fxLayoutGap="15px">
 
-        <!-- <app-accessibility></app-accessibility> -->
+        <app-accessibility></app-accessibility> -->
 
-        <div *ngFor="let foundCampground of foundCampgrounds">
+<!-- <div *ngFor="let foundCampground of foundCampgrounds">
 
-          <!-- <div *ngFor="let campgroundArr of campgroundParkArray"> -->
 
           <mat-accordion>
 
@@ -326,29 +319,29 @@
                   {{ foundCampground.name }}
                 </mat-card-title>
 
-              </mat-card-header>
+              </mat-card-header> -->
 
-              <!-- <h2>{{ foundCampground.parkCode }}</h2> -->
-              <!-- <h2>{{ campgroundParkArray }}</h2> -->
+<!-- <h2>{{ foundCampground.parkCode }}</h2> -->
+<!-- <h2>{{ campgroundParkArray }}</h2> -->
 
-              <p>{{ foundCampground.description }}</p>
+<!-- <p>{{ foundCampground.description }}</p>
 
-              <p>{{ foundCampground.fees }}</p>
+              <p>{{ foundCampground.fees }}</p> -->
 
-              <!-- <app-accessibility></app-accessibility> -->
-              <mat-expansion-panel>
+<!-- <app-accessibility></app-accessibility> -->
+<!-- <mat-expansion-panel>
 
 
                 <mat-expansion-panel-header>
                   <mat-panel-title>
                     <h3>Accessibility</h3>
-                  </mat-panel-title>
+                  </mat-panel-title> -->
 
-                  <!-- <mat-panel-description>
+<!-- <mat-panel-description>
                   Information on all things accessibility
                 </mat-panel-description> -->
 
-                </mat-expansion-panel-header>
+<!-- </mat-expansion-panel-header>
 
                 <div
                   *ngIf="foundCampground.accessibility.wheelchairAccess && accessibilityFormGroup.value.wheelchairAccessCtrl">
@@ -440,14 +433,14 @@
                   *ngIf="foundCampground.amenities.trashRecyclingCollection && amenitiesFormGroup.value.trashRecyclingCtrl">
                   <h4>Trash and recycling collection</h4>
                   {{ foundCampground.amenities.trashRecyclingCollection }}
-                </div>
+                </div> -->
 
-                <!-- <div *ngIf="foundCampground.amenities.toilets && amenitiesFormGroup.value.toiletsCtrl">
+<!-- <div *ngIf="foundCampground.amenities.toilets && amenitiesFormGroup.value.toiletsCtrl">
                 <h4>Toilets</h4>
                 {{ foundCampground.amenities.trailerAllowed }}
           </div> -->
 
-                <div
+<!-- <div
                   *ngIf="foundCampground.amenities.internetConnectivity && amenitiesFormGroup.value.internetConnectivityCtrl">
                   <h4>Internet connectivity</h4>
                   {{ foundCampground.amenities.internetConnectivity }}
@@ -542,11 +535,11 @@
 
             </mat-card>
 
-          </mat-accordion>
+          </mat-accordion> -->
 
-          <!-- </div> -->
+<!-- </div> -->
 
-        </div>
+<!-- </div>
 
       </div>
 
@@ -572,10 +565,10 @@
               <div *ngFor="let image of foundPark.images">
                 <img mat-card-image [src]="image.url">
                 <p>{{ image.title }}</p>
-              </div>
-              <!-- <img src="{{ foundPark.images }}"> -->
+              </div> -->
+<!-- <img src="{{ foundPark.images }}"> -->
 
-              <mat-expansion-panel>
+<!-- <mat-expansion-panel>
 
                 <mat-expansion-panel-header>
                   <mat-panel-title>
@@ -612,7 +605,7 @@
 
 
 
-</div>
+</div> -->
 
 
 <!-- <mat-vertical-stepper #stepper>

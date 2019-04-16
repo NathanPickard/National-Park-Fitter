@@ -72,9 +72,6 @@
       <form [formGroup]="amenitiesFormGroup">
 
         <ng-template matStepLabel>Campground amenities</ng-template>
-        <!-- <mat-form-field>
-          <input matInput placeholder="Do you want to hike?" formControlName="secondCtrl" required>
-        </mat-form-field> -->
 
         <div fxLayoutGap="20px" fxLayout="column">
 
@@ -148,10 +145,9 @@
 
         </div>
 
-        <div>
-          <button mat-button matStepperPrevious>Back</button>
-          <button mat-button matStepperNext>Next
-          </button>
+        <div fxLayoutGap="15px" style="padding: 30px 30px 0px 0px;">
+          <button mat-raised-button matStepperPrevious>Back</button>
+          <button mat-raised-button matStepperNext>Next</button>
         </div>
 
       </form>
@@ -181,9 +177,9 @@
           </mat-checkbox>
         </div>
 
-        <div>
-          <button mat-button matStepperPrevious>Back</button>
-          <button mat-button matStepperNext>Next</button>
+        <div fxLayoutGap="15px" style="padding: 30px 30px 0px 0px;">
+          <button mat-raised-button matStepperPrevious>Back</button>
+          <button mat-raised-button matStepperNext>Next</button>
         </div>
       </form>
     </mat-step>
@@ -191,10 +187,10 @@
     <mat-step state="done">
       <ng-template matStepLabel>Done</ng-template>
       Get results!
-      <div>
-        <button mat-button matStepperPrevious>Back</button>
-        <button mat-button (click)="stepper.reset()">Reset</button>
-        <button mat-button (click)="onSubmitStepper()">Done</button>
+      <div fxLayoutGap="15px" style="padding: 30px 30px 0px 0px;">
+        <button mat-raised-button matStepperPrevious>Back</button>
+        <button mat-raised-button (click)="stepper.reset()">Reset</button>
+        <button mat-raised-button (click)="onSubmitStepper()">Submit</button>
       </div>
     </mat-step>
 
@@ -437,7 +433,7 @@
                 </mat-expansion-panel-header>
 
                 <div *ngIf="foundCampground.weatheroverview && generalInfoFormGroup.value.weatherCtrl">
-                  <div fxLayout="row" fxLayoutAlign="start center" fxLayoutGap="40px">
+                  <div fxLayout="row" fxLayoutAlign="start center">
                     <mat-icon>wb_sunny</mat-icon>
                     <h4>Weather overview</h4>
                   </div>
