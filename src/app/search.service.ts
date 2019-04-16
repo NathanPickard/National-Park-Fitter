@@ -44,6 +44,6 @@ export class SearchService {
   }
 
   searchParks(searchQuery) {
-    return this.httpClient.get<any>(this.API_URL + 'parks?' + 'q=' + searchQuery + '&api_key=' + this.API_KEY);
+    return this.httpClient.get<any>(this.API_URL + 'parks?' + 'q=' + searchQuery + '&fields=images' + '&api_key=' + this.API_KEY);
   }
 }

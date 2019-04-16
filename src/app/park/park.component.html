@@ -98,35 +98,37 @@
                 </mat-card-subtitle>
               </mat-card-header>
 
-              <p>{{ foundPark.description }}</p>
+              <mat-card-content>
 
+                <p>{{ foundPark.description }}</p>
 
-              <div *ngFor="let image of foundPark.images">
-                <img mat-card-image [src]="image.url">
-                <p>{{ image.title }}</p>
-              </div>
-              <!-- <img src="{{ foundPark.images }}"> -->
-
-              <mat-expansion-panel>
-
-                <mat-expansion-panel-header>
-                  <mat-panel-title>
-                    <h3>National Park</h3>
-                  </mat-panel-title>
-                </mat-expansion-panel-header>
-
-                <div *ngIf="foundPark.description && generalParkInfoFormGroup.value.parkInfoCtrl">
-                  <h4>Park Information</h4>
-                  {{ foundPark.description }}
+                <div *ngFor="let image of foundPark.images">
+                  <img mat-card-image [src]="image.url">
+                  <p>{{ image.title }}</p>
                 </div>
+                <!-- <img src="{{ foundPark.images }}"> -->
 
-                <h2>
-                  Park URL:
-                  <a href="{{ foundPark.url }}" target="_blank">here</a>
-                </h2>
+                <mat-expansion-panel>
+
+                  <mat-expansion-panel-header>
+                    <mat-panel-title>
+                      <h3>National Park</h3>
+                    </mat-panel-title>
+                  </mat-expansion-panel-header>
+
+                  <div *ngIf="foundPark.description && generalParkInfoFormGroup.value.parkInfoCtrl">
+                    <h4>Park Information</h4>
+                    {{ foundPark.description }}
+                  </div>
+
+                  <h2>
+                    Park URL:
+                    <a href="{{ foundPark.url }}" target="_blank">here</a>
+                  </h2>
 
 
-              </mat-expansion-panel>
+                </mat-expansion-panel>
+              </mat-card-content>
 
             </mat-card>
 

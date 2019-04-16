@@ -49,7 +49,7 @@ export class StepperComponent implements OnInit {
   ngOnInit() {
 
     this.searchParkForm = new FormGroup({
-      'searchQuery': new FormControl(null)
+      'searchQuery': new FormControl('', [Validators.required])
     });
 
     this.getNewsReleases();
@@ -120,11 +120,11 @@ export class StepperComponent implements OnInit {
     return this.searchService.getLatestNewsReleases().subscribe(
       data => this.handleNewsReleaseSuccess(data),
       error => this.handleError(error)
-      );
-    }
+    );
+  }
 
 
-    onSubmitStepper() {
+  onSubmitStepper() {
     this.stepperSubmitted = true;
 
     this.getCampgroundData();
@@ -142,7 +142,7 @@ export class StepperComponent implements OnInit {
     return this.searchService.getParkResults().subscribe(
       data => this.handleParkSuccess(data),
       error => this.handleError(error)
-      );
+    );
   }
 
   handleSearchParkSuccess(data) {
