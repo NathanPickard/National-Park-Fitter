@@ -4,3 +4,17 @@
 
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+span.mat-checkbox-label > .mat-icon {
+
+  /* display: inline-flex;
+  vertical-align: middle; */
+  margin-right: 10px;
+}
+
+.mat-icon {
+  vertical-align: bottom;
+  /* display: inline-block; */
+
+}
+
