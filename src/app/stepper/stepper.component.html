@@ -32,10 +32,17 @@
           {{ foundSearchPark.designation }}
         </mat-card-subtitle>
       </mat-card-header>
-      <div *ngFor="let image of foundSearchPark.images">
+
+      <!-- <div *ngFor="let image of foundSearchPark.images">
         <img mat-card-sm-image [src]="image.url">
         {{ image.title }}
-      </div>
+      </div> -->
+
+      <!-- <div *ngFor="let image of foundSearchPark.images"> -->
+      <img mat-card-image [src]="foundSearchPark.images[0].url" style="max-width: 200px;">
+      <p>{{ foundSearchPark.images[0].title }}</p>
+
+      <!-- </div> -->
 
 
       <mat-card-content>
