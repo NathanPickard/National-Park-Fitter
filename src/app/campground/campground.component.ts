@@ -24,7 +24,7 @@ export class CampgroundComponent implements OnInit {
   foundCampgroundPark: any[];
 
 
-  campgroundParkArray: any[];
+  campgroundParkArray: any[] = [];
   campgroundPark: any;
 
 
@@ -102,8 +102,8 @@ export class CampgroundComponent implements OnInit {
     // if (this.firstFormGroup.value.firstCtrl == true) {
 
     for (let i = 0; i < this.foundCampgrounds.length; i++) {
-      this.campgroundPark = this.foundCampgrounds[i].parkcode;
-      // console.log(this.campgroundPark);
+      this.campgroundPark = this.foundCampgrounds[i].parkCode;
+      console.log(this.campgroundPark);
 
       this.getParkName(this.campgroundPark);
     }
@@ -119,22 +119,35 @@ export class CampgroundComponent implements OnInit {
   handleCampgroundParkSuccess(data) {
     this.foundCampgroundPark = data.data;
 
-    // console.log(this.foundCampgroundPark);
+    console.log(this.foundCampgroundPark);
+
+    // this.foundCampgroundParkfullname.push(this.campgroundParkArray);
 
     // this.campgroundParkArray.push(this.foundCampgroundPark);
     // this.foundCampgroundPark.push(this.campgroundParkArray);
 
     // console.log(this.campgroundParkArray);
 
-    for (let i = 0; i < this.foundCampgroundPark.length; i++) {
-      // console.log(this.foundCampgroundPark[i].fullname);
 
-      this.campgroundParkArray.push(this.foundCampgroundPark[i].fullname);
+    // for (let i = 0; i < this.foundCampgroundPark.length; i++) {
+
+    //   this.foundCampgrounds.push(this.foundCampgroundPark[i].fullName);
+
+    //   this.campgroundParkArray.push(this.foundCampgroundPark[i].fullName);
+    //   console.log(this.foundCampgroundPark[i].fullName);
+    //   console.log(this.foundCampgrounds);
+
+
+
+
+
       // this.foundCampgrounds.push(this.foundCampgroundPark[i].fullname);
+      // this.foundCampgroundPark[i].fullName.push(this.campgroundParkArray);
 
       // console.log(this.foundCampgrounds);
-      console.log(this.campgroundParkArray);
-    }
+
+      // console.log(this.campgroundParkArray);
+    // }
   }
 
   handleError(error) {
