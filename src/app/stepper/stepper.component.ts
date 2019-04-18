@@ -34,7 +34,7 @@ export class StepperComponent implements OnInit {
 
   resultsFound: boolean = false;
   newsFound: boolean = false;
-  stepperSubmitted: boolean = false;
+  searchSubmitted: boolean = false;
 
   campgroundParkArray: any[] = [name];
 
@@ -105,6 +105,7 @@ export class StepperComponent implements OnInit {
   }
 
   searchParks() {
+    this.searchSubmitted = true;
     this.searching = true;
     const query = this.searchParkForm.value.searchQuery;
 
@@ -125,8 +126,6 @@ export class StepperComponent implements OnInit {
 
 
   onSubmitStepper() {
-    this.stepperSubmitted = true;
-
     this.getCampgroundData();
     this.getParkData();
   }
