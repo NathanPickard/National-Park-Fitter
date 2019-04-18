@@ -73,13 +73,8 @@ export class CampgroundComponent implements OnInit {
 
   onSubmitStepper() {
     this.stepperSubmitted = true;
-    // console.log(this.firstFormGroup.value.firstCtrl);
 
     this.getCampgroundData();
-    // return this.searchService.getCampgroundResults().subscribe(
-    //   data => this.handleSuccess(data),
-    //   error => this.handleError(error)
-    // );
   }
 
   getCampgroundData() {
@@ -90,7 +85,6 @@ export class CampgroundComponent implements OnInit {
   }
 
   handleSuccess(data) {
-    // this.foundYosemiteCampgrounds = data;
     this.resultsFound = true;
 
     this.foundCampgrounds = data.data;
@@ -106,6 +100,7 @@ export class CampgroundComponent implements OnInit {
       console.log(this.campgroundPark);
 
       this.getParkName(this.campgroundPark);
+
     }
   }
 
@@ -120,6 +115,7 @@ export class CampgroundComponent implements OnInit {
     this.foundCampgroundPark = data.data;
 
     console.log(this.foundCampgroundPark);
+    // console.log(this.foundCampgrounds.length);
 
     // this.foundCampgroundParkfullname.push(this.campgroundParkArray);
 
@@ -129,13 +125,14 @@ export class CampgroundComponent implements OnInit {
     // console.log(this.campgroundParkArray);
 
 
-    // for (let i = 0; i < this.foundCampgroundPark.length; i++) {
+    for (let i = 0; i < this.foundCampgroundPark.length; i++) {
 
-    //   this.foundCampgrounds.push(this.foundCampgroundPark[i].fullName);
+      // this.foundCampgrounds[i].push(this.foundCampgroundPark[i].fullName);
 
-    //   this.campgroundParkArray.push(this.foundCampgroundPark[i].fullName);
-    //   console.log(this.foundCampgroundPark[i].fullName);
-    //   console.log(this.foundCampgrounds);
+      this.campgroundParkArray.push(this.foundCampgroundPark[i].fullName);
+      console.log(this.campgroundParkArray);
+      // console.log(this.foundCampgroundPark[i].fullName);
+      // console.log(this.foundCampgrounds);
 
 
 
@@ -147,7 +144,7 @@ export class CampgroundComponent implements OnInit {
       // console.log(this.foundCampgrounds);
 
       // console.log(this.campgroundParkArray);
-    // }
+    }
   }
 
   handleError(error) {

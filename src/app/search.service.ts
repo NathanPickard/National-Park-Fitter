@@ -36,7 +36,7 @@ export class SearchService {
   }
 
   getCampgroundPark(parkCode) {
-    return this.httpClient.get<any>(this.API_URL + 'parks?' + 'parkCode=' + parkCode + '&api_key=' + this.API_KEY + '&limit=5');
+    return this.httpClient.get<any>(this.API_URL + 'parks?' + 'parkCode=' + parkCode + '&fields=images' + '&api_key=' + this.API_KEY + '&limit=5');
   }
 
   getParkResults() {
