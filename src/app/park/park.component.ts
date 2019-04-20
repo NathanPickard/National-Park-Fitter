@@ -12,6 +12,7 @@ import { SearchService } from './../search.service';
 export class ParkComponent implements OnInit {
 
   stateFormGroup: FormGroup;
+  designationFormGroup: FormGroup;
   generalParkInfoFormGroup: FormGroup;
 
   foundParks: any[];
@@ -25,6 +26,13 @@ export class ParkComponent implements OnInit {
   ngOnInit() {
     this.stateFormGroup = this._formBuilder.group({
       stateCtrl: ['', Validators.required]
+    });
+
+    this.designationFormGroup = this._formBuilder.group({
+      nationalParkCtrl: ['', Validators.required],
+      nationalMonumentCtrl: ['', Validators.required],
+      nationalHistoricSiteCtrl: ['', Validators.required],
+      heritageAreaCtrl: ['', Validators.required]
     });
 
     this.generalParkInfoFormGroup = this._formBuilder.group({
