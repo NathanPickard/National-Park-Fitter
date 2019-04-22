@@ -8,15 +8,15 @@
 
         <div>
           <mat-select placeholder="State">
-            <mat-option [value]="stateFormGroup">Oregon</mat-option>
-            <mat-option>Tennessee</mat-option>
+            <mat-option>None</mat-option>
+            <!-- <mat-option [value]="stateFormGroup">Oregon</mat-option> -->
+            <mat-option *ngFor="let state of states" [value]="state">{{ state }}</mat-option>
           </mat-select>
 
         </div>
 
-        <div fxLayoutGap="15px">
-          <button mat-raised-button matStepperPrevious>Back</button>
-          <button mat-raised-button matStepperNext>Next</button>
+        <div fxLayoutGap="15px" style="padding: 30px 30px 0px 0px;">
+          <button mat-raised-button matStepperNext color="primary">Next</button>
         </div>
 
       </form>
@@ -26,6 +26,7 @@
     <mat-step [stepControl]="designationFormGroup" state="designation">
       <form [formGroup]="designationFormGroup">
         <ng-template matStepLabel>Park by designation</ng-template>
+
         <div fxLayoutGap="20px" fxLayout="column">
 
           <mat-checkbox formControlName="nationalParkCtrl">
@@ -44,13 +45,21 @@
             Heritage Area
           </mat-checkbox>
         </div>
+
+        <div fxLayoutGap="15px" style="padding: 30px 30px 0px 0px;">
+          <button mat-raised-button matStepperPrevious color="accent">Back</button>
+          <button mat-raised-button matStepperNext color="primary">Next</button>
+        </div>
+
       </form>
 
     </mat-step>
 
     <mat-step [stepControl]="generalParkInfoFormGroup" state="generalParkInformation">
+
       <form [formGroup]="generalParkInfoFormGroup">
         <ng-template matStepLabel>General park information</ng-template>
+
         <div fxLayoutGap="20px" fxLayout="column">
 
           <mat-checkbox formControlName="parkInfoCtrl">
@@ -64,9 +73,9 @@
           </mat-checkbox>
         </div>
 
-        <div fxLayoutGap="15px">
-          <button mat-raised-button matStepperPrevious>Back</button>
-          <button mat-raised-button matStepperNext>Next</button>
+        <div fxLayoutGap="15px" style="padding: 30px 30px 0px 0px;">
+          <button mat-raised-button matStepperPrevious color="accent">Back</button>
+          <button mat-raised-button matStepperNext color="primary">Next</button>
         </div>
 
       </form>
@@ -74,13 +83,22 @@
 
 
     <mat-step state="done">
+
       <ng-template matStepLabel>Done</ng-template>
       Get results!
-      <div fxLayoutGap="15px">
-        <button mat-raised-button matStepperPrevious>Back</button>
-        <button mat-raised-button (click)="stepper.reset()">Reset</button>
-        <button mat-raised-button (click)="onSubmitStepper()">Submit</button>
+      <div fxLayoutGap="15px" style="padding: 30px 30px 0px 0px;" fxLayout="column">
+
+        <div fxLayout="row" fxLayoutGap="15px">
+          <button mat-raised-button matStepperPrevious color="accent">Back</button>
+          <button mat-raised-button color="primary" (click)="onSubmitStepper()">Submit</button>
+        </div>
+
+        <div>
+          <button mat-stroked-button color="warn" (click)="stepper.reset()">Reset</button>
+        </div>
+
       </div>
+
     </mat-step>
 
     <ng-template matStepperIcon="state">

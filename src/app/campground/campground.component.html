@@ -185,12 +185,13 @@
     </mat-step>
 
     <mat-step state="done">
+
       <ng-template matStepLabel>Done</ng-template>
       Get results!
       <div fxLayoutGap="15px" style="padding: 30px 30px 0px 0px;">
-        <button mat-raised-button matStepperPrevious>Back</button>
-        <button mat-raised-button (click)="stepper.reset()">Reset</button>
-        <button mat-raised-button (click)="onSubmitStepper()">Submit</button>
+        <button mat-raised-button matStepperPrevious color="accent">Back</button>
+        <button mat-raised-button color="warn" (click)="stepper.reset()">Reset</button>
+        <button mat-raised-button color="primary" (click)="onSubmitStepper()">Submit</button>
       </div>
     </mat-step>
 
