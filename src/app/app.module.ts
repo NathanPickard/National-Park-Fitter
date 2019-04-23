@@ -10,7 +10,7 @@ import { NavComponent } from './nav/nav.component';
 
 import { AppRoutingModule } from './app-routing.module';
 
-import { StepperComponent } from './stepper/stepper.component';
+import { HomeComponent } from './home/home.component';
 import { AboutComponent } from './about/about.component';
 import { AmenitiesComponent } from './amenities/amenities.component';
 import { AccessibilityComponent } from './accessibility/accessibility.component';
@@ -43,7 +43,7 @@ import { STEPPER_GLOBAL_OPTIONS } from '@angular/cdk/stepper';
   declarations: [
     AppComponent,
     NavComponent,
-    StepperComponent,
+    HomeComponent,
     AboutComponent,
     AmenitiesComponent,
     AccessibilityComponent,

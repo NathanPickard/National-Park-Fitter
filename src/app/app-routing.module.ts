@@ -1,14 +1,14 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule, PreloadAllModules } from '@angular/router';
 
-import { StepperComponent } from './stepper/stepper.component';
+import { HomeComponent } from './home/home.component';
 import { ParkComponent } from './park/park.component';
 import { CampgroundComponent } from './campground/campground.component';
 import { AboutComponent } from './about/about.component';
 
 const appRoutes: Routes = [
   {
-    path: '', component: StepperComponent
+    path: '', component: HomeComponent
   },
   {
     path: 'parks', component: ParkComponent

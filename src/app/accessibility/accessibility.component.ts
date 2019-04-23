@@ -1,7 +1,7 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 
-import { StepperComponent } from '../stepper/stepper.component';
+import { HomeComponent } from '../home/home.component';
 
 @Component({
   selector: 'app-accessibility',

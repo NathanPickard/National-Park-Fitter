@@ -1,14 +1,14 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators, FormControl } from '@angular/forms';
 
-import { SearchService } from './../search.service';
+import { SearchService } from '../search.service';
 
 @Component({
-  selector: 'app-stepper',
-  templateUrl: './stepper.component.html',
-  styleUrls: ['./stepper.component.css']
+  selector: 'app-home',
+  templateUrl: './home.component.html',
+  styleUrls: ['./home.component.css']
 })
-export class StepperComponent implements OnInit {
+export class HomeComponent implements OnInit {
 
   accessibilityFormGroup: FormGroup;
   amenitiesFormGroup: FormGroup;
