@@ -22,6 +22,7 @@
 
   </div>
 
+
   <div *ngIf="!parksFound && searchSubmitted">
     <mat-spinner></mat-spinner>
   </div>
@@ -30,38 +31,55 @@
     Search results
   </div>
 
-  <div *ngFor="let foundSearchPark of foundSearchParks">
-    <mat-card>
-      <mat-card-header>
-        <mat-card-title>
-          {{ foundSearchPark.fullName }}
-        </mat-card-title>
-        <mat-card-subtitle>
-          {{ foundSearchPark.designation }}
-        </mat-card-subtitle>
-      </mat-card-header>
+  <div *ngIf="parksFound">
 
-      <!-- <div *ngFor="let image of foundSearchPark.images">
+    <div fxLayoutAlign="space-evenly start">
+      <div fxLayout="column" fxFlex="90" fxLayoutGap="15px">
+
+        <div *ngFor="let foundSearchPark of foundSearchParks">
+          <mat-card>
+            <mat-card-header>
+              <mat-card-title>
+                <a href="{{ foundSearchPark.url }}" target="_blank" style="text-decoration: none;">
+                  {{ foundSearchPark.fullName }}</a>
+              </mat-card-title>
+              <mat-card-subtitle>
+                {{ foundSearchPark.designation }}
+              </mat-card-subtitle>
+            </mat-card-header>
+
+            <!-- <div *ngFor="let image of foundSearchPark.images">
         <img mat-card-sm-image [src]="image.url">
         {{ image.title }}
       </div> -->
 
-      <!-- <div *ngFor="let image of foundSearchPark.images"> -->
-      <img mat-card-image [src]="foundSearchPark.images[0].url" style="max-width: 200px;">
-      <p>{{ foundSearchPark.images[0].title }}</p>
+            <!-- <div *ngFor="let image of foundSearchPark.images"> -->
+            <img mat-card-image [src]="foundSearchPark.images[0].url" style="max-width: 350px;">
+            <p>{{ foundSearchPark.images[0].title }}</p>
 
-      <!-- </div> -->
+            <!-- </div> -->
 
 
-      <mat-card-content>
+            <mat-card-content>
+              <h4>Description:</h4>
+              {{foundSearchPark.description }}
+            </mat-card-content>
 
-      </mat-card-content>
+          </mat-card>
 
-    </mat-card>
+        </div>
+
+      </div>
+
+    </div>
 
   </div>
 
   <!-- <div *ngIf="newsFound; else notAvailable"> -->
+
+
+
+
 
   <div *ngIf="!newsFound">
     <mat-spinner></mat-spinner>
@@ -78,6 +96,7 @@
     </ng-template> -->
 
     <div fxLayoutGap="15px" fxLayout="row" fxLayoutAlign="space-evenly start" style="max-height: 50px;">
+
 
       <div *ngFor="let foundNewsRelease of foundNewsReleases">
 
@@ -101,9 +120,11 @@
         </mat-card>
 
       </div>
+
     </div>
 
   </div>
+
 
 </div>
 
