@@ -43,6 +43,11 @@ export class SearchService {
     return this.httpClient.get<any>(this.API_URL + 'parks?' + 'api_key=' + this.API_KEY + '&fields=images' + '&limit=5');
   }
 
+  getParkStepperResults(stateQuery) {
+    return this.httpClient.get<any>(this.API_URL + 'parks?' + 'api_key=' + this.API_KEY + '&fields=images' + '&stateCode=' + stateQuery + '&limit=5');
+
+  }
+
   searchParks(searchQuery) {
     return this.httpClient.get<any>(this.API_URL + 'parks?' + 'q=' + searchQuery + '&fields=images' + '&api_key=' + this.API_KEY);
   }

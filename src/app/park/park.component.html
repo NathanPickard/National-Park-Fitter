@@ -7,10 +7,12 @@
         <ng-template matStepLabel>Park by state</ng-template>
 
         <div>
-          <mat-select placeholder="State">
+
+          <!-- <mat-select placeholder="State" [(ngModel)]="selectedState" name="state"> -->
+          <mat-select placeholder="State" formControlName="stateCtrl" name="state">
             <mat-option>None</mat-option>
             <!-- <mat-option [value]="stateFormGroup">Oregon</mat-option> -->
-            <mat-option *ngFor="let state of states" [value]="state">{{ state }}</mat-option>
+            <mat-option *ngFor="let state of states" [value]="state">{{ state.name }}</mat-option>
           </mat-select>
 
         </div>
