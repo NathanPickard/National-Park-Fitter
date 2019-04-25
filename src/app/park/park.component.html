@@ -12,7 +12,10 @@
           <mat-select placeholder="State" formControlName="stateCtrl" name="state">
             <mat-option>None</mat-option>
             <!-- <mat-option [value]="stateFormGroup">Oregon</mat-option> -->
-            <mat-option *ngFor="let state of states" [value]="state">{{ state.name }}</mat-option>
+            <!-- <mat-option *ngFor="let state of states" [value]="state">{{ state.name }}</mat-option> -->
+            <mat-optgroup *ngFor="let group of stateGroups" [label]="group.name">
+              <mat-option *ngFor="let state of group.state" [value]="state">{{ state.name }}</mat-option>
+            </mat-optgroup>
           </mat-select>
 
         </div>
@@ -135,52 +138,47 @@
 
         <div *ngFor="let foundPark of foundParks">
 
-          <mat-accordion>
+          <mat-card>
+            <mat-card-header>
+              <mat-card-title>
+                {{ foundPark.fullName }}
+              </mat-card-title>
+              <mat-card-subtitle>
+                {{ foundPark.designation }}
+              </mat-card-subtitle>
+            </mat-card-header>
 
-            <mat-card>
-              <mat-card-header>
-                <mat-card-title>
-                  {{ foundPark.fullName }}
-                </mat-card-title>
-                <mat-card-subtitle>
-                  {{ foundPark.designation }}
-                </mat-card-subtitle>
-              </mat-card-header>
+            <mat-card-content>
 
-              <mat-card-content>
+              <p>{{ foundPark.description }}</p>
 
-                <p>{{ foundPark.description }}</p>
+              <div *ngFor="let image of foundPark.images">
+                <img mat-card-image [src]="image.url">
+                <p>{{ image.title }}</p>
+              </div>
+              <!-- <img src="{{ foundPark.images }}"> -->
+              <mat-panel-title>
+                <h3>National Park</h3>
+              </mat-panel-title>
 
-                <div *ngFor="let image of foundPark.images">
-                  <img mat-card-image [src]="image.url">
-                  <p>{{ image.title }}</p>
-                </div>
-                <!-- <img src="{{ foundPark.images }}"> -->
+              <div *ngIf="foundPark.description && generalParkInfoFormGroup.value.parkInfoCtrl">
+                <h4>Park information</h4>
+                {{ foundPark.description }}
+              </div>
 
-                <mat-expansion-panel>
+              <div *ngIf="foundPark.description && generalParkInfoFormGroup.value.parkWeatherCtrl">
+                <h4>Weather summary</h4>
+                {{ foundPark.weatherInfo }}
+              </div>
 
-                  <mat-expansion-panel-header>
-                    <mat-panel-title>
-                      <h3>National Park</h3>
-                    </mat-panel-title>
-                  </mat-expansion-panel-header>
+              <h2>
+                Park URL:
+                <a href="{{ foundPark.url }}" target="_blank">here</a>
+              </h2>
 
-                  <div *ngIf="foundPark.description && generalParkInfoFormGroup.value.parkInfoCtrl">
-                    <h4>Park Information</h4>
-                    {{ foundPark.description }}
-                  </div>
+            </mat-card-content>
 
-                  <h2>
-                    Park URL:
-                    <a href="{{ foundPark.url }}" target="_blank">here</a>
-                  </h2>
-
-                </mat-expansion-panel>
-              </mat-card-content>
-
-            </mat-card>
-
-          </mat-accordion>
+          </mat-card>
 
         </div>
 
