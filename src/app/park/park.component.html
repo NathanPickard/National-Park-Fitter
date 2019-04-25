@@ -76,6 +76,11 @@
             <mat-icon>wb_sunny</mat-icon>
             Weather
           </mat-checkbox>
+
+          <mat-checkbox formControlName="parkDirectionsCtrl">
+            <mat-icon>directions</mat-icon>
+            Directions
+          </mat-checkbox>
         </div>
 
         <div fxLayoutGap="15px" style="padding: 30px 30px 0px 0px;">
@@ -150,24 +155,27 @@
 
             <mat-card-content>
 
-              <div>
-                <h4>Description:</h4>
-                {{ foundPark.description }}
-              </div>
-
               <div *ngFor="let image of foundPark.images">
                 <img mat-card-image [src]="image.url">
                 <p>{{ image.title }}</p>
               </div>
 
+              <h4>Description:</h4>
+              {{ foundPark.description }}
+
               <div *ngIf="foundPark.description && generalParkInfoFormGroup.value.parkInfoCtrl">
                 <h4>Park information</h4>
-                {{ foundPark.description }}
+                <p>{{ foundPark.description }}</p>
               </div>
 
               <div *ngIf="foundPark.description && generalParkInfoFormGroup.value.parkWeatherCtrl">
                 <h4>Weather summary</h4>
                 {{ foundPark.weatherInfo }}
+              </div>
+
+              <div *ngIf="foundPark.description && generalParkInfoFormGroup.value.parkDirectionsCtrl">
+                <h4>Directions</h4>
+                {{ foundPark.directionsInfo }}
               </div>
 
             </mat-card-content>

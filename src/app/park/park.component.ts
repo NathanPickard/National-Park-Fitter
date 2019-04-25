@@ -121,7 +121,8 @@ export class ParkComponent implements OnInit {
 
     this.generalParkInfoFormGroup = this._formBuilder.group({
       parkWeatherCtrl: ['', Validators.required],
-      parkInfoCtrl: ['', Validators.required]
+      parkInfoCtrl: ['', Validators.required],
+      parkDirectionsCtrl: ['', Validators.required]
     });
   }
 
@@ -148,7 +149,6 @@ export class ParkComponent implements OnInit {
         error => this.handleError(error)
       );
     }
-
   }
 
   handleParkSuccess(data) {
