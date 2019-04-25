@@ -150,16 +150,15 @@
 
             <mat-card-content>
 
-              <p>{{ foundPark.description }}</p>
+              <div>
+                <h4>Description:</h4>
+                {{ foundPark.description }}
+              </div>
 
               <div *ngFor="let image of foundPark.images">
                 <img mat-card-image [src]="image.url">
                 <p>{{ image.title }}</p>
               </div>
-              <!-- <img src="{{ foundPark.images }}"> -->
-              <mat-panel-title>
-                <h3>National Park</h3>
-              </mat-panel-title>
 
               <div *ngIf="foundPark.description && generalParkInfoFormGroup.value.parkInfoCtrl">
                 <h4>Park information</h4>
@@ -171,21 +170,19 @@
                 {{ foundPark.weatherInfo }}
               </div>
 
-              <h2>
-                Park URL:
-                <a href="{{ foundPark.url }}" target="_blank">here</a>
-              </h2>
-
             </mat-card-content>
+
+            <mat-card-actions>
+
+              <a href="{{ foundPark.url }}" mat-raised-button color="primary" target="_blank">Website
+              </a>
+
+            </mat-card-actions>
 
           </mat-card>
 
         </div>
-
       </div>
-
     </div>
-
   </div>
-
 </div>

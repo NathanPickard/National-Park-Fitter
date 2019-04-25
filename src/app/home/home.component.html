@@ -78,9 +78,6 @@
   <!-- <div *ngIf="newsFound; else notAvailable"> -->
 
 
-
-
-
   <div *ngIf="!newsFound">
     <mat-spinner></mat-spinner>
   </div>
@@ -95,7 +92,7 @@
       <h4>The latest park news is not available. Try again later</h4>
     </ng-template> -->
 
-    <div fxLayoutGap="15px" fxLayout="row" fxLayoutAlign="space-evenly start" style="max-height: 50px;">
+    <div fxLayoutGap="15px" fxLayout="column" fxLayoutAlign="space-evenly start" style="max-height: 50px;">
 
 
       <div *ngFor="let foundNewsRelease of foundNewsReleases">
