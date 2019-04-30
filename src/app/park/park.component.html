@@ -156,9 +156,11 @@
 
               <!-- <ng-image-slider [images]="imageObject" #nav></ng-image-slider> -->
 
-              <div *ngFor="let image of foundPark.images">
-                <img mat-card-image [src]="image.url">
-                <p>{{ image.title }}</p>
+              <div fxLayout="column" fxLayoutAlign="space-around center">
+                <div *ngFor="let image of foundPark.images">
+                  <img mat-card-image [src]="image.url">
+                  <p>{{ image.title }}</p>
+                </div>
               </div>
 
               <h4>Description:</h4>

@@ -1,0 +1,7 @@
+.mat-card-image {
+  max-width: 550px;
+}
+
+.mat-card-image:first-child {
+  margin-top: 0;
+}
