@@ -20,6 +20,7 @@ import { CampgroundComponent } from './campground/campground.component';
 import { SearchService } from './search.service';
 
 import { FlexLayoutModule } from '@angular/flex-layout';
+import { NgImageSliderModule } from 'ng-image-slider';
 
 import { MatButtonModule } from '@angular/material/button';
 import { MatCardModule } from '@angular/material/card';
@@ -71,7 +72,8 @@ import { STEPPER_GLOBAL_OPTIONS } from '@angular/cdk/stepper';
     MatSelectModule,
     MatSidenavModule,
     MatStepperModule,
-    MatToolbarModule
+    MatToolbarModule,
+    NgImageSliderModule
   ],
   providers: [SearchService,
     {

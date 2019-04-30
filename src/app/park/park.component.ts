@@ -30,9 +30,15 @@ export class ParkComponent implements OnInit {
   selectedState: string;
 
   foundParks: any[];
+  foundPark: any;
 
   stepperSubmitted: boolean = false;
   resultsFound: boolean = false;
+
+  imageObject: Array<object> = [{
+    image: ''
+
+  }]
 
   stateGroups: StateGroup[] = [
     {
@@ -156,6 +162,19 @@ export class ParkComponent implements OnInit {
 
     this.foundParks = data.data;
     console.log(this.foundParks);
+
+    console.log(this.foundParks.length);
+    console.log(this.imageObject);
+
+    for (let i = 0; i < this.foundParks.length; i++) {
+      this.foundPark = this.foundParks[i].images;
+      console.log(this.foundPark);
+      // this.imageObject = this.foundPark;
+      console.log(this.foundPark.url);
+      // this.imageObject = [{
+      //   image: this.foundPark.url
+      // }];
+    }
   }
 
   handleError(error) {

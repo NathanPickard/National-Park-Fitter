@@ -154,31 +154,32 @@
 
             <mat-card-content>
 
-                <div *ngFor="let image of foundPark.images">
-                  <img mat-card-image [src]="image.url">
-                  <p>{{ image.title }}</p>
-                </div>
+              <!-- <ng-image-slider [images]="imageObject" #nav></ng-image-slider> -->
 
-                <h4>Description:</h4>
-                {{ foundPark.description }}
+              <div *ngFor="let image of foundPark.images">
+                <img mat-card-image [src]="image.url">
+                <p>{{ image.title }}</p>
+              </div>
 
-                <div *ngIf="foundPark.description && generalParkInfoFormGroup.value.parkInfoCtrl">
-                  <h4>Park information</h4>
-                  <p>{{ foundPark.description }}</p>
-                </div>
+              <h4>Description:</h4>
+              {{ foundPark.description }}
 
-                <div *ngIf="foundPark.description && generalParkInfoFormGroup.value.parkWeatherCtrl">
-                  <h4>Weather summary</h4>
-                  {{ foundPark.weatherInfo }}
-                </div>
+              <div *ngIf="foundPark.description && generalParkInfoFormGroup.value.parkInfoCtrl">
+                <h4>Park information</h4>
+                <p>{{ foundPark.description }}</p>
+              </div>
 
-                <div
-                  *ngIf="foundPark.directionsInfo && generalParkInfoFormGroup.value.parkDirectionsCtrl;">
-                  <h4>Directions:</h4>
-                  {{ foundPark.directionsInfo }}
-                </div>
+              <div *ngIf="foundPark.description && generalParkInfoFormGroup.value.parkWeatherCtrl">
+                <h4>Weather summary</h4>
+                {{ foundPark.weatherInfo }}
+              </div>
 
-                <!-- <ng-template #directionsNotAvailable>Directions not available</ng-template> -->
+              <div *ngIf="foundPark.directionsInfo && generalParkInfoFormGroup.value.parkDirectionsCtrl;">
+                <h4>Directions:</h4>
+                {{ foundPark.directionsInfo }}
+              </div>
+
+              <!-- <ng-template #directionsNotAvailable>Directions not available</ng-template> -->
 
             </mat-card-content>
 
