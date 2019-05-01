@@ -170,7 +170,7 @@ export class HomeComponent implements OnInit {
   handleNewsReleaseSuccess(data) {
     this.newsFound = true;
     this.foundNewsReleases = data.data;
-    // console.log(this.foundNewsReleases);
+    console.log(this.foundNewsReleases);
 
     // for (let i = 0; i < this.foundNewsReleases.length; i++) {
     //   this.newsReleaseParkCode = this.foundNewsReleases[i].parkCode;

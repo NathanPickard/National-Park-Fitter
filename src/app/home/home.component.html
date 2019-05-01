@@ -97,29 +97,43 @@
       <h4>The latest park news is not available. Try again later</h4>
     </ng-template> -->
 
-    <div fxLayoutGap="15px" fxLayout="column" fxLayoutAlign="space-evenly start" style="max-height: 50px;">
+    <!-- <div fxLayoutGap="25px" fxLayout="column" fxLayoutAlign="space-evenly start"> -->
+    <div fxLayoutAlign="space-evenly start">
+      <!-- <div fxFlex="80"> -->
+      <div fxLayoutGap="25px" fxFlex="90" fxLayout="column">
 
+        <div *ngFor="let foundNewsRelease of foundNewsReleases">
 
-      <div *ngFor="let foundNewsRelease of foundNewsReleases">
+          <mat-card>
+            <mat-card-header>
+              <mat-card-title>
+                <a href="{{ foundNewsRelease.url }}" style="text-decoration: none;" target="_blank">
+                  {{ foundNewsRelease.title }}
+                </a>
+              </mat-card-title>
+              <mat-card-subtitle>
+                {{ foundNewsRelease.releasedate | date: 'E, MMM d, y' }}
+              </mat-card-subtitle>
 
-        <mat-card>
-          <mat-card-header>
-            <mat-card-title>
-              <a href="{{ foundNewsRelease.url }}" style="text-decoration: none;" target="_blank">
-                {{ foundNewsRelease.title }}
-              </a>
-            </mat-card-title>
-            <mat-card-subtitle>
-              {{ foundNewsRelease.releasedate | date: 'E, MMM d, y' }}
-            </mat-card-subtitle>
+            </mat-card-header>
+            <!-- <div *ngFor="let image of foundNewsRelease.image"> </div> -->
 
-          </mat-card-header>
-          <!-- <div *ngFor="let image of foundNewsRelease.image"> </div> -->
-          <img mat-card-image [src]="foundNewsRelease.image.url">
-          <mat-card-content>
-            {{ foundNewsRelease.abstract }}
-          </mat-card-content>
-        </mat-card>
+            <div fxLayoutAlign="center center">
+              <img mat-card-image [src]="foundNewsRelease.image.url">
+            </div>
+
+            <mat-card-content>
+              {{ foundNewsRelease.abstract }}
+            </mat-card-content>
+
+            <mat-card-actions>
+              <a href="{{ foundNewsRelease.url}}" mat-stroked-button color="primary" target="_blank">Read more<mat-icon>
+                  keyboard_arrow_right</mat-icon></a>
+            </mat-card-actions>
+
+          </mat-card>
+
+        </div>
 
       </div>
 
