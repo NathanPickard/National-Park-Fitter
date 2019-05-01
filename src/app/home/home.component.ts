@@ -29,6 +29,7 @@ export class HomeComponent implements OnInit {
 
   foundParks: any[];
   foundSearchParks: any[];
+  foundParkName: any;
 
   foundNewsReleases: any[];
 
@@ -41,6 +42,8 @@ export class HomeComponent implements OnInit {
   campgroundPark: any;
 
   campgroundParkCode: any;
+  parkCode: any;
+  newsReleaseParkCode: any;
 
   searchParkForm: FormGroup;
   searchQuery: string;
@@ -124,7 +127,6 @@ export class HomeComponent implements OnInit {
     );
   }
 
-
   onSubmitStepper() {
     this.getCampgroundData();
     this.getParkData();
@@ -144,17 +146,50 @@ export class HomeComponent implements OnInit {
     );
   }
 
-  handleSearchParkSuccess(data) {
-    this.parksFound = true;
-    this.foundSearchParks = data.data;
+  getParkName(campgroundPark) {
+    return this.searchService.getCampgroundPark(this.campgroundPark).subscribe(
+      data => this.handleCampgroundParkSuccess(data),
+      error => this.handleError(error)
+    );
+  }
 
-    console.log(this.foundSearchParks);
+  getNameFromParkCode(parkCode) {
+    return this.searchService.getParkName(parkCode).subscribe(
+      data => this.handleParkNameSuccess(data),
+      error => this.handleError(error)
+    );
+  }
+
+  handleParkNameSuccess(data) {
+    this.foundParkName = data.data[0].fullName;
+    console.log(this.foundNewsReleases);
+    // console.log(this.foundParkName);
+    // this.foundNewsReleases.push(this.foundParkName);
   }
 
   handleNewsReleaseSuccess(data) {
     this.newsFound = true;
     this.foundNewsReleases = data.data;
-    console.log(this.foundNewsReleases);
+    // console.log(this.foundNewsReleases);
+
+    // for (let i = 0; i < this.foundNewsReleases.length; i++) {
+    //   this.newsReleaseParkCode = this.foundNewsReleases[i].parkCode;
+    //   console.log(this.newsReleaseParkCode);
+    //   this.getNameFromParkCode(this.newsReleaseParkCode);
+    //   console.log(this.foundParkName);
+
+
+
+      // this.foundNewsReleases.push(this.foundParkName);
+      // console.log(this.foundNewsReleases);
+    // }
+  }
+
+  handleSearchParkSuccess(data) {
+    this.parksFound = true;
+    this.foundSearchParks = data.data;
+
+    console.log(this.foundSearchParks);
   }
 
   handleSuccess(data) {
@@ -182,13 +217,6 @@ export class HomeComponent implements OnInit {
 
     this.foundParks = data.data;
     console.log(this.foundParks);
-  }
-
-  getParkName(campgroundPark) {
-    return this.searchService.getCampgroundPark(this.campgroundPark).subscribe(
-      data => this.handleCampgroundParkSuccess(data),
-      error => this.handleError(error),
-    );
   }
 
   handleCampgroundParkSuccess(data) {
