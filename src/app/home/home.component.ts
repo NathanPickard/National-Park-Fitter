@@ -32,6 +32,8 @@ export class HomeComponent implements OnInit {
   foundParkName: any;
 
   foundNewsReleases: any[];
+  foundNextNewsReleases: any[];
+  nextSetNewsRelease: any = 5;
 
   resultsFound: boolean = false;
   newsFound: boolean = false;
@@ -160,6 +162,20 @@ export class HomeComponent implements OnInit {
     );
   }
 
+  getNextNewsReleases() {
+    this.nextSetNewsRelease = this.nextSetNewsRelease + 5;
+    console.log(this.nextSetNewsRelease);
+    return this.searchService.getNextLatestNewsReleases(this.nextSetNewsRelease).subscribe(
+      data => this.handleNextNewsReleaseSuccess(data),
+      error => this.handleError(error)
+    );
+  }
+
+  handleNextNewsReleaseSuccess(data) {
+    this.foundNextNewsReleases = data.data;
+    console.log(this.foundNextNewsReleases);
+  }
+
   handleParkNameSuccess(data) {
     this.foundParkName = data.data[0].fullName;
     console.log(this.foundNewsReleases);
@@ -180,8 +196,8 @@ export class HomeComponent implements OnInit {
 
 
 
-      // this.foundNewsReleases.push(this.foundParkName);
-      // console.log(this.foundNewsReleases);
+    // this.foundNewsReleases.push(this.foundParkName);
+    // console.log(this.foundNewsReleases);
     // }
   }
 

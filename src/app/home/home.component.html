@@ -99,7 +99,6 @@
 
     <!-- <div fxLayoutGap="25px" fxLayout="column" fxLayoutAlign="space-evenly start"> -->
     <div fxLayoutAlign="space-evenly start">
-      <!-- <div fxFlex="80"> -->
       <div fxLayoutGap="25px" fxFlex="90" fxLayout="column">
 
         <div *ngFor="let foundNewsRelease of foundNewsReleases">
@@ -135,10 +134,49 @@
 
         </div>
 
+        <div *ngFor="let foundNextNewsRelease of foundNextNewsReleases">
+
+          <mat-card>
+            <mat-card-header>
+              <mat-card-title>
+                <a href="{{ foundNextNewsRelease.url }}" style="text-decoration: none;" target="_blank">
+                  {{ foundNextNewsRelease.title }}
+                </a>
+              </mat-card-title>
+              <mat-card-subtitle>
+                {{ foundNextNewsRelease.releasedate | date: 'E, MMM d, y' }}
+              </mat-card-subtitle>
+
+            </mat-card-header>
+            <!-- <div *ngFor="let image of foundNewsRelease.image"> </div> -->
+
+            <div fxLayoutAlign="center center">
+              <img mat-card-image [src]="foundNextNewsRelease.image.url">
+            </div>
+
+            <mat-card-content>
+              {{ foundNextNewsRelease.abstract }}
+            </mat-card-content>
+
+            <mat-card-actions>
+              <a href="{{ foundNextNewsRelease.url}}" mat-stroked-button color="primary" target="_blank">Read more
+                <mat-icon>
+                  keyboard_arrow_right</mat-icon></a>
+            </mat-card-actions>
+
+          </mat-card>
+
+        </div>
+
       </div>
 
     </div>
 
+  </div>
+
+
+  <div>
+    <button mat-raised-button (click)="getNextNewsReleases()">Get more news</button>
   </div>
 
 

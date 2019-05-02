@@ -31,6 +31,12 @@ export class SearchService {
     return this.httpClient.get<any>(this.API_URL + 'newsreleases?' + '&api_key=' + this.API_KEY + '&fields=images' + '&limit=5');
   }
 
+  getNextLatestNewsReleases(nextSetNewsRelease) {
+    return this.httpClient.get<any>(this.API_URL + 'newsreleases?' + '&limit=5' + '&start=' + nextSetNewsRelease + '&api_key=' + this.API_KEY + '&fields=images');
+  }
+
+
+
   getCampgroundResults() {
     return this.httpClient.get<any>(this.API_URL + 'campgrounds?' + '&api_key=' + this.API_KEY + '&limit=5');
   }
