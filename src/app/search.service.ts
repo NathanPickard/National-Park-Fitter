@@ -35,6 +35,9 @@ export class SearchService {
     return this.httpClient.get<any>(this.API_URL + 'newsreleases?' + '&limit=5' + '&start=' + nextSetNewsRelease + '&api_key=' + this.API_KEY + '&fields=images');
   }
 
+  getParkRecInfo() {
+    // return this.httpClient.get<any>
+  }
 
 
   getCampgroundResults() {
