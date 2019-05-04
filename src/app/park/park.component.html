@@ -1,5 +1,12 @@
 <div fxFlex fxLayout="column" fxLayoutAlign="center center">
 
+  <mat-toolbar color="primary">
+    <mat-toolbar-row fxLayoutAlign="center center">
+      <span>Park Fitter</span>
+    </mat-toolbar-row>
+  </mat-toolbar>
+
+
   <mat-vertical-stepper #stepper>
 
     <mat-step [stepControl]="stateFormGroup" state="state">
