@@ -1,4 +1,5 @@
-<div fxFlex>
+<!-- <div fxFlex> -->
+<div>
   <!-- <mat-sidenav-container>
     <mat-sidenav #sidenav="matSidenav">
 
@@ -10,23 +11,54 @@
 
     <mat-sidenav-content> -->
 
-  <app-nav></app-nav>
-  <router-outlet></router-outlet>
+  <app-nav (openNav)="sidenav.open()"></app-nav>
 
-  <!-- </mat-sidenav-content>
+  <mat-sidenav-container class="all-wrap">
+    <mat-sidenav #sidenav over>
+      <mat-nav-list>
 
+        <a mat-stroked-button routerLink="/" routerLinkActive="active" (click)="closeSidenav()"
+          [routerLinkActiveOptions]="{exact: true}">
+          <mat-icon>add_location</mat-icon>
+          National Park Fitter
+        </a>
 
+        <a mat-button routerLink="/parks" routerLinkActive="active" (click)="closeSidenav()">
+          <mat-icon>filter_hdr</mat-icon>
+          Parks
+        </a>
 
-  </mat-sidenav-container> -->
+        <a mat-button routerLink="/campgrounds" routerLinkActive="active" (click)="closeSidenav()">
+          <mat-icon svgIcon="tent"></mat-icon>
+          Campgrounds
+        </a>
 
+        <a mat-button routerLink="/about" routerLinkActive="active" (click)="closeSidenav()">
+          <mat-icon svgIcon="information-outline"></mat-icon>
+          About
+        </a>
 
-  <!-- <footer>
-    <mat-toolbar color="primary">
-      <mat-toolbar-row fxLayoutAlign="center center">
-        <a href="" mat-stroked-button target="_blank" style="text-decoration: none;">
-          Built by Nathan Pickard</a>
-      </mat-toolbar-row>
-    </mat-toolbar>
-  </footer> -->
+      </mat-nav-list>
+    </mat-sidenav>
+
+    <mat-sidenav-content class="page-wrap">
+
+      <div fxLayoutAlign="center" fxFlexFill class="content">
+        <router-outlet></router-outlet>
+      </div>
+
+    </mat-sidenav-content>
+
+  </mat-sidenav-container>
 
 </div>
+
+
+<footer fxLayout="column">
+  <mat-toolbar color="primary">
+    <mat-toolbar-row fxLayoutAlign="center center">
+      <a href="https://github.com/NathanPickard" mat-stroked-button target="_blank" style="text-decoration: none;">
+        Built by Nathan Pickard</a>
+    </mat-toolbar-row>
+  </mat-toolbar>
+</footer>

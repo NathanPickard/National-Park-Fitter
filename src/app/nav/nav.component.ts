@@ -3,6 +3,8 @@ import { BreakpointObserver, Breakpoints } from '@angular/cdk/layout';
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
 
+import { SideNavService } from '../side-nav.service';
+
 @Component({
   selector: 'app-nav',
   templateUrl: './nav.component.html',
@@ -16,6 +18,11 @@ export class NavComponent {
       map(result => result.matches)
     );
 
-  constructor(private breakpointObserver: BreakpointObserver) {}
+  constructor(private breakpointObserver: BreakpointObserver,
+    private sideNavService: SideNavService) { }
+
+    openNav() {
+      this.sideNavService.openNav();
+    }
 
 }

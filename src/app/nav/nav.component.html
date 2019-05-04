@@ -24,7 +24,11 @@
 
 <mat-toolbar color="primary">
   <mat-toolbar-row fxLayoutGap="12px">
-    
+
+    <button mat-icon-button (click)="openNav()" fxShow="true" fxHide.gt-sm>
+      <mat-icon>menu</mat-icon>
+    </button>
+
     <a mat-stroked-button routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
       <mat-icon>add_location</mat-icon>
       National Park Fitter
