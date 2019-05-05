@@ -1,7 +1,12 @@
-<div fxLayout="column" fxLayoutAlign="center center">
+<div fxLayout="column" fxLayoutAlign="start center" style="padding-top: 15px;">
 
+  <mat-toolbar color="primary">
+    <mat-toolbar-row fxLayoutAlign="center center">
+      <span>Campground Fitter</span>
+    </mat-toolbar-row>
+  </mat-toolbar>
 
-  <h3>Complete the form below to find the park and campground that's right for you!</h3>
+  <!-- <h3>Complete the form below to find the park and campground that's right for you!</h3> -->
 
   <mat-vertical-stepper #stepper>
 
@@ -198,7 +203,7 @@
         <div>
           <button mat-raised-button color="warn" (click)="stepper.reset()">Reset</button>
         </div>
-        
+
       </div>
     </mat-step>
 
