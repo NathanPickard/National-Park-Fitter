@@ -238,7 +238,7 @@
 
         <!-- <app-accessibility></app-accessibility> -->
 
-        <div *ngFor="let foundCampground of foundCampgrounds">
+        <div *ngFor="let foundCampground of foundCampgrounds; let i = index">
 
           <!-- <div *ngFor="let campgroundArr of campgroundParkArray"> -->
 
@@ -262,8 +262,25 @@
 
               <!-- <app-accessibility></app-accessibility> -->
               <!-- <mat-expansion-panel *ngIf="accessibilityFormGroup.value.wheelchairAccessCtrl"> -->
+
               <mat-expansion-panel>
 
+                <mat-expansion-panel-header>
+                  <mat-panel-title>
+                    <h3>Campsites</h3>
+                  </mat-panel-title>
+                </mat-expansion-panel-header>
+
+                <div
+                  *ngIf="foundCampground.campsites.totalsites">
+                  <h4>Total # of sites:</h4>
+                  {{ foundCampground.campsites.totalsites }}
+                </div>
+
+              </mat-expansion-panel>
+
+
+              <mat-expansion-panel>
 
                 <mat-expansion-panel-header>
                   <mat-panel-title>
@@ -463,7 +480,7 @@
                   <h4>Directions overview</h4>
                   {{ foundCampground.directionsoverview }}
                   <h4>Directions URL:</h4>
-                  <a href="{{ foundCampground.directionsUrl }}" target="_blank">
+                  <a href="{{ foundCampground.directionsUrl }}" mat-raised-button target="_blank">
                     Link
                   </a>
                 </div>

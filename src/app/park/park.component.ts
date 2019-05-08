@@ -182,5 +182,4 @@ export class ParkComponent implements OnInit {
     console.log(error);
   }
 
-
 }
