@@ -23,8 +23,16 @@
   </div>
 
 
-  <div *ngIf="!parksFound && searchSubmitted">
+  <!-- <div *ngIf="!parksFound && searchSubmitted">
     <mat-spinner></mat-spinner>
+  </div> -->
+
+  <div *ngIf="searching && searchSubmitted">
+    <mat-spinner></mat-spinner>
+  </div>
+
+  <div *ngIf="foundSearchParks == null && searchSubmitted">
+    No results found
   </div>
 
   <div *ngIf="parksFound && searchSubmitted">

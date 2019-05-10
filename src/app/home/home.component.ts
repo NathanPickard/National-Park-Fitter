@@ -20,6 +20,8 @@ export class HomeComponent implements OnInit {
   searching: boolean = false;
   parksFound: boolean = false;
 
+  parkSearchResults: any;
+
   constructor(private _formBuilder: FormBuilder,
     private searchService: SearchService) { }
 
@@ -195,15 +197,22 @@ export class HomeComponent implements OnInit {
     //   console.log(this.foundParkName);
 
 
-
     // this.foundNewsReleases.push(this.foundParkName);
     // console.log(this.foundNewsReleases);
     // }
   }
 
   handleSearchParkSuccess(data) {
-    this.parksFound = true;
+    // this.parksFound = true;
+
     this.foundSearchParks = data.data;
+
+    if (this.foundSearchParks === undefined || this.foundSearchParks.length == 0) {
+      console.log("no results found, try again");
+    }
+    else {
+      this.parksFound = true;
+    }
 
     console.log(this.foundSearchParks);
   }
