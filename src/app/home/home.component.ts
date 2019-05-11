@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+/// <reference types="@types/googlemaps" />
+
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { FormBuilder, FormGroup, Validators, FormControl } from '@angular/forms';
 
 import { SearchService } from '../search.service';
@@ -9,6 +11,9 @@ import { SearchService } from '../search.service';
   styleUrls: ['./home.component.css']
 })
 export class HomeComponent implements OnInit {
+
+  @ViewChild('gmap') gmapElement: any;
+  map: google.maps.Map;
 
   accessibilityFormGroup: FormGroup;
   amenitiesFormGroup: FormGroup;
@@ -54,6 +59,13 @@ export class HomeComponent implements OnInit {
 
 
   ngOnInit() {
+
+    var mapProp = {
+      center: new google.maps.LatLng(45.5212, -122.664),
+      zoom: 14,
+      mapTypeId: google.maps.MapTypeId.ROADMAP
+    };
+    this.map = new google.maps.Map(this.gmapElement.nativeElement, mapProp);
 
     this.searchParkForm = new FormGroup({
       'searchQuery': new FormControl('', [Validators.required])
