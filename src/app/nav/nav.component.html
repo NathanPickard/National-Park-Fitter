@@ -44,10 +44,12 @@
       Campgrounds
     </a>
 
-    <a mat-button routerLink="/about" routerLinkActive="active">
-      <mat-icon svgIcon="information-outline"></mat-icon>
-      About
-    </a>
+    <div fxShow="true" fxHide.lt-sm>
+      <a mat-button routerLink="/about" routerLinkActive="active">
+        <mat-icon svgIcon="information-outline"></mat-icon>
+        About
+      </a>
+    </div>
 
     <span class="spacer"></span>
 
