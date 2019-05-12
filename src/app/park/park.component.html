@@ -20,7 +20,7 @@
             <mat-option>None</mat-option>
 
             <mat-divider></mat-divider>
-            
+
             <mat-optgroup *ngFor="let group of stateGroups" [label]="group.name">
               <mat-option *ngFor="let state of group.state" [value]="state">
                 <img class="option-img" [src]="state.flag" height="25">
@@ -154,7 +154,8 @@
           <mat-card>
             <mat-card-header>
               <mat-card-title>
-                {{ foundPark.fullName }}
+                <a href="{{ foundPark.url }}" target="_blank" style="text-decoration: none;">
+                  {{ foundPark.fullName }}</a>
               </mat-card-title>
               <mat-card-subtitle>
                 {{ foundPark.designation }}
@@ -177,7 +178,7 @@
                 </mdb-carousel> -->
 
                 <div *ngFor="let image of foundPark.images">
-                  <img mat-card-image [src]="image.url">
+                  <img mat-card-image [src]="image.url" style="max-width:350px;">
                   <p>{{ image.title }}</p>
                 </div>
               </div>
