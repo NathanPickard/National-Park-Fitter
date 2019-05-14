@@ -1,5 +1,7 @@
 <div fxFlex fxLayout="column" fxLayoutAlign="center center">
 
+
+
   <div fxLayoutAlign="center center" style="min-height: 350px; width: 100%">
 
     <form [formGroup]="searchParkForm" (ngSubmit)="searchParks()">
@@ -62,8 +64,10 @@
       </div> -->
 
             <!-- <div *ngFor="let image of foundSearchPark.images"> -->
-            <img mat-card-image [src]="foundSearchPark.images[0].url" style="max-width: 350px;">
-            <p>{{ foundSearchPark.images[0].title }}</p>
+            <div fxLayout="column" fxLayoutAlign="space-around center">
+              <img mat-card-image [src]="foundSearchPark.images[0].url" style="max-width: 350px;">
+              <p>{{ foundSearchPark.images[0].title }}</p>
+            </div>
 
             <!-- </div> -->
 

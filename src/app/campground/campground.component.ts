@@ -75,9 +75,7 @@ export class CampgroundComponent implements OnInit {
     this.stepperSubmitted = true;
 
     this.getCampgroundData();
-    console.log(this.accessibilityFormGroup.updateOn);
     console.log(this.accessibilityFormGroup);
-
   }
 
   getCampgroundData() {
