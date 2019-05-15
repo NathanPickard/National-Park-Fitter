@@ -23,7 +23,6 @@ export class CampgroundComponent implements OnInit {
   foundCampgrounds: any[];
   foundCampgroundPark: any[];
 
-
   campgroundParkArray: any[] = [];
   campgroundPark: any;
 
@@ -75,7 +74,7 @@ export class CampgroundComponent implements OnInit {
     this.stepperSubmitted = true;
 
     this.getCampgroundData();
-    console.log(this.accessibilityFormGroup);
+    console.log(this.accessibilityFormGroup.valueChanges);
   }
 
   getCampgroundData() {
@@ -101,7 +100,6 @@ export class CampgroundComponent implements OnInit {
       console.log(this.campgroundPark);
 
       this.getParkName(this.campgroundPark);
-
     }
   }
 
@@ -125,7 +123,6 @@ export class CampgroundComponent implements OnInit {
 
     // console.log(this.campgroundParkArray);
 
-
     for (let i = 0; i < this.foundCampgroundPark.length; i++) {
 
       // this.foundCampgrounds[i].push(this.foundCampgroundPark[i].fullName);
@@ -134,7 +131,6 @@ export class CampgroundComponent implements OnInit {
       console.log(this.campgroundParkArray);
       // console.log(this.foundCampgroundPark[i].fullName);
       // console.log(this.foundCampgrounds);
-
 
 
 

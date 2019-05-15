@@ -133,8 +133,9 @@
             </mat-card-header>
             <!-- <div *ngFor="let image of foundNewsRelease.image"> </div> -->
 
-            <div fxLayoutAlign="center center">
+            <div fxLayoutAlign="center center" fxLayout="column">
               <img mat-card-image [src]="foundNewsRelease.image.url">
+              <mat-card-subtitle>{{ foundNewsRelease.image.caption }}</mat-card-subtitle>
             </div>
 
             <mat-card-content>
