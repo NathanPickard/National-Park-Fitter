@@ -1,7 +1,5 @@
 <div fxFlex fxLayout="column" fxLayoutAlign="center center">
 
-
-
   <div fxLayoutAlign="center center" style="min-height: 350px; width: 100%">
 
     <form [formGroup]="searchParkForm" (ngSubmit)="searchParks()">
@@ -71,7 +69,6 @@
 
             <!-- </div> -->
 
-
             <mat-card-content>
               <h4>Description:</h4>
               {{foundSearchPark.description }}
@@ -85,11 +82,8 @@
           </mat-card>
 
         </div>
-
       </div>
-
     </div>
-
   </div>
 
   <div>
@@ -105,9 +99,9 @@
 
   <div *ngIf="newsFound">
 
-    <div fxLayoutAlign="center center">
-      <h3>Latest National Park Service news</h3>
-    </div>
+    <mat-toolbar color="primary" fxLayoutAlign="center center">
+      <h3>Latest National Park Service News</h3>
+    </mat-toolbar>
 
     <!-- <ng-template #notAvailable>
       <h4>The latest park news is not available. Try again later</h4>
