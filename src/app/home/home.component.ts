@@ -218,6 +218,7 @@ export class HomeComponent implements OnInit {
     // this.parksFound = true;
 
     this.foundSearchParks = data.data;
+    console.log(this.foundSearchParks.length);
 
     if (this.foundSearchParks === undefined || this.foundSearchParks.length == 0) {
       console.log("no results found, try again");
