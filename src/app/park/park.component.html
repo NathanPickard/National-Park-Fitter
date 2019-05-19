@@ -143,6 +143,14 @@
 
   <div *ngIf="resultsFound">
 
+    <!-- <div *ngIf="stateFormGroup.value.stateCtrl != null && stateFormGroup.value.stateCtrl != undefined"> -->
+    <div *ngIf="stateFormGroup.value.stateCtrl !== ''">
+      <mat-toolbar fxLayoutAlign="center center" fxLayout="row">
+        Parks in {{ stateFormGroup.value.stateCtrl.name }}
+        <img [src]="stateFormGroup.value.stateCtrl.flag" height="55" style="padding-left: 15px">
+      </mat-toolbar>
+    </div>
+
     <!-- <div fxLayout="column" fxLayoutAlign="center center" fxLayoutGap="15px"> -->
     <div fxLayoutAlign="space-evenly start">
       <div fxLayout="column" fxFlex="90" fxLayoutGap="15px">
@@ -208,7 +216,8 @@
 
             <mat-card-actions fxLayoutGap="20px" fxLayout="row">
 
-              <a href="{{ foundPark.url }}" mat-raised-button color="primary" target="_blank">Website
+              <a href="{{ foundPark.url }}" mat-raised-button color="primary" target="_blank"> {{ foundPark.name }}
+                Website
               </a>
 
               <div *ngIf="foundPark.directionsUrl && generalParkInfoFormGroup.value.parkDirectionsCtrl">
