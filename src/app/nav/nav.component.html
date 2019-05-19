@@ -25,7 +25,7 @@
 <mat-toolbar color="primary">
   <mat-toolbar-row fxLayoutGap="12px">
 
-    <button mat-icon-button (click)="openNav()" fxShow="true" fxHide.gt-sm>
+    <button mat-icon-button (click)="openNav()" fxShow="true" fxHide.gt-xs>
       <mat-icon>menu</mat-icon>
     </button>
 
@@ -39,7 +39,7 @@
       Parks
     </a>
 
-    <a mat-button routerLink="/campgrounds" routerLinkActive="active" fxHide.lt-md>
+    <a mat-button routerLink="/campgrounds" routerLinkActive="active">
       <mat-icon svgIcon="tent"></mat-icon>
       Campgrounds
     </a>
