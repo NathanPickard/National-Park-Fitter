@@ -108,7 +108,6 @@ export class ParkComponent implements OnInit {
         { name: 'United States Virgin Islands', code: 'VI', flag: 'https://upload.wikimedia.org/wikipedia/commons/f/f8/Flag_of_the_United_States_Virgin_Islands.svg' }
       ]
     }
-    // states: State[] = [
   ];
 
   constructor(private _formBuilder: FormBuilder,
@@ -181,5 +180,4 @@ export class ParkComponent implements OnInit {
   handleError(error) {
     console.log(error);
   }
-
 }
