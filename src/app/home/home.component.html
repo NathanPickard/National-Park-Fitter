@@ -22,11 +22,6 @@
 
   </div>
 
-
-  <!-- <div *ngIf="!parksFound && searchSubmitted">
-    <mat-spinner></mat-spinner>
-  </div> -->
-
   <div *ngIf="searching && searchSubmitted">
     <mat-spinner></mat-spinner>
   </div>
@@ -66,7 +61,6 @@
               <img mat-card-image [src]="foundSearchPark.images[0].url" style="max-width: 350px;">
               <p>{{ foundSearchPark.images[0].title }}</p>
             </div>
-
             <!-- </div> -->
 
             <mat-card-content>
@@ -91,7 +85,6 @@
   </div>
 
   <!-- <div *ngIf="newsFound; else notAvailable"> -->
-
 
   <div *ngIf="!newsFound">
     <mat-spinner></mat-spinner>
