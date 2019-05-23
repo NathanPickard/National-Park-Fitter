@@ -106,7 +106,7 @@
 
         <div *ngFor="let foundNewsRelease of foundNewsReleases">
 
-          <mat-card>
+          <mat-card fxLayout="column" fxLayoutAlign="center center">
             <mat-card-header>
               <mat-card-title>
                 <a href="{{ foundNewsRelease.url }}" style="text-decoration: none;" target="_blank">
