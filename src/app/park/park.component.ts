@@ -33,6 +33,8 @@ export class ParkComponent implements OnInit {
   foundParks: any[];
   foundPark: any;
 
+  parkLatLong: any;
+
   stepperSubmitted: boolean = false;
   resultsFound: boolean = false;
 
@@ -170,10 +172,11 @@ export class ParkComponent implements OnInit {
       this.foundPark = this.foundParks[i].images;
       console.log(this.foundPark);
       // this.imageObject = this.foundPark;
-      console.log(this.foundPark.url);
       // this.imageObject = [{
       //   image: this.foundPark.url
       // }];
+      this.parkLatLong = this.foundParks[i].latLong;
+      console.log(this.parkLatLong);
     }
   }
 
