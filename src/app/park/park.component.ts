@@ -34,6 +34,8 @@ export class ParkComponent implements OnInit {
   foundPark: any;
 
   parkLatLong: any;
+  parkLat: any;
+  parkLong: any;
 
   stepperSubmitted: boolean = false;
   resultsFound: boolean = false;
@@ -176,7 +178,13 @@ export class ParkComponent implements OnInit {
       //   image: this.foundPark.url
       // }];
       this.parkLatLong = this.foundParks[i].latLong;
-      console.log(this.parkLatLong);
+      this.parkLat = this.parkLatLong.substr(4, 5);
+      this.parkLong = this.parkLatLong.split("long:").pop();
+      console.log(this.parkLat);
+      console.log(this.parkLong);
+      // console.log(this.parkLatLong.substr(4, 5));
+      // console.log(this.parkLatLong.split("long:").pop());
+
     }
   }
 
