@@ -486,17 +486,20 @@
                   {{ foundCampground.weatheroverview }}
                 </div>
                 <div *ngIf="foundCampground.regulationsoverview && generalInfoFormGroup.value.regulationsCtrl">
-                  <mat-icon>info</mat-icon>
-                  <h4>Regulations overview</h4>
+                  <div fxLayout="row" fxLayoutAlign="start center">
+                    <mat-icon>info</mat-icon>
+                    <h4>Regulations Overview</h4>
+                  </div>
                   {{ foundCampground.regulationsoverview }}
                 </div>
                 <div *ngIf="foundCampground.directionsoverview && generalInfoFormGroup.value.directionsCtrl">
-                  <mat-icon>directions</mat-icon>
-                  <h4>Directions overview</h4>
+                  <div fxLayout="row" fxLayoutAlign="start center">
+                    <mat-icon>directions</mat-icon>
+                    <h4>Directions Overview</h4>
+                  </div>
                   <div fxLayout="column">
                     {{ foundCampground.directionsoverview }}
-                    <a href="{{ foundCampground.directionsUrl }}" fxLayoutAlign="center start" mat-stroked-button
-                      color="primary" target="_blank">
+                    <a href="{{ foundCampground.directionsUrl }}" mat-stroked-button color="primary" target="_blank">
                       Directions
                     </a>
                   </div>
