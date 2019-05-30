@@ -275,21 +275,20 @@
                   <h4># of tent-only sites:</h4> {{ foundCampground.campsites.tentonly }}
                 </div>
 
-                <div *ngIf="foundCampground.campsites.rvonly">
+                <div *ngIf="foundCampground.campsites.rvonly" fxLayout="row" fxLayoutAlign="start center">
                   <h4># of RV-only sites:</h4>
                   {{ foundCampground.campsites.rvonly }}
                 </div>
 
-                <div *ngIf="foundCampground.campsites.electricalhookups">
+                <div *ngIf="foundCampground.campsites.electricalhookups" fxLayout="row" fxLayoutAlign="start center">
                   <h4># of electrical hookups:</h4>
                   {{ foundCampground.campsites.electricalhookups }}
                 </div>
 
-                <div *ngIf="foundCampground.campsites.group">
+                <div *ngIf="foundCampground.campsites.group" fxLayout="row" fxLayoutAlign="start center">
                   <h4># of group sites:</h4>
                   {{ foundCampground.campsites.group }}
                 </div>
-
 
               </mat-expansion-panel>
 
@@ -509,8 +508,6 @@
 
           </mat-accordion>
 
-          <!-- </div> -->
-
         </div>
 
       </div>
@@ -518,6 +515,5 @@
     </div>
 
   </div>
-
 
 </div>
