@@ -10,9 +10,9 @@
   <mat-vertical-stepper #stepper>
 
     <mat-step [stepControl]="stateFormGroup" state="state">
+
       <form [formGroup]="stateFormGroup">
         <ng-template matStepLabel>Park by State</ng-template>
-
         <div>
 
           <!-- <mat-select placeholder="State" [(ngModel)]="selectedState" name="state"> -->
@@ -32,7 +32,6 @@
         <div fxLayoutGap="15px" style="padding: 30px 30px 0px 0px;">
           <button mat-raised-button matStepperNext color="primary">Next</button>
         </div>
-
       </form>
 
     </mat-step>

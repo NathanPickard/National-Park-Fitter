@@ -1,27 +1,23 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule, DomSanitizer } from '@angular/platform-browser';
-import { RouterModule, Routes } from '@angular/router';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 
 import { AppComponent } from './app.component';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { NavComponent } from './nav/nav.component';
-
-import { AppRoutingModule } from './app-routing.module';
-
 import { HomeComponent } from './home/home.component';
+import { NavComponent } from './nav/nav.component';
 import { AboutComponent } from './about/about.component';
-import { AmenitiesComponent } from './amenities/amenities.component';
-import { AccessibilityComponent } from './accessibility/accessibility.component';
+import { AmenitiesComponent } from './campground/amenities/amenities.component';
+import { AccessibilityComponent } from './campground/accessibility/accessibility.component';
 import { ParkComponent } from './park/park.component';
 import { CampgroundComponent } from './campground/campground.component';
 
+import { AppRoutingModule } from './app-routing.module';
 import { SearchService } from './search.service';
 
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { NgImageSliderModule } from 'ng-image-slider';
-
 import { CarouselModule, WavesModule } from 'angular-bootstrap-md';
 
 import { MatButtonModule } from '@angular/material/button';
