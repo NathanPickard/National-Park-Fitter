@@ -271,10 +271,12 @@
                 </div>
 
                 <div *ngIf="foundCampground.campsites.tentonly" fxLayout="row" fxLayoutAlign="start center">
+                    <mat-icon svgIcon="tent"></mat-icon>
                   <h4># of tent-only sites:</h4> {{ foundCampground.campsites.tentonly }}
                 </div>
 
                 <div *ngIf="foundCampground.campsites.rvonly" fxLayout="row" fxLayoutAlign="start center">
+                    <mat-icon>rv_hookup</mat-icon>
                   <h4># of RV-only sites:</h4>
                   {{ foundCampground.campsites.rvonly }}
                 </div>
@@ -377,7 +379,7 @@
                 </div>
 
               </mat-expansion-panel>
-              
+
 
               <mat-expansion-panel>
 
