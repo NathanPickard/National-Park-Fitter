@@ -6,7 +6,6 @@
     </mat-toolbar-row>
   </mat-toolbar>
 
-
   <mat-vertical-stepper #stepper>
 
     <mat-step [stepControl]="stateFormGroup" state="state">
@@ -209,14 +208,14 @@
 
             </mat-card-content>
 
-            <mat-card-actions fxLayoutGap="20px" fxLayout="row">
+            <mat-card-actions fxLayoutGap="20px" fxLayout="row" fxLayoutAlign="center center">
 
-              <a href="{{ foundPark.url }}" mat-raised-button color="primary" target="_blank"> {{ foundPark.name }}
+              <a href="{{ foundPark.url }}" mat-stroked-button color="primary" target="_blank"> {{ foundPark.name }}
                 Website
               </a>
 
               <div *ngIf="foundPark.directionsUrl && generalParkInfoFormGroup.value.parkDirectionsCtrl">
-                <a href="{{ foundPark.directionsUrl }}" mat-raised-button color="primary" target="_blank">Directions
+                <a href="{{ foundPark.directionsUrl }}" mat-stroked-button color="primary" target="_blank">Directions
                 </a>
               </div>
 
