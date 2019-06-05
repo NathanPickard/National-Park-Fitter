@@ -227,7 +227,8 @@
 
   <div *ngIf="resultsFound">
 
-    <!-- <div fxLayout="row" fxLayoutAlign="space-evenly start"> -->
+    <h3>Selected options:</h3>
+
     <div fxLayoutAlign="space-evenly start">
 
       <div fxLayout="column" fxFlex="97" fxLayoutGap="15px">
@@ -235,8 +236,6 @@
         <!-- <app-accessibility></app-accessibility> -->
 
         <div *ngFor="let foundCampground of foundCampgrounds; let i = index">
-
-          <!-- <div *ngFor="let campgroundArr of campgroundParkArray"> -->
 
           <mat-accordion>
 
@@ -256,7 +255,6 @@
               <p>{{ foundCampground.fees }}</p>
 
               <!-- <app-accessibility></app-accessibility> -->
-              <!-- <mat-expansion-panel *ngIf="accessibilityFormGroup.value.wheelchairAccessCtrl"> -->
 
               <mat-expansion-panel>
 
@@ -271,12 +269,12 @@
                 </div>
 
                 <div *ngIf="foundCampground.campsites.tentonly" fxLayout="row" fxLayoutAlign="start center">
-                    <mat-icon svgIcon="tent"></mat-icon>
+                  <mat-icon svgIcon="tent"></mat-icon>
                   <h4># of tent-only sites:</h4> {{ foundCampground.campsites.tentonly }}
                 </div>
 
                 <div *ngIf="foundCampground.campsites.rvonly" fxLayout="row" fxLayoutAlign="start center">
-                    <mat-icon>rv_hookup</mat-icon>
+                  <mat-icon>rv_hookup</mat-icon>
                   <h4># of RV-only sites:</h4>
                   {{ foundCampground.campsites.rvonly }}
                 </div>
