@@ -64,7 +64,6 @@
         </div>
 
       </form>
-
     </mat-step> -->
 
     <mat-step [stepControl]="generalParkInfoFormGroup" state="generalParkInformation">
@@ -167,17 +166,7 @@
 
             <mat-card-content>
 
-              <!-- <ng-image-slider [images]="imageObject" #nav></ng-image-slider> -->
-
               <div fxLayout="column" fxLayoutAlign="space-around center">
-
-                <!-- <mdb-carousel [animation]="'slide'">
-                  <div *ngFor="let image of foundPark.images">
-                    <mdb-carousel-item>
-                      <img src="{{ image.url }}">
-                    </mdb-carousel-item>
-                  </div>
-                </mdb-carousel> -->
 
                 <div *ngFor="let image of foundPark.images">
                   <img mat-card-image [src]="image.url" style="max-width:350px;">
