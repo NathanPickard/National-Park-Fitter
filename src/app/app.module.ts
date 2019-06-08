@@ -17,7 +17,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { SearchService } from './search.service';
 
 import { FlexLayoutModule } from '@angular/flex-layout';
-import { NgImageSliderModule } from 'ng-image-slider';
+// import { NgImageSliderModule } from 'ng-image-slider';
 import { CarouselModule, WavesModule } from 'angular-bootstrap-md';
 
 import { MatButtonModule } from '@angular/material/button';
@@ -71,7 +71,7 @@ import { STEPPER_GLOBAL_OPTIONS } from '@angular/cdk/stepper';
     MatSidenavModule,
     MatStepperModule,
     MatToolbarModule,
-    NgImageSliderModule,
+    // NgImageSliderModule,
     CarouselModule.forRoot(),
     WavesModule.forRoot()
   ],
