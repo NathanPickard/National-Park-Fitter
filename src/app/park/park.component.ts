@@ -2,8 +2,7 @@ import { Component, OnInit } from "@angular/core";
 import {
   FormBuilder,
   FormGroup,
-  Validators,
-  FormControl
+  Validators
 } from "@angular/forms";
 
 import { SearchService } from "./../search.service";
@@ -401,10 +400,7 @@ export class ParkComponent implements OnInit {
     }
   ];
 
-  constructor(
-    private _formBuilder: FormBuilder,
-    private searchService: SearchService
-  ) { }
+  constructor(private _formBuilder: FormBuilder, private searchService: SearchService) { }
 
   ngOnInit() {
     this.stateFormGroup = this._formBuilder.group({

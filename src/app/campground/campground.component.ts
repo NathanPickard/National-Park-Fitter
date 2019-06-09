@@ -85,6 +85,14 @@ export class CampgroundComponent implements OnInit {
     );
   }
 
+
+  getParkName(campgroundPark) {
+    return this.searchService.getCampgroundPark(this.campgroundPark).subscribe(
+      data => this.handleCampgroundParkSuccess(data),
+      error => this.handleError(error),
+    );
+  }
+
   handleSuccess(data) {
     this.resultsFound = true;
 
@@ -102,13 +110,6 @@ export class CampgroundComponent implements OnInit {
 
       this.getParkName(this.campgroundPark);
     }
-  }
-
-  getParkName(campgroundPark) {
-    return this.searchService.getCampgroundPark(this.campgroundPark).subscribe(
-      data => this.handleCampgroundParkSuccess(data),
-      error => this.handleError(error),
-    );
   }
 
   handleCampgroundParkSuccess(data) {
@@ -132,8 +133,6 @@ export class CampgroundComponent implements OnInit {
       console.log(this.campgroundParkArray);
       // console.log(this.foundCampgroundPark[i].fullName);
       // console.log(this.foundCampgrounds);
-
-
 
 
       // this.foundCampgrounds.push(this.foundCampgroundPark[i].fullname);
