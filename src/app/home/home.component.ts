@@ -12,7 +12,7 @@ import { SearchService } from '../search.service';
 })
 export class HomeComponent implements OnInit {
 
-  @ViewChild('gmap') gmapElement: any;
+  @ViewChild('gmap', { static: true }) gmapElement: any;
   map: google.maps.Map;
 
   accessibilityFormGroup: FormGroup;

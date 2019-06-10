@@ -10,7 +10,7 @@ import { SideNavService } from './side-nav.service';
 export class AppComponent implements OnInit {
   title = 'national-park-fitter';
 
-  @ViewChild('sidenav') sidenav;
+  @ViewChild('sidenav', { static: true }) sidenav;
 
   constructor(private sideNavService: SideNavService) { }
 
