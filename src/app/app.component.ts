@@ -1,11 +1,13 @@
 import { Component, ViewChild, OnInit } from '@angular/core';
+import { routerTransition } from './animations';
 
 import { SideNavService } from './side-nav.service';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css']
+  styleUrls: ['./app.component.css'],
+  animations: [routerTransition]
 })
 export class AppComponent implements OnInit {
   title = 'national-park-fitter';

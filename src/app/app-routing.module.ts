@@ -7,18 +7,10 @@ import { CampgroundComponent } from './campground/campground.component';
 import { AboutComponent } from './about/about.component';
 
 const appRoutes: Routes = [
-  {
-    path: '', component: HomeComponent
-  },
-  {
-    path: 'parks', component: ParkComponent
-  },
-  {
-    path: 'campgrounds', component: CampgroundComponent
-  },
-  {
-    path: 'about', component: AboutComponent
-  }
+  { path: '', component: HomeComponent },
+  { path: 'parks', component: ParkComponent },
+  { path: 'campgrounds', component: CampgroundComponent },
+  { path: 'about', component: AboutComponent }
 ];
 
 @NgModule({
