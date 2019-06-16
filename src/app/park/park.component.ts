@@ -1,9 +1,5 @@
 import { Component, OnInit } from "@angular/core";
-import {
-  FormBuilder,
-  FormGroup,
-  Validators
-} from "@angular/forms";
+import { FormBuilder, FormGroup, Validators } from "@angular/forms";
 
 import { SearchService } from "./../search.service";
 
@@ -34,7 +30,8 @@ export class ParkComponent implements OnInit {
   selectedState: string;
 
   foundParks: any[];
-  foundPark: any;
+  foundParkImages: any;
+  foundParkImageArray: any;
 
   foundParkWeather: any;
 
@@ -449,14 +446,14 @@ export class ParkComponent implements OnInit {
     }
   }
 
-  getParkWeather(latitude, longitude) {
-    return this.searchService
-      .getWeatherInfo(latitude, longitude)
-      .subscribe(
-        data => this.handleWeatherSuccess(data),
-        error => this.handleError(error)
-      );
-  }
+  // getParkWeather(latitude, longitude) {
+  //   return this.searchService
+  //     .getWeatherInfo(latitude, longitude)
+  //     .subscribe(
+  //       data => this.handleWeatherSuccess(data),
+  //       error => this.handleError(error)
+  //     );
+  // }
 
   handleParkSuccess(data) {
     this.resultsFound = true;
@@ -468,8 +465,16 @@ export class ParkComponent implements OnInit {
     console.log(this.imageObject);
 
     for (let i = 0; i < this.foundParks.length; i++) {
-      this.foundPark = this.foundParks[i].images;
-      console.log(this.foundPark);
+      this.foundParkImages = this.foundParks[i].images;
+      this.foundParkImageArray = [];
+      for (let j = 0; j < this.foundParks[j].images.length; j++) {
+        console.log(this.foundParks[i].images[j].url);
+        // this.foundParkImageArray.push(this.foundParks[i].images[j].url);
+      }
+
+      console.log(this.foundParkImages);
+      console.log(this.foundParkImageArray);
+
       // this.imageObject = this.foundPark;
       // this.imageObject = [{
       //   image: this.foundPark.url
@@ -479,14 +484,14 @@ export class ParkComponent implements OnInit {
       this.parkLong = this.parkLatLong.split("long:").pop();
       console.log(this.parkLat);
       console.log(this.parkLong);
-      this.getParkWeather(this.parkLat, this.parkLong);
+      // this.getParkWeather(this.parkLat, this.parkLong);
     }
   }
 
-  handleWeatherSuccess(data) {
-    this.foundParkWeather = data;
-    console.log(this.foundParkWeather);
-  }
+  // handleWeatherSuccess(data) {
+  //   this.foundParkWeather = data;
+  //   console.log(this.foundParkWeather);
+  // }
 
   handleError(error) {
     console.log(error);
