@@ -170,12 +170,14 @@
                 <div *ngFor="let image of foundPark.images">
                   <img mat-card-image [src]="image.url" style="max-width:350px;">
                   <mat-card-subtitle>{{ image.title }}</mat-card-subtitle>
-                  <mat-card-subtitle>{{ image.caption }}</mat-card-subtitle>
+                  <!-- <mat-card-subtitle>{{ image.caption }}</mat-card-subtitle> -->
                 </div>
               </div>
 
-              <slideshow>
-              <!-- [imageUrls]="image.url" -->
+              <!-- <slideshow [imageUrls]="this.foundParkImageArray">
+              </slideshow> -->
+
+              <slideshow [imageUrls]="testingArray">
               </slideshow>
 
               <h4>Description:</h4>

@@ -9,6 +9,17 @@ export interface State {
   flag: string;
 }
 
+export interface IImage {
+  url: string | null;
+  href?: string;
+  clickAction?: Function;
+  caption?: string;
+  title?: string;
+  backgroundSize?: string;
+  backgroundPosition?: string;
+  backgroundRepeat?: string;
+}
+
 export interface StateGroup {
   name: string;
   state: State[];
@@ -32,6 +43,12 @@ export class ParkComponent implements OnInit {
   foundParks: any[];
   foundParkImages: any;
   foundParkImageArray: any;
+
+  slideshowImageArray: IImage[];
+
+  // testingArray: any;
+
+  sampleImageArray: any;
 
   foundParkWeather: any;
 
@@ -461,18 +478,49 @@ export class ParkComponent implements OnInit {
     this.foundParks = data.data;
     console.log(this.foundParks);
 
-    console.log(this.foundParks.length);
-    console.log(this.imageObject);
-
     for (let i = 0; i < this.foundParks.length; i++) {
       this.foundParkImages = this.foundParks[i].images;
       this.foundParkImageArray = [];
-      for (let j = 0; j < this.foundParks[j].images.length; j++) {
+      this.slideshowImageArray = [];
+      for (let j = 0; j < this.foundParks[i].images.length; j++) {
         console.log(this.foundParks[i].images[j].url);
+        // console.log(this.foundParks[i].images[j].title);
         // this.foundParkImageArray.push(this.foundParks[i].images[j].url);
+
+        // this.slideshowImageArray.push((this.foundParks[i].images[j].url));
+        // this.slideshowImageArray.push({ url: "https://www.nps.gov/common/uploads/structured_data/3C7924AC-1DD8-B71B-0BEDCDE2B64225D5.jpg" });
+        this.slideshowImageArray.push({
+          url: this.foundParks[i].images[j].url
+        })
       }
 
+      // testingArray: (string | IImage)[] = [
+      //   { url: "https://www.nps.gov/common/uploads/structured_data/3C7924AC-1DD8-B71B-0BEDCDE2B64225D5.jpg" },
+      //   { url: "https://www.nps.gov/common/uploads/structured_data/3C792600-1DD8-B71B-0B560B18E7EC1A12.jpg" },
+      //   { url: "https://www.nps.gov/common/uploads/structured_data/3C792782-1DD8-B71B-0BCA6D30498E1D77.jpg" }
+
+      // ];
+
+      console.log(this.slideshowImageArray);
+
+      // this.slideshowImageArray = [
+      //   { url: "" },
+      //   { url: " "}
+      // ]
+
+      // this.sampleImageArray = [
+      //   "https://www.nps.gov/common/uploads/structured_data/3C7924AC-1DD8-B71B-0BEDCDE2B64225D5.jpg"
+      // { "https://www.nps.gov/common/uploads/structured_data/3C7924AC-1DD8-B71B-0BEDCDE2B64225D5.jpg" }
+      // { "https://www.nps.gov/common/uploads/structured_data/3C792600-1DD8-B71B-0B560B18E7EC1A12.jpg" }
+      // { "https://www.nps.gov/common/uploads/structured_data/3C792782-1DD8-B71B-0BCA6D30498E1D77.jpg" }
+      // { "https://www.nps.gov/common/uploads/structured_data/3C79287E-1DD8-B71B-0B153C0073FE5D2F.jpg"}
+      // { "https://www.nps.gov/common/uploads/structured_data/3C79297D-1DD8-B71B-0B816D9E82328999.jpg"}
+      // { "https://www.nps.gov/common/uploads/structured_data/3C792A71-1DD8-B71B-0B5102E66A2B6ED1.jpg"}
+      // { "https://www.nps.gov/common/uploads/structured_data/3C792B5A-1DD8-B71B-0B17ACFC572CAF4C.jpg"}
+      // ]
+
       console.log(this.foundParkImages);
+
       console.log(this.foundParkImageArray);
 
       // this.imageObject = this.foundPark;
@@ -482,8 +530,8 @@ export class ParkComponent implements OnInit {
       this.parkLatLong = this.foundParks[i].latLong;
       this.parkLat = this.parkLatLong.substr(4, 5);
       this.parkLong = this.parkLatLong.split("long:").pop();
-      console.log(this.parkLat);
-      console.log(this.parkLong);
+      // console.log(this.parkLat);
+      // console.log(this.parkLong);
       // this.getParkWeather(this.parkLat, this.parkLong);
     }
   }
