@@ -498,7 +498,6 @@ export class ParkComponent implements OnInit {
       //   { url: "https://www.nps.gov/common/uploads/structured_data/3C7924AC-1DD8-B71B-0BEDCDE2B64225D5.jpg" },
       //   { url: "https://www.nps.gov/common/uploads/structured_data/3C792600-1DD8-B71B-0B560B18E7EC1A12.jpg" },
       //   { url: "https://www.nps.gov/common/uploads/structured_data/3C792782-1DD8-B71B-0BCA6D30498E1D77.jpg" }
-
       // ];
 
       console.log(this.slideshowImageArray);
