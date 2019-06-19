@@ -76,7 +76,9 @@
           </mat-card>
 
         </div>
+
       </div>
+
     </div>
   </div>
 
@@ -107,6 +109,7 @@
         <div *ngFor="let foundNewsRelease of foundNewsReleases">
 
           <mat-card fxLayout="column" fxLayoutAlign="center center">
+
             <mat-card-header>
               <mat-card-title>
                 <a href="{{ foundNewsRelease.url }}" style="text-decoration: none;" target="_blank">
@@ -118,7 +121,6 @@
               </mat-card-subtitle>
 
             </mat-card-header>
-            <!-- <div *ngFor="let image of foundNewsRelease.image"> </div> -->
 
             <div fxLayoutAlign="center center" fxLayout="column">
               <img mat-card-image [src]="foundNewsRelease.image.url">
@@ -152,7 +154,6 @@
               </mat-card-subtitle>
 
             </mat-card-header>
-            <!-- <div *ngFor="let image of foundNewsRelease.image"> </div> -->
 
             <div fxLayoutAlign="center center">
               <img mat-card-image [src]="foundNextNewsRelease.image.url">
