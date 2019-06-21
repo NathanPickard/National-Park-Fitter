@@ -1,5 +1,7 @@
 <div fxFlex fxLayout="column" fxLayoutAlign="center center">
 
+
+
   <div fxLayoutAlign="center center" style="min-height: 350px; width: 100%">
 
     <form [formGroup]="searchParkForm" (ngSubmit)="searchParks()">
@@ -36,8 +38,16 @@
 
   <div *ngIf="parksFound">
 
+
     <div fxLayoutAlign="space-evenly start">
       <div fxLayout="column" fxFlex="90" fxLayoutGap="15px">
+
+        <agm-map [zoom]="4" [latitude]="39.52" [longitude]="-98.35" [fitBounds]="true">
+          <agm-marker *ngFor="let parkCoordinates of searchResultsLatLongArray" [latitude]="parkCoordinates.lat"
+            [longitude]="parkCoordinates.long" [agmFitBounds]="true">
+            <agm-info-window>{{ parkCoordinates.fullName }}</agm-info-window>
+          </agm-marker>
+        </agm-map>
 
         <div *ngFor="let foundSearchPark of foundSearchParks">
           <mat-card>

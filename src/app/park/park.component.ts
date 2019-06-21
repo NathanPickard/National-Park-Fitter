@@ -453,7 +453,8 @@ export class ParkComponent implements OnInit {
           data => this.handleParkSuccess(data),
           error => this.handleError(error)
         );
-    } else {
+    }
+    else {
       return this.searchService
         .getParkResults()
         .subscribe(
@@ -501,7 +502,6 @@ export class ParkComponent implements OnInit {
       // ];
 
       console.log(this.slideshowImageArray);
-
 
       console.log(this.foundParkImages);
 

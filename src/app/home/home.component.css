@@ -6,3 +6,7 @@
 .mat-card-subtitle.mat-card-subtitle {
   margin-top: 0px;
 }
+
+agm-map {
+  height: 375px;
+}

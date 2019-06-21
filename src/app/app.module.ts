@@ -77,7 +77,10 @@ import { STEPPER_GLOBAL_OPTIONS } from '@angular/cdk/stepper';
     // NgImageSliderModule,
     CarouselModule.forRoot(),
     WavesModule.forRoot(),
-    SlideshowModule
+    SlideshowModule,
+    AgmCoreModule.forRoot({
+      apiKey: 'AIzaSyB6vjKMU0wxBezpYg6PuYPDFOP0k3JPi_o'
+    })
   ],
   providers: [SearchService,
     {

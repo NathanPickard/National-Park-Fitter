@@ -5,6 +5,8 @@ import { FormBuilder, FormGroup, Validators, FormControl } from '@angular/forms'
 
 import { SearchService } from '../search.service';
 
+// import { FitBoundsAccessor } from '@agm/core';
+
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
@@ -29,7 +31,6 @@ export class HomeComponent implements OnInit {
 
   constructor(private _formBuilder: FormBuilder,
     private searchService: SearchService) { }
-
 
   foundCampgrounds: any[];
   foundCampgroundPark: any[];
@@ -56,6 +57,11 @@ export class HomeComponent implements OnInit {
 
   searchParkForm: FormGroup;
   searchQuery: string;
+
+  parkLatLong: any;
+  parkLat: any;
+  parkLong: any;
+  searchResultsLatLongArray: any;
 
 
   ngOnInit() {
@@ -217,6 +223,8 @@ export class HomeComponent implements OnInit {
   handleSearchParkSuccess(data) {
     // this.parksFound = true;
 
+    this.searchResultsLatLongArray = [];
+
     this.foundSearchParks = data.data;
     console.log(this.foundSearchParks.length);
 
@@ -225,6 +233,18 @@ export class HomeComponent implements OnInit {
     }
     else {
       this.parksFound = true;
+    }
+
+    for (let i = 0; i < this.foundSearchParks.length; i++) {
+      this.parkLatLong = this.foundSearchParks[i].latLong;
+      this.parkLat = this.parkLatLong.substr(4, 5);
+      this.parkLong = this.parkLatLong.split("long:").pop();
+
+      this.searchResultsLatLongArray.push({ lat: this.parkLat, long: this.parkLong, fullName: this.foundSearchParks[i].fullName });
+
+      console.log(this.searchResultsLatLongArray);
+      console.log(this.parkLat);
+      console.log(this.parkLong);
     }
 
     console.log(this.foundSearchParks);
