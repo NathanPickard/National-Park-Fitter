@@ -445,7 +445,6 @@ export class ParkComponent implements OnInit {
     if (this.stateFormGroup.value.stateCtrl.code) {
       this.query = this.stateFormGroup.value.stateCtrl.code;
     }
-
     if (this.query !== undefined) {
       return this.searchService
         .getParkStepperResults(this.query)

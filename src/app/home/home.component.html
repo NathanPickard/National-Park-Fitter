@@ -1,7 +1,5 @@
 <div fxFlex fxLayout="column" fxLayoutAlign="center center">
 
-
-
   <div fxLayoutAlign="center center" style="min-height: 350px; width: 100%">
 
     <form [formGroup]="searchParkForm" (ngSubmit)="searchParks()">
@@ -9,6 +7,7 @@
       <mat-form-field appearance="outline">
 
         <mat-label>Search National Parks</mat-label>
+
         <input matInput type="search" placeholder="Search for National Parks" formControlName="searchQuery">
         <mat-icon matSuffix svgIcon="map-search-outline"></mat-icon>
         <mat-hint>Search the National Parks!</mat-hint>
@@ -37,7 +36,6 @@
   </div>
 
   <div *ngIf="parksFound">
-
 
     <div fxLayoutAlign="space-evenly start">
       <div fxLayout="column" fxFlex="90" fxLayoutGap="15px">
@@ -153,6 +151,7 @@
         <div *ngFor="let foundNextNewsRelease of foundNextNewsReleases">
 
           <mat-card>
+
             <mat-card-header>
               <mat-card-title>
                 <a href="{{ foundNextNewsRelease.url }}" style="text-decoration: none;" target="_blank">
@@ -162,7 +161,6 @@
               <mat-card-subtitle>
                 {{ foundNextNewsRelease.releasedate | date: 'E, MMM d, y' }}
               </mat-card-subtitle>
-
             </mat-card-header>
 
             <div fxLayoutAlign="center center">

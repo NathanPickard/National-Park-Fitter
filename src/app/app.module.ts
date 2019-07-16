@@ -18,7 +18,7 @@ import { SearchService } from './search.service';
 
 import { FlexLayoutModule } from '@angular/flex-layout';
 // import { NgImageSliderModule } from 'ng-image-slider';
-import { CarouselModule, WavesModule } from 'angular-bootstrap-md';
+// import { CarouselModule, WavesModule } from 'angular-bootstrap-md';
 import { SlideshowModule } from 'ng-simple-slideshow';
 
 import { MatButtonModule } from '@angular/material/button';
@@ -75,8 +75,8 @@ import { STEPPER_GLOBAL_OPTIONS } from '@angular/cdk/stepper';
     MatStepperModule,
     MatToolbarModule,
     // NgImageSliderModule,
-    CarouselModule.forRoot(),
-    WavesModule.forRoot(),
+    // CarouselModule.forRoot(),
+    // WavesModule.forRoot(),
     SlideshowModule,
     AgmCoreModule.forRoot({
       apiKey: 'AIzaSyB6vjKMU0wxBezpYg6PuYPDFOP0k3JPi_o'
