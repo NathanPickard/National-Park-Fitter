@@ -10,12 +10,12 @@ import { SearchService } from './../search.service';
 })
 export class CampgroundComponent implements OnInit {
 
+  constructor(private _formBuilder: FormBuilder,
+    private searchService: SearchService) { }
+
   accessibilityFormGroup: FormGroup;
   amenitiesFormGroup: FormGroup;
   generalInfoFormGroup: FormGroup;
-
-  constructor(private _formBuilder: FormBuilder,
-    private searchService: SearchService) { }
 
   stepperSubmitted: boolean = false;
   resultsFound: boolean = false;

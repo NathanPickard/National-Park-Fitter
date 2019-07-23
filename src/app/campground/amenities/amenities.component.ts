@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-amenities',
@@ -7,9 +8,31 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AmenitiesComponent implements OnInit {
 
-  constructor() { }
+  constructor(private _formBuilder: FormBuilder) { }
+
+  amenitiesFormGroup: FormGroup;
+
+  foundCampgrounds: any[];
 
   ngOnInit() {
+
+    this.amenitiesFormGroup = this._formBuilder.group({
+
+      trashRecyclingCtrl: ['', Validators.required],
+      toiletsCtrl: ['', Validators.required],
+      internetConnectivityCtrl: ['', Validators.required],
+      showersCtrl: ['', Validators.required],
+      cellPhoneReceptionCtrl: ['', Validators.required],
+      laundryCtrl: ['', Validators.required],
+      amphitheaterCtrl: ['', Validators.required],
+      dumpStationCtrl: ['', Validators.required],
+      campStoreCtrl: ['', Validators.required],
+      staffVolunteerCtrl: ['', Validators.required],
+      potableWatertCtrl: ['', Validators.required],
+      iceAvailableForSaleCtrl: ['', Validators.required],
+      firewoodForSaleCtrl: ['', Validators.required],
+      foodStorageLockersCtrl: ['', Validators.required]
+    });
   }
 
 }
