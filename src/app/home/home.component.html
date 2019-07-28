@@ -48,15 +48,19 @@
         </agm-map>
 
         <div *ngFor="let foundSearchPark of foundSearchParks">
+
           <mat-card>
             <mat-card-header>
+
               <mat-card-title>
                 <a href="{{ foundSearchPark.url }}" target="_blank" style="text-decoration: none;">
                   {{ foundSearchPark.fullName }}</a>
               </mat-card-title>
+
               <mat-card-subtitle>
                 {{ foundSearchPark.designation }}
               </mat-card-subtitle>
+
             </mat-card-header>
 
             <!-- <div *ngFor="let image of foundSearchPark.images">
