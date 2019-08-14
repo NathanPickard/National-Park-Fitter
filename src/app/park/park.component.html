@@ -6,6 +6,8 @@
     </mat-toolbar-row>
   </mat-toolbar>
 
+  <h5>Select from the options below to find the park for you</h5>
+
   <mat-vertical-stepper #stepper>
 
     <mat-step [stepControl]="stateFormGroup" state="state">
@@ -108,7 +110,7 @@
         </div>
 
         <div>
-          <button mat-stroked-button color="warn" (click)="stepper.reset()">Reset</button>
+          <button mat-stroked-button color="warn" (click)="stepper.reset()">Reset search</button>
         </div>
 
       </div>

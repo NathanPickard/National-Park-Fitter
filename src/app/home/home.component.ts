@@ -24,8 +24,8 @@ export class HomeComponent implements OnInit {
   stateFormGroup: FormGroup;
   generalParkInfoFormGroup: FormGroup;
 
-  searching: boolean = false;
-  parksFound: boolean = false;
+  searching = false;
+  parksFound = false;
 
   parkSearchResults: any;
 
@@ -43,9 +43,10 @@ export class HomeComponent implements OnInit {
   foundNextNewsReleases: any[];
   nextSetNewsRelease: any = 5;
 
-  resultsFound: boolean = false;
-  newsFound: boolean = false;
-  searchSubmitted: boolean = false;
+  resultsFound = false;
+  newsFound = false;
+  searchSubmitted = false;
+  noParksFound = false;
 
   campgroundParkArray: any[] = [name];
 
@@ -228,8 +229,9 @@ export class HomeComponent implements OnInit {
     this.foundSearchParks = data.data;
     console.log(this.foundSearchParks.length);
 
-    if (this.foundSearchParks === undefined || this.foundSearchParks.length == 0) {
+    if (this.foundSearchParks === undefined || this.foundSearchParks.length === 0) {
       console.log("no results found, try again");
+      this.noParksFound = true;
     }
     else {
       this.parksFound = true;

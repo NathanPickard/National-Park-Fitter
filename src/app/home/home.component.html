@@ -27,9 +27,13 @@
     <mat-spinner></mat-spinner>
   </div>
 
-  <div *ngIf="foundSearchParks == null && searchSubmitted">
+  <div *ngIf="foundSearchParks === null && searchSubmitted">
     No results found
   </div>
+
+  <!-- <div *ngIf=" noParksFound && !searching && !parksFound">
+    No results found
+  </div> -->
 
   <div *ngIf="parksFound && searchSubmitted">
     Search results
@@ -80,7 +84,7 @@
               {{foundSearchPark.description }}
             </mat-card-content>
 
-            <mat-card-actions>
+            <mat-card-actions style="align-content: center">
               <a href="{{ foundSearchPark.url }}" mat-raised-button color="primary" target="_blank">Website
               </a>
             </mat-card-actions>
