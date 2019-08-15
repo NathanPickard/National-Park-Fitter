@@ -1,7 +1,7 @@
 import { Component, OnInit } from "@angular/core";
 import { FormBuilder, FormGroup, Validators } from "@angular/forms";
 
-import { SearchService } from "./../search.service";
+import { SearchService } from "../shared/search.service";
 
 export interface State {
   name: string;

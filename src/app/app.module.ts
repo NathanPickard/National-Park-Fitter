@@ -14,7 +14,7 @@ import { ParkComponent } from './park/park.component';
 import { CampgroundComponent } from './campground/campground.component';
 
 import { AppRoutingModule } from './app-routing.module';
-import { SearchService } from './search.service';
+import { SearchService } from './shared/search.service';
 
 import { FlexLayoutModule } from '@angular/flex-layout';
 // import { NgImageSliderModule } from 'ng-image-slider';

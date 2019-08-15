@@ -36,7 +36,7 @@
   </div> -->
 
   <div *ngIf="parksFound && searchSubmitted">
-    Search results
+    Search results for "{{ searchParkForm.get('searchQuery').value }}"
   </div>
 
   <div *ngIf="parksFound">
@@ -45,26 +45,28 @@
       <div fxLayout="column" fxFlex="90" fxLayoutGap="15px">
 
         <agm-map [zoom]="4" [latitude]="39.52" [longitude]="-98.35" [fitBounds]="true">
-          <agm-marker *ngFor="let parkCoordinates of searchResultsLatLongArray" [latitude]="parkCoordinates.lat"
-            [longitude]="parkCoordinates.long" [agmFitBounds]="true">
-            <agm-info-window>{{ parkCoordinates.fullName }}</agm-info-window>
-          </agm-marker>
+          <div *ngFor="let parkCoordinates of searchResultsLatLongArray">
+            <agm-marker *ngIf="parkCoordinates.lat && parkCoordinates.long" [latitude]="parkCoordinates.lat"
+              [longitude]="parkCoordinates.long" [agmFitBounds]="true">
+              <agm-info-window>
+                <a href="{{ parkCoordinates.url }}" target="_blank"
+                  style="text-decoration: none">{{ parkCoordinates.fullName }}</a>
+              </agm-info-window>
+            </agm-marker>
+          </div>
         </agm-map>
 
         <div *ngFor="let foundSearchPark of foundSearchParks">
 
-          <mat-card>
-            <mat-card-header>
-
+          <mat-card style="max-width: 1000px;">
+            <mat-card-header fxLayoutAlign="center center">
               <mat-card-title>
                 <a href="{{ foundSearchPark.url }}" target="_blank" style="text-decoration: none;">
                   {{ foundSearchPark.fullName }}</a>
               </mat-card-title>
-
-              <mat-card-subtitle>
+              <mat-card-subtitle fxLayoutAlign="center center">
                 {{ foundSearchPark.designation }}
               </mat-card-subtitle>
-
             </mat-card-header>
 
             <!-- <div *ngFor="let image of foundSearchPark.images">
@@ -84,7 +86,7 @@
               {{foundSearchPark.description }}
             </mat-card-content>
 
-            <mat-card-actions style="align-content: center">
+            <mat-card-actions fxLayoutAlign="center center">
               <a href="{{ foundSearchPark.url }}" mat-raised-button color="primary" target="_blank">Website
               </a>
             </mat-card-actions>
@@ -92,9 +94,7 @@
           </mat-card>
 
         </div>
-
       </div>
-
     </div>
   </div>
 

@@ -3,7 +3,7 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { FormBuilder, FormGroup, Validators, FormControl } from '@angular/forms';
 
-import { SearchService } from '../search.service';
+import { SearchService } from '../shared/search.service';
 
 // import { FitBoundsAccessor } from '@agm/core';
 
@@ -215,7 +215,6 @@ export class HomeComponent implements OnInit {
     //   this.getNameFromParkCode(this.newsReleaseParkCode);
     //   console.log(this.foundParkName);
 
-
     // this.foundNewsReleases.push(this.foundParkName);
     // console.log(this.foundNewsReleases);
     // }
@@ -227,7 +226,6 @@ export class HomeComponent implements OnInit {
     this.searchResultsLatLongArray = [];
 
     this.foundSearchParks = data.data;
-    console.log(this.foundSearchParks.length);
 
     if (this.foundSearchParks === undefined || this.foundSearchParks.length === 0) {
       console.log("no results found, try again");
@@ -242,11 +240,10 @@ export class HomeComponent implements OnInit {
       this.parkLat = this.parkLatLong.substr(4, 5);
       this.parkLong = this.parkLatLong.split("long:").pop();
 
-      this.searchResultsLatLongArray.push({ lat: this.parkLat, long: this.parkLong, fullName: this.foundSearchParks[i].fullName });
+      this.searchResultsLatLongArray
+        .push({ lat: this.parkLat, long: this.parkLong, fullName: this.foundSearchParks[i].fullName, url: this.foundSearchParks[i].url });
 
       console.log(this.searchResultsLatLongArray);
-      console.log(this.parkLat);
-      console.log(this.parkLong);
     }
 
     console.log(this.foundSearchParks);
