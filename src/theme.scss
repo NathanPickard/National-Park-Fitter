@@ -1,0 +1,17 @@
+@import "~@angular/material/theming";
+
+@include mat-core();
+
+$national-park-fitter-app-primary: mat-palette($mat-blue);
+$national-park-fitter-app-accent: mat-palette($mat-amber, A200, A100, A400);
+
+$national-park-fitter-app-warn: mat-palette($mat-red);
+
+$national-park-fitter-app-theme: mat-light-theme(
+  $national-park-fitter-app-primary,
+  $national-park-fitter-app-accent,
+  $national-park-fitter-app-warn
+);
+
+@include angular-material-theme($national-park-fitter-app-theme);
+
