@@ -10,24 +10,24 @@
 
         <a mat-list-item routerLink="/" routerLinkActive="active" (click)="closeSidenav()"
           [routerLinkActiveOptions]="{exact: true}">
-          <mat-icon color="primary">add_location</mat-icon>
+          <mat-icon style="padding-right: 8px" color="primary">add_location</mat-icon>
           National Park Fitter
         </a>
 
         <mat-divider></mat-divider>
 
         <a mat-list-item routerLink="/parks" routerLinkActive="active" (click)="closeSidenav()">
-          <mat-icon color="primary">filter_hdr</mat-icon>
+          <mat-icon style="padding-right: 8px" color="primary">filter_hdr</mat-icon>
           Parks
         </a>
 
         <a mat-list-item routerLink="/campgrounds" routerLinkActive="active" (click)="closeSidenav()">
-          <mat-icon color="primary" svgIcon="tent"></mat-icon>
+          <mat-icon style="padding-right: 8px" color="primary" svgIcon="tent"></mat-icon>
           Campgrounds
         </a>
 
         <a mat-list-item routerLink="/about" routerLinkActive="active" (click)="closeSidenav()">
-          <mat-icon color="primary" svgIcon="information-outline"></mat-icon>
+          <mat-icon style="padding-right: 8px" color="primary" svgIcon="information-outline"></mat-icon>
           About
         </a>
 
@@ -36,7 +36,8 @@
 
     <mat-sidenav-content class="page-wrap">
 
-      <div [@routerTransition]="o.isActivated ? o.activatedRoute : ''" fxLayoutAlign="center" fxFlexFill class="content">
+      <div [@routerTransition]="o.isActivated ? o.activatedRoute : ''" fxLayoutAlign="center" fxFlexFill
+        class="content">
         <router-outlet #o="outlet"></router-outlet>
       </div>
 
