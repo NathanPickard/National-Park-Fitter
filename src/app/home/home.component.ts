@@ -72,6 +72,7 @@ export class HomeComponent implements OnInit {
       zoom: 14,
       mapTypeId: google.maps.MapTypeId.ROADMAP
     };
+    
     this.map = new google.maps.Map(this.gmapElement.nativeElement, mapProp);
 
     this.searchParkForm = new FormGroup({
