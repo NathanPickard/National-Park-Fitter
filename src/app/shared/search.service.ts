@@ -41,6 +41,10 @@ export class SearchService {
     return this.httpClient.get<any>(this.DARK_SKY_URL + this.DARK_SKY_KEY + '/' + latitude + ',' + longitude);
   }
 
+  getHomepageBackgroundImage() {
+    return this.httpClient.get<any>(this.API_URL + 'parks?')
+  }
+
 
 
   getCampgroundResults() {
