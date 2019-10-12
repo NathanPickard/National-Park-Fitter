@@ -2,9 +2,11 @@
 
   <h4 style="padding: 0px 15px;">
     Find the right National Park and campground for your next adventure!</h4>
-
+  <!--
   <div fxLayout="column" fxLayoutAlign="center center" style="min-height: 325px; width: 100%; background-image: url('https://www.nps.gov/common/uploads/structured_data/3C84C6CF-1DD8-B71B-0B1C7CB883AA8FB1.jpg');
-    background-size:contain; background-repeat: no-repeat; background-attachment: fixed;">
+    background-size:contain; background-repeat: no-repeat; background-attachment: fixed;"> -->
+
+  <div fxLayout="column" fxLayoutAlign="center center" style="min-height: 325px; width: 100%;">
 
     <form [formGroup]="searchParkForm" (ngSubmit)="searchParks()">
 
@@ -124,7 +126,7 @@
 
     <!-- <div fxLayoutGap="25px" fxLayout="column" fxLayoutAlign="space-evenly start"> -->
     <div fxLayoutAlign="space-evenly start">
-      <div fxLayoutGap="25px" fxFlex="90" fxLayout="column">
+      <div fxLayoutGap="15px" fxFlex="95" fxLayout.lt-md="column" fxLayout="row">
 
         <div *ngFor="let foundNewsRelease of foundNewsReleases">
 

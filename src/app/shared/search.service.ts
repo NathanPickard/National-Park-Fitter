@@ -46,7 +46,6 @@ export class SearchService {
   }
 
 
-
   getCampgroundResults() {
     return this.httpClient.get<any>(this.API_URL + 'campgrounds?' + '&api_key=' + this.API_KEY + '&limit=5');
   }

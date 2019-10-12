@@ -64,7 +64,6 @@ export class HomeComponent implements OnInit {
   parkLong: any;
   searchResultsLatLongArray: any;
 
-
   ngOnInit() {
 
     var mapProp = {
@@ -142,7 +141,6 @@ export class HomeComponent implements OnInit {
       () => this.searching = false
     );
   }
-
 
   getNewsReleases() {
     return this.searchService.getLatestNewsReleases().subscribe(
