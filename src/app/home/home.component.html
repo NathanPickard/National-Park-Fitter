@@ -1,7 +1,8 @@
 <div fxFlex fxLayout="column" fxLayoutAlign="center center">
 
   <h4 style="padding: 0px 15px;">
-    Find the right National Park and campground for your next adventure!</h4>
+    Find the right National Park and campground for your next adventure!
+  </h4>
   <!--
   <div fxLayout="column" fxLayoutAlign="center center" style="min-height: 325px; width: 100%; background-image: url('https://www.nps.gov/common/uploads/structured_data/3C84C6CF-1DD8-B71B-0B1C7CB883AA8FB1.jpg');
     background-size:contain; background-repeat: no-repeat; background-attachment: fixed;"> -->
@@ -41,65 +42,63 @@
     No results found
   </div> -->
 
-  <div *ngIf="parksFound && searchSubmitted">
+  <mat-toolbar color="primary" fxLayoutAlign="center center" *ngIf="parksFound && searchSubmitted">
     Search results for "{{ searchParkForm.get('searchQuery').value }}"
-  </div>
+  </mat-toolbar>
 
   <div *ngIf="parksFound" fxLayoutGap="50px">
 
-    <div fxLayoutAlign="space-evenly start">
-      <div fxLayout="column" fxFlex="90" fxLayoutGap="15px">
+    <div fxLayout="column" fxFlex="90" fxLayoutGap="15px">
 
-        <agm-map [zoom]="4" [latitude]="39.52" [longitude]="-98.35" [fitBounds]="true">
-          <div *ngFor="let parkCoordinates of searchResultsLatLongArray">
-            <agm-marker *ngIf="parkCoordinates.lat && parkCoordinates.long" [latitude]="parkCoordinates.lat"
-              [longitude]="parkCoordinates.long" [agmFitBounds]="true">
-              <agm-info-window>
-                <a href="{{ parkCoordinates.url }}" target="_blank"
-                  style="text-decoration: none">{{ parkCoordinates.fullName }}</a>
-              </agm-info-window>
-            </agm-marker>
-          </div>
-        </agm-map>
+      <agm-map [zoom]="4" [latitude]="39.52" [longitude]="-98.35" [fitBounds]="true">
+        <div *ngFor="let parkCoordinates of searchResultsLatLongArray">
+          <agm-marker *ngIf="parkCoordinates.lat && parkCoordinates.long" [latitude]="parkCoordinates.lat"
+            [longitude]="parkCoordinates.long" [agmFitBounds]="true">
+            <agm-info-window>
+              <a href="{{ parkCoordinates.url }}" target="_blank"
+                style="text-decoration: none">{{ parkCoordinates.fullName }}</a>
+            </agm-info-window>
+          </agm-marker>
+        </div>
+      </agm-map>
 
-        <div *ngFor="let foundSearchPark of foundSearchParks">
+      <div *ngFor="let foundSearchPark of foundSearchParks">
 
-          <mat-card style="max-width: 1000px;">
-            <mat-card-header fxLayoutAlign="center center">
-              <mat-card-title>
-                <a href="{{ foundSearchPark.url }}" target="_blank" style="text-decoration: none;">
-                  {{ foundSearchPark.fullName }}</a>
-              </mat-card-title>
-              <mat-card-subtitle fxLayoutAlign="center center">
-                {{ foundSearchPark.designation }}
-              </mat-card-subtitle>
-            </mat-card-header>
+        <mat-card style="max-width: 1000px;">
+          <mat-card-header fxLayoutAlign="center center">
+            <mat-card-title>
+              <a href="{{ foundSearchPark.url }}" target="_blank" style="text-decoration: none;">
+                {{ foundSearchPark.fullName }}</a>
+            </mat-card-title>
+            <mat-card-subtitle fxLayoutAlign="center center">
+              {{ foundSearchPark.designation }}
+            </mat-card-subtitle>
+          </mat-card-header>
 
-            <!-- <div *ngFor="let image of foundSearchPark.images">
+          <!-- <div *ngFor="let image of foundSearchPark.images">
         <img mat-card-sm-image [src]="image.url">
         {{ image.title }}
       </div> -->
 
-            <!-- <div *ngFor="let image of foundSearchPark.images"> -->
-            <div fxLayout="column" fxLayoutAlign="space-around center">
-              <img mat-card-image [src]="foundSearchPark.images[0].url" style="max-width: 350px;">
-              <p>{{ foundSearchPark.images[0].title }}</p>
-            </div>
-            <!-- </div> -->
+          <!-- <div *ngFor="let image of foundSearchPark.images"> -->
+          <div fxLayout="column" fxLayoutAlign="space-around center">
+            <img mat-card-image [src]="foundSearchPark.images[0].url" style="max-width: 350px;">
+            <p>{{ foundSearchPark.images[0].title }}</p>
+          </div>
+          <!-- </div> -->
 
-            <mat-card-content>
-              <h4>Description:</h4>
-              {{foundSearchPark.description }}
-            </mat-card-content>
+          <mat-card-content>
+            <h4>Description:</h4>
+            {{foundSearchPark.description }}
+          </mat-card-content>
 
-            <mat-card-actions fxLayoutAlign="center center">
-              <a href="{{ foundSearchPark.url }}" mat-raised-button color="primary" target="_blank">Website
-              </a>
-            </mat-card-actions>
+          <mat-card-actions fxLayoutAlign="center center">
+            <a href="{{ foundSearchPark.url }}" mat-raised-button color="primary" target="_blank">Website
+            </a>
+          </mat-card-actions>
 
-          </mat-card>
+        </mat-card>
 
-        </div>
       </div>
     </div>
   </div>
