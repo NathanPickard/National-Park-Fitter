@@ -125,75 +125,75 @@
     </ng-template> -->
 
     <!-- <div fxLayoutGap="25px" fxLayout="column" fxLayoutAlign="space-evenly start"> -->
-    <div fxLayoutAlign="space-evenly start">
-      <div fxLayoutGap="15px" fxFlex="95" fxLayout.lt-md="column" fxLayout="row">
+    <!-- <div fxLayoutAlign="space-evenly start"> -->
+    <!-- <div fxLayoutGap="15px" fxFlex="95" fxLayout.lt-md="column" fxLayout="row"> -->
+    <div fxLayoutGap="20px" fxLayout="row wrap" fxLayoutAlign="center stretch" fxLayout.lt-md="column">
 
-        <div *ngFor="let foundNewsRelease of foundNewsReleases">
+      <div fxFlex="90" *ngFor="let foundNewsRelease of foundNewsReleases">
 
-          <mat-card fxLayout="column" fxLayoutAlign="center center">
+        <mat-card fxLayout="column" fxLayoutAlign="center center">
+          <!-- <mat-card> -->
 
-            <mat-card-header>
-              <mat-card-title>
-                <a href="{{ foundNewsRelease.url }}" style="text-decoration: none;" target="_blank">
-                  {{ foundNewsRelease.title }}
-                </a>
-              </mat-card-title>
-              <mat-card-subtitle>
-                {{ foundNewsRelease.releasedate | date: 'E, MMM d, y' }}
-              </mat-card-subtitle>
+          <mat-card-header>
+            <mat-card-title>
+              <a href="{{ foundNewsRelease.url }}" style="text-decoration: none;" target="_blank">
+                {{ foundNewsRelease.title }}
+              </a>
+            </mat-card-title>
+            <mat-card-subtitle>
+              {{ foundNewsRelease.releasedate | date: 'E, MMM d, y' }}
+            </mat-card-subtitle>
 
-            </mat-card-header>
+          </mat-card-header>
 
-            <div fxLayoutAlign="center center" fxLayout="column">
-              <img mat-card-image [src]="foundNewsRelease.image.url">
-              <mat-card-subtitle>{{ foundNewsRelease.image.caption }}</mat-card-subtitle>
-            </div>
+          <div fxLayoutAlign="center center" fxLayout="column">
+            <img mat-card-image [src]="foundNewsRelease.image.url">
+            <mat-card-subtitle>{{ foundNewsRelease.image.caption }}</mat-card-subtitle>
+          </div>
 
-            <mat-card-content>
-              {{ foundNewsRelease.abstract }}
-            </mat-card-content>
+          <mat-card-content>
+            {{ foundNewsRelease.abstract }}
+          </mat-card-content>
 
-            <mat-card-actions>
-              <a href="{{ foundNewsRelease.url}}" mat-stroked-button color="primary" target="_blank">Read more<mat-icon>
-                  keyboard_arrow_right</mat-icon></a>
-            </mat-card-actions>
+          <mat-card-actions>
+            <a href="{{ foundNewsRelease.url}}" mat-stroked-button color="primary" target="_blank">Read more<mat-icon>
+                keyboard_arrow_right</mat-icon></a>
+          </mat-card-actions>
 
-          </mat-card>
+        </mat-card>
 
-        </div>
+      </div>
 
-        <div *ngFor="let foundNextNewsRelease of foundNextNewsReleases">
+      <div *ngFor="let foundNextNewsRelease of foundNextNewsReleases">
 
-          <mat-card>
+        <mat-card>
 
-            <mat-card-header>
-              <mat-card-title>
-                <a href="{{ foundNextNewsRelease.url }}" style="text-decoration: none;" target="_blank">
-                  {{ foundNextNewsRelease.title }}
-                </a>
-              </mat-card-title>
-              <mat-card-subtitle>
-                {{ foundNextNewsRelease.releasedate | date: 'E, MMM d, y' }}
-              </mat-card-subtitle>
-            </mat-card-header>
+          <mat-card-header>
+            <mat-card-title>
+              <a href="{{ foundNextNewsRelease.url }}" style="text-decoration: none;" target="_blank">
+                {{ foundNextNewsRelease.title }}
+              </a>
+            </mat-card-title>
+            <mat-card-subtitle>
+              {{ foundNextNewsRelease.releasedate | date: 'E, MMM d, y' }}
+            </mat-card-subtitle>
+          </mat-card-header>
 
-            <div fxLayoutAlign="center center">
-              <img mat-card-image [src]="foundNextNewsRelease.image.url">
-            </div>
+          <div fxLayoutAlign="center center">
+            <img mat-card-image [src]="foundNextNewsRelease.image.url">
+          </div>
 
-            <mat-card-content>
-              {{ foundNextNewsRelease.abstract }}
-            </mat-card-content>
+          <mat-card-content>
+            {{ foundNextNewsRelease.abstract }}
+          </mat-card-content>
 
-            <mat-card-actions>
-              <a href="{{ foundNextNewsRelease.url}}" mat-stroked-button color="primary" target="_blank">Read more
-                <mat-icon>
-                  keyboard_arrow_right</mat-icon></a>
-            </mat-card-actions>
+          <mat-card-actions>
+            <a href="{{ foundNextNewsRelease.url}}" mat-stroked-button color="primary" target="_blank">Read more
+              <mat-icon>
+                keyboard_arrow_right</mat-icon></a>
+          </mat-card-actions>
 
-          </mat-card>
-
-        </div>
+        </mat-card>
 
       </div>
 
