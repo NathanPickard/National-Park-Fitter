@@ -89,7 +89,6 @@ export class HomeComponent implements OnInit {
     });
 
     this.accessibilityFormGroup = this._formBuilder.group({
-
       wheelchairAccessCtrl: ['', Validators.required],
       internetCtrl: ['', Validators.required],
       rvAllowedCtrl: ['', Validators.required],
@@ -106,7 +105,6 @@ export class HomeComponent implements OnInit {
     });
 
     this.amenitiesFormGroup = this._formBuilder.group({
-
       trashRecyclingCtrl: ['', Validators.required],
       toiletsCtrl: ['', Validators.required],
       internetConnectivityCtrl: ['', Validators.required],

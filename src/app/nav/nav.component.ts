@@ -24,5 +24,4 @@ export class NavComponent {
     openNav() {
       this.sideNavService.openNav();
     }
-
 }
