@@ -1,226 +1,231 @@
 <div fxLayout="column" fxLayoutAlign="start center" style="padding-top: 15px;">
 
-  <mat-toolbar color="primary">
-    <mat-toolbar-row fxLayoutAlign="center center">
-      <span>Campground Fitter</span>
-    </mat-toolbar-row>
-  </mat-toolbar>
-
-  <!-- <h3>Complete the form below to find the park and campground that's right for you!</h3> -->
-  <!-- <h4>Select the campground accessibility features you require</h4> -->
-  <h5 fxLayout="column" fxLayoutAlign="center center" style="padding: 0px 40px">Select the campground features,
+  <h5 fxLayout="row" fxLayoutAlign="center center" style="padding: 0px 40px">Select the campground features,
     amenities, and accessibility needs you require to find the perfect campsite</h5>
 
-  <mat-vertical-stepper #stepper>
+  <mat-card>
 
-    <mat-step [stepControl]="accessibilityFormGroup" state="accessibility">
-      <form [formGroup]="accessibilityFormGroup">
+    <mat-toolbar color="primary">
+      <mat-toolbar-row fxLayoutAlign="center center">
+        <span>Campground Fitter</span>
+      </mat-toolbar-row>
+    </mat-toolbar>
 
-        <ng-template matStepLabel>Campground Accessibility</ng-template>
+    <!-- <h3>Complete the form below to find the park and campground that's right for you!</h3> -->
+    <!-- <h4>Select the campground accessibility features you require</h4> -->
 
-        <div fxLayoutGap="20px" fxLayout="column">
+    <mat-vertical-stepper #stepper>
 
-          <mat-checkbox fxLayout="row" formControlName="adaCtrl">
-            <mat-icon>accessible</mat-icon>
-            ADA information
-          </mat-checkbox>
-          <mat-checkbox formControlName="wheelchairAccessCtrl">
-            <mat-icon>accessible_forward</mat-icon>
-            Wheelchair access information
-          </mat-checkbox>
+      <mat-step [stepControl]="accessibilityFormGroup" state="accessibility">
+        <form [formGroup]="accessibilityFormGroup">
 
-          <mat-divider></mat-divider>
+          <ng-template matStepLabel>Campground Accessibility</ng-template>
 
-          <mat-checkbox formControlName="internetCtrl">
-            <mat-icon>wifi</mat-icon>Internet information
-          </mat-checkbox>
-          <mat-checkbox formControlName="cellPhoneInfoCtrl">
-            <mat-icon>smartphone</mat-icon>
-            Cell phone information
-          </mat-checkbox>
+          <div fxLayoutGap="20px" fxLayout="column">
 
-          <mat-divider></mat-divider>
+            <mat-checkbox fxLayout="row" formControlName="adaCtrl">
+              <mat-icon>accessible</mat-icon>
+              ADA information
+            </mat-checkbox>
+            <mat-checkbox formControlName="wheelchairAccessCtrl">
+              <mat-icon>accessible_forward</mat-icon>
+              Wheelchair access information
+            </mat-checkbox>
 
-          <mat-checkbox formControlName="rvAllowedCtrl">
-            <mat-icon>rv_hookup</mat-icon>
-            RV allowed
-          </mat-checkbox>
-          <mat-checkbox formControlName="rvInfoCtrl">
-            <mat-icon>rv_hookup</mat-icon>
-            RV information
-          </mat-checkbox>
-          <mat-checkbox formControlName="trailerAllowedCtrl">
-            <mat-icon svgIcon="truck-trailer"></mat-icon>
-            Trailer allowed
-          </mat-checkbox>
+            <mat-divider></mat-divider>
 
-          <mat-divider></mat-divider>
+            <mat-checkbox formControlName="internetCtrl">
+              <mat-icon>wifi</mat-icon>Internet information
+            </mat-checkbox>
+            <mat-checkbox formControlName="cellPhoneInfoCtrl">
+              <mat-icon>smartphone</mat-icon>
+              Cell phone information
+            </mat-checkbox>
 
-          <mat-checkbox formControlName="accessRoadsCtrl">
-            <mat-icon svgIcon="road"></mat-icon>Access roads
-          </mat-checkbox>
-          <mat-checkbox formControlName="fireStoveCtrl">
-            <mat-icon svgIcon="stove"></mat-icon>
-            Fire stove policy
-          </mat-checkbox>
+            <mat-divider></mat-divider>
 
-          <div>
+            <mat-checkbox formControlName="rvAllowedCtrl">
+              <mat-icon>rv_hookup</mat-icon>
+              RV allowed
+            </mat-checkbox>
+            <mat-checkbox formControlName="rvInfoCtrl">
+              <mat-icon>rv_hookup</mat-icon>
+              RV information
+            </mat-checkbox>
+            <mat-checkbox formControlName="trailerAllowedCtrl">
+              <mat-icon svgIcon="truck-trailer"></mat-icon>
+              Trailer allowed
+            </mat-checkbox>
+
+            <mat-divider></mat-divider>
+
+            <mat-checkbox formControlName="accessRoadsCtrl">
+              <mat-icon svgIcon="road"></mat-icon>Access roads
+            </mat-checkbox>
+            <mat-checkbox formControlName="fireStoveCtrl">
+              <mat-icon svgIcon="stove"></mat-icon>
+              Fire stove policy
+            </mat-checkbox>
+
+            <div>
+              <button mat-raised-button matStepperNext>Next</button>
+            </div>
+
+          </div>
+
+        </form>
+
+      </mat-step>
+
+      <mat-step [stepControl]="amenitiesFormGroup" state="amenities">
+        <form [formGroup]="amenitiesFormGroup">
+
+          <ng-template matStepLabel>Campground Amenities</ng-template>
+
+          <div fxLayoutGap="20px" fxLayout="column">
+
+            <mat-checkbox formControlName="toiletsCtrl">
+              <mat-icon svgIcon="toilet"></mat-icon>
+              Toilets
+            </mat-checkbox>
+            <mat-checkbox formControlName="showersCtrl">
+              <mat-icon svgIcon="shower-head"></mat-icon>
+              Showers
+            </mat-checkbox>
+            <mat-checkbox formControlName="cellPhoneReceptionCtrl">
+              <mat-icon>network_cell</mat-icon>
+              Cell phone reception
+            </mat-checkbox>
+            <mat-checkbox formControlName="laundryCtrl">
+              <mat-icon svgIcon="washing-machine"></mat-icon>
+              Laundry
+            </mat-checkbox>
+            <mat-checkbox formControlName="internetConnectivityCtrl">
+              <mat-icon>wifi</mat-icon>
+              Internet connectivity
+            </mat-checkbox>
+            <mat-checkbox formControlName="amphitheaterCtrl">
+              <mat-icon svgIcon="stadium"></mat-icon>
+              Amphitheater
+            </mat-checkbox>
+            <mat-checkbox formControlName="staffVolunteerCtrl">
+              <mat-icon>people</mat-icon>
+              Staff or volunteer host on site
+            </mat-checkbox>
+
+            <mat-divider></mat-divider>
+
+            <mat-checkbox formControlName="trashRecyclingCtrl">
+              <mat-icon svgIcon="recycle"></mat-icon>
+              Trash and recycling collection
+            </mat-checkbox>
+            <mat-checkbox formControlName="dumpStationCtrl">
+              <mat-icon svgIcon="trash-can-outline"></mat-icon>
+              Dump station
+            </mat-checkbox>
+
+            <mat-divider></mat-divider>
+
+            <mat-checkbox formControlName="potableWatertCtrl">
+              <mat-icon>local_drink</mat-icon>
+              Potable Water
+            </mat-checkbox>
+            <mat-checkbox formControlName="foodStorageLockersCtrl">
+              <mat-icon svgIcon="locker-multiple"></mat-icon>
+              Food storage locker
+            </mat-checkbox>
+
+            <mat-divider></mat-divider>
+
+            <mat-checkbox formControlName="campStoreCtrl">
+              <mat-icon>store</mat-icon>
+              Camp store
+            </mat-checkbox>
+            <mat-checkbox formControlName="iceAvailableForSaleCtrl">
+              <mat-icon>ac_unit</mat-icon>
+              <mat-icon>attach_money</mat-icon>
+              Ice available for sale
+            </mat-checkbox>
+            <mat-checkbox formControlName="firewoodForSaleCtrl">
+              <mat-icon svgIcon="fire"></mat-icon>
+              <mat-icon>attach_money</mat-icon>
+              Firewood available for sale
+            </mat-checkbox>
+
+          </div>
+
+          <div fxLayoutGap="15px" style="padding: 30px 30px 0px 0px;">
+            <button mat-raised-button matStepperPrevious>Back</button>
             <button mat-raised-button matStepperNext>Next</button>
           </div>
 
-        </div>
+        </form>
+      </mat-step>
 
-      </form>
+      <mat-step [stepControl]="generalInfoFormGroup" state="information">
+        <form [formGroup]="generalInfoFormGroup">
+          <ng-template matStepLabel>General Campground Information</ng-template>
 
-    </mat-step>
+          <div fxLayoutGap="20px" fxLayout="column">
 
-    <mat-step [stepControl]="amenitiesFormGroup" state="amenities">
-      <form [formGroup]="amenitiesFormGroup">
+            <mat-checkbox formControlName="weatherCtrl">
+              <mat-icon>wb_sunny</mat-icon>
+              Weather
+            </mat-checkbox>
+            <mat-checkbox formControlName="regulationsCtrl">
+              <mat-icon>info</mat-icon>
+              Regulations
+            </mat-checkbox>
+            <mat-checkbox formControlName="directionsCtrl">
+              <mat-icon>directions</mat-icon>
+              Directions
+            </mat-checkbox>
+          </div>
 
-        <ng-template matStepLabel>Campground Amenities</ng-template>
+          <div fxLayoutGap="15px" style="padding: 30px 30px 0px 0px;">
+            <button mat-raised-button matStepperPrevious>Back</button>
+            <button mat-raised-button matStepperNext>Next</button>
+          </div>
+        </form>
+      </mat-step>
 
-        <div fxLayoutGap="20px" fxLayout="column">
+      <mat-step state="done">
 
-          <mat-checkbox formControlName="toiletsCtrl">
-            <mat-icon svgIcon="toilet"></mat-icon>
-            Toilets
-          </mat-checkbox>
-          <mat-checkbox formControlName="showersCtrl">
-            <mat-icon svgIcon="shower-head"></mat-icon>
-            Showers
-          </mat-checkbox>
-          <mat-checkbox formControlName="cellPhoneReceptionCtrl">
-            <mat-icon>network_cell</mat-icon>
-            Cell phone reception
-          </mat-checkbox>
-          <mat-checkbox formControlName="laundryCtrl">
-            <mat-icon svgIcon="washing-machine"></mat-icon>
-            Laundry
-          </mat-checkbox>
-          <mat-checkbox formControlName="internetConnectivityCtrl">
-            <mat-icon>wifi</mat-icon>
-            Internet connectivity
-          </mat-checkbox>
-          <mat-checkbox formControlName="amphitheaterCtrl">
-            <mat-icon svgIcon="stadium"></mat-icon>
-            Amphitheater
-          </mat-checkbox>
-          <mat-checkbox formControlName="staffVolunteerCtrl">
-            <mat-icon>people</mat-icon>
-            Staff or volunteer host on site
-          </mat-checkbox>
+        <ng-template matStepLabel>Done</ng-template>
+        Get results!
+        <div fxLayoutGap="15px" style="padding: 30px 30px 0px 0px;" fxLayout="column">
 
-          <mat-divider></mat-divider>
+          <div fxLayout="row" fxLayoutGap="15px">
+            <button mat-raised-button matStepperPrevious color="accent">Back</button>
+            <button mat-raised-button color="primary" (click)="onSubmitStepper()">Submit</button>
+          </div>
 
-          <mat-checkbox formControlName="trashRecyclingCtrl">
-            <mat-icon svgIcon="recycle"></mat-icon>
-            Trash and recycling collection
-          </mat-checkbox>
-          <mat-checkbox formControlName="dumpStationCtrl">
-            <mat-icon svgIcon="trash-can-outline"></mat-icon>
-            Dump station
-          </mat-checkbox>
-
-          <mat-divider></mat-divider>
-
-          <mat-checkbox formControlName="potableWatertCtrl">
-            <mat-icon>local_drink</mat-icon>
-            Potable Water
-          </mat-checkbox>
-          <mat-checkbox formControlName="foodStorageLockersCtrl">
-            <mat-icon svgIcon="locker-multiple"></mat-icon>
-            Food storage locker
-          </mat-checkbox>
-
-          <mat-divider></mat-divider>
-
-          <mat-checkbox formControlName="campStoreCtrl">
-            <mat-icon>store</mat-icon>
-            Camp store
-          </mat-checkbox>
-          <mat-checkbox formControlName="iceAvailableForSaleCtrl">
-            <mat-icon>ac_unit</mat-icon>
-            <mat-icon>attach_money</mat-icon>
-            Ice available for sale
-          </mat-checkbox>
-          <mat-checkbox formControlName="firewoodForSaleCtrl">
-            <mat-icon svgIcon="fire"></mat-icon>
-            <mat-icon>attach_money</mat-icon>
-            Firewood available for sale
-          </mat-checkbox>
+          <div>
+            <button mat-raised-button color="warn" (click)="stepper.reset()">Reset search</button>
+          </div>
 
         </div>
+      </mat-step>
 
-        <div fxLayoutGap="15px" style="padding: 30px 30px 0px 0px;">
-          <button mat-raised-button matStepperPrevious>Back</button>
-          <button mat-raised-button matStepperNext>Next</button>
-        </div>
+      <ng-template matStepperIcon="accessibility">
+        <mat-icon>accessibility_new</mat-icon>
+      </ng-template>
 
-      </form>
-    </mat-step>
+      <ng-template matStepperIcon="amenities">
+        <mat-icon>star_border</mat-icon>
+      </ng-template>
 
-    <mat-step [stepControl]="generalInfoFormGroup" state="information">
-      <form [formGroup]="generalInfoFormGroup">
-        <ng-template matStepLabel>General Campground Information</ng-template>
+      <ng-template matStepperIcon="information">
+        <mat-icon>info</mat-icon>
+      </ng-template>
 
-        <div fxLayoutGap="20px" fxLayout="column">
+      <ng-template matStepperIcon="done">
+        <mat-icon>done_all</mat-icon>
+      </ng-template>
 
-          <mat-checkbox formControlName="weatherCtrl">
-            <mat-icon>wb_sunny</mat-icon>
-            Weather
-          </mat-checkbox>
-          <mat-checkbox formControlName="regulationsCtrl">
-            <mat-icon>info</mat-icon>
-            Regulations
-          </mat-checkbox>
-          <mat-checkbox formControlName="directionsCtrl">
-            <mat-icon>directions</mat-icon>
-            Directions
-          </mat-checkbox>
-        </div>
+    </mat-vertical-stepper>
 
-        <div fxLayoutGap="15px" style="padding: 30px 30px 0px 0px;">
-          <button mat-raised-button matStepperPrevious>Back</button>
-          <button mat-raised-button matStepperNext>Next</button>
-        </div>
-      </form>
-    </mat-step>
-
-    <mat-step state="done">
-
-      <ng-template matStepLabel>Done</ng-template>
-      Get results!
-      <div fxLayoutGap="15px" style="padding: 30px 30px 0px 0px;" fxLayout="column">
-
-        <div fxLayout="row" fxLayoutGap="15px">
-          <button mat-raised-button matStepperPrevious color="accent">Back</button>
-          <button mat-raised-button color="primary" (click)="onSubmitStepper()">Submit</button>
-        </div>
-
-        <div>
-          <button mat-raised-button color="warn" (click)="stepper.reset()">Reset search</button>
-        </div>
-
-      </div>
-    </mat-step>
-
-    <ng-template matStepperIcon="accessibility">
-      <mat-icon>accessibility_new</mat-icon>
-    </ng-template>
-
-    <ng-template matStepperIcon="amenities">
-      <mat-icon>star_border</mat-icon>
-    </ng-template>
-
-    <ng-template matStepperIcon="information">
-      <mat-icon>info</mat-icon>
-    </ng-template>
-
-    <ng-template matStepperIcon="done">
-      <mat-icon>done_all</mat-icon>
-    </ng-template>
-
-  </mat-vertical-stepper>
+  </mat-card>
 
   <div *ngIf="!resultsFound && stepperSubmitted">
     <mat-spinner></mat-spinner>

@@ -1,42 +1,45 @@
 <div fxFlex fxLayout="column" fxLayoutAlign="start center" style="padding-top: 15px;">
 
-  <mat-toolbar color="primary">
-    <mat-toolbar-row fxLayoutAlign="center center">
-      <span>Park Fitter</span>
-    </mat-toolbar-row>
-  </mat-toolbar>
+  <!-- <h5>Select from the options below to find the park for you</h5> -->
+  <h5>Search by state and the information you need to find the park for you</h5>
 
-  <h5>Select from the options below to find the park for you</h5>
+  <mat-card>
 
-  <mat-vertical-stepper #stepper>
+    <mat-toolbar color="primary">
+      <mat-toolbar-row fxLayoutAlign="center center">
+        <span>Park Fitter</span>
+      </mat-toolbar-row>
+    </mat-toolbar>
 
-    <mat-step [stepControl]="stateFormGroup" state="state">
+    <mat-vertical-stepper #stepper>
 
-      <form [formGroup]="stateFormGroup">
-        <ng-template matStepLabel>Park by State</ng-template>
-        <div>
+      <mat-step [stepControl]="stateFormGroup" state="state">
 
-          <mat-select placeholder="State" formControlName="stateCtrl" name="state">
-            <mat-option>None</mat-option>
+        <form [formGroup]="stateFormGroup">
+          <ng-template matStepLabel>Park by State</ng-template>
+          <div>
 
-            <mat-divider></mat-divider>
+            <mat-select placeholder="State" formControlName="stateCtrl" name="state">
+              <mat-option>None</mat-option>
 
-            <mat-optgroup *ngFor="let group of stateGroups" [label]="group.name">
-              <mat-option *ngFor="let state of group.state" [value]="state">
-                <img class="option-img" [src]="state.flag" height="25">
-                <span>{{ state.name }}</span>
-              </mat-option>
-            </mat-optgroup>
-          </mat-select>
-        </div>
-        <div fxLayoutGap="15px" style="padding: 30px 30px 0px 0px;">
-          <button mat-raised-button matStepperNext color="primary">Next</button>
-        </div>
-      </form>
+              <mat-divider></mat-divider>
 
-    </mat-step>
+              <mat-optgroup *ngFor="let group of stateGroups" [label]="group.name">
+                <mat-option *ngFor="let state of group.state" [value]="state">
+                  <img class="option-img" [src]="state.flag" height="25">
+                  <span>{{ state.name }}</span>
+                </mat-option>
+              </mat-optgroup>
+            </mat-select>
+          </div>
+          <div fxLayoutGap="15px" style="padding: 30px 30px 0px 0px;">
+            <button mat-raised-button matStepperNext color="primary">Next</button>
+          </div>
+        </form>
 
-    <!-- <mat-step [stepControl]="designationFormGroup" state="designation">
+      </mat-step>
+
+      <!-- <mat-step [stepControl]="designationFormGroup" state="designation">
       <form [formGroup]="designationFormGroup">
         <ng-template matStepLabel>Park by designation</ng-template>
 
@@ -67,73 +70,75 @@
       </form>
     </mat-step> -->
 
-    <mat-step [stepControl]="generalParkInfoFormGroup" state="generalParkInformation">
+      <mat-step [stepControl]="generalParkInfoFormGroup" state="generalParkInformation">
 
-      <form [formGroup]="generalParkInfoFormGroup">
-        <ng-template matStepLabel>General Park Information</ng-template>
+        <form [formGroup]="generalParkInfoFormGroup">
+          <ng-template matStepLabel>General Park Information</ng-template>
 
-        <div fxLayoutGap="20px" fxLayout="column">
+          <div fxLayoutGap="20px" fxLayout="column">
 
-          <mat-checkbox formControlName="parkInfoCtrl">
-            <mat-icon>info</mat-icon>
-            Park Information
-          </mat-checkbox>
+            <mat-checkbox formControlName="parkInfoCtrl">
+              <mat-icon>info</mat-icon>
+              Park Information
+            </mat-checkbox>
 
-          <mat-checkbox formControlName="parkWeatherCtrl">
-            <mat-icon>wb_sunny</mat-icon>
-            Weather
-          </mat-checkbox>
+            <mat-checkbox formControlName="parkWeatherCtrl">
+              <mat-icon>wb_sunny</mat-icon>
+              Weather
+            </mat-checkbox>
 
-          <mat-checkbox formControlName="parkDirectionsCtrl">
-            <mat-icon>directions</mat-icon>
-            Directions
-          </mat-checkbox>
+            <mat-checkbox formControlName="parkDirectionsCtrl">
+              <mat-icon>directions</mat-icon>
+              Directions
+            </mat-checkbox>
+          </div>
+
+          <div fxLayoutGap="15px" style="padding: 30px 30px 0px 0px;">
+            <button mat-raised-button matStepperPrevious color="accent">Back</button>
+            <button mat-raised-button matStepperNext color="primary">Next</button>
+          </div>
+
+        </form>
+      </mat-step>
+
+      <mat-step state="done">
+
+        <ng-template matStepLabel>Done</ng-template>
+        Get Results!
+        <div fxLayoutGap="15px" style="padding: 30px 30px 0px 0px;" fxLayout="column">
+
+          <div fxLayout="row" fxLayoutGap="15px">
+            <button mat-raised-button matStepperPrevious color="accent">Back</button>
+            <button mat-raised-button color="primary" (click)="onSubmitStepper()">Submit</button>
+          </div>
+
+          <div>
+            <button mat-stroked-button color="warn" (click)="stepper.reset()">Reset search</button>
+          </div>
+
         </div>
 
-        <div fxLayoutGap="15px" style="padding: 30px 30px 0px 0px;">
-          <button mat-raised-button matStepperPrevious color="accent">Back</button>
-          <button mat-raised-button matStepperNext color="primary">Next</button>
-        </div>
+      </mat-step>
 
-      </form>
-    </mat-step>
+      <ng-template matStepperIcon="state">
+        <mat-icon>place</mat-icon>
+      </ng-template>
 
-    <mat-step state="done">
+      <ng-template matStepperIcon="designation">
+        <mat-icon>category</mat-icon>
+      </ng-template>
 
-      <ng-template matStepLabel>Done</ng-template>
-      Get Results!
-      <div fxLayoutGap="15px" style="padding: 30px 30px 0px 0px;" fxLayout="column">
+      <ng-template matStepperIcon="generalParkInformation">
+        <mat-icon>info</mat-icon>
+      </ng-template>
 
-        <div fxLayout="row" fxLayoutGap="15px">
-          <button mat-raised-button matStepperPrevious color="accent">Back</button>
-          <button mat-raised-button color="primary" (click)="onSubmitStepper()">Submit</button>
-        </div>
+      <ng-template matStepperIcon="done">
+        <mat-icon>done_all</mat-icon>
+      </ng-template>
 
-        <div>
-          <button mat-stroked-button color="warn" (click)="stepper.reset()">Reset search</button>
-        </div>
+    </mat-vertical-stepper>
 
-      </div>
-
-    </mat-step>
-
-    <ng-template matStepperIcon="state">
-      <mat-icon>place</mat-icon>
-    </ng-template>
-
-    <ng-template matStepperIcon="designation">
-      <mat-icon>category</mat-icon>
-    </ng-template>
-
-    <ng-template matStepperIcon="generalParkInformation">
-      <mat-icon>info</mat-icon>
-    </ng-template>
-
-    <ng-template matStepperIcon="done">
-      <mat-icon>done_all</mat-icon>
-    </ng-template>
-
-  </mat-vertical-stepper>
+  </mat-card>
 
   <div *ngIf="!resultsFound && stepperSubmitted">
     <mat-spinner></mat-spinner>
@@ -223,4 +228,6 @@
       </div>
     </div>
   </div>
+
+
 </div>
