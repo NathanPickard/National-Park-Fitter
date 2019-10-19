@@ -21,7 +21,7 @@ export class NavComponent {
   constructor(private breakpointObserver: BreakpointObserver,
     private sideNavService: SideNavService) { }
 
-    openNav() {
-      this.sideNavService.openNav();
-    }
+  openNav() {
+    this.sideNavService.openNav();
+  }
 }

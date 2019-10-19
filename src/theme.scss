@@ -2,8 +2,9 @@
 
 @include mat-core();
 
-$national-park-fitter-app-primary: mat-palette($mat-blue);
-$national-park-fitter-app-accent: mat-palette($mat-amber, A200, A100, A400);
+$national-park-fitter-app-primary: mat-palette($mat-brown, 500);
+// $national-park-fitter-app-accent: mat-palette($mat-green, A200, A100, A400);
+$national-park-fitter-app-accent: mat-palette($mat-green, 900, A100, A400);
 
 $national-park-fitter-app-warn: mat-palette($mat-red);
 
@@ -14,4 +15,3 @@ $national-park-fitter-app-theme: mat-light-theme(
 );
 
 @include angular-material-theme($national-park-fitter-app-theme);
-
