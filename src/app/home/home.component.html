@@ -126,7 +126,7 @@
     <!-- <div fxLayoutGap="25px" fxLayout="column" fxLayoutAlign="space-evenly start"> -->
     <!-- <div fxLayoutGap="15px" fxFlex="95" fxLayout.lt-md="column" fxLayout="row"> -->
     <!-- <div fxLayoutGap="20px" fxLayout="row wrap" fxLayoutAlign="center stretch" fxLayout.lt-md="column"> -->
-    <div fxLayout="row" fxLayoutAlign="center start" fxLayoutGap="20px">
+    <div fxLayout="column" fxLayoutAlign="center start" fxLayoutGap="20px">
 
       <!-- <div fxFlex="90" *ngFor="let foundNewsRelease of foundNewsReleases"> -->
       <div *ngFor="let foundNewsRelease of foundNewsReleases">
@@ -140,7 +140,7 @@
               </a>
             </mat-card-title>
             <mat-card-subtitle fxLayoutAlign="end center">
-              {{ foundNewsRelease.releasedate | date: 'E, MMM d, y' }}
+              {{ foundNewsRelease.releasedate | date: 'MMM d, y' }}
             </mat-card-subtitle>
 
           </mat-card-header>

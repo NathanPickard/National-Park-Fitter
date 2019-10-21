@@ -160,7 +160,8 @@
         <div *ngFor="let foundPark of foundParks">
 
           <mat-card>
-            <mat-card-header>
+
+            <mat-card-header fxLayoutAlign="center center" fxLayout="column">
               <mat-card-title>
                 <a href="{{ foundPark.url }}" target="_blank" style="text-decoration: none;">
                   {{ foundPark.fullName }}</a>
