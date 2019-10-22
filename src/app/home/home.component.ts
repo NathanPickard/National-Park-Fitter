@@ -190,8 +190,9 @@ export class HomeComponent implements OnInit {
   }
 
   handleNextNewsReleaseSuccess(data) {
-    this.foundNextNewsReleases = data.data;
-    console.log(this.foundNextNewsReleases);
+    for (let i = 0; i < data.data.length; i++) {
+      this.foundNewsReleases.push(data.data[i]);
+    }
   }
 
   handleParkNameSuccess(data) {
