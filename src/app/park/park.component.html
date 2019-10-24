@@ -118,6 +118,11 @@
               Entrance Cost
             </mat-checkbox>
 
+            <mat-checkbox formControlName="entrancePassCtrl">
+              <mat-icon>attach_money</mat-icon>
+              Entrance Passes
+            </mat-checkbox>
+
           </div>
 
           <div fxLayoutGap="15px" style="padding: 30px 30px 0px 0px;">
@@ -245,14 +250,25 @@
               <div
                 *ngIf="(foundPark.entranceFees[0] && entranceInfoFormGroup.value.entranceCostCtrl) || (foundPark.entranceFees[0] && entranceInfoFormGroup.value.entranceInforCtrl)">
 
-                <ul *ngFor="let entranceFee of foundPark.entranceFees">
-                  <li>Entrance Fee:</li>
-                  {{ entranceFee.cost }}
-                </ul>
+                <h4>Entrance Fees:</h4>
 
                 <ul *ngFor="let entranceFee of foundPark.entranceFees">
                   <!-- <li>Entrance Fee:</li> -->
                   {{ entranceFee.title }} - {{ entranceFee.description }}
+                  ${{ entranceFee.cost }}
+                </ul>
+              </div>
+
+              <div *ngIf="(foundPark.entrancePasses[0] && entranceInfoFormGroup.value.entrancePassCtrl)">
+
+                <ul *ngFor="let entrancePass of foundPark.entrancePasses">
+                  <li>Entrance Pass:</li>
+                  {{ entrancePass.cost }}
+                </ul>
+
+                <ul *ngFor="let entrancePass of foundPark.entrancePasses">
+                  <!-- <li>Entrance Fee:</li> -->
+                  {{ entrancePass.title }} - {{ entrancePass.description }}
                 </ul>
               </div>
 
