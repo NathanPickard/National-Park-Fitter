@@ -513,7 +513,7 @@ export class ParkComponent implements OnInit {
         // this.slideshowImageArray.push({ url: "https://www.nps.gov/common/uploads/structured_data/3C7924AC-1DD8-B71B-0BEDCDE2B64225D5.jpg" });
         this.slideshowImageArray.push({
           url: this.foundParks[i].images[j].url
-        })
+        });
       }
 
       // testingArray: (string | IImage)[] = [

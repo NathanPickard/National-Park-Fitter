@@ -224,21 +224,21 @@
               <slideshow [imageUrls]="slideshowImageArray" [minHeight]="'300px'">
               </slideshow>
 
-              <h4>Description:</h4>
+              <h3>Description:</h3>
               {{ foundPark.description }}
 
               <div *ngIf=" foundPark.description && generalParkInfoFormGroup.value.parkInfoCtrl">
-                <h4>Park information</h4>
+                <h3>Park information</h3>
                 <p>{{ foundPark.description }}</p>
               </div>
 
               <div *ngIf="foundPark.weatherInfo && generalParkInfoFormGroup.value.parkWeatherCtrl">
-                <h4>Weather summary</h4>
+                <h3>Weather summary</h3>
                 {{ foundPark.weatherInfo }}
               </div>
 
               <div *ngIf="foundPark.directionsInfo && generalParkInfoFormGroup.value.parkDirectionsCtrl;">
-                <h4>Directions:</h4>
+                <h3>Directions:</h3>
                 {{ foundPark.directionsInfo }}
               </div>
 
@@ -250,16 +250,24 @@
               <div
                 *ngIf="(foundPark.entranceFees[0] && entranceInfoFormGroup.value.entranceCostCtrl) || (foundPark.entranceFees[0] && entranceInfoFormGroup.value.entranceInforCtrl)">
 
-                <h4>Entrance Fees:</h4>
+                <h3>Entrance Information:</h3>
 
-                <ul *ngFor="let entranceFee of foundPark.entranceFees">
-                  <!-- <li>Entrance Fee:</li> -->
-                  {{ entranceFee.title }} - {{ entranceFee.description }}
-                  ${{ entranceFee.cost }}
-                </ul>
+                <div *ngFor="let entranceFee of foundPark.entranceFees">
+                  <ul>
+                    <li>
+                      <!-- <li>Entrance Fee:</li> -->
+                      <h4>{{ entranceFee.title }}:</h4>
+                      <div>
+                        Details: {{ entranceFee.description }}
+                      </div>
+                      Cost: ${{ entranceFee.cost }}
+                    </li>
+                  </ul>
+                </div>
+
               </div>
 
-              <div *ngIf="(foundPark.entrancePasses[0] && entranceInfoFormGroup.value.entrancePassCtrl)">
+              <div *ngIf="foundPark.entrancePasses[0] && entranceInfoFormGroup.value.entrancePassCtrl">
 
                 <ul *ngFor="let entrancePass of foundPark.entrancePasses">
                   <li>Entrance Pass:</li>

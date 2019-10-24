@@ -46,7 +46,7 @@
     Search results for "{{ searchParkForm.get('searchQuery').value }}"
   </mat-toolbar>
 
-  <div *ngIf="parksFound" fxLayoutGap="50px">
+  <div *ngIf="parksFound" fxLayoutGap="50px" fxLayoutAlign="center center" style="padding: 30px 0px 30px 0px">
 
     <div fxLayout="column" fxFlex="90" fxLayoutGap="15px">
 
@@ -87,13 +87,28 @@
           </div>
           <!-- </div> -->
 
+          <!-- <div *ngFor="let images of foundSearchPark.images"> -->
+          <!-- <slideshow [imageUrls]="foundSearchPark.images[0].url"></slideshow> -->
+          <!-- <slideshow [imageUrls]="parkImageUrls"></slideshow> -->
+          <!-- </div> -->
+
+          <!-- <ngx-image-gallery [images]="foundSearchPark.images">
+          </ngx-image-gallery> -->
+
+          <!-- <ngb-carousel *ngIf="foundSearchPark.images">
+            <ng-template ngbSlide *ngFor="let image of foundSearchPark.images">
+              <img [src]="image.url">
+            </ng-template>
+          </ngb-carousel> -->
+
           <mat-card-content>
             <h4>Description:</h4>
             {{foundSearchPark.description }}
           </mat-card-content>
 
           <mat-card-actions fxLayoutAlign="center center">
-            <a href="{{ foundSearchPark.url }}" mat-raised-button color="primary" target="_blank">Website
+            <a href="{{ foundSearchPark.url }}" mat-raised-button color="primary" target="_blank">
+              {{ foundSearchPark.name }} Website
             </a>
           </mat-card-actions>
 
@@ -125,7 +140,7 @@
 
     <!-- <div fxLayoutGap="20px" fxLayout="row wrap" fxLayoutAlign="center stretch" fxLayout.lt-md="column"> -->
     <!-- <div fxLayout.gt-md="row-wrap" fxLayout.lt-md="column" fxLayoutAlign="flex-start" fxLayoutGap="20px"> -->
-    <div fxLayout="column" fxLayoutAlign="flex-start" fxLayoutGap="20px">
+    <div fxLayout="column" fxLayoutAlign="flex-start" fxLayoutGap="20px" style="padding: 20px 0px 20px 0px">
 
       <!-- <div fxFlex="90" *ngFor="let foundNewsRelease of foundNewsReleases"> -->
       <div *ngFor="let foundNewsRelease of foundNewsReleases">
@@ -154,8 +169,9 @@
           </mat-card-content>
 
           <mat-card-actions>
-            <a href="{{ foundNewsRelease.url}}" mat-stroked-button color="primary" target="_blank">Read more<mat-icon>
-                keyboard_arrow_right</mat-icon></a>
+            <a href="{{ foundNewsRelease.url}}" mat-stroked-button color="primary" target="_blank">
+              Read more
+              <mat-icon>keyboard_arrow_right</mat-icon></a>
           </mat-card-actions>
 
         </mat-card>
@@ -166,7 +182,7 @@
 
   </div>
 
-  <div style="padding: 40px;">
+  <div style="padding-bottom: 20px;">
     <button color="primary" mat-raised-button (click)="getNextNewsReleases()">
       Get more news
       <mat-icon>navigate_next</mat-icon>
