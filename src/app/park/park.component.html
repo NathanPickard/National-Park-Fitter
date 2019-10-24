@@ -1,7 +1,7 @@
 <div fxFlex fxLayout="column" fxLayoutAlign="start center" style="padding-top: 15px;">
 
   <!-- <h5>Select from the options below to find the park for you</h5> -->
-  <h5>Search by state and the information you need to find the park for you</h5>
+  <h5>Search by state and select the information you need to find the park for you</h5>
 
   <mat-card>
 
@@ -101,6 +101,33 @@
         </form>
       </mat-step>
 
+      <mat-step [stepControl]="entranceInfoFormGroup" state="entranceInformation">
+
+        <form [formGroup]="entranceInfoFormGroup">
+          <ng-template matStepLabel>Entrance Information</ng-template>
+
+          <div fxLayoutGap="20px" fxLayout="column">
+
+            <mat-checkbox formControlName="entranceInfoCtrl">
+              <mat-icon>info</mat-icon>
+              Entrance Information
+            </mat-checkbox>
+
+            <mat-checkbox formControlName="entranceCostCtrl">
+              <mat-icon>attach_money</mat-icon>
+              Entrance Cost
+            </mat-checkbox>
+
+          </div>
+
+          <div fxLayoutGap="15px" style="padding: 30px 30px 0px 0px;">
+            <button mat-raised-button matStepperPrevious color="accent">Back</button>
+            <button mat-raised-button matStepperNext color="primary">Next</button>
+          </div>
+
+        </form>
+      </mat-step>
+
       <mat-step state="done">
 
         <ng-template matStepLabel>Done</ng-template>
@@ -130,6 +157,10 @@
 
       <ng-template matStepperIcon="generalParkInformation">
         <mat-icon>info</mat-icon>
+      </ng-template>
+
+      <ng-template matStepperIcon="entranceInformation">
+        <mat-icon svgIcon="boom-gate-up-outline"></mat-icon>
       </ng-template>
 
       <ng-template matStepperIcon="done">
@@ -196,7 +227,7 @@
                 <p>{{ foundPark.description }}</p>
               </div>
 
-              <div *ngIf="foundPark.description && generalParkInfoFormGroup.value.parkWeatherCtrl">
+              <div *ngIf="foundPark.weatherInfo && generalParkInfoFormGroup.value.parkWeatherCtrl">
                 <h4>Weather summary</h4>
                 {{ foundPark.weatherInfo }}
               </div>
@@ -204,6 +235,25 @@
               <div *ngIf="foundPark.directionsInfo && generalParkInfoFormGroup.value.parkDirectionsCtrl;">
                 <h4>Directions:</h4>
                 {{ foundPark.directionsInfo }}
+              </div>
+
+              <!-- <div *ngIf="foundPark.entranceFees[0] && entranceInfoFormGroup.value.entranceCostCtrl">
+                <h4>Entrance Fee:</h4>
+                {{ foundPark.entranceFees[0].cost }}
+              </div>
+               -->
+              <div
+                *ngIf="(foundPark.entranceFees[0] && entranceInfoFormGroup.value.entranceCostCtrl) || (foundPark.entranceFees[0] && entranceInfoFormGroup.value.entranceInforCtrl)">
+
+                <ul *ngFor="let entranceFee of foundPark.entranceFees">
+                  <li>Entrance Fee:</li>
+                  {{ entranceFee.cost }}
+                </ul>
+
+                <ul *ngFor="let entranceFee of foundPark.entranceFees">
+                  <!-- <li>Entrance Fee:</li> -->
+                  {{ entranceFee.title }} - {{ entranceFee.description }}
+                </ul>
               </div>
 
               <!-- <ng-template #directionsNotAvailable>Directions not available</ng-template> -->

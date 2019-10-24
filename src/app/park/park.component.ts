@@ -34,8 +34,11 @@ export class ParkComponent implements OnInit {
   stateFormGroup: FormGroup;
   designationFormGroup: FormGroup;
   generalParkInfoFormGroup: FormGroup;
+  entranceInfoFormGroup: FormGroup;
 
   stateQuery: any;
+  queriesArray: any[];
+  queryString: any;
   query: any;
 
   selectedState: string;
@@ -433,6 +436,11 @@ export class ParkComponent implements OnInit {
       parkInfoCtrl: ['', Validators.required],
       parkDirectionsCtrl: ['', Validators.required]
     });
+
+    this.entranceInfoFormGroup = this._formBuilder.group({
+      entranceInfoCtrl: ['', Validators.required],
+      entranceCostCtrl: ['', Validators.required]
+    });
   }
 
   onSubmitStepper() {
@@ -442,19 +450,29 @@ export class ParkComponent implements OnInit {
   }
 
   getParkData() {
+    this.queriesArray = [];
+
     if (this.stateFormGroup.value.stateCtrl.code) {
-      this.query = this.stateFormGroup.value.stateCtrl.code;
+      this.stateQuery = this.stateFormGroup.value.stateCtrl.code;
     }
-    if (this.query !== undefined) {
-      return this.searchService
-        .getParkStepperResults(this.query)
+
+    console.log(this.entranceInfoFormGroup.value.entranceCostCtrl);
+    if (this.entranceInfoFormGroup.value.entranceCostCtrl) {
+      this.queriesArray.push('%2CentranceFees');
+      console.log(this.queriesArray);
+    }
+
+
+    if (this.stateQuery !== undefined) {
+      this.queryString = this.queriesArray.toString();
+      console.log(this.queryString);
+      return this.searchService.getParkStepperResults(this.stateQuery, this.queryString)
         .subscribe(
           data => this.handleParkSuccess(data),
           error => this.handleError(error)
         );
     } else {
-      return this.searchService
-        .getParkResults()
+      return this.searchService.getParkResults()
         .subscribe(
           data => this.handleParkSuccess(data),
           error => this.handleError(error)

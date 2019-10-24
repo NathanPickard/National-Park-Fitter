@@ -45,16 +45,16 @@ export class SearchService {
     return this.httpClient.get<any>(this.API_URL + 'parks?' + 'parkCode=' + parkCode + '&fields=images' + '&api_key=' + this.API_KEY + '&limit=5');
   }
 
+  getParkStepperResults(stateQuery, queries) {
+    return this.httpClient.get<any>(this.API_URL + 'parks?' + 'api_key=' + this.API_KEY + '&fields=images' + queries + '&stateCode=' + stateQuery + '&limit=5');
+  }
+
   getParkResults() {
     return this.httpClient.get<any>(this.API_URL + 'parks?' + 'api_key=' + this.API_KEY + '&fields=images' + '&limit=5');
   }
 
   getParkName(parkCode) {
     return this.httpClient.get<any>(this.API_URL + 'parks?' + 'parkCode=' + parkCode + '&api_key=' + this.API_KEY);
-  }
-
-  getParkStepperResults(stateQuery) {
-    return this.httpClient.get<any>(this.API_URL + 'parks?' + 'api_key=' + this.API_KEY + '&fields=images' + '&stateCode=' + stateQuery + '&limit=5');
   }
 
   searchParks(searchQuery) {
