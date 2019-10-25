@@ -439,7 +439,6 @@ export class ParkComponent implements OnInit {
 
     this.entranceInfoFormGroup = this._formBuilder.group({
       entranceInfoCtrl: ['', Validators.required],
-      entranceCostCtrl: ['', Validators.required],
       entrancePassCtrl: ['', Validators.required]
     });
   }
@@ -457,9 +456,11 @@ export class ParkComponent implements OnInit {
       this.stateQuery = this.stateFormGroup.value.stateCtrl.code;
     }
 
-    console.log(this.entranceInfoFormGroup.value.entranceCostCtrl);
+    console.log(this.stateFormGroup.value.stateCtrl);
 
-    if (this.entranceInfoFormGroup.value.entranceCostCtrl) {
+    console.log(this.entranceInfoFormGroup.value.entranceInfoCtrl);
+
+    if (this.entranceInfoFormGroup.value.entranceInfoCtrl) {
       this.queriesArray.push('%2CentranceFees');
     }
 

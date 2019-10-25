@@ -113,11 +113,6 @@
               Entrance Information
             </mat-checkbox>
 
-            <mat-checkbox formControlName="entranceCostCtrl">
-              <mat-icon>attach_money</mat-icon>
-              Entrance Cost
-            </mat-checkbox>
-
             <mat-checkbox formControlName="entrancePassCtrl">
               <mat-icon>attach_money</mat-icon>
               Entrance Passes
@@ -190,6 +185,10 @@
       </mat-toolbar>
     </div>
 
+    <mat-chip-list>
+
+    </mat-chip-list>
+
     <div fxLayoutAlign="space-evenly start">
       <div fxLayout="column" fxFlex="90" fxLayoutGap="15px">
 
@@ -233,7 +232,7 @@
               </div>
 
               <div *ngIf="foundPark.weatherInfo && generalParkInfoFormGroup.value.parkWeatherCtrl">
-                <h3>Weather summary</h3>
+                <h3>Weather summary:</h3>
                 {{ foundPark.weatherInfo }}
               </div>
 
@@ -242,20 +241,17 @@
                 {{ foundPark.directionsInfo }}
               </div>
 
-              <!-- <div *ngIf="foundPark.entranceFees[0] && entranceInfoFormGroup.value.entranceCostCtrl">
-                <h4>Entrance Fee:</h4>
-                {{ foundPark.entranceFees[0].cost }}
-              </div>
-               -->
-              <div
-                *ngIf="(foundPark.entranceFees[0] && entranceInfoFormGroup.value.entranceCostCtrl) || (foundPark.entranceFees[0] && entranceInfoFormGroup.value.entranceInforCtrl)">
+              <!-- <div *ngIf="foundPark.entranceFees[0] && entranceInfoFormGroup.value.entranceInfoCtrl"> -->
+              <h3
+                *ngIf="(entranceInfoFormGroup.value.entranceInfoCtrl && foundPark.entranceFees[0] !== '') || (entranceInfoFormGroup.value.entrancePassCtrl && foundPark.entrancePasses[0] !== '')">
+                Entrance Information:</h3>
 
-                <h3>Entrance Information:</h3>
+              <div *ngIf="entranceInfoFormGroup.value.entranceInfoCtrl">
+
 
                 <div *ngFor="let entranceFee of foundPark.entranceFees">
                   <ul>
                     <li>
-                      <!-- <li>Entrance Fee:</li> -->
                       <h4>{{ entranceFee.title }}:</h4>
                       <div>
                         Details: {{ entranceFee.description }}
@@ -267,16 +263,15 @@
 
               </div>
 
-              <div *ngIf="foundPark.entrancePasses[0] && entranceInfoFormGroup.value.entrancePassCtrl">
+              <!-- <div *ngIf="foundPark.entrancePasses[0] && entranceInfoFormGroup.value.entrancePassCtrl"> -->
+              <div *ngIf="entranceInfoFormGroup.value.entrancePassCtrl">
 
                 <ul *ngFor="let entrancePass of foundPark.entrancePasses">
-                  <li>Entrance Pass:</li>
-                  {{ entrancePass.cost }}
-                </ul>
-
-                <ul *ngFor="let entrancePass of foundPark.entrancePasses">
-                  <!-- <li>Entrance Fee:</li> -->
-                  {{ entrancePass.title }} - {{ entrancePass.description }}
+                  <li>
+                    <h4>{{ entrancePass.title }}</h4>
+                    <h5>Details: </h5>{{ entrancePass.description }}
+                    <h5>Cost: </h5>${{ entrancePass.cost }}
+                  </li>
                 </ul>
               </div>
 
@@ -286,7 +281,7 @@
 
             <mat-card-actions fxLayoutGap="20px" fxLayout="row" fxLayoutAlign="center center">
 
-              <a href="{{ foundPark.url }}" mat-stroked-button color="primary" target="_blank"> {{ foundPark.name }}
+              <a href="{{ foundPark.url }}" mat-raised-button color="primary" target="_blank"> {{ foundPark.name }}
                 Website
               </a>
 
