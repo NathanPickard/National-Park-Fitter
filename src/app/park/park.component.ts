@@ -9,6 +9,11 @@ export interface State {
   flag: string;
 }
 
+export interface StateGroup {
+  name: string;
+  state: State[];
+}
+
 export interface IImage {
   url: string | null;
   href?: string;
@@ -18,11 +23,6 @@ export interface IImage {
   backgroundSize?: string;
   backgroundPosition?: string;
   backgroundRepeat?: string;
-}
-
-export interface StateGroup {
-  name: string;
-  state: State[];
 }
 
 @Component({
@@ -40,6 +40,8 @@ export class ParkComponent implements OnInit {
   queriesArray: any[];
   queryString: any;
   query: any;
+
+  chipsArray: any[];
 
   selectedState: string;
 
@@ -59,8 +61,8 @@ export class ParkComponent implements OnInit {
   parkLat: any;
   parkLong: any;
 
-  stepperSubmitted: boolean = false;
-  resultsFound: boolean = false;
+  stepperSubmitted = false;
+  resultsFound = false;
 
   imageObject: Array<object> = [
     {
@@ -444,8 +446,12 @@ export class ParkComponent implements OnInit {
   }
 
   onSubmitStepper() {
+    this.chipsArray = [];
     this.stepperSubmitted = true;
     console.log(this.stateFormGroup.value.stateCtrl);
+    console.log(this.stateFormGroup.value);
+    this.chipsArray.push(this.stateFormGroup.value.stateCtrl.name);
+    console.log(this.chipsArray);
     this.getParkData();
   }
 
