@@ -173,30 +173,43 @@
 
   <div fxLayoutAlign="center center" fxLayout="column">
 
-    <h3>Selected:</h3>
+    <h3 *ngIf="stateFormGroup.value.stateCtrl.name ||
+    generalParkInfoFormGroup.value.parkInfoCtrl ||
+    generalParkInfoFormGroup.value.parkWeatherCtrl ||
+    generalParkInfoFormGroup.value.parkDirectionsCtrl ||
+    entranceInfoFormGroup.value.entranceInfoCtrl ||
+    entranceInfoFormGroup.value.entrancePassCtrl">
+      Selected:</h3>
 
-    <mat-chip-list fxLayout="row">
-      <mat-chip selected color="accent" *ngIf="generalParkInfoFormGroup.value.parkInfoCtrl">
-        <mat-icon style="padding-right: 5px;">info</mat-icon>
-        Park Information
+    <div fxLayoutGap="20px" fxLayout="column" fxLayoutAlign="center center" style="padding-bottom: 30px;">
+      <mat-chip selected color="accent" *ngIf="stateFormGroup.value.stateCtrl.name">
+        <mat-icon style="padding-right: 5px;">star</mat-icon>
+        State: {{ stateFormGroup.value.stateCtrl.name }}
       </mat-chip>
-      <mat-chip selected color="accent" *ngIf="generalParkInfoFormGroup.value.parkWeatherCtrl">
-        <mat-icon style="padding-right: 5px;">wb_sunny</mat-icon>
-        Weather
-      </mat-chip>
-      <mat-chip selected color="accent" *ngIf="generalParkInfoFormGroup.value.parkDirectionsCtrl">
-        <mat-icon style="padding-right: 5px;">directions</mat-icon>
-        Directions
-      </mat-chip>
-      <mat-chip selected color="accent" *ngIf="entranceInfoFormGroup.value.entranceInfoCtrl">
-        <mat-icon style="padding-right: 5px;">info</mat-icon>
-        Entrance Information
-      </mat-chip>
-      <mat-chip selected color="accent" *ngIf="entranceInfoFormGroup.value.entrancePassCtrl">
-        <mat-icon style="padding-right: 5px;">local_activity</mat-icon>
-        Entrance Passes
-      </mat-chip>
-    </mat-chip-list>
+
+      <mat-chip-list>
+        <mat-chip selected color="accent" *ngIf="generalParkInfoFormGroup.value.parkInfoCtrl">
+          <mat-icon style="padding-right: 5px;">info</mat-icon>
+          Park Information
+        </mat-chip>
+        <mat-chip selected color="accent" *ngIf="generalParkInfoFormGroup.value.parkWeatherCtrl">
+          <mat-icon style="padding-right: 5px;">wb_sunny</mat-icon>
+          Weather
+        </mat-chip>
+        <mat-chip selected color="accent" *ngIf="generalParkInfoFormGroup.value.parkDirectionsCtrl">
+          <mat-icon style="padding-right: 5px;">directions</mat-icon>
+          Directions
+        </mat-chip>
+        <mat-chip selected color="accent" *ngIf="entranceInfoFormGroup.value.entranceInfoCtrl">
+          <mat-icon style="padding-right: 5px;">info</mat-icon>
+          Entrance Information
+        </mat-chip>
+        <mat-chip selected color="accent" *ngIf="entranceInfoFormGroup.value.entrancePassCtrl">
+          <mat-icon style="padding-right: 5px;">local_activity</mat-icon>
+          Entrance Passes
+        </mat-chip>
+      </mat-chip-list>
+    </div>
 
   </div>
 
@@ -220,7 +233,7 @@
     <div fxLayoutAlign="space-evenly start">
       <div fxLayout="column" fxFlex="90" fxLayoutGap="15px">
 
-        <div *ngFor="let foundPark of foundParks" style="padding:5px 0px 30px;">
+        <div *ngFor="let foundPark of foundParks" style="padding:5px 0px 25px;">
 
           <mat-card>
 

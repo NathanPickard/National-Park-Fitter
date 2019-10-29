@@ -419,7 +419,8 @@ export class ParkComponent implements OnInit {
     }
   ];
 
-  constructor(private _formBuilder: FormBuilder, private searchService: SearchService) { }
+  constructor(private _formBuilder: FormBuilder,
+    private searchService: SearchService) { }
 
   ngOnInit() {
     this.stateFormGroup = this._formBuilder.group({
