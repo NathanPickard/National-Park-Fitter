@@ -456,6 +456,7 @@ export class ParkComponent implements OnInit {
   }
 
   getParkData() {
+    this.foundParks = [];
     this.queriesArray = [];
 
     if (this.stateFormGroup.value.stateCtrl.code) {

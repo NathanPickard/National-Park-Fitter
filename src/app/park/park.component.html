@@ -16,7 +16,7 @@
       <mat-step [stepControl]="stateFormGroup" state="state">
 
         <form [formGroup]="stateFormGroup">
-          <ng-template matStepLabel>Park by State</ng-template>
+          <ng-template matStepLabel>Parks by State</ng-template>
           <div>
 
             <mat-select placeholder="State" formControlName="stateCtrl" name="state">
@@ -114,7 +114,7 @@
             </mat-checkbox>
 
             <mat-checkbox formControlName="entrancePassCtrl">
-              <mat-icon>attach_money</mat-icon>
+              <mat-icon>local_activity</mat-icon>
               Entrance Passes
             </mat-checkbox>
 
@@ -182,7 +182,7 @@
       <div fxLayoutAlign="center center" fxLayout="row" style="padding: 30px 0px 30px 0px">
         <!-- Parks in {{ stateFormGroup.value.stateCtrl.name }} -->
         <p style="padding-right: 8px">Parks in</p>
-        <h3>{{ stateFormGroup.value.stateCtrl.name }}</h3>
+        <h2>{{ stateFormGroup.value.stateCtrl.name }}</h2>
         <img [src]="stateFormGroup.value.stateCtrl.flag" height="55" style="padding-left: 15px">
       </div>
     </div>
@@ -195,11 +195,21 @@
     <div fxLayoutAlign="space-evenly start">
       <div fxLayout="column" fxFlex="90" fxLayoutGap="15px">
 
-        <div *ngFor="let foundPark of foundParks">
+        <div *ngFor="let foundPark of foundParks" style="padding:5px 0px 30px;">
 
           <mat-card>
 
+            <!-- <mat-toolbar color="primary">
+              <mat-toolbar-row fxLayoutAlign="center center">
+                <span>
+                  <a href="{{ foundPark.url }}" target="_blank" style="text-decoration: none; color: white">
+                    {{ foundPark.fullName }}</a>
+                </span>
+              </mat-toolbar-row>
+            </mat-toolbar> -->
+
             <mat-card-header fxLayoutAlign="center center" fxLayout="column">
+
               <mat-card-title>
                 <a href="{{ foundPark.url }}" target="_blank" style="text-decoration: none;">
                   {{ foundPark.fullName }}</a>
@@ -207,6 +217,7 @@
               <mat-card-subtitle fxLayoutAlign="center center">
                 {{ foundPark.designation }}
               </mat-card-subtitle>
+
             </mat-card-header>
 
             <mat-card-content>
@@ -226,38 +237,68 @@
               <slideshow [imageUrls]="slideshowImageArray" [minHeight]="'300px'">
               </slideshow>
 
-              <h3>Description:</h3>
+              <h3>
+                <mat-icon style="padding-right: 10px;">description</mat-icon>
+                Description:
+              </h3>
               {{ foundPark.description }}
 
               <div *ngIf=" foundPark.description && generalParkInfoFormGroup.value.parkInfoCtrl">
-                <h3>Park information</h3>
+                <h3>
+                  <mat-icon svgIcon="information-outline" style="padding-right: 10px;"></mat-icon>
+                  Park information
+                </h3>
                 <p>{{ foundPark.description }}</p>
               </div>
 
               <div *ngIf="foundPark.weatherInfo && generalParkInfoFormGroup.value.parkWeatherCtrl">
-                <h3>Weather summary:</h3>
+                <h3>
+                  <mat-icon style="padding-right: 10px;">wb_sunny</mat-icon>
+                  Weather summary:
+                </h3>
                 {{ foundPark.weatherInfo }}
               </div>
 
               <div *ngIf="foundPark.directionsInfo && generalParkInfoFormGroup.value.parkDirectionsCtrl;">
-                <h3>Directions:</h3>
+                <h3>
+                  <mat-icon style="padding-right: 10px;">directions</mat-icon>
+                  Directions:
+                </h3>
                 {{ foundPark.directionsInfo }}
               </div>
 
-              <h3
+              <!-- <h3
                 *ngIf="(entranceInfoFormGroup.value.entranceInfoCtrl && foundPark.entranceFees[0] != '' && foundPark.entranceFees.length !== 0)">
-                Entrance Information:</h3>
+                Entrance Information:</h3> -->
+
+              <h3 *ngIf="(entranceInfoFormGroup.value.entranceInfoCtrl && foundPark.entranceFees[0] != '' && foundPark.entranceFees.length !== 0)
+                || (entranceInfoFormGroup.value.entrancePassCtrl && foundPark.entrancePasses[0] != '' && foundPark.entrancePasses.length !== 0);
+                else noEntranceInfo">
+                <mat-icon style="padding-right: 10px;" svgIcon="boom-gate-up-outline"></mat-icon>
+                Entrance Information:
+              </h3>
+
+              <ng-template #noEntranceInfo>
+                <h3>
+                  No Entrance Information available
+                </h3>
+              </ng-template>
 
               <div *ngIf="entranceInfoFormGroup.value.entranceInfoCtrl">
-
 
                 <div *ngFor="let entranceFee of foundPark.entranceFees">
                   <ul>
                     <li>
                       <h4>{{ entranceFee.title }}:</h4>
-                      <h5>Details: </h5>{{ entranceFee.description }}
+                      <h4 fxLayout="row" fxLayoutAlign="start center">
+                        <mat-icon style="padding-right: 10px;">description</mat-icon>
+                        Details:
+                      </h4>
+                      {{ entranceFee.description }}
                       <div fxLayout="row" fxLayoutAlign="start center">
-                        <h5 style="padding-right: 8px;">Cost: </h5>${{ entranceFee.cost | number : '1.2-2' }}
+                        <h4 style="padding-right: 8px;" fxLayout="row" fxLayoutAlign="start center">
+                          <mat-icon>attach_money</mat-icon>Cost:
+                        </h4>${{ entranceFee.cost | number : '1.2-2' }}
                       </div>
                     </li>
                   </ul>
@@ -271,9 +312,12 @@
                 <ul *ngFor="let entrancePass of foundPark.entrancePasses">
                   <li>
                     <h4>{{ entrancePass.title }}</h4>
-                    <h5>Details: </h5>{{ entrancePass.description }}
+                    <h4 fxLayout="row" fxLayoutAlign="start center">
+                      <mat-icon style="padding-right: 10px;">description</mat-icon>
+                      Details:
+                    </h4>{{ entrancePass.description }}
                     <div fxLayout="row" fxLayoutAlign="start center">
-                      <h5 style="padding-right: 8px;">Cost: </h5>${{ entrancePass.cost | number : '1.2-2'}}
+                      <h4 style="padding-right: 8px;">Cost: </h4>${{ entrancePass.cost | number : '1.2-2'}}
                     </div>
                   </li>
                 </ul>
