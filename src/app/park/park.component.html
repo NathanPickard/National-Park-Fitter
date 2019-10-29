@@ -171,6 +171,35 @@
 
   </mat-card>
 
+  <div fxLayoutAlign="center center" fxLayout="column">
+
+    <h3>Selected:</h3>
+
+    <mat-chip-list fxLayout="row">
+      <mat-chip selected color="accent" *ngIf="generalParkInfoFormGroup.value.parkInfoCtrl">
+        <mat-icon style="padding-right: 5px;">info</mat-icon>
+        Park Information
+      </mat-chip>
+      <mat-chip selected color="accent" *ngIf="generalParkInfoFormGroup.value.parkWeatherCtrl">
+        <mat-icon style="padding-right: 5px;">wb_sunny</mat-icon>
+        Weather
+      </mat-chip>
+      <mat-chip selected color="accent" *ngIf="generalParkInfoFormGroup.value.parkDirectionsCtrl">
+        <mat-icon style="padding-right: 5px;">directions</mat-icon>
+        Directions
+      </mat-chip>
+      <mat-chip selected color="accent" *ngIf="entranceInfoFormGroup.value.entranceInfoCtrl">
+        <mat-icon style="padding-right: 5px;">info</mat-icon>
+        Entrance Information
+      </mat-chip>
+      <mat-chip selected color="accent" *ngIf="entranceInfoFormGroup.value.entrancePassCtrl">
+        <mat-icon style="padding-right: 5px;">local_activity</mat-icon>
+        Entrance Passes
+      </mat-chip>
+    </mat-chip-list>
+
+  </div>
+
   <div *ngIf="!resultsFound && stepperSubmitted">
     <mat-spinner></mat-spinner>
   </div>
@@ -187,10 +216,6 @@
       </div>
     </div>
 
-    <mat-chip-list>
-
-
-    </mat-chip-list>
 
     <div fxLayoutAlign="space-evenly start">
       <div fxLayout="column" fxFlex="90" fxLayoutGap="15px">
