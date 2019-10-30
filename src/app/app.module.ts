@@ -12,6 +12,7 @@ import { AboutComponent } from './about/about.component';
 import { AmenitiesComponent } from './campground/amenities/amenities.component';
 import { AccessibilityComponent } from './campground/accessibility/accessibility.component';
 import { ParkComponent } from './park/park.component';
+import { ParkStepperComponent } from './park/park-stepper/park-stepper.component';
 import { CampgroundComponent } from './campground/campground.component';
 
 import { AppRoutingModule } from './app-routing.module';
@@ -40,7 +41,8 @@ import { STEPPER_GLOBAL_OPTIONS } from '@angular/cdk/stepper';
     AmenitiesComponent,
     AccessibilityComponent,
     ParkComponent,
-    CampgroundComponent
+    CampgroundComponent,
+    ParkStepperComponent
   ],
   imports: [
     BrowserModule,
