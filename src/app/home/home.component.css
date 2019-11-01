@@ -18,3 +18,12 @@ agm-map {
 background-image {
   opacity: 0.4;
 }
+
+.bg-image {
+  background: linear-gradient(rgba(255, 255, 255, 0.8), rgb(255, 255, 255, 0.8)),
+    url("https://www.nps.gov/common/uploads/structured_data/3C84CAEC-1DD8-B71B-0BA0EEA50BB40F8B.jpg")
+      no-repeat;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}

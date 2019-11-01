@@ -227,6 +227,146 @@
 
   </mat-card>
 
+  <div fxLayoutAlign="center center" fxLayout="column">
+
+    <h3 *ngIf="accessibilityFormGroup.value.adaCtrl ||
+    accessibilityFormGroup.value.wheelchairAccessCtrl ||
+    accessibilityFormGroup.value.internetCtrl ||
+    accessibilityFormGroup.value.cellPhoneInfoCtrl ||
+    accessibilityFormGroup.value.rvAllowedCtrl ||
+    accessibilityFormGroup.value.rvInfoCtrl ||
+    accessibilityFormGroup.value.trailerAllowedCtrl ||
+    accessibilityFormGroup.value.accessRoadsCtrl ||
+    accessibilityFormGroup.value.fireStoveCtrl ||
+    amenitiesFormGroup.value.toiletsCtrl ||
+    amenitiesFormGroup.value.showersCtrl ||
+    amenitiesFormGroup.value.cellPhoneReceptionCtrl ||
+    amenitiesFormGroup.value.laundryCtrl ||
+    amenitiesFormGroup.value.internetConnectivityCtrl ||
+    amenitiesFormGroup.value.amphitheaterCtrl ||
+    amenitiesFormGroup.value.staffVolunteerCtrl ||
+    amenitiesFormGroup.value.trashRecyclingCtrl ||
+    amenitiesFormGroup.value.dumpStationCtrl ||
+    amenitiesFormGroup.value.potableWaterCtrl ||
+    amenitiesFormGroup.value.foodStorageLockersCtrl ||
+    amenitiesFormGroup.value.campStoreCtrl ||
+    amenitiesFormGroup.value.iceAvailableForSaleCtrl ||
+    amenitiesFormGroup.value.firewoodForSaleCtrl ||
+    generalInfoFormGroup.value.weatherCtrl ||
+    generalInfoFormGroup.value.regulationsCtrl ||
+    generalInfoFormGroup.value.directionsCtrl">
+      Selected:</h3>
+
+    <div fxLayoutGap="20px" fxLayout="column" fxLayoutAlign="center center" style="padding-bottom: 30px;">
+      <mat-chip selected color="accent" *ngIf="accessibilityFormGroup.value.adaCtrl">
+        <mat-icon style="padding-right: 5px;">accessible</mat-icon>
+        ADA information
+      </mat-chip>
+
+      <mat-chip-list>
+        <mat-chip selected color="accent" *ngIf="accessibilityFormGroup.value.wheelchairAccessCtrl">
+          <mat-icon style="padding-right: 5px;">accessible_forward</mat-icon>
+          Wheelchair access information
+        </mat-chip>
+        <mat-chip selected color="accent" *ngIf="accessibilityFormGroup.value.internetCtrl">
+          <mat-icon style="padding-right: 5px;">wifi</mat-icon>
+          Internet information
+        </mat-chip>
+        <mat-chip selected color="accent" *ngIf="accessibilityFormGroup.value.cellPhoneInfoCtrl">
+          <mat-icon style="padding-right: 5px;">smartphone</mat-icon>
+          Cell phone information
+        </mat-chip>
+        <mat-chip selected color="accent" *ngIf="accessibilityFormGroup.value.rvAllowedCtrl">
+          <mat-icon style="padding-right: 5px;">rv_hookup</mat-icon>
+          RV allowed
+        </mat-chip>
+        <mat-chip selected color="accent" *ngIf="accessibilityFormGroup.value.trailerAllowedCtrl">
+          <mat-icon style="padding-right: 5px;" svgIcon="truck-trailer"></mat-icon>
+          Trailer allowed
+        </mat-chip>
+        <mat-chip selected color="accent" *ngIf="accessibilityFormGroup.value.accessRoadsCtrl">
+          <mat-icon style="padding-right: 5px;" svgIcon="road"></mat-icon>
+          Access roads
+        </mat-chip>
+        <mat-chip selected color="accent" *ngIf="accessibilityFormGroup.value.fireStoveCtrl">
+          <mat-icon style="padding-right: 5px;" svgIcon="stove"></mat-icon>
+          Fire stove policy
+        </mat-chip>
+        <mat-chip selected color="accent" *ngIf="amenitiesFormGroup.value.toiletsCtrl">
+          <mat-icon style="padding-right: 5px;" svgIcon="toilet"></mat-icon>
+          Toilets
+        </mat-chip>
+        <mat-chip selected color="accent" *ngIf="amenitiesFormGroup.value.showersCtrl">
+          <mat-icon style="padding-right: 5px;" svgIcon="shower-head"></mat-icon>
+          Showers
+        </mat-chip>
+        <mat-chip selected color="accent" *ngIf="amenitiesFormGroup.value.cellPhoneReceptionCtrl">
+          <mat-icon style="padding-right: 5px;">network_cell</mat-icon>
+          Cell phone reception
+        </mat-chip>
+        <mat-chip selected color="accent" *ngIf="amenitiesFormGroup.value.laundryCtrl">
+          <mat-icon style="padding-right: 5px;" svgIcon="washing-machine"></mat-icon>
+          Laundry
+        </mat-chip>
+        <mat-chip selected color="accent" *ngIf="amenitiesFormGroup.value.internetConnectivityCtrl">
+          <mat-icon style="padding-right: 5px;">wifi</mat-icon>
+          Internet connectivity
+        </mat-chip>
+        <mat-chip selected color="accent" *ngIf="amenitiesFormGroup.value.amphitheaterCtrl">
+          <mat-icon style="padding-right: 5px;" svgIcon="stadium"></mat-icon>
+          Amphitheater
+        </mat-chip>
+        <mat-chip selected color="accent" *ngIf="amenitiesFormGroup.value.staffVolunteerCtrl">
+          <mat-icon style="padding-right: 5px;">people</mat-icon>
+          Staff or volunteer host on site
+        </mat-chip>
+        <mat-chip selected color="accent" *ngIf="amenitiesFormGroup.value.trashRecyclingCtrl">
+          <mat-icon style="padding-right: 5px;" svgIcon="recycle"></mat-icon>
+          Trash and recycling collection
+        </mat-chip>
+        <mat-chip selected color="accent" *ngIf="amenitiesFormGroup.value.dumpStationCtrl">
+          <mat-icon style="padding-right: 5px;" svgIcon="trash-can-outline"></mat-icon>
+          Dump station
+        </mat-chip>
+        <mat-chip selected color="accent" *ngIf="amenitiesFormGroup.value.potableWaterCtrl">
+          <mat-icon style="padding-right: 5px;">local_drink</mat-icon>
+          Potable Water
+        </mat-chip>
+        <mat-chip selected color="accent" *ngIf="amenitiesFormGroup.value.foodStorageLockersCtrl">
+          <mat-icon style="padding-right: 5px;" svgIcon="locker-multiple"></mat-icon>
+          Food storage locker
+        </mat-chip>
+        <mat-chip selected color="accent" *ngIf="amenitiesFormGroup.value.campStoreCtrl">
+          <mat-icon style="padding-right: 5px;">store</mat-icon>
+          Camp store
+        </mat-chip>
+        <mat-chip selected color="accent" *ngIf="amenitiesFormGroup.value.iceAvailableForSaleCtrl">
+          <mat-icon style="padding-right: 5px;">ac_unit</mat-icon>
+          <mat-icon style="padding-right: 5px;">attach_money</mat-icon>
+          Ice available for sale
+        </mat-chip>
+        <mat-chip selected color="accent" *ngIf="amenitiesFormGroup.value.firewoodForSaleCtrl">
+          <mat-icon style="padding-right: 5px;" svgIcon="fire"></mat-icon>
+          <mat-icon style="padding-right: 5px;">attach_money</mat-icon>
+          Firewood available for sale
+        </mat-chip>
+        <mat-chip selected color="accent" *ngIf="generalInfoFormGroup.value.weatherCtrl">
+          <mat-icon style="padding-right: 5px;">wb_sunny</mat-icon>
+          Weather
+        </mat-chip>
+        <mat-chip selected color="accent" *ngIf="generalInfoFormGroup.value.regulationsCtrl">
+          <mat-icon style="padding-right: 5px;">info</mat-icon>
+          Regulations
+        </mat-chip>
+        <mat-chip selected color="accent" *ngIf="generalInfoFormGroup.value.directionsCtrl">
+          <mat-icon style="padding-right: 5px;">directions</mat-icon>
+          Directions
+        </mat-chip>
+      </mat-chip-list>
+    </div>
+
+  </div>
+
   <div *ngIf="!resultsFound && stepperSubmitted">
     <mat-spinner></mat-spinner>
   </div>
