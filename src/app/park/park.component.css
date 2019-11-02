@@ -16,3 +16,13 @@
   margin-right: 0;
   margin-left: 8px;
 }
+
+cdk-virtual-scroll-viewport {
+  height: 100vh;
+  width: 80vw;
+  margin: 0 auto;
+}
+
+cdk-virtual-scroll-viewport li {
+  height: 100px;
+}

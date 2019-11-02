@@ -17,8 +17,8 @@ export class CampgroundComponent implements OnInit {
   amenitiesFormGroup: FormGroup;
   generalInfoFormGroup: FormGroup;
 
-  stepperSubmitted: boolean = false;
-  resultsFound: boolean = false;
+  stepperSubmitted = false;
+  resultsFound = false;
 
   foundCampgrounds: any[];
   foundCampgroundPark: any[];

@@ -4,6 +4,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { FlexLayoutModule } from '@angular/flex-layout';
+import { ScrollingModule } from '@angular/cdk/scrolling';
 
 import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
@@ -53,6 +54,7 @@ import { STEPPER_GLOBAL_OPTIONS } from '@angular/cdk/stepper';
     ReactiveFormsModule,
     FlexLayoutModule,
     MaterialModule,
+    ScrollingModule,
     // NgbCarouselModule,
     // NgxImageGalleryModule,
     // NgImageSliderModule,
