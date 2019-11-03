@@ -265,14 +265,27 @@
                   <img mat-card-image [src]="image.url" style="max-width:350px;">
                   <mat-card-subtitle>{{ image.title }}</mat-card-subtitle>
                   <!-- <mat-card-subtitle>{{ image.caption }}</mat-card-subtitle> -->
+                  <!-- <slideshow [imageUrls]="image"></slideshow>
+                  <ngx-image-gallery [images]="image"></ngx-image-gallery> -->
                 </div>
               </div>
 
-              <!-- <slideshow [imageUrls]="this.foundParkImageArray">
+              <!-- <h3 *ngFor="let image of foundPark.images | keyvalue">
+                {{ image }}
+              </h3> -->
+
+              <!-- <ngx-image-gallery [images]="foundPark.images[0]"></ngx-image-gallery> -->
+              <!-- <ngx-image-gallery [images]="slideshowImageArray"></ngx-image-gallery> -->
+
+
+              <!-- <slideshow [imageUrls]="slideshowImageArray" [minHeight]="'300px'">
               </slideshow> -->
 
-              <slideshow [imageUrls]="slideshowImageArray" [minHeight]="'300px'">
+              <slideshow [imageUrls]="foundParkImages" [minHeight]="'300px'">
               </slideshow>
+
+              <!-- <slideshow [imageUrls]="foundPark.images"></slideshow> -->
+
 
               <h3>
                 <mat-icon style="padding-right: 10px;">description</mat-icon>

@@ -23,7 +23,7 @@ import { SearchService } from './shared/search.service';
 // import { CarouselModule, WavesModule } from 'angular-bootstrap-md';
 import { SlideshowModule } from 'ng-simple-slideshow';
 // import { NgbCarouselModule } from '@ng-bootstrap/ng-bootstrap';
-// import { NgxImageGalleryModule } from 'ngx-image-gallery';
+import { NgxImageGalleryModule } from 'ngx-image-gallery';
 
 import { MaterialModule } from './shared/material.module';
 
@@ -56,7 +56,7 @@ import { STEPPER_GLOBAL_OPTIONS } from '@angular/cdk/stepper';
     MaterialModule,
     ScrollingModule,
     // NgbCarouselModule,
-    // NgxImageGalleryModule,
+    NgxImageGalleryModule,
     // NgImageSliderModule,
     // CarouselModule.forRoot(),
     // WavesModule.forRoot(),
