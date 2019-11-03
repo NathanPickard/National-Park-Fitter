@@ -231,6 +231,7 @@ export class HomeComponent implements OnInit {
     }
     else {
       this.parksFound = true;
+      this.noParksFound = false;
     }
 
     for (let i = 0; i < this.foundSearchParks.length; i++) {
