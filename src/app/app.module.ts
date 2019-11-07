@@ -1,10 +1,15 @@
 import { NgModule } from '@angular/core';
-import { BrowserModule, DomSanitizer } from '@angular/platform-browser';
+import { BrowserModule, DomSanitizer, HAMMER_GESTURE_CONFIG, HammerGestureConfig } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { ScrollingModule } from '@angular/cdk/scrolling';
+
+
+import { AppRoutingModule } from './app-routing.module';
+import { MaterialModule } from './shared/material.module';
+import { AgmCoreModule } from '@agm/core';
 
 import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
@@ -16,22 +21,25 @@ import { ParkComponent } from './park/park.component';
 import { ParkStepperComponent } from './park/park-stepper/park-stepper.component';
 import { CampgroundComponent } from './campground/campground.component';
 
-import { AppRoutingModule } from './app-routing.module';
 import { SearchService } from './shared/search.service';
 
 // import { NgImageSliderModule } from 'ng-image-slider';
 // import { CarouselModule, WavesModule } from 'angular-bootstrap-md';
+// import { NgbCarouselModule } from '@ng-bootstrap/ng-bootstrap';
 import { SlideshowModule } from 'ng-simple-slideshow';
-import { NgbCarouselModule } from '@ng-bootstrap/ng-bootstrap';
-import { NgxImageGalleryModule } from 'ngx-image-gallery';
-
-import { MaterialModule } from './shared/material.module';
+// import { NgxImageGalleryModule } from 'ngx-image-gallery';
+import { NgxGalleryModule } from 'ngx-gallery';
 
 import { MatIconRegistry } from '@angular/material/icon';
 
-import { AgmCoreModule } from '@agm/core';
-
 import { STEPPER_GLOBAL_OPTIONS } from '@angular/cdk/stepper';
+
+export class CustomHammerConfig extends HammerGestureConfig {
+  overrides = {
+    pinch: { enable: false },
+    rotate: { enable: false }
+  };
+}
 
 @NgModule({
   declarations: [
@@ -55,8 +63,9 @@ import { STEPPER_GLOBAL_OPTIONS } from '@angular/cdk/stepper';
     FlexLayoutModule,
     MaterialModule,
     ScrollingModule,
-    NgbCarouselModule,
-    NgxImageGalleryModule,
+    NgxGalleryModule,
+    // NgbCarouselModule,
+    // NgxImageGalleryModule,
     // NgImageSliderModule,
     // CarouselModule.forRoot(),
     // WavesModule.forRoot(),
@@ -65,11 +74,16 @@ import { STEPPER_GLOBAL_OPTIONS } from '@angular/cdk/stepper';
       apiKey: 'AIzaSyB6vjKMU0wxBezpYg6PuYPDFOP0k3JPi_o'
     })
   ],
-  providers: [SearchService,
+  providers: [
+    SearchService,
     {
       provide: STEPPER_GLOBAL_OPTIONS,
       useValue: { displayDefaultIndicatorType: false }
-    }],
+    },
+    {
+      provide: HAMMER_GESTURE_CONFIG, useClass: CustomHammerConfig
+    }
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule {
@@ -78,3 +92,5 @@ export class AppModule {
     matIconRegistry.addSvgIconSet(domSanitizer.bypassSecurityTrustResourceUrl('./assets/mdi.svg'));
   }
 }
+
+

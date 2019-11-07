@@ -221,7 +221,7 @@
 
     <!-- <div *ngIf="stateFormGroup.value.stateCtrl != null && stateFormGroup.value.stateCtrl != undefined"> -->
     <div *ngIf="stateFormGroup.value.stateCtrl !== ''">
-      <div fxLayoutAlign="center center" fxLayout="row" style="padding: 30px 0px 30px 0px">
+      <div fxLayoutAlign="center center" fxLayout="row" style="padding: 20px 0px 20px 0px">
         <!-- Parks in {{ stateFormGroup.value.stateCtrl.name }} -->
         <p style="padding-right: 8px">Parks in</p>
         <h2>{{ stateFormGroup.value.stateCtrl.name }}</h2>
@@ -274,14 +274,15 @@
                 {{ image }}
               </h3> -->
 
-              <!-- <ngx-image-gallery [images]="foundPark.images[0]"></ngx-image-gallery> -->
               <!-- <ngx-image-gallery [images]="slideshowImageArray"></ngx-image-gallery> -->
 
 
               <!-- <slideshow [imageUrls]="slideshowImageArray" [minHeight]="'300px'">
               </slideshow> -->
 
-              <ngb-carousel></ngb-carousel>
+              <!-- <ngb-carousel></ngb-carousel> -->
+
+              <!-- <ngx-gallery [images]="foundPark.images"></ngx-gallery> -->
 
               <slideshow [imageUrls]="foundParkImages" [minHeight]="'300px'">
               </slideshow>
