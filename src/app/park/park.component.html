@@ -232,7 +232,7 @@
     <div fxLayoutAlign="space-evenly start">
       <div fxLayout="column" fxFlex="90" fxLayoutGap="15px">
 
-        <div *ngFor="let foundPark of foundParks" style="padding:5px 0px 25px;">
+        <div *ngFor="let foundPark of foundParks; let i = index" style="padding:5px 0px 25px;">
 
           <mat-card>
 
@@ -261,34 +261,24 @@
 
               <div fxLayout="column" fxLayoutAlign="space-around center">
 
-                <div *ngFor="let image of foundPark.images">
+                <div *ngFor="let image of foundPark.images; let i = index">
                   <img mat-card-image [src]="image.url" style="max-width:350px;">
-                  <mat-card-subtitle>{{ image.title }}</mat-card-subtitle>
+                  <mat-card-subtitle>{{ i }} {{ image.title }}</mat-card-subtitle>
                   <!-- <mat-card-subtitle>{{ image.caption }}</mat-card-subtitle> -->
-                  <!-- <slideshow [imageUrls]="image"></slideshow>
-                  <ngx-image-gallery [images]="image"></ngx-image-gallery> -->
                 </div>
               </div>
 
-              <!-- <h3 *ngFor="let image of foundPark.images | keyvalue">
-                {{ image }}
-              </h3> -->
-
               <!-- <ngx-image-gallery [images]="slideshowImageArray"></ngx-image-gallery> -->
 
-
-              <!-- <slideshow [imageUrls]="slideshowImageArray" [minHeight]="'300px'">
+              <!-- <slideshow [imageUrls]="foundParkImages" [minHeight]="'300px'">
               </slideshow> -->
 
-              <!-- <ngb-carousel></ngb-carousel> -->
 
-              <!-- <ngx-gallery [images]="foundPark.images"></ngx-gallery> -->
-
-              <slideshow [imageUrls]="foundParkImages" [minHeight]="'300px'">
+              <slideshow [imageUrls]="foundParks[i].images" [backgroundSize]="'contain'"
+                [backgroundRepeat]="'no-repeat'" [showDots]="true" [arrowSize]="'15px'" [minHeight]="'500px'">
               </slideshow>
 
-              <!-- <slideshow [imageUrls]="foundPark.images"></slideshow> -->
-
+              <!-- <slideshow [imageUrls]="foundPark.images[0].url"></slideshow> -->
 
               <h3>
                 <mat-icon style="padding-right: 10px;">description</mat-icon>

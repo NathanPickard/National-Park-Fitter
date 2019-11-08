@@ -1,7 +1,9 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
 import { NgxGalleryOptions, NgxGalleryImage, NgxGalleryAnimation } from 'ngx-gallery';
+
+import { GalleryItem, ImageItem, GalleryComponent } from '@ngx-gallery/core';
 
 import { SearchService } from '../shared/search.service';
 
@@ -33,6 +35,9 @@ export interface IImage {
   styleUrls: ['./park.component.css']
 })
 export class ParkComponent implements OnInit {
+
+  // @ViewChild(GalleryComponent, { static: false }) gallery: GalleryComponent;
+
 
   galleryOptions: NgxGalleryOptions[];
   stateFormGroup: FormGroup;
@@ -472,6 +477,10 @@ export class ParkComponent implements OnInit {
         preview: false
       }
     ];
+
+    // this.gallery.load([
+    //   new ImageItem({ src: this.found})
+    // ])
   }
 
   onSubmitStepper() {
