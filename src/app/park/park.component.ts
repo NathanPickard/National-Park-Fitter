@@ -1,9 +1,5 @@
-import { Component, OnInit, ViewChild } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-
-import { NgxGalleryOptions, NgxGalleryImage, NgxGalleryAnimation } from 'ngx-gallery';
-
-import { GalleryItem, ImageItem, GalleryComponent } from '@ngx-gallery/core';
 
 import { SearchService } from '../shared/search.service';
 
@@ -36,10 +32,6 @@ export interface IImage {
 })
 export class ParkComponent implements OnInit {
 
-  // @ViewChild(GalleryComponent, { static: false }) gallery: GalleryComponent;
-
-
-  galleryOptions: NgxGalleryOptions[];
   stateFormGroup: FormGroup;
   designationFormGroup: FormGroup;
   generalParkInfoFormGroup: FormGroup;
@@ -453,34 +445,6 @@ export class ParkComponent implements OnInit {
       entranceInfoCtrl: ['', Validators.required],
       entrancePassCtrl: ['', Validators.required]
     });
-
-    this.galleryOptions = [
-      {
-        width: '600px',
-        height: '400px',
-        thumbnailsColumns: 4,
-        imageAnimation: NgxGalleryAnimation.Slide
-      },
-      // max-width 800
-      {
-        breakpoint: 800,
-        width: '100%',
-        height: '600px',
-        imagePercent: 80,
-        thumbnailsPercent: 20,
-        thumbnailsMargin: 20,
-        thumbnailMargin: 20
-      },
-      // max-width 400
-      {
-        breakpoint: 400,
-        preview: false
-      }
-    ];
-
-    // this.gallery.load([
-    //   new ImageItem({ src: this.found})
-    // ])
   }
 
   onSubmitStepper() {
@@ -512,7 +476,6 @@ export class ParkComponent implements OnInit {
     if (this.entranceInfoFormGroup.value.entrancePassCtrl) {
       this.queriesArray.push('%2CentrancePasses');
     }
-
 
     if (this.stateQuery !== undefined) {
       this.queryString = this.queriesArray.toString();
@@ -550,34 +513,7 @@ export class ParkComponent implements OnInit {
       this.foundParkImages = this.foundParks[i].images;
       this.foundParkImageArray = [];
       this.slideshowImageArray = [];
-      for (let j = 0; j < this.foundParks[i].images.length; j++) {
-        console.log(this.foundParks[i].images[j].url);
-        // console.log(this.foundParks[i].images[j].title);
-        // this.foundParkImageArray.push(this.foundParks[i].images[j].url);
 
-        // this.slideshowImageArray.push((this.foundParks[i].images[j].url));
-        // this.slideshowImageArray.push({ url: "https://www.nps.gov/common/uploads/structured_data/3C7924AC-1DD8-B71B-0BEDCDE2B64225D5.jpg" });
-        this.slideshowImageArray.push({
-          url: this.foundParks[i].images[j].url
-        });
-      }
-
-      // testingArray: (string | IImage)[] = [
-      //   { url: "https://www.nps.gov/common/uploads/structured_data/3C7924AC-1DD8-B71B-0BEDCDE2B64225D5.jpg" },
-      //   { url: "https://www.nps.gov/common/uploads/structured_data/3C792600-1DD8-B71B-0B560B18E7EC1A12.jpg" },
-      //   { url: "https://www.nps.gov/common/uploads/structured_data/3C792782-1DD8-B71B-0BCA6D30498E1D77.jpg" }
-      // ];
-
-      console.log(this.slideshowImageArray);
-
-      console.log(this.foundParkImages);
-
-      console.log(this.foundParkImageArray);
-
-      // this.imageObject = this.foundPark;
-      // this.imageObject = [{
-      //   image: this.foundPark.url
-      // }];
       this.parkLatLong = this.foundParks[i].latLong;
       this.parkLat = this.parkLatLong.substr(4, 5);
       this.parkLong = this.parkLatLong.split('long:').pop();

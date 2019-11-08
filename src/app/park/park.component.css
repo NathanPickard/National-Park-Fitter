@@ -26,3 +26,7 @@ cdk-virtual-scroll-viewport {
 cdk-virtual-scroll-viewport li {
   height: 100px;
 }
+
+.last {
+  padding-bottom: 25px;
+}
