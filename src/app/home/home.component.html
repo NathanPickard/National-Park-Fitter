@@ -130,10 +130,9 @@
     <!-- <div fxLayout.gt-md="row-wrap" fxLayout.lt-md="column" fxLayoutAlign="flex-start" fxLayoutGap="20px"> -->
     <div fxLayout="column" fxLayoutAlign="flex-start" fxLayoutGap="20px" style="padding: 20px 0px 20px 0px">
 
-      <!-- <div fxFlex="90" *ngFor="let foundNewsRelease of foundNewsReleases"> -->
       <div *ngFor="let foundNewsRelease of foundNewsReleases">
 
-        <mat-card style="min-width: 275px" fxLayout="column" fxLayoutAlign="center center">
+        <mat-card style="min-width: 275px">
 
           <a href="{{ foundNewsRelease.url }}" style="text-decoration: none;" target="_blank">
             <mat-toolbar fxLayoutAlign="center center" color="primary">
@@ -141,14 +140,14 @@
             </mat-toolbar>
           </a>
 
-          <mat-card-header>
+          <mat-card-header fxLayoutAlign="center center">
             <!-- <mat-card-title fxLayout="center center">
               <a href="{{ foundNewsRelease.url }}" style="text-decoration: none;" target="_blank">
                 {{ foundNewsRelease.title }}
               </a>
             </mat-card-title> -->
-            <mat-card-subtitle fxLayoutAlign="end center">
-              {{ foundNewsRelease.releasedate | date: 'MMM d, y' }}
+            <mat-card-subtitle>
+              <h3>{{ foundNewsRelease.releasedate | date: 'MMM d, y' }}</h3>
             </mat-card-subtitle>
 
           </mat-card-header>
