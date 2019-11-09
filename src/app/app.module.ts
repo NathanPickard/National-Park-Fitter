@@ -23,13 +23,7 @@ import { CampgroundComponent } from './campground/campground.component';
 
 import { SearchService } from './shared/search.service';
 
-// import { NgImageSliderModule } from 'ng-image-slider';
-// import { CarouselModule, WavesModule } from 'angular-bootstrap-md';
-// import { NgbCarouselModule } from '@ng-bootstrap/ng-bootstrap';
 import { SlideshowModule } from 'ng-simple-slideshow';
-// import { NgxImageGalleryModule } from 'ngx-image-gallery';
-import { NgxGalleryModule } from 'ngx-gallery';
-import { GalleryModule, GALLERY_CONFIG } from '@ngx-gallery/core';
 
 import { MatIconRegistry } from '@angular/material/icon';
 
@@ -64,8 +58,6 @@ export class CustomHammerConfig extends HammerGestureConfig {
     FlexLayoutModule,
     MaterialModule,
     ScrollingModule,
-    NgxGalleryModule,
-    GalleryModule,
     // NgbCarouselModule,
     // NgxImageGalleryModule,
     // NgImageSliderModule,
@@ -84,13 +76,6 @@ export class CustomHammerConfig extends HammerGestureConfig {
     },
     {
       provide: HAMMER_GESTURE_CONFIG, useClass: CustomHammerConfig
-    },
-    {
-      provide: GALLERY_CONFIG,
-      useValue: {
-        dots: true,
-        imageSize: 'cover'
-      }
     }
   ],
   bootstrap: [AppComponent]

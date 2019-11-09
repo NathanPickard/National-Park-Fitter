@@ -1,3 +1,5 @@
+/// <reference types="@types/googlemaps" />
+
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
@@ -445,6 +447,12 @@ export class ParkComponent implements OnInit {
       entranceInfoCtrl: ['', Validators.required],
       entrancePassCtrl: ['', Validators.required]
     });
+
+    let mapProp = {
+      center: new google.maps.LatLng(45.5212, -122.664),
+      zoom: 14,
+      mapTypeId: google.maps.MapTypeId.ROADMAP
+    };
   }
 
   onSubmitStepper() {

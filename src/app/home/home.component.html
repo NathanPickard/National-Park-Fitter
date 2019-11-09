@@ -36,7 +36,7 @@
 
   <div *ngIf="noParksFound && searchSubmitted && !searching" fxLayoutAlign="center center"
     style="padding: 25px 0px 25px 0px">
-    <h3>No results found</h3>
+    <h3>No results found, try again</h3>
   </div>
 
   <!-- <div *ngIf=" noParksFound && !searching && !parksFound">
@@ -66,15 +66,15 @@
         </div>
       </agm-map>
 
-      <div *ngFor="let foundSearchPark of foundSearchParks">
+      <div *ngFor="let foundSearchPark of foundSearchParks; let i = index">
 
         <mat-card style="max-width: 1000px;">
 
-          <mat-toolbar fxLayoutAlign="center center" color="primary">
-            <a href="{{ foundSearchPark.url }}" target="_blank" style="text-decoration: none; color: white">
+          <a href="{{ foundSearchPark.url }}" target="_blank" style="text-decoration: none; color: white">
+            <mat-toolbar fxLayoutAlign="center center" color="primary">
               {{ foundSearchPark.fullName }}
-            </a>
-          </mat-toolbar>
+            </mat-toolbar>
+          </a>
 
           <mat-card-header fxLayoutAlign="center center">
             <!-- <mat-card-title>
@@ -86,29 +86,8 @@
             </mat-card-subtitle>
           </mat-card-header>
 
-          <!-- <div *ngFor="let image of foundSearchPark.images">
-        <img mat-card-sm-image [src]="image.url">
-        {{ image.title }}
-      </div> -->
-
-          <!-- <div *ngFor="let image of foundSearchPark.images"> -->
-          <div fxLayout="column" fxLayoutAlign="space-around center">
-            <img mat-card-image [src]="foundSearchPark.images[0].url" style="max-width: 350px;">
-            <p>{{ foundSearchPark.images[0].title }}</p>
-          </div>
-          <!-- </div> -->
-
-          <!-- <div *ngFor="let images of foundSearchPark.images"> -->
-          <!-- <slideshow [imageUrls]="foundSearchPark.images[0].url"></slideshow> -->
-          <!-- <slideshow [imageUrls]="parkImageUrls"></slideshow> -->
-          <!-- </div> -->
-
-
-          <!-- <ngb-carousel *ngIf="foundSearchPark.images">
-            <ng-template ngbSlide *ngFor="let image of foundSearchPark.images">
-              <img [src]="image.url">
-            </ng-template>
-          </ngb-carousel> -->
+          <slideshow [imageUrls]="foundSearchParks[i].images" [backgroundSize]="'contain'"
+            [backgroundRepeat]="'no-repeat'" [showDots]="true" [arrowSize]="'20px'" [minHeight]="'400px'"></slideshow>
 
           <mat-card-content>
             <h4>Description:</h4>
@@ -156,24 +135,31 @@
 
         <mat-card style="min-width: 275px" fxLayout="column" fxLayoutAlign="center center">
 
+          <a href="{{ foundNewsRelease.url }}" style="text-decoration: none;" target="_blank">
+            <mat-toolbar fxLayoutAlign="center center" color="primary">
+              {{ foundNewsRelease.title }}
+            </mat-toolbar>
+          </a>
+
           <mat-card-header>
-            <mat-card-title fxLayout="center center">
+            <!-- <mat-card-title fxLayout="center center">
               <a href="{{ foundNewsRelease.url }}" style="text-decoration: none;" target="_blank">
                 {{ foundNewsRelease.title }}
               </a>
-            </mat-card-title>
+            </mat-card-title> -->
             <mat-card-subtitle fxLayoutAlign="end center">
               {{ foundNewsRelease.releasedate | date: 'MMM d, y' }}
             </mat-card-subtitle>
 
           </mat-card-header>
 
-          <div fxLayoutAlign="center center" fxLayout="column">
-            <img mat-card-image [src]="foundNewsRelease.image.url">
-            <mat-card-subtitle>{{ foundNewsRelease.image.caption }}</mat-card-subtitle>
-          </div>
-
           <mat-card-content>
+
+            <div fxLayoutAlign="center center" fxLayout="column">
+              <img mat-card-image [src]="foundNewsRelease.image.url">
+              <mat-card-subtitle>{{ foundNewsRelease.image.caption }}</mat-card-subtitle>
+            </div>
+
             {{ foundNewsRelease.abstract }}
           </mat-card-content>
 
