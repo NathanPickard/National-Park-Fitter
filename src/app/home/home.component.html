@@ -118,39 +118,40 @@
 
 </div>
 
+
 <div>
+
   <mat-toolbar color="primary" fxLayoutAlign="center center">
     <h3>Latest National Park Service News</h3>
   </mat-toolbar>
 
-  <div *ngIf="newsFound" fxLayout="column" fxlayoutAlign="center center">
-
+  <div *ngIf="newsFound">
 
     <!-- <ng-template #notAvailable>
       <h4>The latest park news is not available. Try again later</h4>
     </ng-template> -->
 
-    <!-- <div fxLayoutGap="20px" fxLayout="row wrap" fxLayoutAlign="center stretch" fxLayout.lt-md="column"> -->
     <!-- <div fxLayout.gt-md="row-wrap" fxLayout.lt-md="column" fxLayoutAlign="flex-start" fxLayoutGap="20px"> -->
-    <div fxLayout="column" style="padding: 20px 0px 20px 0px">
+
+    <div fxLayoutGap="20px" fxLayout="column" style="padding: 20px 15px 20px 15px;">
 
       <div *ngFor="let foundNewsRelease of foundNewsReleases">
 
         <mat-card>
 
-          <a href="{{ foundNewsRelease.url }}" style="text-decoration: none;" target="_blank">
+          <!-- <a href="{{ foundNewsRelease.url }}" style="text-decoration: none;" target="_blank">
             <mat-toolbar fxLayoutAlign="center center" color="primary">
               {{ foundNewsRelease.title }}
             </mat-toolbar>
-          </a>
+          </a> -->
 
           <mat-card-header fxLayoutAlign="center center">
-            <!-- <mat-card-title fxLayout="center center">
-              <a href="{{ foundNewsRelease.url }}" style="text-decoration: none;" target="_blank">
+            <mat-card-title fxLayout="center center" color="primary">
+              <a href="{{ foundNewsRelease.url }}" style="text-decoration: none; text-align: center;" target="_blank">
                 {{ foundNewsRelease.title }}
               </a>
-            </mat-card-title> -->
-            <mat-card-subtitle>
+            </mat-card-title>
+            <mat-card-subtitle fxLayoutAlign="center center">
               <h3>{{ foundNewsRelease.releasedate | date: 'MMM d, y' }}</h3>
             </mat-card-subtitle>
 
@@ -166,7 +167,7 @@
             {{ foundNewsRelease.abstract }}
           </mat-card-content>
 
-          <mat-card-actions>
+          <mat-card-actions fxLayoutAlign="center center">
             <a href="{{ foundNewsRelease.url}}" mat-stroked-button color="primary" target="_blank">
               Read more
               <mat-icon>keyboard_arrow_right</mat-icon></a>
@@ -180,11 +181,11 @@
 
   </div>
 
-  <div style="padding-bottom: 20px;">
-    <button color="primary" mat-raised-button (click)="getNextNewsReleases()">
-      Get more news
-      <mat-icon>navigate_next</mat-icon>
-    </button>
-  </div>
+</div>
 
+<div style="padding-bottom: 20px;" fxLayoutAlign="center center">
+  <button color="primary" mat-raised-button (click)="getNextNewsReleases()">
+    Get more news
+    <mat-icon>navigate_next</mat-icon>
+  </button>
 </div>
