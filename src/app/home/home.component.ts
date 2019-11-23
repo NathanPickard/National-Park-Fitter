@@ -75,7 +75,7 @@ export class HomeComponent implements OnInit {
     // this.map = new google.maps.Map(this.gmapElement.nativeElement, mapProp);
 
     this.searchParkForm = new FormGroup({
-      'searchQuery': new FormControl('', [Validators.required])
+      'searchQuery': new FormControl('')
     });
 
     this.getNewsReleases();

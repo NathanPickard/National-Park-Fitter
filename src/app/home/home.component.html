@@ -116,11 +116,15 @@
     <mat-spinner></mat-spinner>
   </div>
 
-  <div *ngIf="newsFound">
+</div>
 
-    <mat-toolbar color="primary" fxLayoutAlign="center center">
-      <h3>Latest National Park Service News</h3>
-    </mat-toolbar>
+<div>
+  <mat-toolbar color="primary" fxLayoutAlign="center center">
+    <h3>Latest National Park Service News</h3>
+  </mat-toolbar>
+
+  <div *ngIf="newsFound" fxLayout="column" fxlayoutAlign="center center">
+
 
     <!-- <ng-template #notAvailable>
       <h4>The latest park news is not available. Try again later</h4>
@@ -128,11 +132,11 @@
 
     <!-- <div fxLayoutGap="20px" fxLayout="row wrap" fxLayoutAlign="center stretch" fxLayout.lt-md="column"> -->
     <!-- <div fxLayout.gt-md="row-wrap" fxLayout.lt-md="column" fxLayoutAlign="flex-start" fxLayoutGap="20px"> -->
-    <div fxLayout="column" fxLayoutAlign="flex-start" fxLayoutGap="20px" style="padding: 20px 0px 20px 0px">
+    <div fxLayout="column" style="padding: 20px 0px 20px 0px">
 
       <div *ngFor="let foundNewsRelease of foundNewsReleases">
 
-        <mat-card style="min-width: 275px">
+        <mat-card>
 
           <a href="{{ foundNewsRelease.url }}" style="text-decoration: none;" target="_blank">
             <mat-toolbar fxLayoutAlign="center center" color="primary">
