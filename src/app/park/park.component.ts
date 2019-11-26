@@ -52,9 +52,9 @@ export class ParkComponent implements OnInit {
   foundParkImages: any;
   foundParkImageArray: any;
 
-  slideshowImageArray: IImage[];
+  nextSetOfParks: any = 5;
 
-  // testingArray: any;
+  slideshowImageArray: IImage[];
 
   sampleImageArray: any;
 
@@ -511,6 +511,16 @@ export class ParkComponent implements OnInit {
   //     );
   // }
 
+  loadMoreParks() {
+    this.nextSetOfParks = this.nextSetOfParks + 5;
+    console.log(this.nextSetOfParks);
+    return this.searchService.getNextParkStepperResults(this.nextSetOfParks, this.queryString)
+      .subscribe(
+        data => this.handleNextParkStepperResults(data),
+        error => this.handleError(error)
+      );
+  }
+
   handleParkSuccess(data) {
     this.resultsFound = true;
 
@@ -529,6 +539,14 @@ export class ParkComponent implements OnInit {
       // console.log(this.parkLong);
       // this.getParkWeather(this.parkLat, this.parkLong);
     }
+  }
+
+  handleNextParkStepperResults(data) {
+    for (let i = 0; i < data.data.length; i++) {
+      this.foundParks.push(data.data[i]);
+    }
+
+    console.log(this.foundParks);
   }
 
   // handleWeatherSuccess(data) {

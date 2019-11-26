@@ -244,7 +244,7 @@ export class HomeComponent implements OnInit {
 
       console.log(this.searchResultsLatLongArray);
     }
-    console.log(this.foundSearchParks);    
+    console.log(this.foundSearchParks);
   }
 
   handleSuccess(data) {
@@ -308,6 +308,5 @@ export class HomeComponent implements OnInit {
   handleError(error) {
     console.log(error);
   }
-
 
 }

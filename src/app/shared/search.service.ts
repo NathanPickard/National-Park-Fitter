@@ -36,7 +36,6 @@ export class SearchService {
     return this.httpClient.get<any>(this.API_URL + 'parks?')
   }
 
-
   getCampgroundResults() {
     return this.httpClient.get<any>(this.API_URL + 'campgrounds?' + '&api_key=' + this.API_KEY + '&limit=5');
   }
@@ -46,6 +45,10 @@ export class SearchService {
   }
 
   getParkStepperResults(stateQuery, queries) {
+    return this.httpClient.get<any>(this.API_URL + 'parks?' + 'api_key=' + this.API_KEY + '&fields=images' + queries + '&stateCode=' + stateQuery + '&limit=5');
+  }
+
+  getNextParkStepperResults(stateQuery, queries) {
     return this.httpClient.get<any>(this.API_URL + 'parks?' + 'api_key=' + this.API_KEY + '&fields=images' + queries + '&stateCode=' + stateQuery + '&limit=5');
   }
 
