@@ -488,6 +488,8 @@ export class ParkComponent implements OnInit {
     if (this.stateQuery !== undefined) {
       this.queryString = this.queriesArray.toString();
       console.log(this.queryString);
+      console.log(this.stateQuery);
+      console.log(this.queriesArray);
       return this.searchService.getParkStepperResults(this.stateQuery, this.queryString)
         .subscribe(
           data => this.handleParkSuccess(data),
@@ -514,7 +516,10 @@ export class ParkComponent implements OnInit {
   loadMoreParks() {
     this.nextSetOfParks = this.nextSetOfParks + 5;
     console.log(this.nextSetOfParks);
-    return this.searchService.getNextParkStepperResults(this.nextSetOfParks, this.queryString)
+
+    console.log(this.queryString);
+
+    return this.searchService.getNextParkStepperResults(this.nextSetOfParks, this.stateQuery, this.queryString)
       .subscribe(
         data => this.handleNextParkStepperResults(data),
         error => this.handleError(error)
