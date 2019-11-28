@@ -66,6 +66,8 @@ export class ParkComponent implements OnInit {
 
   stepperSubmitted = false;
   resultsFound = false;
+  searching = false;
+  searchingForMore = false;
 
   imageObject: Array<object> = [
     {
@@ -466,6 +468,7 @@ export class ParkComponent implements OnInit {
   }
 
   getParkData() {
+    this.searching = true;
     this.foundParks = [];
     this.queriesArray = [];
 
@@ -493,13 +496,15 @@ export class ParkComponent implements OnInit {
       return this.searchService.getParkStepperResults(this.stateQuery, this.queryString)
         .subscribe(
           data => this.handleParkSuccess(data),
-          error => this.handleError(error)
+          error => this.handleError(error),
+          () => this.searching = false
         );
     } else {
       return this.searchService.getParkResults()
         .subscribe(
           data => this.handleParkSuccess(data),
-          error => this.handleError(error)
+          error => this.handleError(error),
+          () => this.searching = false
         );
     }
   }
@@ -514,6 +519,7 @@ export class ParkComponent implements OnInit {
   // }
 
   loadMoreParks() {
+    this.searchingForMore = true;
     this.nextSetOfParks = this.nextSetOfParks + 5;
     console.log(this.nextSetOfParks);
 
@@ -522,7 +528,8 @@ export class ParkComponent implements OnInit {
     return this.searchService.getNextParkStepperResults(this.nextSetOfParks, this.stateQuery, this.queryString)
       .subscribe(
         data => this.handleNextParkStepperResults(data),
-        error => this.handleError(error)
+        error => this.handleError(error),
+        () => this.searchingForMore = false
       );
   }
 

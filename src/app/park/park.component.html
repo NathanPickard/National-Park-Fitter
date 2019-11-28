@@ -213,7 +213,8 @@
 
   </div>
 
-  <div *ngIf="!resultsFound && stepperSubmitted">
+  <!-- <div *ngIf="!resultsFound && stepperSubmitted"> -->
+  <div *ngIf="searching">
     <mat-spinner></mat-spinner>
   </div>
 
@@ -266,10 +267,6 @@
                   <mat-card-subtitle>{{ image.caption }}</mat-card-subtitle>
                 </div>
               </div> -->
-
-              <!-- <slideshow [imageUrls]="foundParkImages" [minHeight]="'300px'">
-              </slideshow> -->
-
 
               <slideshow [imageUrls]="foundParks[i].images" [backgroundSize]="'contain'"
                 [backgroundRepeat]="'no-repeat'" [showDots]="true" [arrowSize]="'20px'" [minHeight]="'400px'">
@@ -403,6 +400,10 @@
         </div>
       </div>
     </div>
+  </div>
+
+  <div *ngIf="searchingForMore" style="padding: 100px 0px;">
+    <mat-spinner></mat-spinner>
   </div>
 
   <div *ngIf="resultsFound" style="padding-bottom: 20px;" fxLayoutAlign="center center">
