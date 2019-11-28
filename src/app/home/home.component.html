@@ -176,7 +176,7 @@
 
 </div>
 
-<div style="padding-bottom: 20px;" fxLayoutAlign="center center">
+<div *ngIf="newsFound" style="padding-bottom: 20px;" fxLayoutAlign="center center">
   <button color="primary" mat-raised-button (click)="getNextNewsReleases()">
     Get more news
     <mat-icon>navigate_next</mat-icon>
