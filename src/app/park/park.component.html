@@ -230,8 +230,20 @@
       </div>
     </div>
 
+    <agm-map [zoom]="4" [latitude]="39.52" [longitude]="-98.35" [fitBounds]="true">
+      <div *ngFor="let parkCoordinates of searchResultsLatLongArray">
+        <agm-marker *ngIf="parkCoordinates.lat && parkCoordinates.long" [latitude]="parkCoordinates.lat"
+          [longitude]="parkCoordinates.long" [agmFitBounds]="true">
+          <agm-info-window>
+            <a href="{{ parkCoordinates.url }}" target="_blank"
+              style="text-decoration: none">{{ parkCoordinates.fullName }}</a>
+          </agm-info-window>
+        </agm-marker>
+      </div>
+    </agm-map>
+
     <div fxLayoutAlign="space-evenly start">
-      
+
       <div fxLayout="column" fxFlex="90" fxLayoutGap="25px">
 
         <div *ngFor="let foundPark of foundParks; let i = index; let last = last" [ngClass]="{ last: last }">
