@@ -63,6 +63,7 @@ export class ParkComponent implements OnInit {
   parkLatLong: any;
   parkLat: any;
   parkLong: any;
+  resultsStepperLatLongArray: any;
 
   stepperSubmitted = false;
   resultsFound = false;
@@ -536,8 +537,9 @@ export class ParkComponent implements OnInit {
   handleParkSuccess(data) {
     this.resultsFound = true;
 
+    this.resultsStepperLatLongArray = [];
+
     this.foundParks = data.data;
-    console.log(this.foundParks);
 
     for (let i = 0; i < this.foundParks.length; i++) {
       this.foundParkImages = this.foundParks[i].images;
@@ -547,8 +549,15 @@ export class ParkComponent implements OnInit {
       this.parkLatLong = this.foundParks[i].latLong;
       this.parkLat = this.parkLatLong.substr(4, 5);
       this.parkLong = this.parkLatLong.split('long:').pop();
-      // console.log(this.parkLat);
-      // console.log(this.parkLong);
+      console.log(this.parkLat);
+      console.log(this.parkLong);
+
+      this.resultsStepperLatLongArray.push({
+        lat: this.parkLat,
+        long: this.parkLong,
+        fullName: this.foundParks[i].fullName,
+        url: this.foundParks[i].url
+      });
       // this.getParkWeather(this.parkLat, this.parkLong);
     }
   }
@@ -556,6 +565,22 @@ export class ParkComponent implements OnInit {
   handleNextParkStepperResults(data) {
     for (let i = 0; i < data.data.length; i++) {
       this.foundParks.push(data.data[i]);
+      console.log("Handle next stepper results: " + this.foundParks);
+      console.log(this.foundParks);
+
+      this.parkLatLong = this.foundParks[i].latLong;
+      this.parkLat = this.parkLatLong.substr(4, 5);
+      this.parkLong = this.parkLatLong.split('long:').pop();
+
+      console.log(this.parkLat);
+      console.log(this.parkLong);
+
+      this.resultsStepperLatLongArray.push({
+        lat: this.parkLat,
+        long: this.parkLong,
+        fullName: this.foundParks[i].fullName,
+        url: this.foundParks[i].url
+      });
     }
 
     console.log(this.foundParks);

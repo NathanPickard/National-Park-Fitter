@@ -1,6 +1,6 @@
 /// <reference types="@types/googlemaps" />
 
-import { Component, OnInit, ViewChild } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators, FormControl } from '@angular/forms';
 
 import { SearchService } from '../shared/search.service';
@@ -240,7 +240,12 @@ export class HomeComponent implements OnInit {
       this.parkLong = this.parkLatLong.split("long:").pop();
 
       this.searchResultsLatLongArray
-        .push({ lat: this.parkLat, long: this.parkLong, fullName: this.foundSearchParks[i].fullName, url: this.foundSearchParks[i].url });
+        .push({
+          lat: this.parkLat,
+          long: this.parkLong,
+          fullName: this.foundSearchParks[i].fullName,
+          url: this.foundSearchParks[i].url
+        });
 
       console.log(this.searchResultsLatLongArray);
     }

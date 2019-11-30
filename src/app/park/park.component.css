@@ -30,3 +30,7 @@ cdk-virtual-scroll-viewport li {
 .last {
   padding-bottom: 25px;
 }
+
+agm-map {
+  height: 375px;
+}
