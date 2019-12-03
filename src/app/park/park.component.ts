@@ -541,6 +541,8 @@ export class ParkComponent implements OnInit {
 
     this.foundParks = data.data;
 
+    console.log(this.foundParks);
+
     for (let i = 0; i < this.foundParks.length; i++) {
       this.foundParkImages = this.foundParks[i].images;
       this.foundParkImageArray = [];

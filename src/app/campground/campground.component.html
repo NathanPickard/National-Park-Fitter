@@ -382,6 +382,19 @@
 
   <!-- <app-accessibility></app-accessibility> -->
 
+  <agm-map [zoom]="4" [latitude]="39.52" [longitude]="-98.35" [fitBounds]="true">
+    <div *ngFor="let campCoordinates of resultsStepperLatLongArray">
+      <agm-marker *ngIf="campcoordinates.lat && campCoordinates.long" [latitude]="campCoordinates.lat"
+        [longitude]="parkCoordinates.long" [agmFitBounds]="true">
+        <agm-info-window>
+          <a href="{{ campCoordinates.url }}" target="_blank" style="text-decoration: none">
+          {{ campCoordinates.fullName }}</a>
+        </agm-info-window>
+      </agm-marker>
+    </div>
+
+  </agm-map>
+
   <div *ngFor="let foundCampground of foundCampgrounds; let i = index">
 
     <mat-accordion>
