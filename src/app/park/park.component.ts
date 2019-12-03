@@ -538,7 +538,6 @@ export class ParkComponent implements OnInit {
     this.resultsFound = true;
 
     this.resultsStepperLatLongArray = [];
-
     this.foundParks = data.data;
 
     console.log(this.foundParks);
@@ -551,8 +550,8 @@ export class ParkComponent implements OnInit {
       this.parkLatLong = this.foundParks[i].latLong;
       this.parkLat = this.parkLatLong.substr(4, 5);
       this.parkLong = this.parkLatLong.split('long:').pop();
-      console.log(this.parkLat);
-      console.log(this.parkLong);
+      console.log("Latitude: " + this.parkLat);
+      console.log("Longitude: " + this.parkLong);
 
       this.resultsStepperLatLongArray.push({
         lat: this.parkLat,

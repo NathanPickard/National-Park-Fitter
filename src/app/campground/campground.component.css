@@ -10,4 +10,8 @@ label.mat-checkbox-layout {
   vertical-align: middle; */
 }
 
+agm-map {
+  height: 375px;
+}
+
 

@@ -375,25 +375,27 @@
   <mat-spinner></mat-spinner>
 </div>
 
-
-
-
-<div *ngIf="resultsFound" fxLayout="column" fxLayoutAlign="center center" fxLayoutGap="15px">
-
-  <!-- <app-accessibility></app-accessibility> -->
+<div *ngIf="resultsFound">
 
   <agm-map [zoom]="4" [latitude]="39.52" [longitude]="-98.35" [fitBounds]="true">
     <div *ngFor="let campCoordinates of resultsStepperLatLongArray">
-      <agm-marker *ngIf="campcoordinates.lat && campCoordinates.long" [latitude]="campCoordinates.lat"
-        [longitude]="parkCoordinates.long" [agmFitBounds]="true">
+      <agm-marker *ngIf="campCoordinates.lat && campCoordinates.long" [latitude]="campCoordinates.lat"
+        [longitude]="campCoordinates.long" [agmFitBounds]="true">
         <agm-info-window>
           <a href="{{ campCoordinates.url }}" target="_blank" style="text-decoration: none">
-          {{ campCoordinates.fullName }}</a>
+            {{ campCoordinates.fullName }}</a>
         </agm-info-window>
       </agm-marker>
     </div>
 
   </agm-map>
+
+</div>
+
+
+<div *ngIf="resultsFound" fxLayout="column" fxLayoutAlign="center center" fxLayoutGap="15px">
+
+  <!-- <app-accessibility></app-accessibility> -->
 
   <div *ngFor="let foundCampground of foundCampgrounds; let i = index">
 
@@ -404,7 +406,6 @@
         <mat-card-header fxLayoutAlign="center center">
 
           <mat-card-title>
-
             {{ foundCampground.name }}
           </mat-card-title>
 
@@ -413,6 +414,8 @@
         <!-- <h2>{{ foundCampground.parkCode }}</h2> -->
 
         <mat-card-content>
+
+          <img src="{{ foundCampground.images[0].url }}">
 
           <h3>
             <mat-icon style="padding-right: 10px;">description</mat-icon>

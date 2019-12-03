@@ -10,13 +10,11 @@ import { SearchService } from '../shared/search.service';
 })
 export class CampgroundComponent implements OnInit {
 
-  constructor(private _formBuilder: FormBuilder,
-    private searchService: SearchService) { }
-
   accessibilityFormGroup: FormGroup;
   amenitiesFormGroup: FormGroup;
   generalInfoFormGroup: FormGroup;
 
+  searching = false;
   stepperSubmitted = false;
   resultsFound = false;
 
@@ -25,6 +23,15 @@ export class CampgroundComponent implements OnInit {
 
   campgroundParkArray: any[] = [];
   campgroundPark: any;
+
+  campgroundLatLong: any;
+  campgroundLat: any;
+  campgroundLong: any;
+  longStr: any;
+  resultsStepperLatLongArray: any;
+
+  constructor(private _formBuilder: FormBuilder,
+    private searchService: SearchService) { }
 
 
   ngOnInit() {
@@ -79,12 +86,13 @@ export class CampgroundComponent implements OnInit {
   }
 
   getCampgroundData() {
+    this.searching = true;
     return this.searchService.getCampgroundResults().subscribe(
       data => this.handleSuccess(data),
-      error => this.handleError(error)
+      error => this.handleError(error),
+      () => this.searching = false
     );
   }
-
 
   getParkName(campgroundPark) {
     return this.searchService.getCampgroundPark(this.campgroundPark).subscribe(
@@ -96,17 +104,33 @@ export class CampgroundComponent implements OnInit {
   handleSuccess(data) {
     this.resultsFound = true;
 
+    this.resultsStepperLatLongArray = [];
     this.foundCampgrounds = data.data;
     console.log(this.foundCampgrounds);
 
     // this.campgroundPark = this.foundCampgrounds.parkCode;
     // console.log(this.campgroundPark);
 
-    // if (this.firstFormGroup.value.firstCtrl == true) {
-
     for (let i = 0; i < this.foundCampgrounds.length; i++) {
       this.campgroundPark = this.foundCampgrounds[i].parkCode;
-      console.log(this.campgroundPark);
+      // console.log(this.campgroundPark);
+
+      this.campgroundLatLong = this.foundCampgrounds[i].latLong;
+      this.longStr = this.campgroundLatLong.search('lng:')
+      this.campgroundLat = this.campgroundLatLong.substr(5, 5);
+      this.campgroundLong = this.campgroundLatLong.slice(this.longStr + 4, this.longStr + 12);
+
+      console.log("Latitude: " + this.campgroundLat);
+      console.log("Longitude: " + this.campgroundLong);
+
+      this.resultsStepperLatLongArray.push({
+        lat: this.campgroundLat,
+        long: this.campgroundLong,
+        fullName: this.foundCampgrounds[i].name,
+        // url: this.foundCampgrounds[i].url
+      });
+
+      console.log(this.resultsStepperLatLongArray);
 
       this.getParkName(this.campgroundPark);
     }
@@ -126,8 +150,6 @@ export class CampgroundComponent implements OnInit {
     // console.log(this.campgroundParkArray);
 
     for (let i = 0; i < this.foundCampgroundPark.length; i++) {
-
-      // this.foundCampgrounds[i].push(this.foundCampgroundPark[i].fullName);
 
       this.campgroundParkArray.push(this.foundCampgroundPark[i].fullName);
       console.log(this.campgroundParkArray);
