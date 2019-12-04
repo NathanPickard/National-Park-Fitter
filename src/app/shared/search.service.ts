@@ -13,8 +13,6 @@ export class SearchService {
 
   private API_KEY: string = environment.NPS_API_KEY;
   private API_URL: string = environment.NPS_BASE_URL;
-  private DARK_SKY_KEY: string = environment.DARK_SKY_API_KEY;
-  private DARK_SKY_URL: string = environment.DARK_SKY_BASE_URL;
 
   getLatestNewsReleases() {
     return this.httpClient.get<any>(this.API_URL + 'newsreleases?' + '&api_key=' + this.API_KEY + '&fields=images' + '&limit=5');
@@ -26,10 +24,6 @@ export class SearchService {
 
   getParkRecInfo() {
     // return this.httpClient.get<any>
-  }
-
-  getWeatherInfo(latitude, longitude) {
-    return this.httpClient.get<any>(this.DARK_SKY_URL + this.DARK_SKY_KEY + '/' + latitude + ',' + longitude);
   }
 
   getHomepageBackgroundImage() {

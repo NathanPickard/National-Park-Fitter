@@ -49,6 +49,7 @@ export class ParkComponent implements OnInit {
   selectedState: string;
 
   foundParks: any[];
+  foundMoreParks: any[];
   foundParkImages: any;
 
   nextSetOfParks: any = 5;
@@ -559,9 +560,13 @@ export class ParkComponent implements OnInit {
 
   handleNextParkStepperResults(data) {
     for (let i = 0; i < data.data.length; i++) {
-      this.foundParks.push(data.data[i]);
+      this.foundMoreParks = data.data;
+
+
+      this.foundParks.push(data.data);
+
       console.log("Handle next stepper results: " + this.foundParks);
-      console.log(this.foundParks);
+      // console.log(this.foundParks);
 
       this.parkLatLong = this.foundParks[i].latLong;
       this.parkLat = this.parkLatLong.substr(4, 5);
