@@ -19,6 +19,7 @@ export class CampgroundComponent implements OnInit {
   resultsFound = false;
 
   foundCampgrounds: any[];
+  foundCampgroundImages: any;
   foundCampgroundPark: any[];
 
   campgroundParkArray: any[] = [];
@@ -112,6 +113,7 @@ export class CampgroundComponent implements OnInit {
     // console.log(this.campgroundPark);
 
     for (let i = 0; i < this.foundCampgrounds.length; i++) {
+      this.foundCampgroundImages = this.foundCampgrounds[i].images;
       this.campgroundPark = this.foundCampgrounds[i].parkCode;
       // console.log(this.campgroundPark);
 

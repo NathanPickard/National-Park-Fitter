@@ -41,7 +41,6 @@ export class ParkStepperComponent implements OnInit {
   queriesArray: any[];
   foundParks: any[];
 
-  foundParkImages: any;
   foundParkImageArray: any;
 
   stateQuery: any;
@@ -465,42 +464,19 @@ export class ParkStepperComponent implements OnInit {
     console.log(this.foundParks);
 
     for (let i = 0; i < this.foundParks.length; i++) {
-      this.foundParkImages = this.foundParks[i].images;
       this.foundParkImageArray = [];
       this.slideshowImageArray = [];
       for (let j = 0; j < this.foundParks[i].images.length; j++) {
         console.log(this.foundParks[i].images[j].url);
-        // console.log(this.foundParks[i].images[j].title);
-        // this.foundParkImageArray.push(this.foundParks[i].images[j].url);
 
-        // this.slideshowImageArray.push((this.foundParks[i].images[j].url));
-        // this.slideshowImageArray.push({ url: "https://www.nps.gov/common/uploads/structured_data/3C7924AC-1DD8-B71B-0BEDCDE2B64225D5.jpg" });
         this.slideshowImageArray.push({
           url: this.foundParks[i].images[j].url
         });
       }
 
-      // testingArray: (string | IImage)[] = [
-      //   { url: "https://www.nps.gov/common/uploads/structured_data/3C7924AC-1DD8-B71B-0BEDCDE2B64225D5.jpg" },
-      //   { url: "https://www.nps.gov/common/uploads/structured_data/3C792600-1DD8-B71B-0B560B18E7EC1A12.jpg" },
-      //   { url: "https://www.nps.gov/common/uploads/structured_data/3C792782-1DD8-B71B-0BCA6D30498E1D77.jpg" }
-      // ];
-
-      console.log(this.slideshowImageArray);
-
-      console.log(this.foundParkImages);
-
-      console.log(this.foundParkImageArray);
-
-      // this.imageObject = this.foundPark;
-      // this.imageObject = [{
-      //   image: this.foundPark.url
-      // }];
       this.parkLatLong = this.foundParks[i].latLong;
       this.parkLat = this.parkLatLong.substr(4, 5);
       this.parkLong = this.parkLatLong.split('long:').pop();
-      // console.log(this.parkLat);
-      // console.log(this.parkLong);
       // this.getParkWeather(this.parkLat, this.parkLong);
     }
   }

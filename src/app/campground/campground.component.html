@@ -404,18 +404,18 @@
       <mat-card>
 
         <mat-card-header fxLayoutAlign="center center">
-
           <mat-card-title>
             {{ foundCampground.name }}
           </mat-card-title>
-
         </mat-card-header>
 
         <!-- <h2>{{ foundCampground.parkCode }}</h2> -->
 
         <mat-card-content>
 
-          <img src="{{ foundCampground.images[0].url }}">
+          <slideshow [imageUrls]="foundCampgrounds[i].images" [backgroundSize]="'contain'"
+            [backgroundRepeat]="'no-repeat'" [showDots]="true" [arrowSize]="'20px'" [minHeight]="'400px'">
+          </slideshow>
 
           <h3>
             <mat-icon style="padding-right: 10px;">description</mat-icon>

@@ -110,6 +110,10 @@
     <mat-spinner></mat-spinner>
   </div>
 
+  <div *ngIf="searchingForNews">
+    <mat-spinner></mat-spinner>
+  </div>
+
 </div>
 
 <div>
@@ -169,16 +173,17 @@
         </mat-card>
 
       </div>
-
     </div>
-
   </div>
-
 </div>
 
-<div *ngIf="newsFound" style="padding-bottom: 20px;" fxLayoutAlign="center center">
+<div *ngIf="newsFound && !loadingMoreNews" style="padding-bottom: 20px;" fxLayoutAlign="center center">
   <button color="primary" mat-raised-button (click)="getNextNewsReleases()">
     Get more news
     <mat-icon>navigate_next</mat-icon>
   </button>
+</div>
+
+<div *ngIf="loadingMoreNews" fxLayoutAlign="center center" style="padding: 50px 0px;">
+  <mat-spinner></mat-spinner>
 </div>

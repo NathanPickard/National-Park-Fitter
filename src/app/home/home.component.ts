@@ -25,6 +25,9 @@ export class HomeComponent implements OnInit {
   generalParkInfoFormGroup: FormGroup;
 
   searching = false;
+
+  searchingForNews = false;
+  loadingMoreNews = false;
   parksFound = false;
 
   parkSearchResults: any;
@@ -141,9 +144,11 @@ export class HomeComponent implements OnInit {
   }
 
   getNewsReleases() {
+    this.searchingForNews = true;
     return this.searchService.getLatestNewsReleases().subscribe(
       data => this.handleNewsReleaseSuccess(data),
-      error => this.handleError(error)
+      error => this.handleError(error),
+      () => this.searchingForNews = false
     );
   }
 
@@ -181,11 +186,13 @@ export class HomeComponent implements OnInit {
   }
 
   getNextNewsReleases() {
+    this.loadingMoreNews = true;
     this.nextSetNewsRelease = this.nextSetNewsRelease + 5;
     console.log(this.nextSetNewsRelease);
     return this.searchService.getNextLatestNewsReleases(this.nextSetNewsRelease).subscribe(
       data => this.handleNextNewsReleaseSuccess(data),
-      error => this.handleError(error)
+      error => this.handleError(error),
+      () => this.loadingMoreNews = false
     );
   }
 

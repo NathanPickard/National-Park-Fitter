@@ -50,13 +50,10 @@ export class ParkComponent implements OnInit {
 
   foundParks: any[];
   foundParkImages: any;
-  foundParkImageArray: any;
 
   nextSetOfParks: any = 5;
 
   slideshowImageArray: IImage[];
-
-  sampleImageArray: any;
 
   foundParkWeather: any;
 
@@ -544,14 +541,11 @@ export class ParkComponent implements OnInit {
 
     for (let i = 0; i < this.foundParks.length; i++) {
       this.foundParkImages = this.foundParks[i].images;
-      this.foundParkImageArray = [];
       this.slideshowImageArray = [];
 
       this.parkLatLong = this.foundParks[i].latLong;
       this.parkLat = this.parkLatLong.substr(4, 5);
       this.parkLong = this.parkLatLong.split('long:').pop();
-      console.log("Latitude: " + this.parkLat);
-      console.log("Longitude: " + this.parkLong);
 
       this.resultsStepperLatLongArray.push({
         lat: this.parkLat,
