@@ -561,19 +561,20 @@ export class ParkComponent implements OnInit {
   handleNextParkStepperResults(data) {
     for (let i = 0; i < data.data.length; i++) {
       this.foundMoreParks = data.data;
+      console.log("Found more parks data: " + this.foundMoreParks);
 
 
-      this.foundParks.push(data.data);
+      this.foundParks.push(data.data[i]);
 
-      console.log("Handle next stepper results: " + this.foundParks);
+      // console.log("Handle next stepper results: " + this.foundParks);
       // console.log(this.foundParks);
 
       this.parkLatLong = this.foundParks[i].latLong;
       this.parkLat = this.parkLatLong.substr(4, 5);
       this.parkLong = this.parkLatLong.split('long:').pop();
 
-      console.log(this.parkLat);
-      console.log(this.parkLong);
+      // console.log(this.parkLat);
+      // console.log(this.parkLong);
 
       this.resultsStepperLatLongArray.push({
         lat: this.parkLat,
