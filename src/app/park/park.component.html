@@ -249,15 +249,6 @@
 
           <mat-card>
 
-            <!-- <mat-toolbar color="primary">
-              <mat-toolbar-row fxLayoutAlign="center center">
-                <span>
-                  <a href="{{ foundPark.url }}" target="_blank" style="text-decoration: none; color: white">
-                    {{ foundPark.fullName }}</a>
-                </span>
-              </mat-toolbar-row>
-            </mat-toolbar> -->
-
             <mat-card-header fxLayoutAlign="center center" fxLayout="column">
 
               <mat-card-title>
@@ -271,14 +262,6 @@
             </mat-card-header>
 
             <mat-card-content>
-
-              <!-- <div fxLayout="column" fxLayoutAlign="space-around center">
-                <div *ngFor="let image of foundPark.images; let i = index">
-                  <img mat-card-image [src]="image.url" style="max-width:350px;">
-                  <mat-card-subtitle>{{ i }} {{ image.title }}</mat-card-subtitle>
-                  <mat-card-subtitle>{{ image.caption }}</mat-card-subtitle>
-                </div>
-              </div> -->
 
               <slideshow [imageUrls]="foundParks[i].images" [backgroundSize]="'contain'"
                 [backgroundRepeat]="'no-repeat'" [showDots]="true" [arrowSize]="'20px'" [minHeight]="'400px'">
