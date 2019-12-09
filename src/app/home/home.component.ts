@@ -213,20 +213,9 @@ export class HomeComponent implements OnInit {
     this.newsFound = true;
     this.foundNewsReleases = data.data;
     console.log(this.foundNewsReleases);
-
-    // for (let i = 0; i < this.foundNewsReleases.length; i++) {
-    //   this.newsReleaseParkCode = this.foundNewsReleases[i].parkCode;
-    //   console.log(this.newsReleaseParkCode);
-    //   this.getNameFromParkCode(this.newsReleaseParkCode);
-    //   console.log(this.foundParkName);
-
-    // this.foundNewsReleases.push(this.foundParkName);
-    // console.log(this.foundNewsReleases);
-    // }
   }
 
   handleSearchParkSuccess(data) {
-    // this.parksFound = true;
 
     this.searchResultsLatLongArray = [];
 
@@ -269,8 +258,6 @@ export class HomeComponent implements OnInit {
     // this.campgroundPark = this.foundCampgrounds.parkCode;
     // console.log(this.campgroundPark);
 
-    // if (this.firstFormGroup.value.firstCtrl == true) {
-
     for (let i = 0; i < this.foundCampgrounds.length; i++) {
       this.campgroundPark = this.foundCampgrounds[i].parkcode;
       // console.log(this.campgroundPark);
@@ -305,8 +292,6 @@ export class HomeComponent implements OnInit {
       // console.log(this.foundCampgrounds);
       console.log(this.campgroundParkArray);
     }
-
-    // this.campgroundParkArray.push('24');
 
     // this.foundCampgroundPark[i].fullName.push(this.campgroundParkArray);
 
