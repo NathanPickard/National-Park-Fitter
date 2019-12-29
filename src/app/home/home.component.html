@@ -133,7 +133,7 @@
               </a>
             </mat-card-title>
             <mat-card-subtitle fxLayoutAlign="center center">
-              <h3>{{ foundNewsRelease.releasedate | date: 'MMM d, y' }}</h3>
+              <h4>{{ foundNewsRelease.releasedate | date: 'MMM d, y' }}</h4>
             </mat-card-subtitle>
 
           </mat-card-header>
@@ -145,7 +145,10 @@
               <mat-card-subtitle>{{ foundNewsRelease.image.caption }}</mat-card-subtitle>
             </div>
 
-            {{ foundNewsRelease.abstract }}
+            <div fxLayoutAlign="center center">
+              {{ foundNewsRelease.abstract }}
+            </div>
+
           </mat-card-content>
 
           <mat-card-actions fxLayoutAlign="center center">
