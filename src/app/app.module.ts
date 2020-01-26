@@ -58,11 +58,6 @@ export class CustomHammerConfig extends HammerGestureConfig {
     FlexLayoutModule,
     MaterialModule,
     ScrollingModule,
-    // NgbCarouselModule,
-    // NgxImageGalleryModule,
-    // NgImageSliderModule,
-    // CarouselModule.forRoot(),
-    // WavesModule.forRoot(),
     SlideshowModule,
     AgmCoreModule.forRoot({
       apiKey: 'AIzaSyB6vjKMU0wxBezpYg6PuYPDFOP0k3JPi_o'

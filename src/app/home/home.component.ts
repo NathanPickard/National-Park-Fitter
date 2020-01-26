@@ -205,7 +205,6 @@ export class HomeComponent implements OnInit {
   handleParkNameSuccess(data) {
     this.foundParkName = data.data[0].fullName;
     console.log(this.foundNewsReleases);
-    // console.log(this.foundParkName);
     // this.foundNewsReleases.push(this.foundParkName);
   }
 
@@ -256,7 +255,6 @@ export class HomeComponent implements OnInit {
     console.log(this.foundCampgrounds);
 
     // this.campgroundPark = this.foundCampgrounds.parkCode;
-    // console.log(this.campgroundPark);
 
     for (let i = 0; i < this.foundCampgrounds.length; i++) {
       this.campgroundPark = this.foundCampgrounds[i].parkcode;
@@ -275,8 +273,6 @@ export class HomeComponent implements OnInit {
 
   handleCampgroundParkSuccess(data) {
     this.foundCampgroundPark = data.data;
-
-    // console.log(this.foundCampgroundPark);
 
     // this.campgroundParkArray.push(this.foundCampgroundPark);
     // this.foundCampgroundPark.push(this.campgroundParkArray);
