@@ -82,7 +82,6 @@ export class CampgroundComponent implements OnInit {
     this.stepperSubmitted = true;
 
     this.getCampgroundData();
-    // console.log(this.accessibilityFormGroup.valueChanges);
     console.log(this.accessibilityFormGroup.value);
   }
 
@@ -142,7 +141,6 @@ export class CampgroundComponent implements OnInit {
     this.foundCampgroundPark = data.data;
 
     console.log(this.foundCampgroundPark);
-    // console.log(this.foundCampgrounds.length);
 
     // this.foundCampgroundParkfullname.push(this.campgroundParkArray);
 
