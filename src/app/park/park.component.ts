@@ -575,9 +575,9 @@ export class ParkComponent implements OnInit {
         fullName: this.foundParks[i].fullName,
         url: this.foundParks[i].url
       });
+      console.log(this.resultsStepperLatLongArray);
     }
-
-    console.log(this.foundParks);
+    console.log(this.resultsStepperLatLongArray);
   }
 
   // handleWeatherSuccess(data) {

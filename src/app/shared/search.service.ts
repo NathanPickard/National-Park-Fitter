@@ -60,7 +60,7 @@ export class SearchService {
     return this.httpClient.get<any>(this.API_URL + 'parks?' + 'q=' + searchQuery + '&fields=images' + '&api_key=' + this.API_KEY);
   }
 
-  getCurrentWeatherForParks() {
+  getCurrentWeatherForParks(latitude, longitude) {
     return this.httpClient.get<any>(this.WEATHER_URL + 'weather' + '&units=imperial' + '&APPID=' + this.WEATHER_API_KEY);
   }
 }
