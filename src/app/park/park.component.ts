@@ -532,6 +532,15 @@ export class ParkComponent implements OnInit {
       );
   }
 
+  getCurrentWeatherForParks() {
+    return this.searchService.getCurrentWeatherForParks(this.parkLat, this.parkLong)
+      .subscribe(
+        data => this.handleCurrentWeatherForParks(data),
+        error => this.handleError(error),
+        () => this.searching = false
+      );
+  }
+
   handleParkSuccess(data) {
     this.resultsFound = true;
 
@@ -584,6 +593,10 @@ export class ParkComponent implements OnInit {
   //   this.foundParkWeather = data;
   //   console.log(this.foundParkWeather);
   // }
+
+  handleCurrentWeatherForParks(data) {
+
+  }
 
   handleError(error) {
     console.log(error);
