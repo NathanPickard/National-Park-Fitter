@@ -222,7 +222,6 @@
     <!-- <div *ngIf="stateFormGroup.value.stateCtrl != null && stateFormGroup.value.stateCtrl != undefined"> -->
     <div *ngIf="stateFormGroup.value.stateCtrl !== ''">
       <div fxLayoutAlign="center center" fxLayout="row" style="padding: 20px 0px 20px 0px">
-        <!-- Parks in {{ stateFormGroup.value.stateCtrl.name }} -->
         <p style="padding-right: 8px">Parks in</p>
         <h2>{{ stateFormGroup.value.stateCtrl.name }}</h2>
         <img [src]="stateFormGroup.value.stateCtrl.flag" height="55" style="padding-left: 15px">
@@ -296,10 +295,6 @@
                 </h3>
                 {{ foundPark.directionsInfo }}
               </div>
-
-              <!-- <h3
-                *ngIf="(entranceInfoFormGroup.value.entranceInfoCtrl && foundPark.entranceFees[0] != '' && foundPark.entranceFees.length !== 0)">
-                Entrance Information:</h3> -->
 
               <h3
                 *ngIf="(entranceInfoFormGroup.value.entranceInfoCtrl && foundPark.entranceFees[0] != '' && foundPark.entranceFees.length != 0)
