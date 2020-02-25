@@ -473,7 +473,6 @@ export class ParkStepperComponent implements OnInit {
           url: this.foundParks[i].images[j].url
         });
       }
-
       this.parkLatLong = this.foundParks[i].latLong;
       this.parkLat = this.parkLatLong.substr(4, 5);
       this.parkLong = this.parkLatLong.split('long:').pop();

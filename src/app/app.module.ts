@@ -6,7 +6,6 @@ import { HttpClientModule } from '@angular/common/http';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { ScrollingModule } from '@angular/cdk/scrolling';
 
-
 import { AppRoutingModule } from './app-routing.module';
 import { MaterialModule } from './shared/material.module';
 import { AgmCoreModule } from '@agm/core';
@@ -82,5 +81,3 @@ export class AppModule {
     matIconRegistry.addSvgIconSet(domSanitizer.bypassSecurityTrustResourceUrl('./assets/mdi.svg'));
   }
 }
-
-
