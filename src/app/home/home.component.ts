@@ -258,7 +258,6 @@ export class HomeComponent implements OnInit {
 
     for (let i = 0; i < this.foundCampgrounds.length; i++) {
       this.campgroundPark = this.foundCampgrounds[i].parkcode;
-      // console.log(this.campgroundPark);
 
       this.getParkName(this.campgroundPark);
     }
