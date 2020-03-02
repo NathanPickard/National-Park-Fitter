@@ -275,25 +275,19 @@ export class HomeComponent implements OnInit {
 
     // this.campgroundParkArray.push(this.foundCampgroundPark);
     // this.foundCampgroundPark.push(this.campgroundParkArray);
-
     // console.log(this.campgroundParkArray);
 
     for (let i = 0; i < this.foundCampgroundPark.length; i++) {
       // console.log(this.foundCampgroundPark[i].fullname);
-
       this.campgroundParkArray.push(this.foundCampgroundPark[i].fullname);
       // this.foundCampgrounds.push(this.foundCampgroundPark[i].fullname);
 
       // console.log(this.foundCampgrounds);
       console.log(this.campgroundParkArray);
     }
-
     // this.foundCampgroundPark[i].fullName.push(this.campgroundParkArray);
-
     // console.log(this.campgroundParkArray);
-
     // this.foundCampgroundPark.unshift(this.campgroundParkArray);
-
     // console.log(this.foundCampgroundPark);
   }
 
