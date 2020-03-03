@@ -61,6 +61,6 @@ export class SearchService {
   }
 
   getCurrentWeatherForParks(latitude, longitude) {
-    return this.httpClient.get<any>(this.WEATHER_URL + 'weather' + '&units=imperial' + '&APPID=' + this.WEATHER_API_KEY);
+    return this.httpClient.get<any>(this.WEATHER_URL + 'weather' + 'lat=' + latitude + 'lon=' + longitude + '&units=imperial' + '&APPID=' + this.WEATHER_API_KEY);
   }
 }

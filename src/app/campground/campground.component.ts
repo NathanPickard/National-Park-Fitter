@@ -143,10 +143,8 @@ export class CampgroundComponent implements OnInit {
     console.log(this.foundCampgroundPark);
 
     // this.foundCampgroundParkfullname.push(this.campgroundParkArray);
-
     // this.campgroundParkArray.push(this.foundCampgroundPark);
     // this.foundCampgroundPark.push(this.campgroundParkArray);
-
     // console.log(this.campgroundParkArray);
 
     for (let i = 0; i < this.foundCampgroundPark.length; i++) {
