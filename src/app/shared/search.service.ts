@@ -25,7 +25,6 @@ export class SearchService {
   }
 
   getParkRecInfo() {
-    // return this.httpClient.get<any>
   }
 
   getHomepageBackgroundImage() {
