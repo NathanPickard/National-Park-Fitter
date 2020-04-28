@@ -532,7 +532,7 @@ export class ParkComponent implements OnInit {
       );
   }
 
-  getCurrentWeatherForParks() {
+  getCurrentWeather() {
     return this.searchService.getCurrentWeatherForParks(this.parkLat, this.parkLong)
       .subscribe(
         data => this.handleCurrentWeatherForParks(data),
@@ -556,6 +556,7 @@ export class ParkComponent implements OnInit {
       this.parkLatLong = this.foundParks[i].latLong;
       this.parkLat = this.parkLatLong.substr(4, 5);
       this.parkLong = this.parkLatLong.split('long:').pop();
+      console.log(this.parkLat, this.parkLong);
 
       this.resultsStepperLatLongArray.push({
         lat: this.parkLat,
