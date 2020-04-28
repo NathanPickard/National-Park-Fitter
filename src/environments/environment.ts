@@ -6,8 +6,10 @@ export const environment = {
   production: false,
   NPS_API_KEY: 'uYQbQmGs618vM9mHWlgajs0UHlmXmKWup3WN40GT',
   NPS_BASE_URL: 'https://api.nps.gov/api/v1/',
-  OPEN_WEATHER_API_KEY: 'cca81332aa416bea35d977c1e43d68f7',
-  OPEN_WEATHER_BASE_URL: 'https://api.openweather.org/data/2.5/'
+  // OPEN_WEATHER_API_KEY: 'cca81332aa416bea35d977c1e43d68f7',
+  // OPEN_WEATHER_BASE_URL: 'https://api.openweather.org/data/2.5/'
+  WEATHER_API_KEY: '3a4569f9956ea7bd05433eabcc5881dd',
+  WEATHER_BASE_URL: 'http://api.weatherstack.com/'
 };
 
 /*

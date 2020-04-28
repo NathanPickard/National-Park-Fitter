@@ -13,8 +13,8 @@ export class SearchService {
 
   private API_KEY: string = environment.NPS_API_KEY;
   private API_URL: string = environment.NPS_BASE_URL;
-  private WEATHER_API_KEY: string = environment.OPEN_WEATHER_API_KEY;
-  private WEATHER_URL: string = environment.OPEN_WEATHER_BASE_URL;
+  private WEATHER_API_KEY: string = environment.WEATHER_API_KEY;
+  private WEATHER_URL: string = environment.WEATHER_BASE_URL;
 
   getLatestNewsReleases() {
     return this.httpClient.get<any>(this.API_URL + 'newsreleases?' + '&api_key=' + this.API_KEY + '&fields=images' + '&limit=5');
@@ -60,6 +60,6 @@ export class SearchService {
   }
 
   getCurrentWeatherForParks(latitude, longitude) {
-    return this.httpClient.get<any>(this.WEATHER_URL + 'weather' + 'lat=' + latitude + 'lon=' + longitude + '&units=imperial' + '&APPID=' + this.WEATHER_API_KEY);
+    return this.httpClient.get<any>(this.WEATHER_URL + 'current' + '?access_key=' + this.WEATHER_API_KEY + '&units=f' + '&query=' + latitude + ',' + longitude);
   }
 }
