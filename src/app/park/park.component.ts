@@ -51,6 +51,7 @@ export class ParkComponent implements OnInit {
   foundParks: any[];
   foundMoreParks: any[];
   foundParkImages: any;
+  weatherResults: any;
 
   nextSetOfParks: any = 5;
 
@@ -564,7 +565,7 @@ export class ParkComponent implements OnInit {
         fullName: this.foundParks[i].fullName,
         url: this.foundParks[i].url
       });
-      // this.getParkWeather(this.parkLat, this.parkLong);
+      this.getParkWeather(this.parkLat, this.parkLong);
     }
   }
 
@@ -597,6 +598,20 @@ export class ParkComponent implements OnInit {
 
   handleCurrentWeatherForParks(data) {
 
+  }
+
+  getParkWeather(latitude, longitude) {
+    console.log(latitude);
+    return this.searchService.getCurrentWeatherForParks(latitude, longitude)
+      .subscribe(
+        data => this.handleWeatherSuccess(data),
+        error => this.handleError(error)
+      );
+  }
+
+  handleWeatherSuccess(data) {
+    this.weatherResults = data;
+    console.log(this.weatherResults);
   }
 
   handleError(error) {
