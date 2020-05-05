@@ -52,6 +52,7 @@ export class ParkComponent implements OnInit {
   foundMoreParks: any[];
   foundParkImages: any;
   weatherResults: any;
+  currentWeatherResults: any;
 
   nextSetOfParks: any = 5;
 
@@ -471,6 +472,7 @@ export class ParkComponent implements OnInit {
     this.searching = true;
     this.foundParks = [];
     this.queriesArray = [];
+    this.currentWeatherResults = [];
 
     if (this.stateFormGroup.value.stateCtrl.code) {
       this.stateQuery = this.stateFormGroup.value.stateCtrl.code;
@@ -611,7 +613,10 @@ export class ParkComponent implements OnInit {
 
   handleWeatherSuccess(data) {
     this.weatherResults = data;
-    console.log(this.weatherResults);
+    // console.log(this.weatherResults);
+    // console.log("This is the current temperature " + this.weatherResults.current.temperature);
+    this.currentWeatherResults.push(this.weatherResults.current.temperature);
+    console.log(this.currentWeatherResults);
   }
 
   handleError(error) {
