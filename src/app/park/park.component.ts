@@ -603,7 +603,6 @@ export class ParkComponent implements OnInit {
   }
 
   getParkWeather(latitude, longitude) {
-    console.log(latitude);
     return this.searchService.getCurrentWeatherForParks(latitude, longitude)
       .subscribe(
         data => this.handleWeatherSuccess(data),
@@ -616,7 +615,9 @@ export class ParkComponent implements OnInit {
     // console.log(this.weatherResults);
     // console.log("This is the current temperature " + this.weatherResults.current.temperature);
     this.currentWeatherResults.push(this.weatherResults.current.temperature);
+    // this.foundParks.push(this.weatherResults.current.temperature);
     console.log(this.currentWeatherResults);
+    // console.log(this.foundParks);
   }
 
   handleError(error) {
