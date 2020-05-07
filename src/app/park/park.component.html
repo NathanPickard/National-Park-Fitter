@@ -250,9 +250,9 @@
 
             <mat-card-header fxLayoutAlign="center center" fxLayout="column">
 
-              <mat-card-title>
+              <mat-card-title fxLayoutAlign="center center">
                 <a href="{{ foundPark.url }}" target="_blank" style="text-decoration: none;">
-                  {{ foundPark.fullName }} {{ this.currentWeatherResults[i] }} </a>
+                  {{ foundPark.fullName }} {{ currentWeatherResults[i] }} </a>
               </mat-card-title>
               <mat-card-subtitle fxLayoutAlign="center center">
                 {{ foundPark.designation }}
@@ -368,6 +368,8 @@
               </div>
 
               <!-- <ng-template #directionsNotAvailable>Directions not available</ng-template> -->
+
+              <h4>Current temperature: {{ currentWeatherResults[i] }}</h4>
 
             </mat-card-content>
 

@@ -616,6 +616,8 @@ export class ParkComponent implements OnInit {
     // console.log("This is the current temperature " + this.weatherResults.current.temperature);
     this.currentWeatherResults.push(this.weatherResults.current.temperature);
     // this.foundParks.push(this.weatherResults.current.temperature);
+    console.log(this.foundParks);
+
     console.log(this.currentWeatherResults);
     // console.log(this.foundParks);
   }
