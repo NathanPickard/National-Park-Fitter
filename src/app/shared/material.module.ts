@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 
+import { MatAutocompleteModule } from '@angular/material/autocomplete';
 import { MatButtonModule } from '@angular/material/button';
 import { MatCardModule } from '@angular/material/card';
 import { MatCheckboxModule } from '@angular/material/checkbox';
@@ -18,6 +19,7 @@ import { MatToolbarModule } from '@angular/material/toolbar';
 
 @NgModule({
   imports: [
+    MatAutocompleteModule,
     MatButtonModule,
     MatCardModule,
     MatCheckboxModule,
@@ -35,6 +37,7 @@ import { MatToolbarModule } from '@angular/material/toolbar';
     MatToolbarModule
   ],
   exports: [
+    MatAutocompleteModule,
     MatButtonModule,
     MatCardModule,
     MatCheckboxModule,
