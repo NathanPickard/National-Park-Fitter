@@ -3,6 +3,8 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators, FormControl } from '@angular/forms';
 
+import { debounceTime, tap, switchMap, finalize } from 'rxjs/operators';
+
 import { SearchService } from '../shared/search.service';
 
 // import { FitBoundsAccessor } from '@agm/core';
@@ -67,6 +69,10 @@ export class HomeComponent implements OnInit {
   parkLong: any;
   searchResultsLatLongArray: any;
 
+  filteredParks: any[];
+  isLoading = false;
+  errorMessage: string;
+
   ngOnInit() {
 
     var mapProp = {
@@ -129,6 +135,35 @@ export class HomeComponent implements OnInit {
       regulationsCtrl: ['', Validators.required],
       directionsCtrl: ['', Validators.required],
     });
+
+    this.searchParkForm.get('searchQuery').valueChanges
+      .pipe(debounceTime(500),
+        tap(() => {
+          this.errorMessage = '';
+          this.filteredParks = [];
+          this.isLoading = true;
+        }),
+        switchMap(value => this.searchService.searchParks(value)
+          .pipe(finalize(() => {
+            this.isLoading = false;
+          }),
+          )
+        )
+      )
+      .subscribe(data => {
+        if (data !== undefined) {
+          console.log('Got results');
+          this.filteredParks = data.data;
+          this.errorMessage = '';
+        } else {
+          this.errorMessage = data['Error'];
+          console.log(data);
+          this.filteredParks = data.data;
+          console.log(this.filteredParks);
+        }
+        console.log(this.filteredParks);
+      });
+
   }
 
   searchParks() {
