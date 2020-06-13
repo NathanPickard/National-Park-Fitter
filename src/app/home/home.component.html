@@ -11,7 +11,7 @@
 
     <form [formGroup]="searchParkForm" (ngSubmit)="searchParks()">
 
-      <mat-form-field appearance="outline">
+      <mat-form-field appearance="outline" style="width: 275px;">
 
         <mat-label>Search National Parks</mat-label>
 
@@ -26,15 +26,19 @@
             </mat-option>
           </ng-container>
         </mat-autocomplete>
-        <mat-icon matSuffix svgIcon="map-search-outline"></mat-icon>
+        <button type="submit" mat-mini-fab matSuffix color="primary">
+          <mat-icon matSuffix svgIcon="map-search-outline"></mat-icon>
+        </button>
+        <!-- <mat-icon matSuffix svgIcon="map-search-outline"></mat-icon> -->
         <mat-hint>Search the National Parks!</mat-hint>
         <mat-error *ngIf="searchParkForm.get('searchQuery').invalid">Enter a park name</mat-error>
 
+        <!-- <button type="submit" mat-raised-button color="primary">
+          <mat-icon>search</mat-icon>
+        </button> -->
+
       </mat-form-field>
 
-      <button type="submit" mat-raised-button color="primary">
-        <mat-icon>search</mat-icon>
-      </button>
 
     </form>
 
@@ -89,10 +93,11 @@
             </mat-card-subtitle>
           </mat-card-header>
 
-          <slideshow [imageUrls]="foundSearchParks[i].images" [backgroundSize]="'contain'"
-            [backgroundRepeat]="'no-repeat'" [showDots]="true" [arrowSize]="'20px'" [minHeight]="'400px'"></slideshow>
-
           <mat-card-content>
+
+            <slideshow [imageUrls]="foundSearchParks[i].images" [backgroundSize]="'contain'"
+              [backgroundRepeat]="'no-repeat'" [showDots]="true" [arrowSize]="'20px'" [minHeight]="'400px'"></slideshow>
+
             <h4>Description:</h4>
             {{foundSearchPark.description }}
           </mat-card-content>
@@ -147,7 +152,7 @@
 
             <div fxLayoutAlign="center center" fxLayout="column">
               <img mat-card-image [src]="foundNewsRelease.image.url">
-              <mat-card-subtitle>{{ foundNewsRelease.image.caption }}</mat-card-subtitle>
+              <mat-card-subtitle style="text-align: center;">{{ foundNewsRelease.image.caption }}</mat-card-subtitle>
             </div>
 
             <div fxLayoutAlign="center center">
