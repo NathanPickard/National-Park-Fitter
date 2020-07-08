@@ -19,7 +19,6 @@
         <form [formGroup]="stateFormGroup">
           <ng-template matStepLabel>Parks by State</ng-template>
           <div>
-
             <mat-select placeholder="State" formControlName="stateCtrl" name="state">
               <mat-option>None</mat-option>
 
@@ -214,7 +213,6 @@
 
   </div>
 
-  <!-- <div *ngIf="!resultsFound && stepperSubmitted"> -->
   <div *ngIf="searching">
     <mat-spinner></mat-spinner>
   </div>
@@ -331,7 +329,7 @@
                 <div *ngFor="let entranceFee of foundPark.entranceFees">
                   <ul>
                     <li>
-                      <h4>{{ entranceFee.title }}:</h4>
+                      <h4>{{ entranceFee.title }}</h4>
                       <h4 fxLayout="row" fxLayoutAlign="start center">
                         <mat-icon style="padding-right: 10px;">description</mat-icon>
                         Details:
@@ -354,7 +352,7 @@
 
                 <ul *ngFor="let entrancePass of foundPark.entrancePasses">
                   <li>
-                    <h4>{{ entrancePass.title }}:</h4>
+                    <h4>{{ entrancePass.title }}</h4>
                     <h4 fxLayout="row" fxLayoutAlign="start center">
                       <mat-icon style="padding-right: 10px;">description</mat-icon>
                       Details:
@@ -388,9 +386,7 @@
               </div>
 
             </mat-card-actions>
-
           </mat-card>
-
         </div>
       </div>
     </div>
@@ -406,6 +402,5 @@
       <mat-icon>expand_more</mat-icon>
     </button>
   </div>
-
 
 </div>
