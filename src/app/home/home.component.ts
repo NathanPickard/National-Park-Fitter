@@ -282,7 +282,6 @@ export class HomeComponent implements OnInit {
   }
 
   handleSuccess(data) {
-    // this.foundYosemiteCampgrounds = data;
     this.resultsFound = true;
 
     this.foundCampgrounds = data.data;

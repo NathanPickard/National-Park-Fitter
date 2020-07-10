@@ -51,7 +51,6 @@ export class ParkComponent implements OnInit {
   foundParks: any[];
   foundMoreParks: any;
   numberOfFoundParks: any;
-  numberOfAdditionalParks: any;
   foundParkImages: any;
   weatherResults: any;
   currentWeatherResults: any;
@@ -582,8 +581,6 @@ export class ParkComponent implements OnInit {
       this.foundParks.push(data.data[i]);
 
       console.log(this.numberOfFoundParks);
-      this.numberOfAdditionalParks = i + this.numberOfFoundParks;
-      console.log(this.numberOfAdditionalParks);
 
       this.foundMoreParks = data.data[i];
       console.log(this.foundMoreParks);
