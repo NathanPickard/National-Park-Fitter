@@ -5,14 +5,11 @@
   </h3>
 
   <div class="bg-image" fxLayout="column" fxLayoutAlign="center center" style="min-height: 325px; width: 100%;">
-
     <form [formGroup]="searchParkForm" (ngSubmit)="searchParks()">
 
       <mat-form-field appearance="outline" style="width: 275px;">
-
         <mat-label>Search National Parks</mat-label>
 
-        <!-- <input matInput type="search" placeholder="Search for National Parks" formControlName="searchQuery"> -->
         <input matInput [matAutocomplete]="auto" type="search" placeholder="Search for National Parks"
           formControlName="searchQuery">
         <mat-autocomplete #auto="matAutocomplete">
@@ -32,7 +29,6 @@
       </mat-form-field>
 
     </form>
-
   </div>
 
   <div *ngIf="searching && searchSubmitted" fxLayoutAlign="center center" style="padding: 25px 0px 25px 0px">
@@ -119,11 +115,12 @@
 
   <div *ngIf="newsFound">
 
-    <div fxLayoutGap="20px" fxLayout="column" style="padding: 20px 15px 20px 15px;">
+    <!-- <div fxLayoutGap="20px" fxLayout="column" fxLayoutAlign="center center" style="padding: 20px 15px 20px 15px;"> -->
+    <div style="padding: 20px 15px 20px 15px;" fxLayoutGap="20px grid" fxLayout="row wrap" fxLayoutAlign="center start">
 
       <div *ngFor="let foundNewsRelease of foundNewsReleases">
 
-        <mat-card>
+        <mat-card style="max-width: 550px;">
 
           <mat-card-header fxLayoutAlign="center center">
             <mat-card-title fxLayout="center center" color="primary">
@@ -132,7 +129,7 @@
               </a>
             </mat-card-title>
             <mat-card-subtitle fxLayoutAlign="center center">
-              <h4>{{ foundNewsRelease.releasedate | date: 'MMM d, y' }}</h4>
+              <h4>{{ foundNewsRelease.releaseDate | date: 'MMM d, y' }}</h4>
             </mat-card-subtitle>
 
           </mat-card-header>
@@ -141,7 +138,8 @@
 
             <div fxLayoutAlign="center center" fxLayout="column">
               <img mat-card-image [src]="foundNewsRelease.image.url">
-              <mat-card-subtitle style="text-align: center;">{{ foundNewsRelease.image.caption }}</mat-card-subtitle>
+              <mat-card-subtitle style="text-align: center; font-style: italic;">{{ foundNewsRelease.image.caption }}
+              </mat-card-subtitle>
             </div>
 
             <div fxLayoutAlign="center center">
