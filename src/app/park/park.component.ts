@@ -627,7 +627,6 @@ export class ParkComponent implements OnInit {
     console.log(this.foundParks);
 
     console.log(this.currentWeatherResults);
-    // console.log(this.foundParks);
   }
 
   handleError(error) {
