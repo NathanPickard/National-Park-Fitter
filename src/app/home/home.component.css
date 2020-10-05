@@ -7,6 +7,10 @@
   margin-top: 0px;
 }
 
+mat-card-subtitle h4 {
+  margin: 0px 0px 15px 0px;
+}
+
 agm-map {
   height: 375px;
 }

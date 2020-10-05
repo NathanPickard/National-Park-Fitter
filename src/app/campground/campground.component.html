@@ -419,9 +419,55 @@
           </h3>
           <p>{{ foundCampground.description }}</p>
 
-          <!-- <div ngFor="let fee of foundCampground.fees let j = index">
-            <p>{{ fee }}</p>
+          <!-- <p>{{ foundCampground.fees }}</p> -->
+
+          <!-- <div ngFor="let fee of foundCampground.fees let j = index"> -->
+          <!-- <div ngFor="let money of foundCampground.fees; let j = index"> -->
+          <!-- <div ngFor="let money of foundCampground">
+            <p>{{ money.fees }}</p>
+            <h2>Hello there</h2> -->
+          <!-- <p>{{ fee[0].cost }}</p> -->
+          <!-- <div ngFor="let price of fee">
+              <p>{{ price.cost }}</p> -->
+          <!-- </div> -->
+          <!-- </div> -->
+
+          <!-- <div *ngFor="let money of foundCampground.fees | keyvalue">
+            {{ money.key }} {{ money.value }}
+            <div *ngFor="let campCost of money.value">
+              {{ campCost.cost }}
+            </div>
           </div> -->
+
+          <!-- <div *ngFor="let campgroundFees of foundCampground.fees; let i = index">
+            <div *ngFor="let feesForCampground of campgroundFees; let j = index">
+              {{ feesForCampground }}  
+            </div>
+          </div> -->
+
+          <!-- <div *ngFor="let campCost of campgroundFees">
+            {{ campCost.cost }}
+          </div> -->
+
+          <!-- <p *ngFor="let objArrayElement of generateArray("></p> -->
+
+          <div *ngFor="let item of foundCampground.fees | keyvalue; let i = index">
+            <!-- <h1>{{ item.value[2] }}</h1> -->
+            <!-- <h1>{{ item.key }}</h1>
+            <h1>{{ item.value }}</h1> -->
+            <h2>Cost of campground: {{ i + 1 }}</h2>
+            <div *ngFor="let theCost of item.value | keyvalue; let i = index">
+              
+              <!-- <p>{{ theCost }}</p> -->
+              <p>{{ item.value | json }}</p>
+              <p>{{ theCost.value }}</p>
+              <!-- <p>{{ theCost.value[1] }}</p> -->
+            </div>
+            <div>
+              <!-- {{ item | json }} -->
+              <!-- {{ item.value }} -->
+            </div>
+          </div>
 
           <!-- <app-accessibility></app-accessibility> -->
 

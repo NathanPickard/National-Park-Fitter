@@ -17,11 +17,11 @@ export class SearchService {
   private WEATHER_URL: string = environment.WEATHER_BASE_URL;
 
   getLatestNewsReleases() {
-    return this.httpClient.get<any>(this.API_URL + 'newsreleases?' + '&api_key=' + this.API_KEY + '&fields=images' + '&limit=5');
+    return this.httpClient.get<any>(this.API_URL + 'newsreleases?' + '&api_key=' + this.API_KEY + '&fields=images' + '&limit=8');
   }
 
   getNextLatestNewsReleases(nextSetNewsRelease) {
-    return this.httpClient.get<any>(this.API_URL + 'newsreleases?' + '&limit=5' + '&start=' + nextSetNewsRelease + '&api_key=' + this.API_KEY + '&fields=images');
+    return this.httpClient.get<any>(this.API_URL + 'newsreleases?' + '&limit=6' + '&start=' + nextSetNewsRelease + '&api_key=' + this.API_KEY + '&fields=images');
   }
 
   getParkRecInfo() {

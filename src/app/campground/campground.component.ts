@@ -29,7 +29,9 @@ export class CampgroundComponent implements OnInit {
   campgroundLat: any;
   campgroundLong: any;
   longStr: any;
+
   resultsStepperLatLongArray: any;
+  campgroundFees: any;
 
   constructor(private _formBuilder: FormBuilder,
     private searchService: SearchService) { }
@@ -105,6 +107,9 @@ export class CampgroundComponent implements OnInit {
     this.resultsFound = true;
 
     this.resultsStepperLatLongArray = [];
+    this.campgroundFees = [];
+    // this.
+
     this.foundCampgrounds = data.data;
     console.log(this.foundCampgrounds);
 
@@ -113,6 +118,7 @@ export class CampgroundComponent implements OnInit {
 
     for (let i = 0; i < this.foundCampgrounds.length; i++) {
       this.foundCampgroundImages = this.foundCampgrounds[i].images;
+      this.campgroundFees = this.foundCampgrounds[i].fees;
       this.campgroundPark = this.foundCampgrounds[i].parkCode;
       // console.log(this.campgroundPark);
 
@@ -132,6 +138,20 @@ export class CampgroundComponent implements OnInit {
       });
 
       console.log(this.resultsStepperLatLongArray);
+      console.log(this.campgroundFees);
+      console.log(this.foundCampgroundImages);
+
+      // for (let j = 0; j < this.foundCampgrounds[i].fees.length; j++) {
+      //   console.log(this.foundCampgrounds[i].fees[j]);
+      //   this.campgroundFees.push({
+      //     cost: this.foundCampgrounds[i].fees[j].cost,
+      //     description: this.foundCampgrounds[i].fees[j].description,
+      //     title: this.foundCampgrounds[i].fees[j].title
+      //     // this.foundCampgrounds[i].fees[j]
+      //   });
+      // }
+
+      // console.log('CAMPGROUND FEES: ' + this.campgroundFees);
 
       this.getParkName(this.campgroundPark);
     }
@@ -156,6 +176,10 @@ export class CampgroundComponent implements OnInit {
       // this.foundCampgrounds.push(this.foundCampgroundPark[i].fullname);
       // this.foundCampgroundPark[i].fullName.push(this.campgroundParkArray);
     }
+  }
+
+  generateArray(obj) {
+    return Object.keys(obj).map((key) => { return obj[key] });
   }
 
   handleError(error) {
