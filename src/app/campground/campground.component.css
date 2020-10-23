@@ -1,8 +1,3 @@
-.span.mat-checkbox-label {
-  color: blue;
-  /* display: inline-flex;
-  vertical-align: middle; */
-}
 
 label.mat-checkbox-layout {
   color: blue;
@@ -14,4 +9,17 @@ agm-map {
   height: 375px;
 }
 
+.span.mat-checkbox-label {
+  color: blue;
+  /* display: inline-flex;
+  vertical-align: middle; */
+}
 
+.bg-image {
+  background: linear-gradient(rgba(255, 255, 255, 0.9), rgb(255, 255, 255, 0.4)),
+    url("https://website-images-nathan.s3-us-west-2.amazonaws.com/national-park-fitter/zach-betten-K9olx8OF36A-unsplash.jpg")
+      no-repeat;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
