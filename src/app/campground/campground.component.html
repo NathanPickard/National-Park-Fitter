@@ -14,6 +14,31 @@
 
     <mat-vertical-stepper #stepper>
 
+      <mat-step [stepControl]="stateFormGroup" state="state">
+
+        <form [formGroup]="stateFormGroup">
+          <ng-template matStepLabel>Campground by State</ng-template>
+          <div>
+            <mat-select placeholder="State" formControlName="stateCtrl" name="state">
+              <mat-option>None</mat-option>
+
+              <mat-divider></mat-divider>
+
+              <mat-optgroup *ngFor="let group of stateGroups" [label]="group.name">
+                <mat-option *ngFor="let state of group.state" [value]="state">
+                  <img class="option-img" [src]="state.flag" height="25">
+                  <span>{{ state.name }}</span>
+                </mat-option>
+              </mat-optgroup>
+            </mat-select>
+          </div>
+          <div fxLayoutGap="15px" style="padding: 30px 30px 0px 0px;">
+            <button mat-raised-button matStepperNext color="primary">Next</button>
+          </div>
+        </form>
+
+      </mat-step>
+
       <mat-step [stepControl]="accessibilityFormGroup" state="accessibility">
         <form [formGroup]="accessibilityFormGroup">
 
@@ -261,6 +286,11 @@
         ADA information
       </mat-chip>
 
+      <mat-chip selected color="accent" *ngIf="stateFormGroup.value.stateCtrl.name">
+        <mat-icon style="padding-right: 5px;">star</mat-icon>
+        State: {{ stateFormGroup.value.stateCtrl.name }}
+      </mat-chip>
+
       <mat-chip-list>
         <mat-chip selected color="accent" *ngIf="accessibilityFormGroup.value.wheelchairAccessCtrl">
           <mat-icon style="padding-right: 5px;">accessible_forward</mat-icon>
@@ -373,6 +403,14 @@
 
 <div *ngIf="resultsFound">
 
+  <div *ngIf="stateFormGroup.value.stateCtrl !== ''">
+    <div fxLayoutAlign="center center" fxLayout="row" style="padding: 20px 0px 20px 0px">
+      <p style="padding-right: 8px">Parks in</p>
+      <h2>{{ stateFormGroup.value.stateCtrl.name }}</h2>
+      <img [src]="stateFormGroup.value.stateCtrl.flag" height="55" style="padding-left: 15px">
+    </div>
+  </div>
+
   <agm-map [zoom]="4" [latitude]="39.52" [longitude]="-98.35" [fitBounds]="true">
     <div *ngFor="let campCoordinates of resultsStepperLatLongArray">
       <agm-marker *ngIf="campCoordinates.lat && campCoordinates.long" [latitude]="campCoordinates.lat"
@@ -383,7 +421,6 @@
         </agm-info-window>
       </agm-marker>
     </div>
-
   </agm-map>
 
 </div>
@@ -457,7 +494,7 @@
             <h1>{{ item.value }}</h1> -->
             <h2>Cost of campground: {{ i + 1 }}</h2>
             <div *ngFor="let theCost of item.value | keyvalue; let i = index">
-              
+
               <!-- <p>{{ theCost }}</p> -->
               <p>{{ item.value | json }}</p>
               <p>{{ theCost.value }}</p>

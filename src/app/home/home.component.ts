@@ -186,17 +186,17 @@ export class HomeComponent implements OnInit {
     );
   }
 
-  onSubmitStepper() {
-    this.getCampgroundData();
-    this.getParkData();
-  }
+  // onSubmitStepper() {
+  //   this.getCampgroundData();
+  //   this.getParkData();
+  // }
 
-  getCampgroundData() {
-    return this.searchService.getCampgroundResults().subscribe(
-      data => this.handleSuccess(data),
-      error => this.handleError(error)
-    );
-  }
+  // getCampgroundData() {
+  //   return this.searchService.getCampgroundResults().subscribe(
+  //     data => this.handleSuccess(data),
+  //     error => this.handleError(error)
+  //   );
+  // }
 
   getParkData() {
     return this.searchService.getParkResults().subscribe(
