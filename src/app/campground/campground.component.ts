@@ -517,7 +517,7 @@ export class CampgroundComponent implements OnInit {
       // console.log(this.campgroundPark);
 
       this.campgroundLatLong = this.foundCampgrounds[i].latLong;
-      this.longStr = this.campgroundLatLong.search('lng:')
+      this.longStr = this.campgroundLatLong.search('lng:');
       this.campgroundLat = this.campgroundLatLong.substr(5, 5);
       this.campgroundLong = this.campgroundLatLong.slice(this.longStr + 4, this.longStr + 12);
 

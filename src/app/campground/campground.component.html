@@ -405,7 +405,7 @@
 
   <div *ngIf="stateFormGroup.value.stateCtrl !== ''">
     <div fxLayoutAlign="center center" fxLayout="row" style="padding: 20px 0px 20px 0px">
-      <p style="padding-right: 8px">Campground in</p>
+      <p style="padding-right: 8px">Campgrounds in</p>
       <h2>{{ stateFormGroup.value.stateCtrl.name }}</h2>
       <img [src]="stateFormGroup.value.stateCtrl.flag" height="55" style="padding-left: 15px">
     </div>
@@ -446,9 +446,11 @@
 
         <mat-card-content>
 
-          <slideshow [imageUrls]="foundCampgrounds[i].images" [backgroundSize]="'contain'"
-            [backgroundRepeat]="'no-repeat'" [showDots]="true" [arrowSize]="'20px'" [minHeight]="'400px'">
-          </slideshow>
+          <div *ngIf="foundCampgrounds[i].images.length">
+            <slideshow [imageUrls]="foundCampgrounds[i].images" [backgroundSize]="'contain'"
+              [backgroundRepeat]="'no-repeat'" [showDots]="true" [arrowSize]="'20px'" [minHeight]="'400px'">
+            </slideshow>
+          </div>
 
           <h3>
             <mat-icon style="padding-right: 10px;">description</mat-icon>
