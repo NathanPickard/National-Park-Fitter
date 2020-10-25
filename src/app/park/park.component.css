@@ -1,3 +1,17 @@
+agm-map {
+  height: 375px;
+}
+
+cdk-virtual-scroll-viewport {
+  height: 100vh;
+  width: 80vw;
+  margin: 0 auto;
+}
+
+cdk-virtual-scroll-viewport li {
+  height: 100px;
+}
+
 .mat-card-image {
   max-width: 550px;
 }
@@ -17,20 +31,15 @@
   margin-left: 8px;
 }
 
-cdk-virtual-scroll-viewport {
-  height: 100vh;
-  width: 80vw;
-  margin: 0 auto;
-}
-
-cdk-virtual-scroll-viewport li {
-  height: 100px;
-}
-
 .last {
   padding-bottom: 25px;
 }
 
-agm-map {
-  height: 375px;
+.bg-image {
+  background: linear-gradient(rgba(255, 255, 255, 0.6), rgb(255, 255, 255, 0.2)),
+    url("https://website-images-nathan.s3-us-west-2.amazonaws.com/national-park-fitter/francis-bouffard-31m4coERZJI-unsplash.jpg")
+      no-repeat;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
 }

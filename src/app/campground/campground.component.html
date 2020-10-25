@@ -452,6 +452,12 @@
             </slideshow>
           </div>
 
+          <div *ngFor="let fee of foundCampground.fees">
+            <h1>{{ fee.title }}:</h1>
+            <h1>{{ fee.description }}</h1>
+            <h1>${{ fee.cost }}</h1>
+          </div>
+
           <h3>
             <mat-icon style="padding-right: 10px;">description</mat-icon>
             Description:
