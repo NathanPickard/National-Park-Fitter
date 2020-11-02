@@ -502,7 +502,6 @@ export class CampgroundComponent implements OnInit {
 
     this.resultsStepperLatLongArray = [];
     this.campgroundFees = [];
-    // this.
 
     this.foundCampgrounds = data.data;
     console.log(this.foundCampgrounds);
