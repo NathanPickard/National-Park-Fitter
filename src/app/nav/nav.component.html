@@ -1,4 +1,4 @@
-<mat-toolbar color="primary">
+<!-- <mat-toolbar color="primary">
   <mat-toolbar-row fxLayoutGap="8px">
 
     <button mat-icon-button (click)="openNav()" fxShow="true" fxHide.gt-xs>
@@ -29,6 +29,42 @@
         About
       </a>
     </div>
+
+  </mat-toolbar-row>
+</mat-toolbar> -->
+
+<mat-toolbar color="primary">
+  <mat-toolbar-row fxLayoutGap="8px" style="justify-content: center;">
+
+    <button mat-icon-button (click)="openNav()" fxShow="true" fxHide.gt-xs>
+      <mat-icon>menu</mat-icon>
+    </button>
+
+
+    <a mat-button routerLink="/parks" routerLinkActive="active" fxHide.lt-sm>
+      <mat-icon>filter_hdr</mat-icon>
+      Parks
+    </a>
+
+    <a fxLayoutAlign="end end" mat-stroked-button routerLink="/" routerLinkActive="active"
+      [routerLinkActiveOptions]="{exact: true}">
+      <mat-icon>add_location</mat-icon>
+      National Park Fitter
+    </a>
+
+    <a mat-button routerLink="/campgrounds" routerLinkActive="active" fxHide.lt-sm>
+      <mat-icon svgIcon="tent"></mat-icon>
+      Campgrounds
+    </a>
+
+    <!-- <span class="spacer"></span> -->
+
+    <!-- <div fxHide.lt-sm>
+      <a mat-button routerLink="/about" routerLinkActive="active">
+        <mat-icon svgIcon="information-outline"></mat-icon>
+        About
+      </a>
+    </div> -->
 
   </mat-toolbar-row>
 </mat-toolbar>
