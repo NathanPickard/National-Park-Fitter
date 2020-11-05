@@ -86,12 +86,12 @@
               <mat-icon svgIcon="road"></mat-icon>Access roads
             </mat-checkbox>
             <mat-checkbox formControlName="fireStoveCtrl">
-              <mat-icon svgIcon="stove"></mat-icon>
+              <mat-icon svgIcon="stove"></mat-icon> 
               Fire stove policy
             </mat-checkbox>
 
             <div fxLayoutGap="15px" style="padding: 30px 30px 0px 0px;">
-              <button mat-stroked-button matStepperPrevious>Back</button>
+              <button mat-stroked-button matStepperPrevious color="accent">Back</button>
               <button mat-raised-button matStepperNext color="primary">Next</button>
             </div>
 
@@ -179,7 +179,7 @@
           </div>
 
           <div fxLayoutGap="15px" style="padding: 30px 30px 0px 0px;">
-            <button mat-stroked-button matStepperPrevious>Back</button>
+            <button mat-stroked-button matStepperPrevious color="accent">Back</button>
             <button mat-raised-button matStepperNext color="primary">Next</button>
           </div>
 
@@ -207,7 +207,7 @@
           </div>
 
           <div fxLayoutGap="15px" style="padding: 30px 30px 0px 0px;">
-            <button mat-stroked-button matStepperPrevious>Back</button>
+            <button mat-stroked-button matStepperPrevious color="accent">Back</button>
             <button mat-raised-button matStepperNext color="primary">Next</button>
           </div>
         </form>
@@ -222,7 +222,7 @@
         <div fxLayoutGap="45px" style="padding: 30px 30px 0px 0px;" fxLayout="column">
 
           <div fxLayout="row" fxLayoutGap="15px">
-            <button mat-raised-button matStepperPrevious>Back</button>
+            <button mat-raised-button matStepperPrevious color="accent">Back</button>
             <button mat-raised-button color="primary" (click)="onSubmitStepper()">Submit</button>
           </div>
 
@@ -399,7 +399,6 @@
   </div>
 
 </div>
-
 
 
 <div *ngIf="!resultsFound && stepperSubmitted" fxLayoutAlign="center center">

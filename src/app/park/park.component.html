@@ -1,8 +1,8 @@
-<div class="bg-image" fxFlex fxLayout="column" fxLayoutAlign="start center" style="padding-top: 15px;">
+<div class="bg-image" fxLayout="column" fxLayoutAlign="start center" style="padding: 15px 0px 125px;">
 
-  <h5 fxLayout="row" fxLayoutAlign="center center" style="padding: 0px 20px; text-align: center;">
+  <h4 fxLayout="row" fxLayoutAlign="center center" style="padding: 0px 20px; text-align: center;">
     Search by state and select the information you need to find the right park for you
-  </h5>
+  </h4>
 
   <mat-card>
 
@@ -94,7 +94,7 @@
           </div>
 
           <div fxLayoutGap="15px" style="padding: 30px 30px 0px 0px;">
-            <button mat-raised-button matStepperPrevious color="accent">Back</button>
+            <button mat-stroked-button matStepperPrevious color="accent">Back</button>
             <button mat-raised-button matStepperNext color="primary">Next</button>
           </div>
 
@@ -121,7 +121,7 @@
           </div>
 
           <div fxLayoutGap="15px" style="padding: 30px 30px 0px 0px;">
-            <button mat-raised-button matStepperPrevious color="accent">Back</button>
+            <button mat-stroked-button matStepperPrevious color="accent">Back</button>
             <button mat-raised-button matStepperNext color="primary">Next</button>
           </div>
 
@@ -137,7 +137,7 @@
         <div fxLayoutGap="45px" style="padding: 30px 30px 0px 0px;" fxLayout="column">
 
           <div fxLayout="row" fxLayoutGap="15px">
-            <button mat-raised-button matStepperPrevious color="accent">Back</button>
+            <button mat-stroked-button matStepperPrevious color="accent">Back</button>
             <button mat-raised-button color="primary" (click)="onSubmitStepper()">Submit</button>
           </div>
 
@@ -173,138 +173,140 @@
 
   </mat-card>
 
-  <div fxLayoutAlign="center center" fxLayout="column">
+</div>
 
-    <h3 *ngIf="stateFormGroup.value.stateCtrl.name ||
+<div fxLayoutAlign="center center" fxLayout="column">
+
+  <h3 *ngIf="stateFormGroup.value.stateCtrl.name ||
     generalParkInfoFormGroup.value.parkInfoCtrl ||
     generalParkInfoFormGroup.value.parkWeatherCtrl ||
     generalParkInfoFormGroup.value.parkDirectionsCtrl ||
     entranceInfoFormGroup.value.entranceInfoCtrl ||
     entranceInfoFormGroup.value.entrancePassCtrl">
-      Selected:</h3>
+    Selected:</h3>
 
-    <div fxLayoutGap="20px" fxLayout="column" fxLayoutAlign="center center" style="padding-bottom: 30px;">
-      <mat-chip selected color="accent" *ngIf="stateFormGroup.value.stateCtrl.name">
-        <mat-icon style="padding-right: 5px;">star</mat-icon>
-        State: {{ stateFormGroup.value.stateCtrl.name }}
+  <div fxLayoutGap="20px" fxLayout="column" fxLayoutAlign="center center" style="padding-bottom: 30px;">
+    <mat-chip selected color="accent" *ngIf="stateFormGroup.value.stateCtrl.name">
+      <mat-icon style="padding-right: 5px;">star</mat-icon>
+      State: {{ stateFormGroup.value.stateCtrl.name }}
+    </mat-chip>
+
+    <mat-chip-list>
+      <mat-chip selected color="accent" *ngIf="generalParkInfoFormGroup.value.parkInfoCtrl">
+        <mat-icon style="padding-right: 5px;">info</mat-icon>
+        Park Information
       </mat-chip>
-
-      <mat-chip-list>
-        <mat-chip selected color="accent" *ngIf="generalParkInfoFormGroup.value.parkInfoCtrl">
-          <mat-icon style="padding-right: 5px;">info</mat-icon>
-          Park Information
-        </mat-chip>
-        <mat-chip selected color="accent" *ngIf="generalParkInfoFormGroup.value.parkWeatherCtrl">
-          <mat-icon style="padding-right: 5px;">wb_sunny</mat-icon>
-          Weather
-        </mat-chip>
-        <mat-chip selected color="accent" *ngIf="generalParkInfoFormGroup.value.parkDirectionsCtrl">
-          <mat-icon style="padding-right: 5px;">directions</mat-icon>
-          Directions
-        </mat-chip>
-        <mat-chip selected color="accent" *ngIf="entranceInfoFormGroup.value.entranceInfoCtrl">
-          <mat-icon style="padding-right: 5px;">info</mat-icon>
-          Entrance Information
-        </mat-chip>
-        <mat-chip selected color="accent" *ngIf="entranceInfoFormGroup.value.entrancePassCtrl">
-          <mat-icon style="padding-right: 5px;">local_activity</mat-icon>
-          Entrance Passes
-        </mat-chip>
-      </mat-chip-list>
-    </div>
-
+      <mat-chip selected color="accent" *ngIf="generalParkInfoFormGroup.value.parkWeatherCtrl">
+        <mat-icon style="padding-right: 5px;">wb_sunny</mat-icon>
+        Weather
+      </mat-chip>
+      <mat-chip selected color="accent" *ngIf="generalParkInfoFormGroup.value.parkDirectionsCtrl">
+        <mat-icon style="padding-right: 5px;">directions</mat-icon>
+        Directions
+      </mat-chip>
+      <mat-chip selected color="accent" *ngIf="entranceInfoFormGroup.value.entranceInfoCtrl">
+        <mat-icon style="padding-right: 5px;">info</mat-icon>
+        Entrance Information
+      </mat-chip>
+      <mat-chip selected color="accent" *ngIf="entranceInfoFormGroup.value.entrancePassCtrl">
+        <mat-icon style="padding-right: 5px;">local_activity</mat-icon>
+        Entrance Passes
+      </mat-chip>
+    </mat-chip-list>
   </div>
 
-  <div *ngIf="searching">
-    <mat-spinner></mat-spinner>
+</div>
+
+<div *ngIf="searching" fxLayoutAlign="center center">
+  <mat-spinner></mat-spinner>
+</div>
+
+<div *ngIf="resultsFound">
+
+  <div *ngIf="stateFormGroup.value.stateCtrl !== ''">
+    <div fxLayoutAlign="center center" fxLayout="row" style="padding: 20px 0px 20px 0px">
+      <p style="padding-right: 8px">Parks in</p>
+      <h2>{{ stateFormGroup.value.stateCtrl.name }}</h2>
+      <img [src]="stateFormGroup.value.stateCtrl.flag" height="55" style="padding-left: 15px">
+    </div>
   </div>
 
-  <div *ngIf="resultsFound">
-
-    <div *ngIf="stateFormGroup.value.stateCtrl !== ''">
-      <div fxLayoutAlign="center center" fxLayout="row" style="padding: 20px 0px 20px 0px">
-        <p style="padding-right: 8px">Parks in</p>
-        <h2>{{ stateFormGroup.value.stateCtrl.name }}</h2>
-        <img [src]="stateFormGroup.value.stateCtrl.flag" height="55" style="padding-left: 15px">
-      </div>
+  <agm-map [zoom]="4" [latitude]="39.52" [longitude]="-98.35" [fitBounds]="true">
+    <div *ngFor="let parkCoordinates of resultsStepperLatLongArray">
+      <agm-marker *ngIf="parkCoordinates.lat && parkCoordinates.long" [latitude]="parkCoordinates.lat"
+        [longitude]="parkCoordinates.long" [agmFitBounds]="true">
+        <agm-info-window>
+          <a href="{{ parkCoordinates.url }}" target="_blank"
+            style="text-decoration: none">{{ parkCoordinates.fullName }}</a>
+        </agm-info-window>
+      </agm-marker>
     </div>
+  </agm-map>
 
-    <agm-map [zoom]="4" [latitude]="39.52" [longitude]="-98.35" [fitBounds]="true">
-      <div *ngFor="let parkCoordinates of resultsStepperLatLongArray">
-        <agm-marker *ngIf="parkCoordinates.lat && parkCoordinates.long" [latitude]="parkCoordinates.lat"
-          [longitude]="parkCoordinates.long" [agmFitBounds]="true">
-          <agm-info-window>
-            <a href="{{ parkCoordinates.url }}" target="_blank"
-              style="text-decoration: none">{{ parkCoordinates.fullName }}</a>
-          </agm-info-window>
-        </agm-marker>
-      </div>
-    </agm-map>
+  <div fxLayoutAlign="space-evenly start">
 
-    <div fxLayoutAlign="space-evenly start">
+    <div fxLayout="column" fxFlex="90" fxLayoutGap="25px">
 
-      <div fxLayout="column" fxFlex="90" fxLayoutGap="25px">
+      <div *ngFor="let foundPark of foundParks; let i = index; let last = last" [ngClass]="{ last: last }">
 
-        <div *ngFor="let foundPark of foundParks; let i = index; let last = last" [ngClass]="{ last: last }">
+        <mat-card>
 
-          <mat-card>
+          <mat-card-header fxLayoutAlign="center center" fxLayout="column">
 
-            <mat-card-header fxLayoutAlign="center center" fxLayout="column">
+            <mat-card-title fxLayoutAlign="center center">
+              <a href="{{ foundPark.url }}" target="_blank" style="text-decoration: none;">
+                {{ foundPark.fullName }}</a>
+            </mat-card-title>
+            <mat-card-subtitle fxLayoutAlign="center center">
+              {{ foundPark.designation }}
+            </mat-card-subtitle>
 
-              <mat-card-title fxLayoutAlign="center center">
-                <a href="{{ foundPark.url }}" target="_blank" style="text-decoration: none;">
-                  {{ foundPark.fullName }}</a>
-              </mat-card-title>
-              <mat-card-subtitle fxLayoutAlign="center center">
-                {{ foundPark.designation }}
-              </mat-card-subtitle>
+          </mat-card-header>
 
-            </mat-card-header>
+          <mat-card-content>
 
-            <mat-card-content>
+            <slideshow [imageUrls]="foundParks[i].images" [backgroundSize]="'contain'" [backgroundRepeat]="'no-repeat'"
+              [showDots]="true" [arrowSize]="'20px'" [minHeight]="'400px'">
+            </slideshow>
 
-              <slideshow [imageUrls]="foundParks[i].images" [backgroundSize]="'contain'"
-                [backgroundRepeat]="'no-repeat'" [showDots]="true" [arrowSize]="'20px'" [minHeight]="'400px'">
-              </slideshow>
+            <h3>
+              <mat-icon style="padding-right: 10px;">description</mat-icon>
+              Description:
+            </h3>
+            {{ foundPark.description }}
 
+            <div *ngIf=" foundPark.description && generalParkInfoFormGroup.value.parkInfoCtrl">
               <h3>
-                <mat-icon style="padding-right: 10px;">description</mat-icon>
-                Description:
+                <mat-icon svgIcon="information-outline" style="padding-right: 10px;"></mat-icon>
+                Park information
               </h3>
-              {{ foundPark.description }}
+              <p>{{ foundPark.description }}</p>
+            </div>
 
-              <div *ngIf=" foundPark.description && generalParkInfoFormGroup.value.parkInfoCtrl">
-                <h3>
-                  <mat-icon svgIcon="information-outline" style="padding-right: 10px;"></mat-icon>
-                  Park information
-                </h3>
-                <p>{{ foundPark.description }}</p>
-              </div>
+            <div *ngIf="foundPark.weatherInfo && generalParkInfoFormGroup.value.parkWeatherCtrl">
+              <h3>
+                <mat-icon style="padding-right: 10px;">wb_sunny</mat-icon>
+                Weather summary:
+              </h3>
+              {{ foundPark.weatherInfo }}
+            </div>
 
-              <div *ngIf="foundPark.weatherInfo && generalParkInfoFormGroup.value.parkWeatherCtrl">
-                <h3>
-                  <mat-icon style="padding-right: 10px;">wb_sunny</mat-icon>
-                  Weather summary:
-                </h3>
-                {{ foundPark.weatherInfo }}
-              </div>
+            <div *ngIf="foundPark.directionsInfo && generalParkInfoFormGroup.value.parkDirectionsCtrl;">
+              <h3>
+                <mat-icon style="padding-right: 10px;">directions</mat-icon>
+                Directions:
+              </h3>
+              {{ foundPark.directionsInfo }}
+            </div>
 
-              <div *ngIf="foundPark.directionsInfo && generalParkInfoFormGroup.value.parkDirectionsCtrl;">
-                <h3>
-                  <mat-icon style="padding-right: 10px;">directions</mat-icon>
-                  Directions:
-                </h3>
-                {{ foundPark.directionsInfo }}
-              </div>
-
-              <h3
-                *ngIf="(entranceInfoFormGroup.value.entranceInfoCtrl && foundPark.entranceFees[0] != '' && foundPark.entranceFees.length != 0)
+            <h3
+              *ngIf="(entranceInfoFormGroup.value.entranceInfoCtrl && foundPark.entranceFees[0] != '' && foundPark.entranceFees.length != 0)
                 || (entranceInfoFormGroup.value.entrancePassCtrl && foundPark.entrancePasses[0] != '' && foundPark.entrancePasses.length != 0)">
-                <mat-icon style="padding-right: 10px;" svgIcon="boom-gate-up-outline"></mat-icon>
-                Entrance Information:
-              </h3>
+              <mat-icon style="padding-right: 10px;" svgIcon="boom-gate-up-outline"></mat-icon>
+              Entrance Information:
+            </h3>
 
-              <!-- <ng-template
+            <!-- <ng-template
                 *ngIf="(entranceInfoFormGroup.value.entranceInfoCtrl && (foundPark.entranceFees[0] == '' || foundPark.entranceFees.length == 0))
               || (entranceInfoFormGroup.value.entrancePassCtrl && (foundPark.entrancePasses[0] == '' || foundPark.entrancePasses.length == 0))">
                 <h3>
@@ -313,95 +315,93 @@
                 </h3>
               </ng-template> -->
 
-              <h3 *ngIf="entranceInfoFormGroup.value.entranceInfoCtrl && foundPark.entranceFees.length == 0">
-                <mat-icon style="padding-right: 10px;" svgIcon="boom-gate-up-outline">
-                </mat-icon>
-                No Entrance Information available
-              </h3>
+            <h3 *ngIf="entranceInfoFormGroup.value.entranceInfoCtrl && foundPark.entranceFees.length == 0">
+              <mat-icon style="padding-right: 10px;" svgIcon="boom-gate-up-outline">
+              </mat-icon>
+              No Entrance Information available
+            </h3>
 
-              <h3 *ngIf="(entranceInfoFormGroup.value.entrancePassCtrl && foundPark.entrancePasses.length == 0)">
-                <mat-icon style="padding-right: 10px;" svgIcon="boom-gate-up-outline">
-                </mat-icon>
-                No Entrance Pass information available
-              </h3>
+            <h3 *ngIf="(entranceInfoFormGroup.value.entrancePassCtrl && foundPark.entrancePasses.length == 0)">
+              <mat-icon style="padding-right: 10px;" svgIcon="boom-gate-up-outline">
+              </mat-icon>
+              No Entrance Pass information available
+            </h3>
 
-              <div *ngIf="entranceInfoFormGroup.value.entranceInfoCtrl">
+            <div *ngIf="entranceInfoFormGroup.value.entranceInfoCtrl">
 
-                <div *ngFor="let entranceFee of foundPark.entranceFees">
-                  <ul>
-                    <li>
-                      <h4>{{ entranceFee.title }}</h4>
-                      <h4 fxLayout="row" fxLayoutAlign="start center">
-                        <mat-icon style="padding-right: 10px;">description</mat-icon>
-                        Details:
-                      </h4>
-                      {{ entranceFee.description }}
-                      <div fxLayout="row" fxLayoutAlign="start center">
-                        <h4 style="padding-right: 8px;" fxLayout="row" fxLayoutAlign="start center">
-                          <mat-icon>attach_money</mat-icon>
-                          Cost:
-                        </h4>${{ entranceFee.cost | number : '1.2-2' }}
-                      </div>
-                    </li>
-                  </ul>
-                </div>
-
-              </div>
-
-              <!-- <div *ngIf="foundPark.entrancePasses[0] && entranceInfoFormGroup.value.entrancePassCtrl"> -->
-              <div *ngIf="entranceInfoFormGroup.value.entrancePassCtrl">
-
-                <ul *ngFor="let entrancePass of foundPark.entrancePasses">
+              <div *ngFor="let entranceFee of foundPark.entranceFees">
+                <ul>
                   <li>
-                    <h4>{{ entrancePass.title }}</h4>
+                    <h4>{{ entranceFee.title }}</h4>
                     <h4 fxLayout="row" fxLayoutAlign="start center">
                       <mat-icon style="padding-right: 10px;">description</mat-icon>
                       Details:
-                    </h4>{{ entrancePass.description }}
+                    </h4>
+                    {{ entranceFee.description }}
                     <div fxLayout="row" fxLayoutAlign="start center">
                       <h4 style="padding-right: 8px;" fxLayout="row" fxLayoutAlign="start center">
                         <mat-icon>attach_money</mat-icon>
                         Cost:
-                      </h4>${{ entrancePass.cost | number : '1.2-2'}}
+                      </h4>${{ entranceFee.cost | number : '1.2-2' }}
                     </div>
                   </li>
                 </ul>
               </div>
 
-              <!-- <ng-template #directionsNotAvailable>Directions not available</ng-template> -->
+            </div>
 
-              <h4>Current temperature: {{ currentWeatherResults[i] }}</h4>
+            <!-- <div *ngIf="foundPark.entrancePasses[0] && entranceInfoFormGroup.value.entrancePassCtrl"> -->
+            <div *ngIf="entranceInfoFormGroup.value.entrancePassCtrl">
 
-            </mat-card-content>
+              <ul *ngFor="let entrancePass of foundPark.entrancePasses">
+                <li>
+                  <h4>{{ entrancePass.title }}</h4>
+                  <h4 fxLayout="row" fxLayoutAlign="start center">
+                    <mat-icon style="padding-right: 10px;">description</mat-icon>
+                    Details:
+                  </h4>{{ entrancePass.description }}
+                  <div fxLayout="row" fxLayoutAlign="start center">
+                    <h4 style="padding-right: 8px;" fxLayout="row" fxLayoutAlign="start center">
+                      <mat-icon>attach_money</mat-icon>
+                      Cost:
+                    </h4>${{ entrancePass.cost | number : '1.2-2'}}
+                  </div>
+                </li>
+              </ul>
+            </div>
 
-            <mat-card-actions fxLayoutGap=" 20px" fxLayout="row" fxLayoutAlign="center center">
+            <!-- <ng-template #directionsNotAvailable>Directions not available</ng-template> -->
 
-              <a href="{{ foundPark.url }}" mat-raised-button color="primary" target="_blank">
-                {{ foundPark.name }}
-                Website
+            <h4>Current temperature: {{ currentWeatherResults[i] }}</h4>
+
+          </mat-card-content>
+
+          <mat-card-actions fxLayoutGap=" 20px" fxLayout="row" fxLayoutAlign="center center">
+
+            <a href="{{ foundPark.url }}" mat-raised-button color="primary" target="_blank">
+              {{ foundPark.name }}
+              Website
+            </a>
+
+            <div *ngIf="foundPark.directionsUrl && generalParkInfoFormGroup.value.parkDirectionsCtrl">
+              <a href="{{ foundPark.directionsUrl }}" mat-stroked-button color="primary" target="_blank">Directions
               </a>
+            </div>
 
-              <div *ngIf="foundPark.directionsUrl && generalParkInfoFormGroup.value.parkDirectionsCtrl">
-                <a href="{{ foundPark.directionsUrl }}" mat-stroked-button color="primary" target="_blank">Directions
-                </a>
-              </div>
-
-            </mat-card-actions>
-          </mat-card>
-        </div>
+          </mat-card-actions>
+        </mat-card>
       </div>
     </div>
   </div>
+</div>
 
-  <div *ngIf="searchingForMore" style="padding: 25px 0px;">
-    <mat-spinner></mat-spinner>
-  </div>
+<div *ngIf="searchingForMore" style="padding: 25px 0px;">
+  <mat-spinner></mat-spinner>
+</div>
 
-  <div *ngIf="resultsFound" style="padding-bottom: 20px;" fxLayoutAlign="center center">
-    <button color="primary" mat-raised-button (click)="loadMoreParks()">
-      Get more parks
-      <mat-icon>expand_more</mat-icon>
-    </button>
-  </div>
-
+<div *ngIf="resultsFound" style="padding-bottom: 20px;" fxLayoutAlign="center center">
+  <button color="primary" mat-raised-button (click)="loadMoreParks()">
+    Get more parks
+    <mat-icon>expand_more</mat-icon>
+  </button>
 </div>

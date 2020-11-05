@@ -23,3 +23,8 @@ agm-map {
   background-position: center;
   background-repeat: no-repeat;
 }
+
+.option-img {
+  vertical-align: middle;
+  margin-right: 8px;
+}
