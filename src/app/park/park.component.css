@@ -37,7 +37,7 @@ cdk-virtual-scroll-viewport li {
 
 .bg-image {
   background: linear-gradient(rgba(255, 255, 255, 0.6), rgb(255, 255, 255, 0.2)),
-    url("https://website-images-nathan.s3-us-west-2.amazonaws.com/national-park-fitter/francis-bouffard-31m4coERZJI-unsplash.jpg")
+    url("https://d2mv4f9tjbf4o1.cloudfront.net/national-park-fitter/francis-bouffard-31m4coERZJI-unsplash.jpg")
       no-repeat;
   background-size: cover;
   background-position: center;

@@ -123,8 +123,8 @@
         <mat-card style="max-width: 550px;">
 
           <mat-card-header fxLayoutAlign="center center">
-            <mat-card-title fxLayout="center center" color="primary">
-              <a href="{{ foundNewsRelease.url }}" style="text-decoration: none; text-align: center;" target="_blank">
+            <mat-card-title fxLayout="center center">
+              <a href="{{ foundNewsRelease.url }}" style="text-decoration: none; text-align: center; color: #1565c0;" target="_blank">
                 {{ foundNewsRelease.title }}
               </a>
             </mat-card-title>
@@ -137,7 +137,7 @@
           <mat-card-content>
 
             <div fxLayoutAlign="center center" fxLayout="column">
-              <img mat-card-image [src]="foundNewsRelease.image.url" style="max-width: 380px;">
+              <img mat-card-image [src]="foundNewsRelease.image.url" style="max-width: 515px;">
               <mat-card-subtitle style="text-align: center; font-style: italic;">{{ foundNewsRelease.image.caption }}
               </mat-card-subtitle>
             </div>
