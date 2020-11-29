@@ -13,7 +13,11 @@
         <input matInput [matAutocomplete]="auto" type="search" placeholder="Search for National Parks"
           formControlName="searchQuery">
         <mat-autocomplete #auto="matAutocomplete">
-          <mat-option *ngIf="isLoading" class="is-loading">Loading...</mat-option>
+          <mat-option *ngIf="isLoading" class="is-loading">
+            <div fxLayoutAlign="center center">
+              <mat-spinner diameter="35"></mat-spinner>
+            </div>
+          </mat-option>
           <ng-container *ngIf="!isLoading">
             <mat-option *ngFor="let filteredPark of filteredParks" [value]="filteredPark.fullName">
               <span><b>{{ filteredPark.fullName }}</b></span>
@@ -124,7 +128,8 @@
 
           <mat-card-header fxLayoutAlign="center center">
             <mat-card-title fxLayout="center center">
-              <a href="{{ foundNewsRelease.url }}" style="text-decoration: none; text-align: center; color: #1565c0;" target="_blank">
+              <a href="{{ foundNewsRelease.url }}" style="text-decoration: none; text-align: center; color: #1565c0;"
+                target="_blank">
                 {{ foundNewsRelease.title }}
               </a>
             </mat-card-title>
