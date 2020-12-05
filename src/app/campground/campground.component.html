@@ -86,7 +86,7 @@
               <mat-icon svgIcon="road"></mat-icon>Access roads
             </mat-checkbox>
             <mat-checkbox formControlName="fireStoveCtrl">
-              <mat-icon svgIcon="stove"></mat-icon> 
+              <mat-icon svgIcon="stove"></mat-icon>
               Fire stove policy
             </mat-checkbox>
 
@@ -714,4 +714,15 @@
       </mat-card>
     </mat-accordion>
   </div>
+</div>
+
+<div *ngIf="searchingForMore" fxLayoutAlign="center center" style="padding: 25px 0px;">
+  <mat-spinner></mat-spinner>
+</div>
+
+<div *ngIf="resultsFound" style="padding-bottom: 20px;" fxLayoutAlign="center center">
+  <button color="primary" mat-raised-button (click)="loadMoreCampgrounds()">
+    Get more campgrounds
+    <mat-icon>expand_more</mat-icon>
+  </button>
 </div>

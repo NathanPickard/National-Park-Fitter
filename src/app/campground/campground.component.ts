@@ -43,6 +43,7 @@ export class CampgroundComponent implements OnInit {
   query: any;
 
   searching = false;
+  searchingForMore = false;
   stepperSubmitted = false;
   resultsFound = false;
 
@@ -488,6 +489,10 @@ export class CampgroundComponent implements OnInit {
           () => this.searching = false
         );
     }
+  }
+
+  loadMoreCampgrounds() {
+    this.searchingForMore = true;
   }
 
   getParkName(campgroundPark) {
