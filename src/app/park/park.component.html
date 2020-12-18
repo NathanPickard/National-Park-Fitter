@@ -305,15 +305,6 @@
             Entrance Information:
           </h3>
 
-          <!-- <ng-template
-                *ngIf="(entranceInfoFormGroup.value.entranceInfoCtrl && (foundPark.entranceFees[0] == '' || foundPark.entranceFees.length == 0))
-              || (entranceInfoFormGroup.value.entrancePassCtrl && (foundPark.entrancePasses[0] == '' || foundPark.entrancePasses.length == 0))">
-                <h3>
-                  <mat-icon style="padding-right: 10px;" svgIcon="boom-gate-up-outline"></mat-icon>
-                  No Entrance Information available
-                </h3>
-              </ng-template> -->
-
           <h3 *ngIf="entranceInfoFormGroup.value.entranceInfoCtrl && foundPark.entranceFees.length == 0">
             <mat-icon style="padding-right: 10px;" svgIcon="boom-gate-up-outline">
             </mat-icon>
