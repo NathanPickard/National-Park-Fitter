@@ -116,13 +116,10 @@
   </mat-toolbar>
 
   <div *ngIf="newsFound">
-
     <div style="padding: 20px 15px 20px 15px;" fxLayoutGap="20px grid" fxLayout="row wrap" fxLayoutAlign="center start">
-
       <div *ngFor="let foundNewsRelease of foundNewsReleases">
 
         <mat-card style="max-width: 550px;">
-
           <mat-card-header fxLayoutAlign="center center">
             <mat-card-title fxLayout="center center">
               <a href="{{ foundNewsRelease.url }}" style="text-decoration: none; text-align: center; color: #1565c0;"
@@ -154,7 +151,6 @@
               Read more
               <mat-icon>keyboard_arrow_right</mat-icon></a>
           </mat-card-actions>
-
         </mat-card>
 
       </div>
