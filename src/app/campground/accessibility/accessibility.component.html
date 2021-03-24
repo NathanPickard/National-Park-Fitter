@@ -38,62 +38,50 @@
           <h4>Wheelchair access information</h4>
           {{ foundCampground.accessibility.wheelchairAccess }}
         </div>
-
         <div *ngIf="foundCampground.accessibility.internetInfo && accessibilityFormGroup.value.internetCtrl">
           <h4>Internet information</h4>
           {{ foundCampground.accessibility.internetInfo }}
         </div>
-
         <div *ngIf="foundCampground.accessibility.rvAllowed && accessibilityFormGroup.value.rvAllowedCtrl">
           <h4>RV allowed:</h4>
           {{ foundCampground.accessibility.rvAllowed }}
         </div>
-
         <div *ngIf="foundCampground.accessibility.cellPhoneInfo && accessibilityFormGroup.value.cellPhoneInfoCtrl">
           <h4>Cell phone information</h4>
           {{ foundCampground.accessibility.cellPhoneInfo }}
         </div>
-
         <div *ngIf="foundCampground.accessibility.fireStovePolicy && accessibilityFormGroup.value.fireStoveCtrl">
           <h4>Fire stove policy</h4>
           {{ foundCampground.accessibility.fireStovePolicy }}
         </div>
-
         <div *ngIf="foundCampground.accessibility.rvMaxLength && accessibilityFormGroup.value.rvMaxCtrl">
           <h4>Maximum # of RVs allowed</h4>
           {{ foundCampground.accessibility.rvMaxLength }}
         </div>
-
         <div *ngIf="foundCampground.accessibility.additionalInfo && accessibilityFormGroup.value.additionalInfoCtrl">
           <h4>Additional information</h4>
           {{ foundCampground.accessibility.additionalInfo }}
         </div>
-
         <div *ngIf="foundCampground.accessibility.trailerMaxLength && accessibilityFormGroup.value.trailerMaxCtrl">
           <h4>Maximum # of trailers allowed</h4>
           {{ foundCampground.accessibility.trailerMaxLength }}
         </div>
-
         <div *ngIf="foundCampground.accessibility.trailerMaxLength && accessibilityFormGroup.value.adaCtrl">
           <h4>ADA Information</h4>
           {{ foundCampground.accessibility.adaInfo }}
         </div>
-
         <div *ngIf="foundCampground.accessibility.rvInfo && accessibilityFormGroup.value.rvInfoCtrl">
           <h4>RV information</h4>
           {{ foundCampground.accessibility.trailerMaxLength }}
         </div>
-
         <div *ngIf="foundCampground.accessibility.accessRoads && accessibilityFormGroup.value.accessRoadsCtrl">
           <h4>Access roads</h4>
           {{ foundCampground.accessibility.accessRoads }}
         </div>
-
         <div *ngIf="foundCampground.accessibility.classifications && accessibilityFormGroup.value.classificationsCtrl">
           <h4>Classifications</h4>
           {{ foundCampground.accessibility.classifications }}
         </div>
-
         <div *ngIf="foundCampground.accessibility.trailerAllowed && accessibilityFormGroup.value.trailerAllowedCtrl">
           <h4>Trailer allowed</h4>
           {{ foundCampground.accessibility.trailerAllowed }}
