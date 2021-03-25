@@ -590,89 +590,73 @@
           </mat-expansion-panel>
 
           <mat-expansion-panel>
-
             <mat-expansion-panel-header>
               <mat-panel-title>
                 <h3>Amenities</h3>
               </mat-panel-title>
             </mat-expansion-panel-header>
-
             <div
               *ngIf="foundCampground.amenities.trashRecyclingCollection && amenitiesFormGroup.value.trashRecyclingCtrl">
               <h4>Trash and recycling collection</h4>
               {{ foundCampground.amenities.trashRecyclingCollection }}
             </div>
-
             <div *ngIf="foundCampground.amenities.toilets && amenitiesFormGroup.value.toiletsCtrl">
               <h4>Toilets</h4>
               {{ foundCampground.amenities.toilets }}
             </div>
-
             <div
               *ngIf="foundCampground.amenities.internetConnectivity && amenitiesFormGroup.value.internetConnectivityCtrl">
               <h4>Internet connectivity</h4>
               {{ foundCampground.amenities.internetConnectivity }}
             </div>
-
             <div *ngIf="foundCampground.amenities.showers && amenitiesFormGroup.value.showersCtrl">
               <h4>Showers</h4>
               {{ foundCampground.amenities.showers }}
             </div>
-
             <div
               *ngIf="foundCampground.amenities.cellPhoneReception && amenitiesFormGroup.value.cellPhoneReceptionCtrl">
               <h4>Cell phone reception</h4>
               {{ foundCampground.amenities.cellPhoneReception }}
             </div>
-
             <div *ngIf="foundCampground.amenities.laundry && amenitiesFormGroup.value.laundryCtrl">
               <h4>Laundry</h4>
               {{ foundCampground.amenities.laundry }}
             </div>
-
             <div *ngIf="foundCampground.amenities.amphitheater && amenitiesFormGroup.value.amphitheaterCtrl">
               <h4>Amphitheater</h4>
               {{ foundCampground.amenities.amphitheater }}
             </div>
-
             <div *ngIf="foundCampground.amenities.dumpStation && amenitiesFormGroup.value.dumpStationCtrl">
               <h4>Dump station</h4>
               {{ foundCampground.amenities.dumpStation }}
             </div>
-
             <div *ngIf="foundCampground.amenities.campStore && amenitiesFormGroup.value.campStoreCtrl">
               <h4>Camp store</h4>
               {{ foundCampground.amenities.campStore }}
             </div>
-
             <div
               *ngIf="foundCampground.amenities.staffOrVolunteerHostOnsite && amenitiesFormGroup.value.staffVolunteerCtrl">
               <h4>Staff or volunteer host on site</h4>
               {{ foundCampground.amenities.staffOrVolunteerHostOnsite }}
             </div>
-
             <div *ngIf="foundCampground.amenities.potableWater && amenitiesFormGroup.value.potableWatertCtrl">
               <h4>Potable water</h4>
               {{ foundCampground.amenities.potableWater }}
             </div>
-
             <div
               *ngIf="foundCampground.amenities.iceAvailableForSale && amenitiesFormGroup.value.iceAvailableForSaleCtrl">
               <h4>Ice availalbe for sale</h4>
               {{ foundCampground.amenities.iceAvailableForSale }}
             </div>
-
             <div *ngIf="foundCampground.amenities.firewoodForSale && amenitiesFormGroup.value.firewoodForSaleCtrl">
               <h4>Firewood for sale</h4>
               {{ foundCampground.amenities.firewoodforSale }}
             </div>
-
             <div
               *ngIf="foundCampground.amenities.foodStorageLockers && amenitiesFormGroup.value.foodStorageLockersCtrl">
               <h4>Food storage lockers</h4>
               {{ foundCampground.amenities.foodStorageLockers }}
             </div>
-
           </mat-expansion-panel>
 
           <mat-expansion-panel>
