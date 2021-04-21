@@ -1,26 +1,21 @@
 <mat-toolbar color="primary">
   <mat-toolbar-row fxLayoutGap="15px">
-
     <button mat-icon-button (click)="openNav()" fxShow="true" fxHide.gt-xs>
       <mat-icon>menu</mat-icon>
     </button>
-
     <a fxLayoutAlign="end end" mat-stroked-button routerLink="/" routerLinkActive="active"
       [routerLinkActiveOptions]="{exact: true}" style="font-size: 18px;">
       <mat-icon>add_location</mat-icon>
       National Park Fitter
     </a>
-
     <a mat-button routerLink="/parks" routerLinkActive="active" fxHide.lt-sm>
       <mat-icon>filter_hdr</mat-icon>
       Parks
     </a>
-
     <a mat-button routerLink="/campgrounds" routerLinkActive="active" fxHide.lt-sm>
       <mat-icon svgIcon="tent"></mat-icon>
       Campgrounds
     </a>
-
     <span class="spacer"></span>
 
     <div fxHide.lt-sm>
@@ -29,6 +24,5 @@
         <span fxHide.lt-md>About</span>
       </a>
     </div>
-
   </mat-toolbar-row>
 </mat-toolbar>

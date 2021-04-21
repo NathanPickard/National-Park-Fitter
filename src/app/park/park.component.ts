@@ -606,9 +606,7 @@ export class ParkComponent implements OnInit {
   //   console.log(this.foundParkWeather);
   // }
 
-  handleCurrentWeatherForParks(data) {
-
-  }
+  handleCurrentWeatherForParks(data) {  }
 
   getParkWeather(latitude, longitude) {
     return this.searchService.getCurrentWeatherForParks(latitude, longitude)
