@@ -76,17 +76,14 @@
           <ng-template matStepLabel>General Park Information</ng-template>
 
           <div fxLayoutGap="20px" fxLayout="column">
-
             <mat-checkbox formControlName="parkInfoCtrl">
               <mat-icon>info</mat-icon>
               Park Information
             </mat-checkbox>
-
             <mat-checkbox formControlName="parkWeatherCtrl">
               <mat-icon>wb_sunny</mat-icon>
               Weather
             </mat-checkbox>
-
             <mat-checkbox formControlName="parkDirectionsCtrl">
               <mat-icon>directions</mat-icon>
               Directions
@@ -107,17 +104,14 @@
           <ng-template matStepLabel>Entrance Information</ng-template>
 
           <div fxLayoutGap="20px" fxLayout="column">
-
             <mat-checkbox formControlName="entranceInfoCtrl">
               <mat-icon>info</mat-icon>
               Entrance Information
             </mat-checkbox>
-
             <mat-checkbox formControlName="entrancePassCtrl">
               <mat-icon>local_activity</mat-icon>
               Entrance Passes
             </mat-checkbox>
-
           </div>
 
           <div fxLayoutGap="15px" style="padding: 30px 30px 0px 0px;">
@@ -135,40 +129,31 @@
           Get park results!
         </div>
         <div fxLayoutGap="45px" style="padding: 30px 30px 0px 0px;" fxLayout="column">
-
           <div fxLayout="row" fxLayoutGap="15px">
             <button mat-stroked-button matStepperPrevious color="accent">Back</button>
             <button mat-raised-button color="primary" (click)="onSubmitStepper()">Submit</button>
           </div>
-
           <div>
             <button mat-stroked-button color="warn" (click)="stepper.reset()">Reset search</button>
           </div>
-
         </div>
 
       </mat-step>
-
       <ng-template matStepperIcon="state">
         <mat-icon>place</mat-icon>
       </ng-template>
-
       <ng-template matStepperIcon="designation">
         <mat-icon>category</mat-icon>
       </ng-template>
-
       <ng-template matStepperIcon="generalParkInformation">
         <mat-icon>info</mat-icon>
       </ng-template>
-
       <ng-template matStepperIcon="entranceInformation">
         <mat-icon svgIcon="boom-gate-up-outline"></mat-icon>
       </ng-template>
-
       <ng-template matStepperIcon="done">
         <mat-icon>done_all</mat-icon>
       </ng-template>
-
     </mat-vertical-stepper>
 
   </mat-card>
