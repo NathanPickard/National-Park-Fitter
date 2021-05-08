@@ -4,7 +4,7 @@ import { BreakpointObserver, Breakpoints } from '@angular/cdk/layout';
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
 
-import { SideNavService } from '../side-nav.service';
+import { SideNavService } from '../shared/side-nav.service';
 
 @Component({
   selector: 'app-nav',

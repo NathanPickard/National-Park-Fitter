@@ -1,7 +1,7 @@
 import { Component, ViewChild, OnInit } from '@angular/core';
 import { routerTransition } from './animations';
 
-import { SideNavService } from './side-nav.service';
+import { SideNavService } from './shared/side-nav.service';
 
 @Component({
   selector: 'app-root',
