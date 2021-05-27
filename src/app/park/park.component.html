@@ -15,7 +15,6 @@
     <mat-vertical-stepper #stepper>
 
       <mat-step [stepControl]="stateFormGroup" state="state">
-
         <form [formGroup]="stateFormGroup">
           <ng-template matStepLabel>Parks by State</ng-template>
           <div>
@@ -71,10 +70,8 @@
     </mat-step> -->
 
       <mat-step [stepControl]="generalParkInfoFormGroup" state="generalParkInformation">
-
         <form [formGroup]="generalParkInfoFormGroup">
           <ng-template matStepLabel>General Park Information</ng-template>
-
           <div fxLayoutGap="20px" fxLayout="column">
             <mat-checkbox formControlName="parkInfoCtrl">
               <mat-icon>info</mat-icon>
@@ -89,20 +86,16 @@
               Directions
             </mat-checkbox>
           </div>
-
           <div fxLayoutGap="15px" style="padding: 30px 30px 0px 0px;">
             <button mat-stroked-button matStepperPrevious color="accent">Back</button>
             <button mat-raised-button matStepperNext color="primary">Next</button>
           </div>
-
         </form>
       </mat-step>
 
       <mat-step [stepControl]="entranceInfoFormGroup" state="entranceInformation">
-
         <form [formGroup]="entranceInfoFormGroup">
           <ng-template matStepLabel>Entrance Information</ng-template>
-
           <div fxLayoutGap="20px" fxLayout="column">
             <mat-checkbox formControlName="entranceInfoCtrl">
               <mat-icon>info</mat-icon>
@@ -113,12 +106,10 @@
               Entrance Passes
             </mat-checkbox>
           </div>
-
           <div fxLayoutGap="15px" style="padding: 30px 30px 0px 0px;">
             <button mat-stroked-button matStepperPrevious color="accent">Back</button>
             <button mat-raised-button matStepperNext color="primary">Next</button>
           </div>
-
         </form>
       </mat-step>
 
