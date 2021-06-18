@@ -58,7 +58,7 @@
 
     <div fxLayout="column" fxFlex="90" fxLayoutGap="15px">
 
-      <agm-map [zoom]="4" [latitude]="39.52" [longitude]="-98.35" [fitBounds]="true">
+      <!-- <agm-map [zoom]="4" [latitude]="39.52" [longitude]="-98.35" [fitBounds]="true">
         <div *ngFor="let parkCoordinates of searchResultsLatLongArray">
           <agm-marker *ngIf="parkCoordinates.lat && parkCoordinates.long" [latitude]="parkCoordinates.lat"
             [longitude]="parkCoordinates.long" [agmFitBounds]="true">
@@ -68,9 +68,9 @@
             </agm-info-window>
           </agm-marker>
         </div>
-      </agm-map>
+      </agm-map> -->
 
-      
+      <google-map></google-map>
 
       <div *ngFor="let foundSearchPark of foundSearchParks; let i = index">
 

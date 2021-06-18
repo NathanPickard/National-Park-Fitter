@@ -8,7 +8,6 @@ import { ScrollingModule } from '@angular/cdk/scrolling';
 
 import { AppRoutingModule } from './app-routing.module';
 import { MaterialModule } from './shared/material.module';
-import { AgmCoreModule } from '@agm/core';
 
 import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
@@ -58,10 +57,7 @@ export class CustomHammerConfig extends HammerGestureConfig {
     FlexLayoutModule,
     MaterialModule,
     ScrollingModule,
-    SlideshowModule,
-    AgmCoreModule.forRoot({
-      apiKey: 'AIzaSyB6vjKMU0wxBezpYg6PuYPDFOP0k3JPi_o'
-    })
+    SlideshowModule
   ],
   providers: [
     SearchService,
