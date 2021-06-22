@@ -19,6 +19,14 @@ export class HomeComponent implements OnInit {
   // @ViewChild('gmap', { static: true }) gmapElement: any;
   map: google.maps.Map;
 
+  options: google.maps.MapOptions = {
+    center: { lat: 45.5212, lng: -122.664 },
+    mapTypeId: 'roadmap',
+    disableDoubleClickZoom: true,
+    maxZoom: 15,
+    minZoom: 8,
+  }
+
   accessibilityFormGroup: FormGroup;
   amenitiesFormGroup: FormGroup;
   generalInfoFormGroup: FormGroup;

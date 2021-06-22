@@ -70,7 +70,14 @@
         </div>
       </agm-map> -->
 
-      <google-map></google-map>
+      <google-map
+        [options]="options"
+        [zoom]="zoom">
+        <map-marker *ngFor="let markerPosition of markerPostions"
+          [position]="markerPosition"
+          [options]="markerOptions">
+        </map-marker>
+      </google-map>
 
       <div *ngFor="let foundSearchPark of foundSearchParks; let i = index">
 
