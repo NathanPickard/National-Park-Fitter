@@ -71,12 +71,15 @@
       </agm-map> -->
 
       <google-map
+        height="500px"
+        width="100%"
         [options]="options"
         [zoom]="zoom">
-        <map-marker *ngFor="let markerPosition of markerPostions"
+        <!-- <map-marker *ngFor="let markerPosition of markerPostions" -->
+        <!-- <map-marker *ngFor="let markerPosition of searchResultsLatLongArray"
           [position]="markerPosition"
           [options]="markerOptions">
-        </map-marker>
+        </map-marker> -->
       </google-map>
 
       <div *ngFor="let foundSearchPark of foundSearchParks; let i = index">

@@ -17,7 +17,7 @@ import { SearchService } from '../shared/search.service';
 export class HomeComponent implements OnInit {
 
   // @ViewChild('gmap', { static: true }) gmapElement: any;
-  map: google.maps.Map;
+  // map: google.maps.Map;
 
   options: google.maps.MapOptions = {
     center: { lat: 45.5212, lng: -122.664 },
@@ -276,12 +276,25 @@ export class HomeComponent implements OnInit {
       this.parkLat = this.parkLatLong.substr(4, 5);
       this.parkLong = this.parkLatLong.split("long:").pop();
 
+      // this.searchResultsLatLongArray
+      //   .push({
+      //     lat: this.parkLat,
+      //     long: this.parkLong,
+      //     fullName: this.foundSearchParks[i].fullName,
+      //     url: this.foundSearchParks[i].url
+      //   });
+
       this.searchResultsLatLongArray
         .push({
-          lat: this.parkLat,
-          long: this.parkLong,
-          fullName: this.foundSearchParks[i].fullName,
-          url: this.foundSearchParks[i].url
+          position: {
+            lat: this.parkLat,
+            lng: this.parkLong,
+          },
+          label: { },
+          title: '',
+          options: {
+            animation: google.maps.Animation.BOUNCE
+          }
         });
 
       console.log(this.searchResultsLatLongArray);

@@ -148,7 +148,6 @@
     </mat-vertical-stepper>
 
   </mat-card>
-
 </div>
 
 <div fxLayoutAlign="center center" fxLayout="column">
@@ -166,7 +165,6 @@
       <mat-icon style="padding-right: 5px;">star</mat-icon>
       State: {{ stateFormGroup.value.stateCtrl.name }}
     </mat-chip>
-
     <mat-chip-list>
       <mat-chip selected color="accent" *ngIf="generalParkInfoFormGroup.value.parkInfoCtrl">
         <mat-icon style="padding-right: 5px;">info</mat-icon>
@@ -190,7 +188,6 @@
       </mat-chip>
     </mat-chip-list>
   </div>
-
 </div>
 
 <div *ngIf="searching" fxLayoutAlign="center center" style="margin-bottom: 80px">
@@ -206,7 +203,6 @@
       <img [src]="stateFormGroup.value.stateCtrl.flag" height="55" style="padding-left: 15px">
     </div>
   </div>
-
   <agm-map [zoom]="4" [latitude]="39.52" [longitude]="-98.35" [fitBounds]="true">
     <div *ngFor="let parkCoordinates of resultsStepperLatLongArray">
       <agm-marker *ngIf="parkCoordinates.lat && parkCoordinates.long" [latitude]="parkCoordinates.lat"
@@ -218,7 +214,6 @@
       </agm-marker>
     </div>
   </agm-map>
-
   <div fxLayout="column" fxLayoutAlign="center center" fxLayoutGap="25px" style="padding-top: 35px;">
 
     <div *ngFor="let foundPark of foundParks; let i = index; let last = last" [ngClass]="{ last: last }"
@@ -227,7 +222,6 @@
       <mat-card>
 
         <mat-card-header fxLayoutAlign="center center" fxLayout="column">
-
           <mat-card-title fxLayoutAlign="center center">
             <a href="{{ foundPark.url }}" target="_blank" style="text-decoration: none;">
               {{ foundPark.fullName }}</a>
@@ -235,7 +229,6 @@
           <mat-card-subtitle fxLayoutAlign="center center">
             {{ foundPark.designation }}
           </mat-card-subtitle>
-
         </mat-card-header>
 
         <mat-card-content>
@@ -257,7 +250,6 @@
             </h3>
             <p>{{ foundPark.description }}</p>
           </div>
-
           <div *ngIf="foundPark.weatherInfo && generalParkInfoFormGroup.value.parkWeatherCtrl">
             <h3>
               <mat-icon style="padding-right: 10px;">wb_sunny</mat-icon>
@@ -265,7 +257,6 @@
             </h3>
             {{ foundPark.weatherInfo }}
           </div>
-
           <div *ngIf="foundPark.directionsInfo && generalParkInfoFormGroup.value.parkDirectionsCtrl;">
             <h3>
               <mat-icon style="padding-right: 10px;">directions</mat-icon>
@@ -273,28 +264,23 @@
             </h3>
             {{ foundPark.directionsInfo }}
           </div>
-
           <h3
             *ngIf="(entranceInfoFormGroup.value.entranceInfoCtrl && foundPark.entranceFees[0] != '' && foundPark.entranceFees.length != 0)
                 || (entranceInfoFormGroup.value.entrancePassCtrl && foundPark.entrancePasses[0] != '' && foundPark.entrancePasses.length != 0)">
             <mat-icon style="padding-right: 10px;" svgIcon="boom-gate-up-outline"></mat-icon>
             Entrance Information:
           </h3>
-
           <h3 *ngIf="entranceInfoFormGroup.value.entranceInfoCtrl && foundPark.entranceFees.length == 0">
             <mat-icon style="padding-right: 10px;" svgIcon="boom-gate-up-outline">
             </mat-icon>
             No Entrance Information available
           </h3>
-
           <h3 *ngIf="(entranceInfoFormGroup.value.entrancePassCtrl && foundPark.entrancePasses.length == 0)">
             <mat-icon style="padding-right: 10px;" svgIcon="boom-gate-up-outline">
             </mat-icon>
             No Entrance Pass information available
           </h3>
-
           <div *ngIf="entranceInfoFormGroup.value.entranceInfoCtrl">
-
             <div *ngFor="let entranceFee of foundPark.entranceFees">
               <ul>
                 <li>
@@ -313,7 +299,6 @@
                 </li>
               </ul>
             </div>
-
           </div>
 
           <div *ngIf="entranceInfoFormGroup.value.entrancePassCtrl">
