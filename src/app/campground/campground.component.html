@@ -15,15 +15,12 @@
     <mat-vertical-stepper #stepper>
 
       <mat-step [stepControl]="stateFormGroup" state="state">
-
         <form [formGroup]="stateFormGroup">
           <ng-template matStepLabel>Campground by State</ng-template>
           <div>
             <mat-select placeholder="State" formControlName="stateCtrl" name="state">
               <mat-option>None</mat-option>
-
               <mat-divider></mat-divider>
-
               <mat-optgroup *ngFor="let group of stateGroups" [label]="group.name">
                 <mat-option *ngFor="let state of group.state" [value]="state">
                   <img class="option-img" [src]="state.flag" height="25">
@@ -36,16 +33,12 @@
             <button mat-raised-button matStepperNext color="primary">Next</button>
           </div>
         </form>
-
       </mat-step>
 
       <mat-step [stepControl]="accessibilityFormGroup" state="accessibility">
         <form [formGroup]="accessibilityFormGroup">
-
           <ng-template matStepLabel>Campground Accessibility</ng-template>
-
           <div fxLayoutGap="20px" fxLayout="column">
-
             <mat-checkbox fxLayout="row" formControlName="adaCtrl">
               <mat-icon>accessible</mat-icon>
               ADA information
@@ -54,9 +47,7 @@
               <mat-icon>accessible_forward</mat-icon>
               Wheelchair access information
             </mat-checkbox>
-
             <mat-divider></mat-divider>
-
             <mat-checkbox formControlName="internetCtrl">
               <mat-icon>wifi</mat-icon>Internet information
             </mat-checkbox>
@@ -64,9 +55,7 @@
               <mat-icon>smartphone</mat-icon>
               Cell phone information
             </mat-checkbox>
-
             <mat-divider></mat-divider>
-
             <mat-checkbox formControlName="rvAllowedCtrl">
               <mat-icon>rv_hookup</mat-icon>
               RV allowed
@@ -79,9 +68,7 @@
               <mat-icon svgIcon="truck-trailer"></mat-icon>
               Trailer allowed
             </mat-checkbox>
-
             <mat-divider></mat-divider>
-
             <mat-checkbox formControlName="accessRoadsCtrl">
               <mat-icon svgIcon="road"></mat-icon>Access roads
             </mat-checkbox>
@@ -89,25 +76,18 @@
               <mat-icon svgIcon="stove"></mat-icon>
               Fire stove policy
             </mat-checkbox>
-
             <div fxLayoutGap="15px" style="padding: 30px 30px 0px 0px;">
               <button mat-stroked-button matStepperPrevious color="accent">Back</button>
               <button mat-raised-button matStepperNext color="primary">Next</button>
             </div>
-
           </div>
-
         </form>
-
       </mat-step>
 
       <mat-step [stepControl]="amenitiesFormGroup" state="amenities">
         <form [formGroup]="amenitiesFormGroup">
-
           <ng-template matStepLabel>Campground Amenities</ng-template>
-
           <div fxLayoutGap="20px" fxLayout="column">
-
             <mat-checkbox formControlName="toiletsCtrl">
               <mat-icon svgIcon="toilet"></mat-icon>
               Toilets
@@ -136,9 +116,7 @@
               <mat-icon>people</mat-icon>
               Staff or volunteer host on site
             </mat-checkbox>
-
             <mat-divider></mat-divider>
-
             <mat-checkbox formControlName="trashRecyclingCtrl">
               <mat-icon svgIcon="recycle"></mat-icon>
               Trash and recycling collection
@@ -147,9 +125,7 @@
               <mat-icon svgIcon="trash-can-outline"></mat-icon>
               Dump station
             </mat-checkbox>
-
             <mat-divider></mat-divider>
-
             <mat-checkbox formControlName="potableWatertCtrl">
               <mat-icon>local_drink</mat-icon>
               Potable Water
@@ -158,9 +134,7 @@
               <mat-icon svgIcon="locker-multiple"></mat-icon>
               Food storage locker
             </mat-checkbox>
-
             <mat-divider></mat-divider>
-
             <mat-checkbox formControlName="campStoreCtrl">
               <mat-icon>store</mat-icon>
               Camp store
@@ -175,23 +149,18 @@
               <mat-icon>attach_money</mat-icon>
               Firewood available for sale
             </mat-checkbox>
-
           </div>
-
           <div fxLayoutGap="15px" style="padding: 30px 30px 0px 0px;">
             <button mat-stroked-button matStepperPrevious color="accent">Back</button>
             <button mat-raised-button matStepperNext color="primary">Next</button>
           </div>
-
         </form>
       </mat-step>
 
       <mat-step [stepControl]="generalInfoFormGroup" state="information">
         <form [formGroup]="generalInfoFormGroup">
           <ng-template matStepLabel>General Campground Information</ng-template>
-
           <div fxLayoutGap="20px" fxLayout="column">
-
             <mat-checkbox formControlName="weatherCtrl">
               <mat-icon>wb_sunny</mat-icon>
               Weather
@@ -205,7 +174,6 @@
               Directions
             </mat-checkbox>
           </div>
-
           <div fxLayoutGap="15px" style="padding: 30px 30px 0px 0px;">
             <button mat-stroked-button matStepperPrevious color="accent">Back</button>
             <button mat-raised-button matStepperNext color="primary">Next</button>
@@ -214,45 +182,36 @@
       </mat-step>
 
       <mat-step state="done">
-
         <ng-template matStepLabel>Done</ng-template>
         <div>
           Get campground results!
         </div>
         <div fxLayoutGap="45px" style="padding: 30px 30px 0px 0px;" fxLayout="column">
-
           <div fxLayout="row" fxLayoutGap="15px">
             <button mat-raised-button matStepperPrevious color="accent">Back</button>
             <button mat-raised-button color="primary" (click)="onSubmitStepper()">Submit</button>
           </div>
-
           <div>
             <button mat-stroked-button color="warn" (click)="stepper.reset()">Reset search</button>
           </div>
-
         </div>
       </mat-step>
 
       <ng-template matStepperIcon="accessibility">
         <mat-icon>accessibility_new</mat-icon>
       </ng-template>
-
       <ng-template matStepperIcon="amenities">
         <mat-icon>star_border</mat-icon>
       </ng-template>
-
       <ng-template matStepperIcon="information">
         <mat-icon>info</mat-icon>
       </ng-template>
-
       <ng-template matStepperIcon="done">
         <mat-icon>done_all</mat-icon>
       </ng-template>
 
     </mat-vertical-stepper>
-
   </mat-card>
-
 </div>
 
 <div fxLayoutAlign="center center" fxLayout="column">
@@ -400,7 +359,6 @@
 
 </div>
 
-
 <div *ngIf="!resultsFound && stepperSubmitted" fxLayoutAlign="center center">
   <mat-spinner></mat-spinner>
 </div>
@@ -426,9 +384,7 @@
       </agm-marker>
     </div>
   </agm-map>
-
 </div>
-
 
 <div *ngIf="resultsFound" fxLayout="column" fxLayoutAlign="center center" fxLayoutGap="30px">
 
@@ -437,47 +393,35 @@
   <div *ngFor="let foundCampground of foundCampgrounds; let i = index" style="width: 85%; max-width: 700px;">
 
     <mat-accordion>
-
       <mat-card>
-
         <mat-card-header fxLayoutAlign="center center">
           <mat-card-title>
             <h3>{{ foundCampground.name }}</h3>
           </mat-card-title>
         </mat-card-header>
-
         <!-- <h2>{{ foundCampground.parkCode }}</h2> -->
-
         <mat-card-content>
-
           <div *ngIf="foundCampgrounds[i].images.length">
             <slideshow [imageUrls]="foundCampgrounds[i].images" [backgroundSize]="'contain'"
               [backgroundRepeat]="'no-repeat'" [showDots]="true" [arrowSize]="'20px'" [minHeight]="'400px'">
             </slideshow>
           </div>
-
-
           <h3>
             <mat-icon style="padding-right: 10px;">description</mat-icon>
             Description:
           </h3>
           <p>{{ foundCampground.description }}</p>
-
           <div *ngFor="let fee of foundCampground.fees">
             <h4>{{ fee.title }}: {{ fee.cost | currency }}</h4>
             <p>{{ fee.description }}</p>
           </div>
-
           <!-- <app-accessibility></app-accessibility> -->
-
           <mat-expansion-panel>
-
             <mat-expansion-panel-header>
               <mat-panel-title>
                 <h3>Campsites</h3>
               </mat-panel-title>
             </mat-expansion-panel-header>
-
             <div *ngIf="foundCampground.campsites.totalsites" fxLayout="row" fxLayoutAlign="start center">
               <h4>Total # of sites:</h4> {{ foundCampground.campsites.totalsites }}
             </div>
@@ -498,11 +442,8 @@
               <h4># of group sites:</h4>
               {{ foundCampground.campsites.group }}
             </div>
-
           </mat-expansion-panel>
-
           <mat-expansion-panel>
-
             <mat-expansion-panel-header>
               <mat-panel-title>
                 <h3>Accessibility</h3>
@@ -511,7 +452,6 @@
                   Information on all things accessibility
                 </mat-panel-description> -->
             </mat-expansion-panel-header>
-
             <div
               *ngIf="foundCampground.accessibility.wheelchairAccess && accessibilityFormGroup.value.wheelchairAccessCtrl">
               <h4>Wheelchair access information</h4>
@@ -568,7 +508,6 @@
               <h4>Trailer allowed</h4>
               {{ foundCampground.accessibility.trailerAllowed }}
             </div>
-
           </mat-expansion-panel>
 
           <mat-expansion-panel>
@@ -642,13 +581,11 @@
           </mat-expansion-panel>
 
           <mat-expansion-panel>
-
             <mat-expansion-panel-header>
               <mat-panel-title>
                 <h3>General Information</h3>
               </mat-panel-title>
             </mat-expansion-panel-header>
-
             <div *ngIf="foundCampground.weatherOverview && generalInfoFormGroup.value.weatherCtrl">
               <div fxLayout="row" fxLayoutAlign="start center">
                 <mat-icon>wb_sunny</mat-icon>

@@ -469,6 +469,7 @@ export class CampgroundComponent implements OnInit {
 
     this.chipsArray.push(this.stateFormGroup.value.stateCtrl.name);
     this.getCampgroundData();
+    console.log(this.accessibilityFormGroup);
     console.log(this.accessibilityFormGroup.value);
   }
 
