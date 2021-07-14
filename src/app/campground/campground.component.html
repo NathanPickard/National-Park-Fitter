@@ -364,7 +364,6 @@
 </div>
 
 <div *ngIf="resultsFound">
-
   <div *ngIf="stateFormGroup.value.stateCtrl !== ''">
     <div fxLayoutAlign="center center" fxLayout="row" style="padding: 20px 0px 20px 0px">
       <p style="padding-right: 8px">Campgrounds in</p>
@@ -372,7 +371,6 @@
       <img [src]="stateFormGroup.value.stateCtrl?.flag" height="55" style="padding-left: 15px">
     </div>
   </div>
-
   <agm-map [zoom]="4" [latitude]="39.52" [longitude]="-98.35" [fitBounds]="true">
     <div *ngFor="let campCoordinates of resultsStepperLatLongArray">
       <agm-marker *ngIf="campCoordinates.lat && campCoordinates.long" [latitude]="campCoordinates.lat"
@@ -387,9 +385,7 @@
 </div>
 
 <div *ngIf="resultsFound" fxLayout="column" fxLayoutAlign="center center" fxLayoutGap="30px">
-
   <!-- <app-accessibility></app-accessibility> -->
-
   <div *ngFor="let foundCampground of foundCampgrounds; let i = index" style="width: 85%; max-width: 700px;">
 
     <mat-accordion>
