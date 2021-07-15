@@ -1,7 +1,5 @@
 <div>
-
   <app-nav (openNav)="sidenav.open()"></app-nav>
-
   <mat-sidenav-container class="all-wrap">
     <mat-sidenav #sidenav over>
       <mat-nav-list>
@@ -10,9 +8,7 @@
           <mat-icon style="padding-right: 8px" color="primary">add_location</mat-icon>
           National Park Fitter
         </a>
-
         <mat-divider></mat-divider>
-
         <a mat-list-item routerLink="/parks" routerLinkActive="active" (click)="closeSidenav()">
           <mat-icon style="padding-right: 8px" color="primary">filter_hdr</mat-icon>
           Parks
@@ -27,16 +23,13 @@
         </a>
       </mat-nav-list>
     </mat-sidenav>
-
     <mat-sidenav-content class="page-wrap">
       <div [@routerTransition]="o.isActivated ? o.activatedRoute : ''" fxFlexFill class="content">
         <router-outlet #o="outlet"></router-outlet>
       </div>
     </mat-sidenav-content>
   </mat-sidenav-container>
-
 </div>
-
 <footer fxLayout="column">
   <mat-toolbar color="primary">
     <mat-toolbar-row fxLayoutAlign="center center">
