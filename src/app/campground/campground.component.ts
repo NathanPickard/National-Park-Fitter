@@ -549,7 +549,6 @@ export class CampgroundComponent implements OnInit {
       //     // this.foundCampgrounds[i].fees[j]
       //   });
       // }
-
       // console.log('CAMPGROUND FEES: ' + this.campgroundFees);
 
       this.getParkName(this.campgroundPark);

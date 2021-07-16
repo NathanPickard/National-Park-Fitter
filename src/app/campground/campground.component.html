@@ -196,7 +196,6 @@
           </div>
         </div>
       </mat-step>
-
       <ng-template matStepperIcon="accessibility">
         <mat-icon>accessibility_new</mat-icon>
       </ng-template>
@@ -209,13 +208,11 @@
       <ng-template matStepperIcon="done">
         <mat-icon>done_all</mat-icon>
       </ng-template>
-
     </mat-vertical-stepper>
   </mat-card>
 </div>
 
 <div fxLayoutAlign="center center" fxLayout="column">
-
   <h3 *ngIf="accessibilityFormGroup.value.adaCtrl ||
     accessibilityFormGroup.value.wheelchairAccessCtrl ||
     accessibilityFormGroup.value.internetCtrl ||
@@ -243,18 +240,15 @@
     generalInfoFormGroup.value.regulationsCtrl ||
     generalInfoFormGroup.value.directionsCtrl">
     Selected:</h3>
-
   <div fxLayoutGap="20px" fxLayout="column" fxLayoutAlign="center center" style="padding-bottom: 30px;">
     <mat-chip selected color="accent" *ngIf="accessibilityFormGroup.value.adaCtrl">
       <mat-icon style="padding-right: 5px;">accessible</mat-icon>
       ADA information
     </mat-chip>
-
     <mat-chip selected color="accent" *ngIf="stateFormGroup.value.stateCtrl?.name">
       <mat-icon style="padding-right: 5px;">star</mat-icon>
       State: {{ stateFormGroup.value.stateCtrl.name }}
     </mat-chip>
-
     <mat-chip-list>
       <mat-chip selected color="accent" *ngIf="accessibilityFormGroup.value.wheelchairAccessCtrl">
         <mat-icon style="padding-right: 5px;">accessible_forward</mat-icon>
@@ -356,7 +350,6 @@
       </mat-chip>
     </mat-chip-list>
   </div>
-
 </div>
 
 <div *ngIf="!resultsFound && stepperSubmitted" fxLayoutAlign="center center">
@@ -387,7 +380,6 @@
 <div *ngIf="resultsFound" fxLayout="column" fxLayoutAlign="center center" fxLayoutGap="30px">
   <!-- <app-accessibility></app-accessibility> -->
   <div *ngFor="let foundCampground of foundCampgrounds; let i = index" style="width: 85%; max-width: 700px;">
-
     <mat-accordion>
       <mat-card>
         <mat-card-header fxLayoutAlign="center center">

@@ -300,9 +300,7 @@
               </ul>
             </div>
           </div>
-
           <div *ngIf="entranceInfoFormGroup.value.entrancePassCtrl">
-
             <ul *ngFor="let entrancePass of foundPark.entrancePasses">
               <li>
                 <h4>{{ entrancePass.title }}</h4>
@@ -323,21 +321,16 @@
           <!-- <ng-template #directionsNotAvailable>Directions not available</ng-template> -->
 
           <h4>Current temperature: {{ currentWeatherResults[i] }}</h4>
-
         </mat-card-content>
-
         <mat-card-actions fxLayoutGap=" 20px" fxLayout="row" fxLayoutAlign="center center">
-
           <a href="{{ foundPark.url }}" mat-raised-button color="primary" target="_blank">
             {{ foundPark.name }}
             Website
           </a>
-
           <div *ngIf="foundPark.directionsUrl && generalParkInfoFormGroup.value.parkDirectionsCtrl">
             <a href="{{ foundPark.directionsUrl }}" mat-stroked-button color="primary" target="_blank">Directions
             </a>
           </div>
-
         </mat-card-actions>
       </mat-card>
     </div>
