@@ -62,7 +62,6 @@ export class HomeComponent implements OnInit {
   noParksFound = false;
 
   campgroundParkArray: any[] = [name];
-
   campgroundPark: any;
 
   campgroundParkCode: any;
@@ -296,7 +295,6 @@ export class HomeComponent implements OnInit {
             animation: google.maps.Animation.BOUNCE
           }
         });
-
       console.log(this.searchResultsLatLongArray);
     }
     console.log(this.foundSearchParks);
@@ -304,7 +302,6 @@ export class HomeComponent implements OnInit {
 
   handleSuccess(data) {
     this.resultsFound = true;
-
     this.foundCampgrounds = data.data;
     console.log(this.foundCampgrounds);
 
@@ -312,7 +309,6 @@ export class HomeComponent implements OnInit {
 
     for (let i = 0; i < this.foundCampgrounds.length; i++) {
       this.campgroundPark = this.foundCampgrounds[i].parkcode;
-
       this.getParkName(this.campgroundPark);
     }
   }
@@ -335,7 +331,6 @@ export class HomeComponent implements OnInit {
       // console.log(this.foundCampgroundPark[i].fullname);
       this.campgroundParkArray.push(this.foundCampgroundPark[i].fullname);
       // this.foundCampgrounds.push(this.foundCampgroundPark[i].fullname);
-
       // console.log(this.foundCampgrounds);
       console.log(this.campgroundParkArray);
     }
