@@ -5,15 +5,12 @@
   </h4>
 
   <mat-card>
-
     <mat-toolbar color="primary">
       <mat-toolbar-row fxLayoutAlign="center center">
         <span>Park Fitter</span>
       </mat-toolbar-row>
     </mat-toolbar>
-
     <mat-vertical-stepper #stepper>
-
       <mat-step [stepControl]="stateFormGroup" state="state">
         <form [formGroup]="stateFormGroup">
           <ng-template matStepLabel>Parks by State</ng-template>
@@ -35,7 +32,6 @@
             <button mat-raised-button matStepperNext color="primary">Next</button>
           </div>
         </form>
-
       </mat-step>
 
       <!-- <mat-step [stepControl]="designationFormGroup" state="designation">
@@ -112,9 +108,7 @@
           </div>
         </form>
       </mat-step>
-
       <mat-step state="done">
-
         <ng-template matStepLabel>Done</ng-template>
         <div>
           Get park results!
@@ -128,7 +122,6 @@
             <button mat-stroked-button color="warn" (click)="stepper.reset()">Reset search</button>
           </div>
         </div>
-
       </mat-step>
       <ng-template matStepperIcon="state">
         <mat-icon>place</mat-icon>
@@ -146,12 +139,10 @@
         <mat-icon>done_all</mat-icon>
       </ng-template>
     </mat-vertical-stepper>
-
   </mat-card>
 </div>
 
 <div fxLayoutAlign="center center" fxLayout="column">
-
   <h3 *ngIf="stateFormGroup.value.stateCtrl.name ||
     generalParkInfoFormGroup.value.parkInfoCtrl ||
     generalParkInfoFormGroup.value.parkWeatherCtrl ||
@@ -159,7 +150,6 @@
     entranceInfoFormGroup.value.entranceInfoCtrl ||
     entranceInfoFormGroup.value.entrancePassCtrl">
     Selected:</h3>
-
   <div fxLayoutGap="20px" fxLayout="column" fxLayoutAlign="center center" style="padding-bottom: 30px;">
     <mat-chip selected color="accent" *ngIf="stateFormGroup.value.stateCtrl.name">
       <mat-icon style="padding-right: 5px;">star</mat-icon>
@@ -195,7 +185,6 @@
 </div>
 
 <div *ngIf="resultsFound">
-
   <div *ngIf="stateFormGroup.value.stateCtrl !== ''">
     <div fxLayoutAlign="center center" fxLayout="row" style="padding: 20px 0px 20px 0px">
       <p style="padding-right: 8px">Parks in</p>
@@ -215,12 +204,9 @@
     </div>
   </agm-map>
   <div fxLayout="column" fxLayoutAlign="center center" fxLayoutGap="25px" style="padding-top: 35px;">
-
     <div *ngFor="let foundPark of foundParks; let i = index; let last = last" [ngClass]="{ last: last }"
       style="width: 80%; max-width: 850px;">
-
       <mat-card>
-
         <mat-card-header fxLayoutAlign="center center" fxLayout="column">
           <mat-card-title fxLayoutAlign="center center">
             <a href="{{ foundPark.url }}" target="_blank" style="text-decoration: none;">
@@ -230,19 +216,15 @@
             {{ foundPark.designation }}
           </mat-card-subtitle>
         </mat-card-header>
-
         <mat-card-content>
-
           <slideshow [imageUrls]="foundParks[i].images" [backgroundSize]="'contain'" [backgroundRepeat]="'no-repeat'"
             [showDots]="true" [arrowSize]="'20px'" [minHeight]="'400px'">
           </slideshow>
-
           <h3>
             <mat-icon style="padding-right: 10px;">description</mat-icon>
             Description:
           </h3>
           {{ foundPark.description }}
-
           <div *ngIf=" foundPark.description && generalParkInfoFormGroup.value.parkInfoCtrl">
             <h3>
               <mat-icon svgIcon="information-outline" style="padding-right: 10px;"></mat-icon>
