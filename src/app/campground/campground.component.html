@@ -5,15 +5,12 @@
   </h4>
 
   <mat-card>
-
     <mat-toolbar color="primary">
       <mat-toolbar-row fxLayoutAlign="center center">
         <span>Campground Fitter</span>
       </mat-toolbar-row>
     </mat-toolbar>
-
     <mat-vertical-stepper #stepper>
-
       <mat-step [stepControl]="stateFormGroup" state="state">
         <form [formGroup]="stateFormGroup">
           <ng-template matStepLabel>Campground by State</ng-template>
@@ -34,7 +31,6 @@
           </div>
         </form>
       </mat-step>
-
       <mat-step [stepControl]="accessibilityFormGroup" state="accessibility">
         <form [formGroup]="accessibilityFormGroup">
           <ng-template matStepLabel>Campground Accessibility</ng-template>
@@ -83,7 +79,6 @@
           </div>
         </form>
       </mat-step>
-
       <mat-step [stepControl]="amenitiesFormGroup" state="amenities">
         <form [formGroup]="amenitiesFormGroup">
           <ng-template matStepLabel>Campground Amenities</ng-template>
@@ -156,7 +151,6 @@
           </div>
         </form>
       </mat-step>
-
       <mat-step [stepControl]="generalInfoFormGroup" state="information">
         <form [formGroup]="generalInfoFormGroup">
           <ng-template matStepLabel>General Campground Information</ng-template>
@@ -180,7 +174,6 @@
           </div>
         </form>
       </mat-step>
-
       <mat-step state="done">
         <ng-template matStepLabel>Done</ng-template>
         <div>
