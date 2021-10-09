@@ -380,7 +380,6 @@
             <h3>{{ foundCampground.name }}</h3>
           </mat-card-title>
         </mat-card-header>
-        <!-- <h2>{{ foundCampground.parkCode }}</h2> -->
         <mat-card-content>
           <div *ngIf="foundCampgrounds[i].images.length">
             <slideshow [imageUrls]="foundCampgrounds[i].images" [backgroundSize]="'contain'"

@@ -1,22 +1,17 @@
 <div *ngFor="let foundCampground of foundCampgrounds">
-
-  <!-- <div *ngFor="let campgroundArr of campgroundParkArray"> -->
   <mat-accordion>
 
     <mat-card>
-
       <mat-card-header>
         <mat-card-title>
           {{ foundCampground.name }}
         </mat-card-title>
-
       </mat-card-header>
 
       <!-- <h2>{{ foundCampground.parkCode }}</h2> -->
       <!-- <h2>{{ campgroundParkArray }}</h2> -->
 
       <p>{{ foundCampground.description }}</p>
-
       <p>{{ foundCampground.fees }}</p>
 
       <mat-expansion-panel>
