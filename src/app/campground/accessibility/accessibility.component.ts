@@ -1,5 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { FormGroup, FormBuilder, Validators } from '@angular/forms';
+import { UntypedFormGroup, UntypedFormBuilder, Validators } from '@angular/forms';
 
 import { HomeComponent } from '../../home/home.component';
 
@@ -14,9 +14,9 @@ export class AccessibilityComponent implements OnInit {
   // @Input() foundCampground: any[];
   foundCampgrounds: any[];
 
-  accessibilityFormGroup: FormGroup;
+  accessibilityFormGroup: UntypedFormGroup;
 
-  constructor(private _formBuilder: FormBuilder) { }
+  constructor(private _formBuilder: UntypedFormBuilder) { }
 
   // foundCampgrounds: any[];
 

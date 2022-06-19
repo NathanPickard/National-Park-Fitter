@@ -1,7 +1,7 @@
 /// <reference types="@types/googlemaps" />
 
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { UntypedFormBuilder, UntypedFormGroup, Validators } from '@angular/forms';
 
 import { SearchService } from '../shared/search.service';
 
@@ -34,10 +34,10 @@ export interface IImage {
 })
 export class ParkComponent implements OnInit {
 
-  stateFormGroup: FormGroup;
-  designationFormGroup: FormGroup;
-  generalParkInfoFormGroup: FormGroup;
-  entranceInfoFormGroup: FormGroup;
+  stateFormGroup: UntypedFormGroup;
+  designationFormGroup: UntypedFormGroup;
+  generalParkInfoFormGroup: UntypedFormGroup;
+  entranceInfoFormGroup: UntypedFormGroup;
 
   stateQuery: any;
   queriesArray: any[];
@@ -426,7 +426,7 @@ export class ParkComponent implements OnInit {
     }
   ];
 
-  constructor(private _formBuilder: FormBuilder,
+  constructor(private _formBuilder: UntypedFormBuilder,
     private searchService: SearchService) { }
 
   ngOnInit() {

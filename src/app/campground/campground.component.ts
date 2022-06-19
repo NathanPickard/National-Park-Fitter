@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { UntypedFormBuilder, UntypedFormGroup, Validators } from '@angular/forms';
 
 import { SearchService } from '../shared/search.service';
 
@@ -32,10 +32,10 @@ export interface IImage {
 })
 export class CampgroundComponent implements OnInit {
 
-  stateFormGroup: FormGroup;
-  accessibilityFormGroup: FormGroup;
-  amenitiesFormGroup: FormGroup;
-  generalInfoFormGroup: FormGroup;
+  stateFormGroup: UntypedFormGroup;
+  accessibilityFormGroup: UntypedFormGroup;
+  amenitiesFormGroup: UntypedFormGroup;
+  generalInfoFormGroup: UntypedFormGroup;
 
   stateQuery: any;
   queryString: any;
@@ -412,7 +412,7 @@ export class CampgroundComponent implements OnInit {
     }
   ];
 
-  constructor(private _formBuilder: FormBuilder,
+  constructor(private _formBuilder: UntypedFormBuilder,
     private searchService: SearchService) { }
 
 

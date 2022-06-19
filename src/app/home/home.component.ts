@@ -1,7 +1,7 @@
 /// <reference types="@types/googlemaps" />
 
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup, Validators, FormControl } from '@angular/forms';
+import { UntypedFormBuilder, UntypedFormGroup, Validators, UntypedFormControl } from '@angular/forms';
 
 import { debounceTime, tap, switchMap, finalize } from 'rxjs/operators';
 
@@ -27,12 +27,12 @@ export class HomeComponent implements OnInit {
     minZoom: 8,
   }
 
-  accessibilityFormGroup: FormGroup;
-  amenitiesFormGroup: FormGroup;
-  generalInfoFormGroup: FormGroup;
+  accessibilityFormGroup: UntypedFormGroup;
+  amenitiesFormGroup: UntypedFormGroup;
+  generalInfoFormGroup: UntypedFormGroup;
 
-  stateFormGroup: FormGroup;
-  generalParkInfoFormGroup: FormGroup;
+  stateFormGroup: UntypedFormGroup;
+  generalParkInfoFormGroup: UntypedFormGroup;
 
   searching = false;
 
@@ -42,7 +42,7 @@ export class HomeComponent implements OnInit {
 
   parkSearchResults: any;
 
-  constructor(private _formBuilder: FormBuilder,
+  constructor(private _formBuilder: UntypedFormBuilder,
     private searchService: SearchService) { }
 
   foundCampgrounds: any[];
@@ -68,7 +68,7 @@ export class HomeComponent implements OnInit {
   parkCode: any;
   newsReleaseParkCode: any;
 
-  searchParkForm: FormGroup;
+  searchParkForm: UntypedFormGroup;
   searchQuery: string;
 
   parkLatLong: any;
@@ -90,8 +90,8 @@ export class HomeComponent implements OnInit {
 
     // this.map = new google.maps.Map(this.gmapElement.nativeElement, mapProp);
 
-    this.searchParkForm = new FormGroup({
-      searchQuery: new FormControl('')
+    this.searchParkForm = new UntypedFormGroup({
+      searchQuery: new UntypedFormControl('')
     });
 
     this.getNewsReleases();
