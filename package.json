@@ -38,7 +38,7 @@
     "@angular/language-service": "^16.1.4",
     "@types/googlemaps": "^3.43.3",
     "@types/jasmine": "~4.3.6",
-    "@types/jasminewd2": "~2.0.10",
+    "@types/jasminewd2": "~2.0.11",
     "@types/node": "^20.6.2",
     "codelyzer": "^6.0.2",
     "jasmine-core": "~5.1.1",
