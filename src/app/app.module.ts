@@ -2,7 +2,7 @@ import { NgModule, Injectable } from '@angular/core';
 import { BrowserModule, DomSanitizer, HAMMER_GESTURE_CONFIG, HammerGestureConfig } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { HttpClientModule } from '@angular/common/http';
+import { provideHttpClient, withInterceptorsFromDi } from '@angular/common/http';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { ScrollingModule } from '@angular/cdk/scrolling';
 
@@ -35,42 +35,36 @@ export class CustomHammerConfig extends HammerGestureConfig {
   };
 }
 
-@NgModule({
-  declarations: [
-    AppComponent,
-    NavComponent,
-    HomeComponent,
-    AboutComponent,
-    AmenitiesComponent,
-    AccessibilityComponent,
-    ParkComponent,
-    CampgroundComponent,
-    ParkStepperComponent
-  ],
-  imports: [
-    BrowserModule,
-    BrowserAnimationsModule,
-    AppRoutingModule,
-    FormsModule,
-    HttpClientModule,
-    ReactiveFormsModule,
-    FlexLayoutModule,
-    MaterialModule,
-    ScrollingModule,
-    SlideshowModule
-  ],
-  providers: [
-    SearchService,
-    {
-      provide: STEPPER_GLOBAL_OPTIONS,
-      useValue: { displayDefaultIndicatorType: false }
-    },
-    {
-      provide: HAMMER_GESTURE_CONFIG, useClass: CustomHammerConfig
-    }
-  ],
-  bootstrap: [AppComponent]
-})
+@NgModule({ declarations: [
+        AppComponent,
+        NavComponent,
+        HomeComponent,
+        AboutComponent,
+        AmenitiesComponent,
+        AccessibilityComponent,
+        ParkComponent,
+        CampgroundComponent,
+        ParkStepperComponent
+    ],
+    bootstrap: [AppComponent], imports: [BrowserModule,
+        BrowserAnimationsModule,
+        AppRoutingModule,
+        FormsModule,
+        ReactiveFormsModule,
+        FlexLayoutModule,
+        MaterialModule,
+        ScrollingModule,
+        SlideshowModule], providers: [
+        SearchService,
+        {
+            provide: STEPPER_GLOBAL_OPTIONS,
+            useValue: { displayDefaultIndicatorType: false }
+        },
+        {
+            provide: HAMMER_GESTURE_CONFIG, useClass: CustomHammerConfig
+        },
+        provideHttpClient(withInterceptorsFromDi())
+    ] })
 export class AppModule {
   constructor(matIconRegistry: MatIconRegistry, domSanitizer: DomSanitizer) {
     // matIconRegistry.addSvgIconSet(domSanitizer.bypassSecurityTrustResourceUrl('https://chan4077.github.io/res/mdi.svg'));
